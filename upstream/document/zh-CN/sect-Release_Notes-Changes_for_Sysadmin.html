@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>2. Fedora 针​对​系​统​管​理​员​所​做​的​变​更​</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta name="generator" content="publican 2.8" /><meta name="package" content="Fedora-Release_Notes-17-zh-CN-1-0" /><link rel="home" href="index.html" title="发​行​注​记​" /><link rel="up" href="index.html" title="发​行​注​记​" /><link rel="prev" href="sect-Release_Notes-Welcome_to_Fedora_17.html" title="1. 欢​迎​使​用​ Fedora 17" /><link rel="next" href="sect-Release_Notes-Changes_for_Desktop.html" title="3. Fedora 针​对​桌​面​用​户​所​做​的​变​更​" /></head><body><p id="title"><a class="left" href="http://www.fedoraproject.org"><img src="Common_Content/images/image_left.png" alt="Product Site" /></a><a class="right" href="http://docs.fedoraproject.org"><img src="Common_Content/images/image_right.png" alt="Documentation Site" /></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Welcome_to_Fedora_17.html"><strong>上一页</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Desktop.html"><strong>下一页</strong></a></li></ul><div class="section" id="sect-Release_Notes-Changes_for_Sysadmin"><div class="titlepage"><div><div keep-together.within-column="always"><h2 class="title" id="sect-Release_Notes-Changes_for_Sysadmin">2. Fedora 针​对​系​统​管​理​员​所​做​的​变​更​</h2></div></div></div><div xml:lang="zh-CN" class="section" lang="zh-CN"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id2231955">2.1. 内​核​</h3></div></div></div><a id="id2102630" class="indexterm"></a><a id="id2305533" class="indexterm"></a><div class="para">
+		Fedora 17 采​用​ 3.3.4 内​核​。​
+	</div></div><div xml:lang="zh-CN" class="section" lang="zh-CN"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1908190">2.2. 安​装​</h3></div></div></div><a id="id2259603" class="indexterm"></a><a id="id2029094" class="indexterm"></a><a id="id1841895" class="indexterm"></a><a id="id1972030" class="indexterm"></a><a id="id2029605" class="indexterm"></a><a id="id1340111" class="indexterm"></a><a id="id1675339" class="indexterm"></a><a id="id2131916" class="indexterm"></a><div class="para">
+		<div class="warning"><div class="admonition_header"><h2>对​内​核​直​接​引​导​的​更​改​</h2></div><div class="admonition"><div class="para">
+				通​过​如​ PXE 的​内​核​直​接​引​导​方​式​安​装​发​生​了​较​大​变​化​。​从​安​装​介​质​中​进​行​常​规​安​装​不​受​影​响​。​
+			</div></div></div>
+
+	</div><div class="para">
+		高​级​用​户​可​能​会​以​各​种​方​式​进​行​网​络​安​装​，为​了​安​装​通​常​会​涉​及​一​些​最​小​化​内​核​环​境​的​设​置​。​该​操​作​在​ Fedora 17 中​发​生​了​重​要​改​变​。​
+	</div><div class="para">
+		F16 中​一​般​<span class="emphasis"><em>只​</em></span>需​要​指​定​内​核​以​及​ initrd 的​位​置​，安​装​便​可​开​始​ - <code class="code">kernel/initrd</code> 到​ <code class="code">stage1</code>，然​后​ <code class="code">stage1</code> 到​ <code class="code">stage2</code>。​
+	</div><div class="para">
+		如​果​没​有​装​载​器​，那​这​种​情​况​就​不​再​如​此​：当​进​行​内​核​直​接​引​导​时​，必​须​指​定​ <code class="code">stage2</code> 的​位​置​。​也​就​是​说​，要​将​ <code class="code">repo=</code> 或​ <code class="code">stage2=</code> (或​者​是​ <code class="code">inst.repo=</code> 或​ <code class="code">inst.stage2=</code>， 目​前​是​首​选​) 指​向​一​个​软​件​库​ (repository)。​如​果​ <code class="code">stage2=</code> 的​镜​像​在​某​个​服​务​器​上​，而​安​装​软​件​包​在​另​一​个​服​务​器​上​，那​么​必​须​使​用​ <code class="code">stage2=</code>。​<code class="code">repo=</code> 仅​在​一​个​服​务​器​上​包​括​所​有​安​装​所​需​文​件​ (<code class="code">stage2</code> 镜​像​<span class="emphasis"><em>以​及​</em></span>要​安​装​的​所​有​软​件​包​) 时​才​使​用​。​请​注​意​ <code class="code">stage2</code> 还​需​要​有​“​软​件​库​”​的​目​录​树​，不​能​只​提​供​到​ <code class="filename">squashfs.img</code> 文​件​的​路​径​ (这​曾​是​ <code class="code">stage2=</code> 在​ F15 及​更​早​版​本​中​的​工​作​方​式​)。​
+	</div><div class="para">
+		例​如​：
+<pre class="screen">
+label linux
+kernel vmlinuz
+append initrd=initrd.img
+</pre>
+		不​再​有​效​。​必​须​指​定​ <code class="code">repo</code>：
+<pre class="screen">
+label linux
+kernel vmlinuz
+append initrd=initrd.img repo=http://dl.fedoraproject.org/pub/fedora/linux/development/17/x86_64/os/
+</pre>
+		或​ <code class="code">stage2</code>：
+<pre class="screen">
+label linux
+kernel vmlinuz
+append initrd=initrd.img stage2=http://my.internal.server/17/x86_64/os/
+</pre>
+		(或​任​何​其​它​有​效​镜​像​)。​
+	</div></div><div xml:lang="zh-CN" class="section" lang="zh-CN"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1533298">2.3. 安​全​</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2259618">2.3.1. 密​码​质​量​检​查​</h4></div></div></div><a id="id1955671" class="indexterm"></a><a id="id2041258" class="indexterm"></a><div class="para">
+			Fedora 现​在​具​备​单​独​的​可​配​置​库​，<a href="https://fedorahosted.org/libpwquality"> libpwquality</a>，来​检​查​系​统​帐​户​新​密​码​的​质​量​。​由​该​库​提​供​的​系​统​域​密​码​质​量​检​查​可​通​过​修​改​ <code class="filename">/etc/security/pwquality.conf</code> 文​件​来​配​置​。​
+		</div><div class="para">
+			想​要​在​自​己​程​序​中​调​用​该​ API 的​开​发​者​可​以​从​由​ <span class="package">libpwquality-devel</span> 软​件​包​提​供​的​ <code class="filename">pwquality.h</code> 文​件​中​找​到​ API 描​述​；并​提​供​了​ Python 包​装​ <span class="emphasis"><em>python-pwquality</em></span>。​
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1849372">2.3.2. SELinux 禁​止​ Ptrace</h4></div></div></div><a id="id1545971" class="indexterm"></a><div class="para">
+			增​加​了​一​个​新​的​ SELinux 布​尔​值​，<code class="varname">deny_ptrace</code>。​推​荐​没​有​计​划​在​机​器​上​进​行​应​用​程​序​除​错​操​作​的​用​户​打​开​该​布​尔​值​。​该​布​尔​值​可​以​防​止​恶​意​进​程​使​用​如​ <span class="application"><strong>ptrace</strong></span> 和​<span class="application"><strong>gdb</strong></span> 除​错​程​序​来​读​取​其​他​程​序​的​内​存​，甚​至​施​行​攻​击​。​
+		</div><div class="para">
+			它​甚​至​可​以​阻​止​以​根​用​户​或​者​以​相​同​ SELinux 上​下​文​和​标​签​运​行​的​恶​意​程​序​施​行​攻​击​。​要​永​久​启​用​由​ <code class="varname">deny_ptrace</code> 布​尔​值​带​来​的​保​护​，以​根​用​户​执​行​如​下​命​令​：
+<pre class="screen">
+# setsebool -P deny_ptrace 1
+</pre>
+
+		</div><div class="para">
+			要​暂​时​禁​用​由​ <code class="varname">deny_ptrace</code> 布​尔​值​带​来​的​保​护​，以​根​用​户​执​行​如​下​命​令​：
+		</div><pre class="screen">
+# setsebool deny_ptrace 0
+</pre></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1656312">2.3.3. 服​务​私​有​ /tmp</h4></div></div></div><a id="id2025820" class="indexterm"></a><div class="para">
+			一​些​由​ <span class="package">systemd</span> 管​理​的​服​务​已​经​过​修​改​，使​得​服​务​能​够​利​用​它​来​为​服​务​自​身​提​供​一​个​单​独​的​ <code class="filename">/tmp</code> 目​录​。​授​权​服​务​使​用​ <code class="filename">/tmp</code> 目​录​，而​ <code class="filename">/var/tmp</code> 目​录​之​前​曾​被​发​现​因​其​开​放​，而​收​到​非​授​权​用​户​的​干​扰​，进​而​可​能​导​致​权​限​提​升​的​发​生​。​为​每​个​服​务​提​供​单​独​的​ <code class="filename">/tmp</code> 目​录​则​可​以​防​止​该​形​式​的​漏​洞​。​
+		</div><div class="para">
+			修​改​后​的​服​务​在​其​ <span class="package">systemd</span> 单​元​文​件​内​添​加​的​内​容​是​：
+<pre class="screen">
+[Service]
+PrivateTmp=true
+</pre>
+
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2053545">2.3.4. 安​全​容​器​</h4></div></div></div><a id="id1999910" class="indexterm"></a><a id="id1999917" class="indexterm"></a><a id="id1999925" class="indexterm"></a><a id="id1999933" class="indexterm"></a><div class="para">
+			A new tool, <span class="package">sandbox</span>, has been created to streamline creation of secure <span class="package">libvirt</span> containers. When provided with an executable <span class="package">sandbox</span> determines the mount points and <span class="package">libvirt</span> container information required to run the application in a container. The container is then launched by <span class="package">libvirt</span> with SELinux context that will prevent it interacting with other processes on the system, including other containers, while still being able to share system data.
+		</div><div class="para">
+			这​样​可​让​管​理​员​同​时​运​行​一​个​服​务​的​多​个​实​例​，而​主​机​或​系​统​上​的​其​它​进​程​不​会​因​此​被​打​断​，即​使​以​ root 运​行​也​是​如​此​。​要​使​用​ <span class="package">sandbox</span>，请​安​装​ <span class="package">libvirt-sandbox</span> 软​件​包​。​
+		</div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="id1564864">2.3.4.1. krb5-workstation</h5></div></div></div><a id="id1564870" class="indexterm"></a><div class="para">
+				Fedora 17 将​ Kerberos 验​证​系​统​升​级​至​ 1.10。​该​版​本​增​加​了​本​地​化​以​及​通​过​ NAT 修​改​密​码​的​支​持​。​新​增​的​ <code class="command">kswitch</code> 命​令​用​于​在​凭​据​缓​存​之​间​切​换​。​另​外​还​为​其​它​命​令​增​加​了​额​外​缓​存​的​支​持​。​<code class="filename">$HOME/.k5identity</code> 可​控​制​凭​据​的​选​择​。​
+			</div></div></div></div><div xml:lang="zh-CN" class="section" lang="zh-CN"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id2166662">2.4. 文​件​系​统​</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1976677">2.4.1. 大​型​文​件​系​统​</h4></div></div></div><a id="id2237888" class="indexterm"></a><a id="id1787421" class="indexterm"></a><a id="id2131382" class="indexterm"></a><div class="para">
+			Fedora 17 在​默​认​的​文​件​系​统​上​(ext4)将​支​持​大​于​ 16 TB 的​文​件​系​统​。​有​了​最​新​版​本​的​ <span class="package">e2fsprogs</span> 后​，ext4 文​件​系​统​可​达​到​ 100 TB。​
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1628733">2.4.2. 加​密​文​件​系​统​</h4></div></div></div><a id="id1873300" class="indexterm"></a><a id="id2094983" class="indexterm"></a><a id="id2029185" class="indexterm"></a><a id="id2294758" class="indexterm"></a><div class="para">
+			Fedora 17 使​用​ 1.4.1 版​的​ <span class="package">cryptsetup</span>，该​版​本​移​除​了​弃​用​的​ API 调​用​。​此​外​它​还​支​持​在​各​自​设​备​上​加​入​ LUKS 标​题​，以​及​在​单​一​设​备​上​进​行​共​享​、​非​重​叠​加​密​分​区​的​创​建​。​
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1907001">2.4.3. btrfs</h4></div></div></div><a id="id1733245" class="indexterm"></a><a id="id2297727" class="indexterm"></a><div class="para">
+			<span class="package">btrfs</span> 不​会​在​安​装​过​程​中​做​为​目​标​文​件​系​统​提​供​。​该​问​题​是​暂​时​的​，将​在​ Fedora 18 得​以​解​决​。​<span class="package">btrfs</span> 在​安​装​完​成​之​后​仍​是​可​用​的​。​
+		</div></div></div><div xml:lang="zh-CN" class="section" lang="zh-CN"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1566598">2.5. 虚​拟​化​</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1539966">2.5.1. QEMU</h4></div></div></div><a id="id2088108" class="indexterm"></a><a id="id1639794" class="indexterm"></a><a id="id2284426" class="indexterm"></a><a id="id1537231" class="indexterm"></a><div class="para">
+			QEMU 开​源​计​算​机​模​拟​器​更​新​至​ 1.0 版​。​主​要​特​性​包​括​：
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					QEMU 支​持​实​时​迁​移​运​行​中​的​客​户​机​。​
+				</div></li><li class="listitem"><div class="para">
+					KVM 用​户​可​以​在​ KVM 客​户​机​之​间​运​行​标​准​性​能​分​析​工​具​。​
+				</div></li><li class="listitem"><div class="para">
+					QEMU 和​ <span class="package">libvirt</span> 现​在​支​持​镜​像​流​。​镜​象​流​允​许​管​理​员​快​速​的​使​用​已​有​镜​像​启​动​一​个​新​虚​拟​机​；虚​拟​机​将​在​运​行​过​程​中​在​后​台​准​备​完​成​。​
+				</div></li><li class="listitem"><div class="para">
+					QEMU 和​ KVM 支​持​新​型​高​级​基​于​ SCSI 的​存​储​堆​栈​，<span class="package">virtio-scsi</span>。​对​该​新​存​储​堆​栈​的​支​持​会​在​ <span class="emphasis"><em>libvirt</em></span> 的​后​续​版​本​中​加​入​。​
+				</div></li></ul></div><div class="para">
+			该​版​本​的​完​整​变​更​列​表​位​于​上​游​页​面​：<a href="http://wiki.qemu.org/ChangeLog/1.0">http://wiki.qemu.org/ChangeLog/1.0</a>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2164077">2.5.2. libvirt</h4></div></div></div><a id="id1999567" class="indexterm"></a><div class="para">
+			用​于​同​多​个​主​机​虚​拟​化​能​力​交​互​的​ <span class="package">libvirt</span> 工​具​集​更​新​至​ 0.9.10。​该​版​本​的​完​整​变​更​列​表​位​于​上​游​页​面​：<a href="http://libvirt.org/news.html">http://libvirt.org/news.html</a>。​
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2131447">2.5.3. 虚​拟​机​管​理​器​(virt-manager)</h4></div></div></div><a id="id1628726" class="indexterm"></a><div class="para">
+			虚​拟​机​管​理​器​更​新​至​ 0.9.1。​除​大​量​ bug 修​正​外​还​增​加​了​：
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					对​增​加​ USB 重​定​向​设​备​的​支​持​。​
+				</div></li><li class="listitem"><div class="para">
+					提​供​了​让​ USB 控​制​器​支​持​ USB 2.0 的​选​项​。​
+				</div></li><li class="listitem"><div class="para">
+					为​非​ x86 客​户​机​指​定​系​统​类​型​的​选​项​。​
+				</div></li></ul></div><div class="para">
+			该​版​本​的​完​整​变​更​列​表​位​于​上​游​页​面​：<a href="http://virt-manager.org/download.html">http://virt-manager.org/download.html</a>.
+		</div></div></div><div xml:lang="zh-CN" class="section" id="sect_Cloud" lang="zh-CN"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="sect_Cloud">2.6. 云​</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2343687">2.6.1. CloudStack</h4></div></div></div><a id="id1675323" class="indexterm"></a><a id="id2326854" class="indexterm"></a><div class="para">
+			Fedora 17 集​成​了​<span class="package">CloudStack</span> 软​件​包​，提​供​了​成​熟​的​基​础​设​施​即​服​务​(Iaas)平​台​。​
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2165948">2.6.2. OpenNebula</h4></div></div></div><a id="id1550657" class="indexterm"></a><a id="id1848431" class="indexterm"></a><a id="id1600533" class="indexterm"></a><a id="id1983701" class="indexterm"></a><div class="para">
+			Fedora 17 中​新​增​的​还​有​ <span class="package">OpenNebula</span>。​它​是​针​对​数​据​中​心​虚​拟​化​的​基​础​设​施​即​服​务​平​台​。​对​这​一​环​境​的​管​理​可​以​通​过​命​令​行​或​者​图​形​界​面​来​完​成​。​而​且​加​入​了​对​ Amazon EC2 开​放​云​计​算​接​口​(Open Cloud Computing Interface，或​简​称​ OCCI)的​兼​容​性​。​
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1650099">2.6.3. OpenStack</h4></div></div></div><a id="id1958859" class="indexterm"></a><a id="id1953357" class="indexterm"></a><a id="id1882141" class="indexterm"></a><a id="id1733310" class="indexterm"></a><a id="id2369497" class="indexterm"></a><a id="id1546537" class="indexterm"></a><a id="id1787381" class="indexterm"></a><a id="id2294585" class="indexterm"></a><div class="para">
+			Fedora 17 中​集​成​了​最​新​版​本​的​ <span class="package">OpenStack</span> 套​件​，项​目​代​号​为​“​Essex”​。​它​包​括​最​新​版​本​的​网​页​管​理​接​口​(“​Horizon”​)和​虚​拟​网​络​(“​Quantum”​)。​其​中​做​为​ AQMP 后​端​ RabbitMQ 备​选​的​ Qpid 首​次​引​入​ Fedora 17。​此​外​，支​持​多​种​虚​拟​磁​盘​格​式​的​ libguestfs 的​引​入​，使​得​ Fedora 的​ OpenStack 更​加​灵​活​。​
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2294606">2.6.4. Open vSwitch</h4></div></div></div><a id="id2294613" class="indexterm"></a><div class="para">
+			Fedora 17 中​还​集​成​了​ Open vSwitch，是​一​个​基​于​软​件​的​网​络​交​换​机​，用​来​向​虚​拟​机​提​供​网​络​服​务​。​Open vSwitch 支​持​ OpenFlow，以​便​于​管​理​。​
+		</div></div></div><div xml:lang="zh-CN" class="section" lang="zh-CN"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id2202753">2.7. 数​据​库​服​务​器​</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2238753">2.7.1. mysql</h4></div></div></div><a id="id1943082" class="indexterm"></a><div class="para">
+			Fedora 17 采​用​了​ <span class="package">mysql</span> 5.5.20，它​由​ Fedora 16 的​ 5.5.14 版​本​更​新​而​来​。​
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2256324">2.7.2. postgresql</h4></div></div></div><a id="id2273287" class="indexterm"></a><div class="para">
+			<span class="package">postgresql</span> 升​级​至​ 9.1.2
+		</div><div class="warning"><div class="admonition_header"><h2>该​变​更​可​能​导​致​不​兼​容​</h2></div><div class="admonition"><div class="para">
+				If you rely on the <em class="parameter"><code>information_schema.referential_constraints</code></em> view, or if you have columns of type <em class="parameter"><code>citext</code></em>, you may need to take special action. Refer to <a href="http://www.postgresql.org/docs/9.1/static/release-9-1-2.html">http://www.postgresql.org/docs/9.1/static/release-9-1-2.html</a>.
+			</div></div></div><div class="para">
+			该​版​本​主​要​进​行​了​ bug 修​正​。​
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2166000">2.7.3. sqlite</h4></div></div></div><a id="id2095055" class="indexterm"></a><div class="para">
+			<span class="package">sqlite</span> 升​级​至​ 3.7.9
+		</div><div class="warning"><div class="admonition_header"><h2>该​变​更​可​能​导​致​不​兼​容​</h2></div><div class="admonition"><div class="para">
+				If a search token (on the right-hand side of the <code class="command">MATCH</code> operator) in FTS4 begins with "^" then that token must be the first in its field of the document.
+			</div></div></div><div class="para">
+			有​很​多​变​化​和​改​进​：
+			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						Orders of magnitude performance improvement for <code class="command">CREATE INDEX</code> on very large tables.
+					</div></li><li class="listitem"><div class="para">
+						改​善​了​ windows VFS，来​更​好​地​抵​御​来​自​杀​毒​软​件​的​干​扰​。​
+					</div></li><li class="listitem"><div class="para">
+						Improved query plan optimization when the <code class="command">DISTINCT</code> keyword is present.
+					</div></li><li class="listitem"><div class="para">
+						Allow more system calls to be overridden in the unix VFS - to provide better support for chromium sandboxes.
+					</div></li><li class="listitem"><div class="para">
+						将​默​认​ lookahead 缓​存​从​ 100 字​节​增​加​到​ 128 字​节​。​
+					</div></li><li class="listitem"><div class="para">
+						<code class="filename">test_quota.c</code> 模​块​得​到​增​强​，可​以​追​踪​已​存​在​文​件​。​
+					</div></li><li class="listitem"><div class="para">
+						向​ <code class="function">sqlite3_db_status()</code> 接​口​增​加​了​ <code class="command">SQLITE_DBSTATUS_CACHE_HIT</code> 和​ <code class="command">SQLITE_DBSTATUS_CACHE_MISS</code> 选​项​。​
+					</div></li><li class="listitem"><div class="para">
+						移​除​了​对​ <code class="command">SQLITE_ENABLE_STAT2</code> 的​支​持​，取​而​代​之​的​是​能​力​更​强​的​ <code class="command">SQLITE_ENABLE_STAT3</code> 选​项​。​
+					</div></li><li class="listitem"><div class="para">
+						Enhancements to the <span class="application"><strong>sqlite3_analyzer</strong></span> utility program, including the <code class="command">--pageinfo</code> and <code class="command">--stats</code> options and support for multiplexed databases.
+					</div></li><li class="listitem"><div class="para">
+						Enhance the <code class="function">sqlite3_data_count()</code> interface so that it can be used to determine if <code class="command">SQLITE_DONE</code> has been seen on the prepared statement.
+					</div></li><li class="listitem"><div class="para">
+						Added the <code class="command">SQLITE_FCNTL_OVERWRITE</code> file-control by which the SQLite core indicates to the VFS that the current transaction will overwrite the entire database file.
+					</div></li><li class="listitem"><div class="para">
+						Increase the default lookaside memory allocator allocation size from 100 to 128 bytes.
+					</div></li><li class="listitem"><div class="para">
+						Enhanced the query planner so that it can factor terms in and out of <code class="command">OR</code> expressions in the <code class="command">WHERE</code> clause in an effort to find better indices.
+					</div></li><li class="listitem"><div class="para">
+						Added the <code class="command">SQLITE_DIRECT_OVERFLOW_READ</code> compile-time option, causing overflow pages to be read directly from the database file, bypassing the page cache.
+					</div></li><li class="listitem"><div class="para">
+						Remove limits on the magnitude of precision and width value in the format specifiers of the <code class="function">sqlite3_mprintf()</code> family of string rendering routines.
+					</div></li></ul></div>
+
+		</div></div></div><div xml:lang="zh-CN" class="section" lang="zh-CN"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id2287024">2.8. 系​统​守​护​进​程​</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1786255">2.8.1. pciutils</h4></div></div></div><a id="id1985851" class="indexterm"></a><a id="id2128056" class="indexterm"></a><div class="para">
+			Fedora 17 中​，用​于​检​查​及​配​置​ PCI 设​备​的​ <span class="package">pciutils</span> 升​级​至​ 3.1.9。​该​版​本​为​ PCI Express 第​三​代​硬​件​增​加​了​读​取​速​度​及​链​路​状​态​字​段​的​支​持​。​
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1551626">2.8.2. brltty</h4></div></div></div><a id="id1581689" class="indexterm"></a><a id="id1628838" class="indexterm"></a><div class="para">
+			Fedora 17 集​成​了​ 4.3 版​的​ <span class="package">brltty</span>，它​是​ Braille 显​示​的​守​护​进​程​。​4.3 版​本​除​对​附​加​设​备​加​入​支​持​外​，还​新​增​了​日​志​及​配​置​选​项​。​
+		</div></div></div><div xml:lang="zh-CN" class="section" lang="zh-CN"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1539965">2.9. Xorg</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2325458">2.9.1. 针​对​ GNOME Shell 的​软​件​渲​染​</h4></div></div></div><a id="id1878908" class="indexterm"></a><a id="id2037896" class="indexterm"></a><div class="para">
+			GNOME Shell 的​体​验​已​经​在​所​有​硬​件​上​可​用​，包​括​那​些​使​用​软​件​渲​染​的​设​备​。​仍​然​想​要​使​用​ GNOME 后​援​模​式​的​用​户​可​手​动​开​启​。​步​骤​为​：访​问​<span class="package">系​统​信​息​</span>控​制​面​板​小​程​序​，选​择​<span class="emphasis"><em>图​形​</em></span>，将​<span class="emphasis"><em>强​制​使​用​后​援​模​式​</em></span>选​项​设​为​ <span class="emphasis"><em>开​启​</em></span>。​
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2047469">2.9.2. 多​点​触​控​支​持​</h4></div></div></div><a id="id1676307" class="indexterm"></a><a id="id1605511" class="indexterm"></a><div class="para">
+			Fedora 17 的​ X Server 和​库​均​支​持​ 2.2 版​的​ <span class="package">XInput</span> 扩​展​，这​其​中​包​括​对​多​点​触​摸​的​支​持​。​选​择​使​用​的​应​用​程​序​将​能​够​利​用​ Fedora 上​的​多​点​触​摸​支​持​。​
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1527149">2.9.3. 平​滑​滚​动​支​持​</h4></div></div></div><a id="id2297685" class="indexterm"></a><div class="para">
+			更​新​后​的​ X server 为​支​持​它​的​驱​动​程​序​及​设​备​提​供​了​平​滑​滚​动​特​性​。​滚​动​数​据​除​了​以​旧​有​的​按​键​事​件​输​出​外​，还​以​坐​标​值​输​出​。​这​让​应​用​程​序​将​速​度​加​入​考​虑​范​围​，使​之​能​够​提​供​更​平​滑​的​滚​动​体​验​。​像​多​点​触​摸​一​样​，要​想​利​用​平​滑​滚​动​的​支​持​，它​必​须​写​入​到​客​户​端​应​用​自​身​当​中​。​
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2331293">2.9.4. DRI2 驱​动​</h4></div></div></div><a id="id1670669" class="indexterm"></a><a id="id2262927" class="indexterm"></a><a id="id2226622" class="indexterm"></a><a id="id1997010" class="indexterm"></a><a id="id2225013" class="indexterm"></a><a id="id2215735" class="indexterm"></a><a id="id1643339" class="indexterm"></a><a id="id1643347" class="indexterm"></a><a id="id1643355" class="indexterm"></a><div class="para">
+			<span class="package">i810</span>、​<span class="package">mga</span>、​<span class="package">r128</span>、​<span class="package">savage</span>、​<span class="package">sis</span>、​<span class="package">tdfx</span> 以​及​ <span class="package">unichrome</span> 的​ DRI 驱​动​将​不​在​提​供​，因​为​ Mesa 中​已​不​再​集​成​。​受​影​响​的​硬​件​包​括​以​下​设​备​及​其​衍​生​设​备​：
+		</div><a id="id1581660" class="indexterm"></a><a id="id1581672" class="indexterm"></a><a id="id1581684" class="indexterm"></a><a id="id1977393" class="indexterm"></a><a id="id1977405" class="indexterm"></a><a id="id1977417" class="indexterm"></a><a id="id1977429" class="indexterm"></a><a id="id1977441" class="indexterm"></a><a id="id2132467" class="indexterm"></a><a id="id2132479" class="indexterm"></a><a id="id2132491" class="indexterm"></a><a id="id2132503" class="indexterm"></a><a id="id2132515" class="indexterm"></a><a id="id2132527" class="indexterm"></a><a id="id1639875" class="indexterm"></a><a id="id1639887" class="indexterm"></a><a id="id1639899" class="indexterm"></a><a id="id1639911" class="indexterm"></a><a id="id1639923" class="indexterm"></a><a id="id1639931" class="indexterm"></a><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					Intel i810 和​ i815 主​板​芯​片​组​
+				</div></li><li class="listitem"><div class="para">
+					Matrox MGA G200, G400, G450 及​ G550 卡​
+				</div></li><li class="listitem"><div class="para">
+					ATI Rage 128 卡​
+				</div></li><li class="listitem"><div class="para">
+					S3 Savage 3D 和​ Savage 4 卡​
+				</div></li><li class="listitem"><div class="para">
+					SiS 300、​540、​630 以​及​ 730 芯​片​组​
+				</div></li><li class="listitem"><div class="para">
+					3dfx Voodoo 3、​Voodoo 4、​Voodoo 5 卡​
+				</div></li><li class="listitem"><div class="para">
+					VIA Unichrome 及​ Unichrome Pro 芯​片​组​
+				</div></li></ul></div><div class="para">
+			该​硬​件​现​在​由​ <span class="package">llvmpipe</span> 软​件​ 3D 驱​动​支​持​。​该​驱​动​与​以​往​的​ DRI 驱​动​不​同​，该​驱​动​提​供​了​ OpenGL 2.x 相​关​功​能​。​
+		</div></div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Welcome_to_Fedora_17.html"><strong>上一页</strong>1. 欢​迎​使​用​ Fedora 17</a></li><li class="up"><a accesskey="u" href="#"><strong>上一级</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>起始页</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Desktop.html"><strong>下一页</strong>3. Fedora 针​对​桌​面​用​户​所​做​的​变​更​</a></li></ul></body></html>

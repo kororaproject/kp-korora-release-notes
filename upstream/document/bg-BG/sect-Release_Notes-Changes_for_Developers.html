@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>4. Промени във Fedora за Разработчици</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta name="generator" content="publican 2.8" /><meta name="package" content="Fedora-Release_Notes-17-bg-BG-1-0" /><link rel="home" href="index.html" title="Бележки към Изданието" /><link rel="up" href="index.html" title="Бележки към Изданието" /><link rel="prev" href="sect-Release_Notes-Changes_for_Desktop.html" title="3. Промени във Fedora за Настолни Потребители" /><link rel="next" href="sect-Release_Notes-Changes_for_Specific_Audiences.html" title="5. Промени във Fedora за Специфични ползватели" /></head><body><p id="title"><a class="left" href="http://www.fedoraproject.org"><img src="Common_Content/images/image_left.png" alt="Product Site" /></a><a class="right" href="http://docs.fedoraproject.org"><img src="Common_Content/images/image_right.png" alt="Documentation Site" /></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Changes_for_Desktop.html"><strong>Назад</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Specific_Audiences.html"><strong>Напред</strong></a></li></ul><div class="section" id="sect-Release_Notes-Changes_for_Developers"><div class="titlepage"><div><div keep-together.within-column="always"><h2 class="title" id="sect-Release_Notes-Changes_for_Developers">4. Промени във Fedora за Разработчици</h2></div></div></div><div xml:lang="bg-BG" class="section" lang="bg-BG"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1635366">4.1. Инструменти за разработка</h3></div></div></div><div class="para">
+		По традиция, Fedora съдържа богат комплект инструменти за разработка. Следват най-важните от многото подобрения в инструментите за разработка, включени в това издание на Fedora.
+	</div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1605947">4.1.1. gcc</h4></div></div></div><a id="id1652240" class="indexterm"></a><a id="id1656689" class="indexterm"></a><a id="id1602076" class="indexterm"></a><a id="id1604569" class="indexterm"></a><a id="id1565416" class="indexterm"></a><a id="id1653673" class="indexterm"></a><a id="id1577441" class="indexterm"></a><a id="id1558230" class="indexterm"></a><a id="id1648096" class="indexterm"></a><a id="id1634944" class="indexterm"></a><a id="id1608793" class="indexterm"></a><div class="para">
+			Fedora 17 включва версия 4.7.0 на <span class="package">gcc</span>, <span class="emphasis"><em>gcc-c++</em></span>, <span class="emphasis"><em>gcc-gfortran</em></span>, <span class="emphasis"><em>gcc-objc</em></span> и <span class="emphasis"><em>gcc-gnat</em></span>. Обновлението включва многобройни промени в gcc серията компилатори, не само C и C++, но също и в Ada и Fortran. За пълното описание, вижте GCC 4.7 Release Series Changes на <a href="http://gcc.gnu.org/gcc-4.7/changes.html">http://gcc.gnu.org/gcc-4.7/changes.html</a>.
+		</div><div class="para">
+			Някои по-важни моменти:
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					Няколко остарели архитектури, включително IRIX 6.5, MIPS OpenBSD, Solaris, Tru64 UNIX 5.1 и някои ARM платформи
+				</div></li><li class="listitem"><div class="para">
+					Поддръжка за OpenMP 3.1 на C, C++ и Fortran
+				</div></li><li class="listitem"><div class="para">
+					Подобрена поддръжка за C11 и C++11 стандартни обновления
+				</div></li><li class="listitem"><div class="para">
+					Нова debug гъвкавост за Ada
+				</div></li><li class="listitem"><div class="para">
+					Няколко подобрения в производителността във Fortran
+				</div></li><li class="listitem"><div class="para">
+					Много подобрения за оптимизация
+				</div></li><li class="listitem"><div class="para">
+					Нови платформи: 
+					<a id="id1656952" class="indexterm"></a>
+					 <a id="id1656964" class="indexterm"></a>
+					 <a id="id1656976" class="indexterm"></a>
+					 <a id="id1656988" class="indexterm"></a>
+					 <a id="id1560182" class="indexterm"></a>
+					 <a id="id1560194" class="indexterm"></a>
+					 <a id="id1560206" class="indexterm"></a>
+					 <a id="id1560214" class="indexterm"></a>
+					 <a id="id1560226" class="indexterm"></a>
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								ARM Cortex A7
+							</div></li><li class="listitem"><div class="para">
+								AVR XMEGA
+							</div></li><li class="listitem"><div class="para">
+								Texas Instruments C6X
+							</div></li><li class="listitem"><div class="para">
+								National Semiconductor's CR16
+							</div></li><li class="listitem"><div class="para">
+								Tilera TILE-Gx and TILEPro families
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					В допълнение, има специфични за платформите подобрения в ARM, AVR, IA-32/x86-64, MIPS, PowerPC/PowerPC64, SH и SPARC.
+				</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1607219">4.1.2. gdb</h4></div></div></div><a id="id1607226" class="indexterm"></a><div class="para">
+			Fedora 17 сега включва <span class="package">gdb</span> 7.4.50.20120120. За да прегледате многото нови функционалности, моля, вижте <a href="http://www.gnu.org/software/gdb/download/ANNOUNCEMENT">http://www.gnu.org/software/gdb/download/ANNOUNCEMENT</a>
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1609112">4.1.3. Haskell</h4></div></div></div><a id="id1609119" class="indexterm"></a><div class="para">
+			Платформата Haskell беше обновена до последното 2011.4.0.0 издание.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1609133">4.1.4. JBoss AS 7</h4></div></div></div><a id="id1609139" class="indexterm"></a><a id="id1609147" class="indexterm"></a><div class="para">
+			Във Fedora сега е включена сбита версия на JBoss AS 7 (<span class="emphasis"><em>jboss-as</em></span>). JBoss AS 7 е бърз, модулен, лек за работа, сълместим Java EE сървър за приложения. Към момента, се поддържа само JBoss AS 7 <span class="emphasis"><em>Web Profile</em></span>, поддръжка за <span class="emphasis"><em>Full Profile</em></span> ще бъде добавена в по-късно издание.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1609174">4.1.5. OpenJDK</h4></div></div></div><a id="id1609180" class="indexterm"></a><div class="para">
+			Сега OpenJDK7 е подразбиращият се Java Development Kit във Fedora, заменящ OpenJDK6. Пълен списък на добавените в OpenJDK7 функционалности е наличен в ъпстрийма на <a href="http://openjdk.java.net/projects/jdk7/features/">http://openjdk.java.net/projects/jdk7/features/</a>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1609201">4.1.6. doxygen</h4></div></div></div><a id="id1609207" class="indexterm"></a><div class="para">
+			В допълнение на многото отстранени бъгове, <span class="package">doxygen</span> 1.7.6.1 включва:
+			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						The selected member is now briefly highlighted in the HTML output (when GENERATE_TREEVIEW is enabled).
+					</div></li><li class="listitem"><div class="para">
+						Дървото за навигиране (GENERATE_TREEVIEW) сега показва същата информация като index-а.
+					</div></li><li class="listitem"><div class="para">
+						navindex секцията от оформлението сега също контролира показваното в дървото за навигиране.
+					</div></li><li class="listitem"><div class="para">
+						Когато class/structs има много (&gt;15) членове от един тип, само първите 10 се показват в UML диаграмата.
+					</div></li><li class="listitem"><div class="para">
+						Изходът от JavaScript базираната машина за търсене е направен по-компактен.
+					</div></li><li class="listitem"><div class="para">
+						Преводът на Френски е обновен.
+					</div></li><li class="listitem"><div class="para">
+						Добавена е поддръжка за PHP heredoc и nowdoc конструкции.
+					</div></li><li class="listitem"><div class="para">
+						Добавена поддръжка за cross-referencing in case of operator-&gt; overloading. Това включва поддръжка за std::auto_ptr,std::smart_ptr,std::unique_ptr and std::weak_ptr when BUILTIN_STL_SUPPORT is enabled.
+					</div></li></ul></div>
+
+		</div><div class="para">
+			Сайт на проекта: <a href="http://www.stack.nl/~dimitri/doxygen/index.html">http://www.stack.nl/~dimitri/doxygen/index.html</a>
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1609321">4.1.7. emacs</h4></div></div></div><a id="id1609327" class="indexterm"></a><div class="para">
+			GNU Emacs е обновен от ъпстрийма до последното предварително издание, 24.0.93
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1609342">4.1.8. git</h4></div></div></div><a id="id1609348" class="indexterm"></a><div class="para">
+			<span class="package">git</span> беше обновен до 1.7.9. Fedora 16 включваше 1.7.7.
+		</div><div class="para">
+			Има многобройни малки допълнения във функционалностите. Тези, които се интересуват, могат да прегледат <a href="https://raw.github.com/gitster/git/master/Documentation/RelNotes/1.7.9.txt"> промените след 1.7.8</a> и <a href="https://raw.github.com/gitster/git/master/Documentation/RelNotes/1.7.8.txt"> промените след 1.7.7</a> в бележките към изданието на ъпстрийма.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1609381">4.1.9. rcs</h4></div></div></div><a id="id1565935" class="indexterm"></a><div class="para">
+			Уважаваната revision control system (<span class="package">rcs</span>) беше обновена до 5.8.
+		</div><div class="para">
+			Обновленията включват:
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					Сега лицензът е GPLv3+
+				</div></li><li class="listitem"><div class="para">
+					Промени в терминологията: от "path" на "file name" (или "file-name")
+				</div></li><li class="listitem"><div class="para">
+					Промени в пакета RCS
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								Нова документация в Info формат
+							</div></li><li class="listitem"><div class="para">
+								Изоставена конфигурираща опция: --with-diffutils
+							</div></li><li class="listitem"><div class="para">
+								Конфигурирането е много стриктно в някои случаи и и по-небрежна в други.
+							</div></li><li class="listitem"><div class="para">
+								Нова конфигурираща опция: --enable-suid[=setreuid]
+							</div></li><li class="listitem"><div class="para">
+								Нова конфигурираща опция: --disable-mmap
+							</div></li><li class="listitem"><div class="para">
+								Нова конфигурираща опция: --enable-mailer=PROG
+							</div></li><li class="listitem"><div class="para">
+								Нова конфигурираща опция: --enable-compat2
+							</div></li><li class="listitem"><div class="para">
+								Може да изпълните "make check" преди "make install".
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					Отстранени бъгове
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								Remove all edit info when removing all revisions.
+							</div></li><li class="listitem"><div class="para">
+								Кодът вече не използва mktemp.
+							</div></li><li class="listitem"><div class="para">
+								Разни tweaks / корекции в man страницата.
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					Други промени
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								Всички команди приемат ‘--help’ и ‘--version’.
+							</div></li><li class="listitem"><div class="para">
+								A string of all digits is now valid for author, state.
+							</div></li><li class="listitem"><div class="para">
+								Env var RCS_MEM_LIMIT controls stdio threshold.
+							</div></li><li class="listitem"><div class="para">
+								RCS сега може да работи с файлове по-големи от 2 гигабайта.
+							</div></li><li class="listitem"><div class="para">
+								Pass-through for RCS file ‘commitid SYMBOL’ now builtin.
+							</div></li><li class="listitem"><div class="para">
+								RCS file top-level grammar frozen.
+							</div></li><li class="listitem"><div class="para">
+								RCS file syntax-validated earlier, completely.
+							</div></li><li class="listitem"><div class="para">
+								Possible to specify an empty log message with ci -m, rcs -m.
+							</div></li><li class="listitem"><div class="para">
+								Date option accepts some more date-only formats
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					Промени в rcsdiff
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								New handling for option: -U N
+							</div></li><li class="listitem"><div class="para">
+								Refined "same-revision don't call diff" optimization
+							</div></li></ul></div>
+
+				</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1566199">4.1.10. subversion</h4></div></div></div><a id="id1566206" class="indexterm"></a><div class="para">
+			Системата за контрол на версиите <span class="package">subversion</span> беше обновена от 1.6.17 на 1.7.3. Многобройните промени включват подобрена употреба на HTTP, нов отдалечен dumpfile инструмент и подобрен изход на конзолата в допълнение към многобройните по-малки промени. Препоръчваме Ви да посетите <a href="http://subversion.apache.org/docs/release-notes/1.7.html">http://subversion.apache.org/docs/release-notes/1.7.html</a> за повече информация за тези подобрения.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1566233">4.1.11. bugzilla</h4></div></div></div><a id="id1566240" class="indexterm"></a><div class="para">
+			<span class="package">bugzilla</span> 4.0.4 коригира някои проблеми в сигурността на предишните версии. В допълнение, новата версия позволява на системните администратори да забраняват autocomplete и коригира някои по-незначителни бъга. Вижте <a href="http://www.bugzilla.org/">http://www.bugzilla.org/</a> за подробности.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1566265">4.1.12. bzr</h4></div></div></div><a id="id1566271" class="indexterm"></a><div class="para">
+			Въпреки, че основно е отстраняваща бъгове, версията 2.5 на <span class="package">bzr</span> представлява нова стабилна версия, from which future bugfixes will be applied.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1566290">4.1.13. highlight</h4></div></div></div><a id="id1566297" class="indexterm"></a><a id="id1566305" class="indexterm"></a><a id="id1566313" class="indexterm"></a><a id="id1566321" class="indexterm"></a><a id="id1566329" class="indexterm"></a><div class="para">
+			Fedora 17 включва <span class="package">highlight</span> 3.7. Подобренията след версия 3.6 включват:
+			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						поддръжка за Biferno
+					</div></li><li class="listitem"><div class="para">
+						поддръжка за RPL
+					</div></li><li class="listitem"><div class="para">
+						поддръжка за Ceylon
+					</div></li><li class="listitem"><div class="para">
+						коригирана Ruby дефиниция
+					</div></li><li class="listitem"><div class="para">
+						HTML низът за шрифт може да съдържа списък шрифтове, които не са затворени в кавички
+					</div></li><li class="listitem"><div class="para">
+						добавена е --portable опция към командния ред за запис на конфиг файловете в текущата работна директория, вместо в директорията на потребителя
+					</div></li></ul></div>
+
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1566401">4.1.14. mercurial</h4></div></div></div><a id="id1566407" class="indexterm"></a><a id="id1566415" class="indexterm"></a><div class="para">
+			<span class="package">mercurial</span> беше обновен до 2.1. Ако се интересувате, вижте <a href="http://mercurial.selenic.com/wiki/WhatsNew">http://mercurial.selenic.com/wiki/WhatsNew</a> за подробен списък на новите функционалности и на отстранените бъгове.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1566438">4.1.15. monodevelop</h4></div></div></div><a id="id1566445" class="indexterm"></a><a id="id1566453" class="indexterm"></a><div class="para">
+			Във Fedora 17 е включен <span class="package">monodevelop</span> 2.8.5. Някои от многобройните нови функционалности са:
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					Project Management
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								Нов Edit References диалог
+							</div></li><li class="listitem"><div class="para">
+								Подобрени Class и Document Outline pads
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					Source Editing
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								Нов редактор за цветови схеми за syntax highlighting
+							</div></li><li class="listitem"><div class="para">
+								Нова syntax highlighting цветова схема по подразбиране
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					Няколко корекции и подобрения в поддръжката на Version Control и на SVN in particular adding a project which contains linked files to version control is now handled correctly
+				</div></li></ul></div><div class="para">
+			Посетете уеб сайта на проекта на <a href="http://monodevelop.com/">http://monodevelop.com/</a> за още подробности.
+		</div></div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Changes_for_Desktop.html"><strong>Назад</strong>3. Промени във Fedora за Настолни Потребители</a></li><li class="up"><a accesskey="u" href="#"><strong>Ниво нагоре</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Начало</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Specific_Audiences.html"><strong>Напред</strong>5. Промени във Fedora за Специфични ползватели</a></li></ul></body></html>

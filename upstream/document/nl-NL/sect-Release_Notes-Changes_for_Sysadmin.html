@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>2. Veranderingen in Fedora voor systeembeheerders</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta name="generator" content="publican 2.8" /><meta name="package" content="Fedora-Release_Notes-17-nl-NL-1-0" /><link rel="home" href="index.html" title="Vrijgave informatie" /><link rel="up" href="index.html" title="Vrijgave informatie" /><link rel="prev" href="sect-Release_Notes-Welcome_to_Fedora_17.html" title="1. Welkom bij Fedora 17" /><link rel="next" href="sect-Release_Notes-Changes_for_Desktop.html" title="3. Veranderingen in Fedora voor bureaubladgebruikers" /></head><body><p id="title"><a class="left" href="http://www.fedoraproject.org"><img src="Common_Content/images/image_left.png" alt="Product Site" /></a><a class="right" href="http://docs.fedoraproject.org"><img src="Common_Content/images/image_right.png" alt="Documentation Site" /></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Welcome_to_Fedora_17.html"><strong>Terug</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Desktop.html"><strong>Volgende</strong></a></li></ul><div class="section" id="sect-Release_Notes-Changes_for_Sysadmin"><div class="titlepage"><div><div keep-together.within-column="always"><h2 class="title" id="sect-Release_Notes-Changes_for_Sysadmin">2. Veranderingen in Fedora voor systeembeheerders</h2></div></div></div><div xml:lang="nl-NL" class="section" lang="nl-NL"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1524953">2.1. Kernel</h3></div></div></div><a id="id2158957" class="indexterm"></a><a id="id2158855" class="indexterm"></a><div class="para">
+		Fedora 17 bevat de 3.3.4 kernel.
+	</div></div><div xml:lang="nl-NL" class="section" lang="nl-NL"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id2026932">2.2. Installatie</h3></div></div></div><a id="id1780510" class="indexterm"></a><a id="id1657718" class="indexterm"></a><a id="id1728848" class="indexterm"></a><a id="id1982223" class="indexterm"></a><a id="id1603494" class="indexterm"></a><a id="id2150041" class="indexterm"></a><a id="id1984605" class="indexterm"></a><a id="id1575847" class="indexterm"></a><div class="para">
+		<div class="warning"><div class="admonition_header"><h2>Veranderingen aan Direct Kernel Boot</h2></div><div class="admonition"><div class="para">
+				Er zijn significante veranderingen indien wordt geïnstalleerd via een direct kernel boot als PXE. De normale installatie via installatiemedia is niet veranderd.
+			</div></div></div>
+
+	</div><div class="para">
+		Ervaren gebruikers kunnen verscheidene methodes van netwerkinstallaties uitvoeren, meestal met gebruikmaking van een bepaalde minimale kernelomgeving, waarbinnen de installatie wordt uitgevoerd. Deze manier van installeren heeft significante veranderingen ondergaan in Fedora 17.
+	</div><div class="para">
+		In F16 is het over het algemeen <span class="emphasis"><em>alleen</em></span> noodzakelijk dat de locatie van de kernel en initrd wordt opgegeven, waarna installatie werkt - <code class="code">kernel/initrd</code> roept <code class="code">stage1</code>, en <code class="code">stage1</code> roept <code class="code">stage2</code>.
+	</div><div class="para">
+		Zonder loader gaat dit niet meer op: bij uitvoeren van een 'direct kernel boot' moet de locatie van <code class="code">stage2</code> worden opgegeven. Met andere woorden: lever <code class="code">repo=</code> of <code class="code">stage2=</code> (of <code class="code">inst.repo=</code> of <code class="code">inst.stage2=</code>, waaraan thans de voorkeur wordt gegeven), verwijzend naar een repository. Indien het <code class="code">stage2</code>-image zich op de ene server bevindt, maar de installatiepakketten op een andere server, moet <code class="code">stage2=</code> worden gebruikt: <code class="code">repo=</code> mag alleen worden gebruikt indien alles wat nodig is voor installatie zich op één server bevindt (zowel het <code class="code">stage2</code>-image als <span class="emphasis"><em>ook</em></span> alle installatiepakketten). Wees ervan bewust dat <code class="code">stage2=</code> nog steeds een 'repository' tree wil zien, je kan niet het directe pad naar een <code class="filename">squashfs.img</code>-bestand opgeven (zoals <code class="code">stage2=</code> werkte in F15 en eerder).
+	</div><div class="para">
+		Bijvoorbeeld:
+<pre class="screen">
+label linux
+kernel vmlinuz
+append initrd=initrd.img
+</pre>
+		is niet meer geldig. Het is noodzakelijk <code class="code">repo</code> te specificeren:
+<pre class="screen">
+label linux
+kernel vmlinuz
+append initrd=initrd.img repo=http://dl.fedoraproject.org/pub/fedora/linux/development/17/x86_64/os/
+</pre>
+		of <code class="code">stage2</code>:
+<pre class="screen">
+label linux
+kernel vmlinuz
+append initrd=initrd.img stage2=http://my.internal.server/17/x86_64/os/
+</pre>
+		(of elke andere geldige mirror).
+	</div></div><div xml:lang="nl-NL" class="section" lang="nl-NL"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1657541">2.3. Beveiliging</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1546133">2.3.1. Kwaliteitscontrole Wachtwoord</h4></div></div></div><a id="id1603490" class="indexterm"></a><a id="id1734331" class="indexterm"></a><div class="para">
+			Fedora heeft nu een enkele, configurabele bibliotheek, <a href="https://fedorahosted.org/libpwquality"> libpwquality</a>, waarmee de kwaliteit van een nieuw wachtwoord voor systeemaccounts kan worden gecontroleerd. De systeemwijde kwaliteitscontrole voor wachtwoorden die door deze bibliotheek wordt geleverd kan worden ingesteld door het configuratiebestand <code class="filename">/etc/security/pwquality.conf</code> te bewerken.
+		</div><div class="para">
+			Ontwikkelaars die deze API vanuit hun applicaties wensen aan te roepen kunnen de API-beschrijving vinden in het bestand <code class="filename">pwquality.h</code> van het pakket <span class="package">libpwquality-devel</span>. Ook wordt een pyton-wrapper, <span class="emphasis"><em>python-pwquality</em></span>, meegeleverd.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2343433">2.3.2. SELinux Deny Ptrace</h4></div></div></div><a id="id1669043" class="indexterm"></a><div class="para">
+			Er is een nieuwe SELinux boolean, <code class="varname">deny_ptrace</code> toegevoegd. Gebruikers die niet van plan zijn applicaties op hun machine te debuggen worden aangeraden deze boolean aan te zetten. Deze boolean verhindert rogue-processen het geheugen van andere processen te lezen -of op een andere manier aan te vallen- met behulp van debugging tools waaronder dus <span class="application"><strong>ptrace</strong></span> en <span class="application"><strong>gdb</strong></span>.
+		</div><div class="para">
+			Zulke aanvallen worden verhinderd, zelfs daar waar rogue-processen als root worden uitgevoerd of wanneer een proces wordt aangevallen in dezelfde SELinux-context en label. Om permanent door de <code class="varname">deny_ptrace</code> boolean te worden beschermd, voert u het volgende commando als root uit:
+<pre class="screen">
+# setsebool -P deny_ptrace 1
+</pre>
+
+		</div><div class="para">
+			Om de bescherming die de <code class="varname">deny_ptrace</code> boolean biedt tijdelijk uit te schakelen, kunt u het volgende commando als root uitvoeren:
+		</div><pre class="screen">
+# setsebool deny_ptrace 0
+</pre></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1657547">2.3.3. Services Private /tmp</h4></div></div></div><a id="id1569864" class="indexterm"></a><div class="para">
+			Een aantal services gemanaged door <span class="package">systemd</span> zijn zo aangepast, dat zij gebruik kunnen maken van een eigen <code class="filename">/tmp</code>-map. Geprivilegeerde services die <code class="filename">/tmp</code> en <code class="filename">/var/tmp</code> gebruikten stonden vroeger open voor niet-geprivilegeerde gebruikers, mogelijk leidend tot privilege-escalatie. Door gebruik te maken van eigen <code class="filename">/tmp</code>-mappen voor services verhindert dit type exploit.
+		</div><div class="para">
+			De aanwijzing die is toegevoegd aan <span class="package">systemd</span> unitbestanden voor de aangepaste services is:
+<pre class="screen">
+[Service]
+PrivateTmp=true
+</pre>
+
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1534497">2.3.4. Secure Containers</h4></div></div></div><a id="id1534504" class="indexterm"></a><a id="id1534512" class="indexterm"></a><a id="id1534520" class="indexterm"></a><a id="id1534528" class="indexterm"></a><div class="para">
+			Een nieuwe gereedschap, <span class="package">sandbox</span>, is in het leven geroepen om aanmaken van secure <span class="package">libvirt</span> containers te stroomlijnen. Indien opgegeven met een uitvoerbaar bestand zal <span class="package">sandbox</span> de aankoppelpunten en <span class="package">libvirt</span> container informatie vaststellen. Deze informatie is nodig om de applicatie in een container te kunnen uitvoeren. De container wordt vervolgens gestart door <span class="package">libvirt</span> met de juiste SELinux context. Dit zal voorkomen dat er interactie plaatsvindt met andere processen op het systeem, waaronder andere containers, terwijl het mogelijk blijft systeemdata te delen.
+		</div><div class="para">
+			Dit stelt een beheerder in staat meerdere instanties van een service gelijktijdig te laten draaien zonder dat deze services de hostmachine beschadigen of processen op het systeem verstoren, zelfs als zij uitgevoerd worden als root. Om <span class="package">sandbox</span> te gebruiken, installeert u het pakket <span class="package">libvirt-sandbox</span>.
+		</div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="id2164281">2.3.4.1. krb5-werkstation</h5></div></div></div><a id="id2164288" class="indexterm"></a><div class="para">
+				Fedora 17 upgrade het Kerberos authenticatiesysteem naar versie 1.10. Toegevoegd is het veranderen van wachtwoorden over NAT en ondersteuning voor lokalisatie. Het <code class="command">kswitch</code>-commando is toegevoegd om te kunnen wisselen tussen credential-caches. Meer cache-support is toegevoegd bij andere commando's. Credential-keuze kan worden aangestuurd via het bestand <code class="filename">$HOME/.k5identity</code>.
+			</div></div></div></div><div xml:lang="nl-NL" class="section" lang="nl-NL"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id2038731">2.4. Bestandssystemen</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1521379">2.4.1. Grote bestandssystemen</h4></div></div></div><a id="id1521440" class="indexterm"></a><a id="id2033618" class="indexterm"></a><a id="id1584484" class="indexterm"></a><div class="para">
+			Fedora 17 zal in het standaard bestandssysteem (ext4) grotere bestandssystemen dan 16 terabytes ondersteunen. Met de laatste versie van <span class="package">e2fsprogs</span> kunnen ext4 bestandssystemen nu een grootte hebben tot 100 TB.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2167143">2.4.2. Versleutelde bestandssystemen</h4></div></div></div><a id="id1772172" class="indexterm"></a><a id="id1928373" class="indexterm"></a><a id="id2051550" class="indexterm"></a><a id="id2331972" class="indexterm"></a><div class="para">
+			Fedora 17 gebruikt versie 1.4.1 van het <span class="package">cryptsetup</span> pakket, die verouderde API-aanroepen verwijdert. Daarnaast is ondersteuning toegevoegd voor het plaatsen van LUKS-headers op aparte apparaten en het aanmaken van gedeelde, niet-overlappende versleutelde segmenten op een enkel apparaat.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2025088">2.4.3. btrfs</h4></div></div></div><a id="id1868061" class="indexterm"></a><a id="id1584232" class="indexterm"></a><div class="para">
+			<span class="package">btrfs</span> is niet beschikbaar als een doelbestandssysteem tijdens de installatie. Dit is een tijdelijk probleem en zal opgelost worden in Fedora 18. <span class="package">btrfs</span> is nog wel beschikbaar na de installatie.
+		</div></div></div><div xml:lang="nl-NL" class="section" lang="nl-NL"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1670440">2.5. Virtualisatie</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1840795">2.5.1. QEMU</h4></div></div></div><a id="id1626172" class="indexterm"></a><a id="id2264285" class="indexterm"></a><a id="id1669103" class="indexterm"></a><a id="id2086917" class="indexterm"></a><div class="para">
+			De QEMU open bron machine emulator is vernieuwd naar versie 1.0. Opmerkelijke eigenschappen zijn:
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					QEMU ondersteunt nu live migratie van draaiende gasten.
+				</div></li><li class="listitem"><div class="para">
+					KVM gebruikers kunnen nu standaard performance profilerings-gereedschappen draaien binnen KVM gasten.
+				</div></li><li class="listitem"><div class="para">
+					QEMU en <span class="package">libvirt</span> ondersteunen nu image streaming. Image streaming laat een beheerder nieuwe virtuele machines gebaseerd op bestaande images sneller opstarten; virtual machines worden dan tijdens het draaien volledig op de achtergrond voorbereid
+				</div></li><li class="listitem"><div class="para">
+					QEMU en KVM ondersteunen een nieuwe geavanceerde op SCSI gebaseerde opslag stack, <span class="package">virtio-scsi</span>. Ondersteuning voor deze nieuwe opslag stack zal in een latere vrijgave toegevoegd worden aan <span class="emphasis"><em>libvirt</em></span>.
+				</div></li></ul></div><div class="para">
+			De volledige lijst van veranderingen in deze vrijgave is upstream beschikbaar op <a href="http://wiki.qemu.org/ChangeLog/1.0">http://wiki.qemu.org/ChangeLog/1.0</a>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2030155">2.5.2. libvirt</h4></div></div></div><a id="id1933601" class="indexterm"></a><div class="para">
+			De <span class="package">libvirt</span> gereedschapslist voor interactie met de virtualisatie mogelijkheden van verscheidene hosts is vernieuwd naar versie 0.9.10. De volledige lijst van veranderingen in deze vrijgave is upstream beschikbaar op <a href="http://libvirt.org/news.html">http://libvirt.org/news.html</a>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1868123">2.5.3. Virtuele machine beheerder (virt-manager)</h4></div></div></div><a id="id1963978" class="indexterm"></a><div class="para">
+			De Virtuele machine beheerder is vernieuwd naar versie 0.9.1. Naast een groot aantal foutreparaties voegt deze vrijgave ook het volgende toe:
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					Ondersteuning voor het toevoegen van USB redirectie apparaten.
+				</div></li><li class="listitem"><div class="para">
+					Een optie om de USB controller te veranderen om USB 2.0 te ondersteunen.
+				</div></li><li class="listitem"><div class="para">
+					Een optie voor het specificeren van het machine type voor niet-x86 gasten.
+				</div></li></ul></div><div class="para">
+			De volledige lijst van veranderingen in deze vrijgave is upstream beschikbaar op <a href="http://virt-manager.org/download.html">http://virt-manager.org/download.html</a>.
+		</div></div></div><div xml:lang="nl-NL" class="section" id="sect_Cloud" lang="nl-NL"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="sect_Cloud">2.6. Cloud</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2337058">2.6.1. CloudStack</h4></div></div></div><a id="id2129757" class="indexterm"></a><a id="id2163818" class="indexterm"></a><div class="para">
+			Fedora 17 zal het <span class="package">CloudStack</span> pakket bevatten, welke een volwassen infrastructuur biedt voor een Service (IaaS) platform.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1900232">2.6.2. OpenNebula</h4></div></div></div><a id="id2237642" class="indexterm"></a><a id="id1670587" class="indexterm"></a><a id="id2115433" class="indexterm"></a><a id="id1576216" class="indexterm"></a><div class="para">
+			Ook nieuw voor Fedora 17 is <span class="package">OpenNebula</span>. OpenNebula biedt een IaaS platform toegespitst op datacenter virtualisatie. Het beheer van de omgeving kan via de commando-regel of grafische interfaces gebeuren. Compatibiliteit met Amazon EC2 de Open Cloud Computing Interface (OCCI) is toegevoegd.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1628846">2.6.3. OpenStack</h4></div></div></div><a id="id2356178" class="indexterm"></a><a id="id1638540" class="indexterm"></a><a id="id1724793" class="indexterm"></a><a id="id1548729" class="indexterm"></a><a id="id2165920" class="indexterm"></a><a id="id2176124" class="indexterm"></a><a id="id1933604" class="indexterm"></a><a id="id1625964" class="indexterm"></a><div class="para">
+			Fedora 17 bevat de nieuwste versie van de <span class="package">OpenStack</span> suite, met de code naam "Essex". Aan de nieuwe vrijgave zijn de nieuwste versies van de web beheersinterface ("Horizon") en virtueel netwerken ("Quantum") toegevoegd. Het gebruik van Qpid als een alternatief voor RabbitMQ voor het AQMP backend is nieuw in Fedora 17. Daarnaast zal de beschikbaarheid van libguestfs om meerdere virtuele schijfformaten te ondersteunen de OpenStack aanbieding van Fedora flexibeler maken.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1625985">2.6.4. Open vSwitch</h4></div></div></div><a id="id1625992" class="indexterm"></a><div class="para">
+			Fedora 17 bevat Open vSwitch, een op software gebaseerde netwerk switch die gebruikt wordt om netwerk services te bieden voor virtuele machines. Open vSwitch ondersteunt OpenFlow voor beheers gemak.
+		</div></div></div><div xml:lang="nl-NL" class="section" lang="nl-NL"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1669957">2.7. Database servers</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1551186">2.7.1. mysql</h4></div></div></div><a id="id1972268" class="indexterm"></a><div class="para">
+			Fedora 17 bevat <span class="package">mysql</span> 5.5.20, vernieuwt vergeleken met 5.5.14 in Fedora 16.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1670496">2.7.2. postgresql</h4></div></div></div><a id="id2346408" class="indexterm"></a><div class="para">
+			<span class="package">postgresql</span> is vernieuwd naar 9.1.2
+		</div><div class="warning"><div class="admonition_header"><h2>Potentieel incompatibele verandering</h2></div><div class="admonition"><div class="para">
+				Als je op de <em class="parameter"><code>information_schema.referential_constraints</code></em> view vertrouwt, of als je kolommen hebt van het type <em class="parameter"><code>citext</code></em>, moet je misschien speciale actie ondernemen. Refereer naar <a href="http://www.postgresql.org/docs/9.1/static/release-9-1-2.html">http://www.postgresql.org/docs/9.1/static/release-9-1-2.html</a>.
+			</div></div></div><div class="para">
+			Dit is voornamelijk een foutreparatie vrijgave.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1899714">2.7.3. sqlite</h4></div></div></div><a id="id1822388" class="indexterm"></a><div class="para">
+			<span class="package">sqlite</span> is vernieuwd naar 3.7.9
+		</div><div class="warning"><div class="admonition_header"><h2>Potentieel incompatibele verandering</h2></div><div class="admonition"><div class="para">
+				Als een zoek token (op de rechter zijde van de <code class="command">MATCH</code> operator) in FTS4 begint met "^" dan moet dat token de eerste zijn in zijn veld van het document.
+			</div></div></div><div class="para">
+			Er zijn vele veranderingen en verbeteringen:
+			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						Ordes van grootte performance verbetering voor <code class="command">CREATE INDEX</code> op heel grote tabellen.
+					</div></li><li class="listitem"><div class="para">
+						De venster VFS zijn verbeterd voor een betere verdediging tegen interferentie van anti-virus software.
+					</div></li><li class="listitem"><div class="para">
+						Verbeterde query plan optimalisatie als het <code class="command">DISTINCT</code> sleutelwoord aanwezig is.
+					</div></li><li class="listitem"><div class="para">
+						Toestaan dat meer systeem aanroepen overschreven worden in de unix VFS - voor het bieden van een betere ondersteuning van chromium sandboxes.
+					</div></li><li class="listitem"><div class="para">
+						Verhogen van de standaard grootte van een lookahead cache regel van 100 naar 128 bytes.
+					</div></li><li class="listitem"><div class="para">
+						Verbeteringen in de <code class="filename">test_quota.c</code> module zodat het reeds bestaande bestanden kan tracken.
+					</div></li><li class="listitem"><div class="para">
+						Opties <code class="command">SQLITE_DBSTATUS_CACHE_HIT</code> en <code class="command">SQLITE_DBSTATUS_CACHE_MISS</code> toegevoegd aan de <code class="function">sqlite3_db_status()</code> interface.
+					</div></li><li class="listitem"><div class="para">
+						Ondersteuning verwijdert voor <code class="command">SQLITE_ENABLE_STAT2</code>, en vervangen door de veel krachtiger <code class="command">SQLITE_ENABLE_STAT3</code> optie.
+					</div></li><li class="listitem"><div class="para">
+						Verbeteringen in het <span class="application"><strong>sqlite3_analyzer</strong></span> hulpprogramma, inclusief de <code class="command">--pageinfo</code> en <code class="command">--stats</code> opties en ondersteuning voor multiplex databases.
+					</div></li><li class="listitem"><div class="para">
+						Het verbeteren van de <code class="function">sqlite3_data_count()</code> interface zodat het gebruikt kan worden om te bepalen of <code class="command">SQLITE_DONE</code> ontdekt is on het aangemaakte statement.
+					</div></li><li class="listitem"><div class="para">
+						De <code class="command">SQLITE_FCNTL_OVERWRITE</code> bestandscontrole toegevoegd waarmee de SQLite kern aangeeft van het VFS dat de huidige transactie het gehele database bestand zal overschrijven.
+					</div></li><li class="listitem"><div class="para">
+						Verhogen van de standaard lookaside geheugen allocator toewijzingsgrootte van 100 naar 128 bytes.
+					</div></li><li class="listitem"><div class="para">
+						Verbeteren van de query planner zodat het termen kan ontbinden in factoren in en buiten <code class="command">OR</code> expressies in de <code class="command">WHERE</code> clausule in een poging om betere indices te vinden.
+					</div></li><li class="listitem"><div class="para">
+						Toevoegen van de <code class="command">SQLITE_DIRECT_OVERFLOW_READ</code> compileer-tijd optie, waardoor overflow pagina's direct van het database bestand gelezen kunnen worden met voorbijgaan van de pagina cache.
+					</div></li><li class="listitem"><div class="para">
+						Het verwijderen van limieten op de grootte van precisie en breedte waardes in de formaat specificatie van de <code class="function">sqlite3_mprintf()</code> familie van string render routines.
+					</div></li></ul></div>
+
+		</div></div></div><div xml:lang="nl-NL" class="section" lang="nl-NL"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1955529">2.8. Systeem daemons</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1672516">2.8.1. pciutils</h4></div></div></div><a id="id2150042" class="indexterm"></a><a id="id2166351" class="indexterm"></a><div class="para">
+			Het <span class="package">pciutils</span> pakket, welke gereedschappen biedt voor het inspecteren en configureren van PCI apparaten, is in Fedora 17 vernieuwd naar versie 3.1.9. Deze versie voegt ondersteuning toe voor de leessnelheid en link status velden voor PCI Express Generation 3 hardware.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2024131">2.8.2. brltty</h4></div></div></div><a id="id1525620" class="indexterm"></a><a id="id2158805" class="indexterm"></a><div class="para">
+			Fedora 17 bevat versie 4.3 van <span class="package">brltty</span>, het Braille display daemon. Versie 4.3 bevat nieuwe log en configuratie opties naast ondersteuning voor extra apparaten.
+		</div></div></div><div xml:lang="nl-NL" class="section" lang="nl-NL"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id2264278">2.9. Xorg</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2186508">2.9.1. Software Rendering voor GNOME Shell</h4></div></div></div><a id="id1550650" class="indexterm"></a><a id="id1803321" class="indexterm"></a><div class="para">
+			De GNOME shell ervaring is nu beschikbaar op alle hardware, inclusief hardware dat software-rendering gebruikt. Gebruikers die GNOME's fallback-modus willen blijven gebruiken kunnen dit handmatig inschakelen. Ga naar het <span class="package">Systeem Info</span> controlepaneelapplet, selecteer <span class="emphasis"><em>Grafisch</em></span>, en zet de '<span class="emphasis"><em>Forceer Fallback Mode</em></span>'-optie op <span class="emphasis"><em>AAN</em></span>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1974221">2.9.2. Multi-touch Support</h4></div></div></div><a id="id1918100" class="indexterm"></a><a id="id1865959" class="indexterm"></a><div class="para">
+			De X server en bibliotheken in Fedora 17 ondersteunen versie 2.2 van de <span class="package">XInput</span>-extensie, dit is inclusief multi-touch-ondersteuning. Applicaties die daarvoor kiezen kunnen nu gebruikmaken van multi-touch-ondersteuning op Fedora.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1609304">2.9.3. Smooth Scrolling Support</h4></div></div></div><a id="id1648081" class="indexterm"></a><div class="para">
+			De geupdate X server levert ook 'smooth scrolling' voor stuurprogramma's en apparaten die dat ondersteunen. Gescrollde data wordt nu geëxporteerd als axis-waarden als toevoeging op vroegere 'button press events' -indrukken van knoppen-. Net als bij multi-touch geldt dat 'smooth scrolling'-ondersteuning moet zijn ingeprogrammeerd in de clientapplicaties zelf.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1919897">2.9.4. DRI2 Stuurprogramma's</h4></div></div></div><a id="id1978868" class="indexterm"></a><a id="id2150034" class="indexterm"></a><a id="id2039356" class="indexterm"></a><a id="id1815700" class="indexterm"></a><a id="id2264225" class="indexterm"></a><a id="id2070541" class="indexterm"></a><a id="id2070549" class="indexterm"></a><a id="id2070557" class="indexterm"></a><a id="id2070565" class="indexterm"></a><div class="para">
+			De <span class="package">i810</span>, <span class="package">mga</span>, <span class="package">r128</span>, <span class="package">savage</span>, <span class="package">sis</span>, <span class="package">tdfx</span>, and <span class="package">unichrome</span> DRI stuurprogramma's worden niet meer aangeboden, omdat zij niet meer door Mesa worden meegeleverd. Onder de getroffen hardware vallen onder meer varianten van de volgende apparaten:
+		</div><a id="id1891502" class="indexterm"></a><a id="id1891514" class="indexterm"></a><a id="id1891526" class="indexterm"></a><a id="id2165808" class="indexterm"></a><a id="id2165820" class="indexterm"></a><a id="id2165832" class="indexterm"></a><a id="id2165844" class="indexterm"></a><a id="id2165856" class="indexterm"></a><a id="id1953545" class="indexterm"></a><a id="id1953557" class="indexterm"></a><a id="id1953569" class="indexterm"></a><a id="id1953581" class="indexterm"></a><a id="id1953593" class="indexterm"></a><a id="id1953605" class="indexterm"></a><a id="id1639120" class="indexterm"></a><a id="id1639132" class="indexterm"></a><a id="id1639144" class="indexterm"></a><a id="id1639156" class="indexterm"></a><a id="id1639168" class="indexterm"></a><a id="id1639176" class="indexterm"></a><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					Intel i810 en i815 moederbord chipsets
+				</div></li><li class="listitem"><div class="para">
+					Matrox MGA G200, G400, G450 en G550 kaarten
+				</div></li><li class="listitem"><div class="para">
+					ATI Rage 128 kaarten
+				</div></li><li class="listitem"><div class="para">
+					S3 Savage 3D en Savage 4 kaarten
+				</div></li><li class="listitem"><div class="para">
+					SiS 300, 540, 630, en 730 chipsets
+				</div></li><li class="listitem"><div class="para">
+					3dfx Voodoo 3, Voodoo 4, en Voodoo 5 kaarten
+				</div></li><li class="listitem"><div class="para">
+					VIA Unichrome en Unichrome Pro chipsets
+				</div></li></ul></div><div class="para">
+			Deze hardware wordt nu ondersteund door het <span class="package">llvmpipe</span> software 3D stuurprogramma. Dit stuurprogramma maakt -in tegenstelling tot de oudere DRI-stuurptogramma's- OpenGL 2.x functionaliteit mogelijk.
+		</div></div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Welcome_to_Fedora_17.html"><strong>Terug</strong>1. Welkom bij Fedora 17</a></li><li class="up"><a accesskey="u" href="#"><strong>Omhoog</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Begin</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Desktop.html"><strong>Volgende</strong>3. Veranderingen in Fedora voor bureaubladgebruik...</a></li></ul></body></html>

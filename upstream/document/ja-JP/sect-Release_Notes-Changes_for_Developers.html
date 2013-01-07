@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>4. Fedora の変更点 - 開発者向け</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta name="generator" content="publican 2.8" /><meta name="package" content="Fedora-Release_Notes-17-ja-JP-1-0" /><link rel="home" href="index.html" title="リリースノート" /><link rel="up" href="index.html" title="リリースノート" /><link rel="prev" href="sect-Release_Notes-Changes_for_Desktop.html" title="3. Fedora の変更点 - デスクトップユーザー向け" /><link rel="next" href="sect-Release_Notes-Changes_for_Specific_Audiences.html" title="5. Fedora の変更点 - 特定の方向け" /></head><body><p id="title"><a class="left" href="http://www.fedoraproject.org"><img src="Common_Content/images/image_left.png" alt="Product Site" /></a><a class="right" href="http://docs.fedoraproject.org"><img src="Common_Content/images/image_right.png" alt="Documentation Site" /></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Changes_for_Desktop.html"><strong>戻る</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Specific_Audiences.html"><strong>次へ</strong></a></li></ul><div class="section" id="sect-Release_Notes-Changes_for_Developers"><div class="titlepage"><div><div keep-together.within-column="always"><h2 class="title" id="sect-Release_Notes-Changes_for_Developers">4. Fedora の変更点 - 開発者向け</h2></div></div></div><div xml:lang="ja-JP" class="section" lang="ja-JP"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id2003647">4.1. 開発ツール</h3></div></div></div><div class="para">
+		Fedora は伝統的に豊富な開発ツール群が含まれています。以下は、このリリースの Fedora に含まれる開発ツールに対する多くの改良の注目点です。
+	</div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2069513">4.1.1. gcc</h4></div></div></div><a id="id1973257" class="indexterm"></a><a id="id1840509" class="indexterm"></a><a id="id2324341" class="indexterm"></a><a id="id1841138" class="indexterm"></a><a id="id1585500" class="indexterm"></a><a id="id1979047" class="indexterm"></a><a id="id1579420" class="indexterm"></a><a id="id2003456" class="indexterm"></a><a id="id1550816" class="indexterm"></a><a id="id1621767" class="indexterm"></a><a id="id2326530" class="indexterm"></a><div class="para">
+			Fedora 17 は <span class="package">gcc</span>, <span class="emphasis"><em>gcc-c++</em></span>, <span class="emphasis"><em>gcc-gfortran</em></span>, <span class="emphasis"><em>gcc-objc</em></span>, および <span class="emphasis"><em>gcc-gnat</em></span> のバージョン 4.7.0 が含まれます。この更新は、C と C++ だけではなく、Ada や Fortran というコンパイラーの gcc シリーズに対する数多くの変更を含みます。完全な詳細は、<a href="http://gcc.gnu.org/gcc-4.7/changes.html">http://gcc.gnu.org/gcc-4.7/changes.html</a> にある GCC 4.7 リリースシリーズの変更点を参照してください。
+		</div><div class="para">
+			いくつかの注目点:
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					IRIX 6.5, MIPS OpenBSD, Solaris, Tru64 UNIX 5.1 および数多くのレガシー ARM プラットフォームを含む、いくつかの推奨されないアーキテクチャー
+				</div></li><li class="listitem"><div class="para">
+					C, C++ および Fortran における OpenMP 3.1 のサポート
+				</div></li><li class="listitem"><div class="para">
+					C11 および C++11 標準の更新へのさらなるサポート
+				</div></li><li class="listitem"><div class="para">
+					Ada の新しいデバッグ柔軟性
+				</div></li><li class="listitem"><div class="para">
+					Fortran における数多くのパフォーマンス向上
+				</div></li><li class="listitem"><div class="para">
+					多くのオプティマイザーの改善
+				</div></li><li class="listitem"><div class="para">
+					新規プラットフォーム: 
+					<a id="id1539449" class="indexterm"></a>
+					 <a id="id1541543" class="indexterm"></a>
+					 <a id="id1541555" class="indexterm"></a>
+					 <a id="id1541567" class="indexterm"></a>
+					 <a id="id1541579" class="indexterm"></a>
+					 <a id="id1541591" class="indexterm"></a>
+					 <a id="id2126754" class="indexterm"></a>
+					 <a id="id2126762" class="indexterm"></a>
+					 <a id="id2126774" class="indexterm"></a>
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								ARM Cortex A7
+							</div></li><li class="listitem"><div class="para">
+								AVR XMEGA
+							</div></li><li class="listitem"><div class="para">
+								Texas Instruments C6X
+							</div></li><li class="listitem"><div class="para">
+								National Semiconductor の CR16
+							</div></li><li class="listitem"><div class="para">
+								Tilera TILE-Gx および TILEPro ファミリー
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					さらに ARM, AVR, IA-32/x86-64, MIPS, PowerPC/PowerPC64, SH および SPARC においてプラットフォーム固有の改善があります。
+				</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1842113">4.1.2. gdb</h4></div></div></div><a id="id1842120" class="indexterm"></a><div class="para">
+			Fedora 17 は現在 <span class="package">gdb</span> 7.4.50.20120120 が含まれます。多くの新しい機能を確認するには、<a href="http://www.gnu.org/software/gdb/download/ANNOUNCEMENT">http://www.gnu.org/software/gdb/download/ANNOUNCEMENT</a> を参照してください。
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1842141">4.1.3. Haskell</h4></div></div></div><a id="id1842148" class="indexterm"></a><div class="para">
+			Haskell プラットフォームは最新の 2011.4.0.0 リリースに更新されました。
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1936204">4.1.4. JBoss AS 7</h4></div></div></div><a id="id1936210" class="indexterm"></a><a id="id1936218" class="indexterm"></a><div class="para">
+			スリムダウンされたバージョンの JBoss AS 7 (<span class="emphasis"><em>jboss-as</em></span>) が、Fedora 用にパッケージされました。 JBoss AS 7 は、高速で、モジュラーで、軽量な、Java EE 準拠のアプリケーションサーバーです。現在、JBoss AS 7 <span class="emphasis"><em>Web Profile</em></span> だけがサポートされています。 <span class="emphasis"><em>Full Profile</em></span> のサポートは、将来のリリースで追加される予定です。
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1936244">4.1.5. OpenJDK</h4></div></div></div><a id="id1936251" class="indexterm"></a><div class="para">
+			OpenJDK7 は、OpenJDK6 に代わって、Fedora でのデフォルトの Java Development Kit になりました。OpenJDK7 で追加された機能の完全なリストは、アップストリームの <a href="http://openjdk.java.net/projects/jdk7/features/">http://openjdk.java.net/projects/jdk7/features/</a> を参照下さい。
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1936271">4.1.6. doxygen</h4></div></div></div><a id="id1936278" class="indexterm"></a><div class="para">
+			数多くのバグ修正に加えて、<span class="package">doxygen</span> 1.7.6.1 は次のものを含みます:
+			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						選択されたメンバーが HTML 出力で軽くハイライトされるようになりました。（GENERATE_TREEVIEW が有効なとき）
+					</div></li><li class="listitem"><div class="para">
+						ナビゲーションツリー（GENERATE_TREEVIEW）は、インデックスと同じ情報を表示します。
+					</div></li><li class="listitem"><div class="para">
+						レイアウトのナビゲーションセクションは、ナビゲーションツリーで表示されるものも制御するようになりました。
+					</div></li><li class="listitem"><div class="para">
+						クラスあるいは構造体が多くの(&gt;15) 同じ型のメンバーを持つとき、最初の１０だけが、UML ダイアグラムに表示されます。
+					</div></li><li class="listitem"><div class="para">
+						JavaScript ベースの検索エンジンの出力をよりコンパクトにしました。
+					</div></li><li class="listitem"><div class="para">
+						フランス語の翻訳の更新
+					</div></li><li class="listitem"><div class="para">
+						PHP heredoc と nowdoc construct のサポートを追加しました。
+					</div></li><li class="listitem"><div class="para">
+						&gt; オペレーターオーバーローディングの場合の、クロス・レファレンス機能のサポートが追加されました。これには、BUILTIN_STL_SUPPORT が有効な場合の、 std::auto_ptr,std::smart_ptr,std::unique_ptr そして std::weak_ptr が含まれます。
+					</div></li></ul></div>
+
+		</div><div class="para">
+			プロジェクトのサイト: <a href="http://www.stack.nl/~dimitri/doxygen/index.html">http://www.stack.nl/~dimitri/doxygen/index.html</a>
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1891033">4.1.7. emacs</h4></div></div></div><a id="id1891040" class="indexterm"></a><div class="para">
+			GNU Emacs がアップストリームから最新の事前リリース 24.0.93 に更新されました。
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1891054">4.1.8. git</h4></div></div></div><a id="id1891061" class="indexterm"></a><div class="para">
+			<span class="package">git</span> が 1.7.9 に更新されました。Fedora 16 は 1.7.7 が含まれていました。
+		</div><div class="para">
+			多くの小さな新機能があります。興味を持たれた方は、アップストリームの <a href="https://raw.github.com/gitster/git/master/Documentation/RelNotes/1.7.9.txt"> changes since 1.7.8</a> と <a href="https://raw.github.com/gitster/git/master/Documentation/RelNotes/1.7.8.txt"> changes since 1.7.7</a> を参照下さい。
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1891093">4.1.9. rcs</h4></div></div></div><a id="id1891100" class="indexterm"></a><div class="para">
+			由緒ある版数管理システム (<span class="package">rcs</span>) が 5.8 に更新されました。
+		</div><div class="para">
+			更新は次のものが含まれます:
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					GPLv3+ ライセンス化
+				</div></li><li class="listitem"><div class="para">
+					用語の変更: "パス" から "ファイル名" に
+				</div></li><li class="listitem"><div class="para">
+					RCS パッケージに変更
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								Info 形式の新しいドキュメント
+							</div></li><li class="listitem"><div class="para">
+								設定オプションの廃止: --with-diffutils
+							</div></li><li class="listitem"><div class="para">
+								いくつかの方法において設定の厳密化、他における弛緩化。
+							</div></li><li class="listitem"><div class="para">
+								新しい設定オプション: --enable-suid[=setreuid]
+							</div></li><li class="listitem"><div class="para">
+								新しい設定オプション: --disable-mmap
+							</div></li><li class="listitem"><div class="para">
+								新しい設定オプション: --enable-mailer=PROG
+							</div></li><li class="listitem"><div class="para">
+								新しい設定オプション: --enable-compat2
+							</div></li><li class="listitem"><div class="para">
+								"make install" 前に "make check" できます。
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					バグ修正
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								すべてのリビジョンを削除するときにすべての編集情報を削除します
+							</div></li><li class="listitem"><div class="para">
+								コードはもはや mktemp を使用しません。
+							</div></li><li class="listitem"><div class="para">
+								その他のマニュアルページにおける微調整および修正。
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					他の変更
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								すべてのコマンドは ‘--help’ および ‘--version’ を受け付けます。
+							</div></li><li class="listitem"><div class="para">
+								著者と状態に、すべて数字の文字列が使えるようになりました。
+							</div></li><li class="listitem"><div class="para">
+								RCS_MEM_LIMIT 環境変数が、標準入出力のしきい値を制御します。
+							</div></li><li class="listitem"><div class="para">
+								RCS が 2GB よりも大きなファイルを処理できるようになりました。
+							</div></li><li class="listitem"><div class="para">
+								RCS ファイルのパススルー ‘commitid SYMBOL’ が組み込まれました。
+							</div></li><li class="listitem"><div class="para">
+								RCS ファイルの最上位の文法が凍結されました。
+							</div></li><li class="listitem"><div class="para">
+								RCS ファイルの構文検証がより簡単になり、完全になりました。
+							</div></li><li class="listitem"><div class="para">
+								ci -m, rcs -m を用いた空のログメッセージを指定できます
+							</div></li><li class="listitem"><div class="para">
+								日付のオプションがさらにいくつかの日付のみの形式を受け付けます
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					rcsdiff への変更
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								オプションの新しい処理方法: -U N
+							</div></li><li class="listitem"><div class="para">
+								"same-revision don't call diff" 最適化の精度向上
+							</div></li></ul></div>
+
+				</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1894221">4.1.10. subversion</h4></div></div></div><a id="id1894228" class="indexterm"></a><div class="para">
+			バージョンコントロールシステム <span class="package">subversion</span> が、 1.6.17 から 1.7.3 に更新されました。多くの変更がありますが、その中には、 HTTP の使用の改善、リモートダンプツール、そしてコンソール出力の改善があります。その他の改善については、ぜひ、 <a href="http://subversion.apache.org/docs/release-notes/1.7.html">http://subversion.apache.org/docs/release-notes/1.7.html</a> を訪れて下さい。
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1894253">4.1.11. bugzilla</h4></div></div></div><a id="id1894260" class="indexterm"></a><div class="para">
+			<span class="package">bugzilla</span> 4.0.4 は、以前のバージョンにあった多くのセキュリティ問題を修正しました。さらに、新リリースでは、システム管理者がオートコンプリートを無効にすることができるようになった他、多くの小さなバグを修正しました。詳しくは、 <a href="http://www.bugzilla.org/">http://www.bugzilla.org/</a> を参照下さい。
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1894284">4.1.12. bzr</h4></div></div></div><a id="id1894291" class="indexterm"></a><div class="para">
+			<span class="package">bzr</span> 2.5 は、基本的にはバグ修正リリースですが、それは新しい安定版バージョンであり、将来のバグ修正はそれをもとにします。
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1894310">4.1.13. highlight</h4></div></div></div><a id="id1894316" class="indexterm"></a><a id="id1894324" class="indexterm"></a><a id="id1894332" class="indexterm"></a><a id="id1894340" class="indexterm"></a><a id="id1894348" class="indexterm"></a><div class="para">
+			Fedora 17 は <span class="package">highlight</span> 3.7 が含まれます。バージョン 3.6 の改善は次のものが含まれます:
+			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						Biferno のサポート
+					</div></li><li class="listitem"><div class="para">
+						RPL のサポート
+					</div></li><li class="listitem"><div class="para">
+						Ceylon のサポート
+					</div></li><li class="listitem"><div class="para">
+						修正された Ruby 定義
+					</div></li><li class="listitem"><div class="para">
+						HTML フォント文字列はフォントのリストを含むことができ、引用符で囲まれていません。
+					</div></li><li class="listitem"><div class="para">
+						ユーザーのディレクトリーの代わりにカレント作業ディレクトリーに設定ファイルを保存するために --portable コマンドラインを追加しました。
+					</div></li></ul></div>
+
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1894419">4.1.14. mercurial</h4></div></div></div><a id="id1894426" class="indexterm"></a><a id="id1894434" class="indexterm"></a><div class="para">
+			<span class="package">mercurial</span> は 2.1 に更新されました。興味のある読者は、新機能とバグ修正の詳細な一覧のために <a href="http://mercurial.selenic.com/wiki/WhatsNew">http://mercurial.selenic.com/wiki/WhatsNew</a> を訪問してください。
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1894457">4.1.15. monodevelop</h4></div></div></div><a id="id1894463" class="indexterm"></a><a id="id1894471" class="indexterm"></a><div class="para">
+			Fedora 17 に <span class="package">monodevelop</span> 2.8.5 が採用されました。多くの新機能のうちには：
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					プロジェクト管理
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								新しい Edit References ダイアログ
+							</div></li><li class="listitem"><div class="para">
+								改善された Class and Document Outline パッド
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					ソース編集
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								構文ハイライトのカラースキーマの新しいエディター
+							</div></li><li class="listitem"><div class="para">
+								構文ハイライトの新しい初期カラースキーマ
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					Version Control と SVN サポートに関する修正と改善。特に、リンクされたファイルを含むプロジェクトをバージョンコントロールに追加する処理が、正しく行われるようになりました。
+				</div></li></ul></div><div class="para">
+			さらなる詳細はプロジェクトのウェブサイト <a href="http://monodevelop.com/">http://monodevelop.com/</a> を訪問してください。
+		</div></div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Changes_for_Desktop.html"><strong>戻る</strong>3. Fedora の変更点 - デスクトップユーザー向け</a></li><li class="up"><a accesskey="u" href="#"><strong>上に戻る</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>ホーム</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Specific_Audiences.html"><strong>次へ</strong>5. Fedora の変更点 - 特定の方向け</a></li></ul></body></html>

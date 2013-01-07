@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>4. Changes in Fedora for Developers</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta name="generator" content="publican 2.8" /><meta name="package" content="Fedora-Release_Notes-17-en-US-1-0" /><link rel="home" href="index.html" title="Release Notes" /><link rel="up" href="index.html" title="Release Notes" /><link rel="prev" href="sect-Release_Notes-Changes_for_Desktop.html" title="3. Changes in Fedora for Desktop Users" /><link rel="next" href="sect-Release_Notes-Changes_for_Specific_Audiences.html" title="5. Changes in Fedora for Specific Audiences" /></head><body><p id="title"><a class="left" href="http://www.fedoraproject.org"><img src="Common_Content/images/image_left.png" alt="Product Site" /></a><a class="right" href="http://docs.fedoraproject.org"><img src="Common_Content/images/image_right.png" alt="Documentation Site" /></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Changes_for_Desktop.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Specific_Audiences.html"><strong>Next</strong></a></li></ul><div class="section" id="sect-Release_Notes-Changes_for_Developers"><div class="titlepage"><div><div keep-together.within-column="always"><h2 class="title" id="sect-Release_Notes-Changes_for_Developers">4. Changes in Fedora for Developers</h2></div></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1576490">4.1. Development Tools</h3></div></div></div><div class="para">
+		Fedora has traditionally contained a rich set of development tools. The following are highlights of the many improvements to the development tools included in this release of Fedora.
+	</div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1523542">4.1.1. gcc</h4></div></div></div><a id="id1619706" class="indexterm"></a><a id="id1565195" class="indexterm"></a><a id="id2310521" class="indexterm"></a><a id="id2342904" class="indexterm"></a><a id="id1615303" class="indexterm"></a><a id="id1637325" class="indexterm"></a><a id="id1623009" class="indexterm"></a><a id="id1576207" class="indexterm"></a><a id="id1619738" class="indexterm"></a><a id="id1547430" class="indexterm"></a><a id="id1599130" class="indexterm"></a><div class="para">
+			Fedora 17 includes version 4.7.0 of <span class="package">gcc</span>, <span class="emphasis"><em>gcc-c++</em></span>, <span class="emphasis"><em>gcc-gfortran</em></span>, <span class="emphasis"><em>gcc-objc</em></span>, and <span class="emphasis"><em>gcc-gnat</em></span>. The update includes numerous changes to the gcc series of compilers, not only C and C++, but also to Ada and Fortran. For complete details, refer to the GCC 4.7 Release Series Changes at <a href="http://gcc.gnu.org/gcc-4.7/changes.html">http://gcc.gnu.org/gcc-4.7/changes.html</a>.
+		</div><div class="para">
+			Some highlights:
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					Several obsoleted architectures including IRIX 6.5, MIPS OpenBSD, Solaris, Tru64 UNIX 5.1 and a number of legacy ARM platforms
+				</div></li><li class="listitem"><div class="para">
+					Support for OpenMP 3.1 on C, C++ and Fortran
+				</div></li><li class="listitem"><div class="para">
+					More support for the C11 and C++11 standards updates
+				</div></li><li class="listitem"><div class="para">
+					New debug flexibility for Ada
+				</div></li><li class="listitem"><div class="para">
+					A number of performance improvements in Fortran
+				</div></li><li class="listitem"><div class="para">
+					Many optimizer enhancements
+				</div></li><li class="listitem"><div class="para">
+					New platforms: 
+					<a id="id1600051" class="indexterm"></a>
+					 <a id="id1600063" class="indexterm"></a>
+					 <a id="id1600075" class="indexterm"></a>
+					 <a id="id1600087" class="indexterm"></a>
+					 <a id="id1547292" class="indexterm"></a>
+					 <a id="id1547304" class="indexterm"></a>
+					 <a id="id1547316" class="indexterm"></a>
+					 <a id="id1547324" class="indexterm"></a>
+					 <a id="id1547336" class="indexterm"></a>
+					 <div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								ARM Cortex A7
+							</div></li><li class="listitem"><div class="para">
+								AVR XMEGA
+							</div></li><li class="listitem"><div class="para">
+								Texas Instruments C6X
+							</div></li><li class="listitem"><div class="para">
+								National Semiconductor's CR16
+							</div></li><li class="listitem"><div class="para">
+								Tilera TILE-Gx and TILEPro families
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					In addition, there are platform-specific improvements in ARM, AVR, IA-32/x86-64, MIPS, PowerPC/PowerPC64, SH and SPARC.
+				</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2310900">4.1.2. gdb</h4></div></div></div><a id="id2310907" class="indexterm"></a><div class="para">
+			Fedora 17 now includes <span class="package">gdb</span> 7.4.50.20120120. To review the many new features please visit <a href="http://www.gnu.org/software/gdb/download/ANNOUNCEMENT">http://www.gnu.org/software/gdb/download/ANNOUNCEMENT</a>
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1616462">4.1.3. Haskell</h4></div></div></div><a id="id1616468" class="indexterm"></a><div class="para">
+			The Haskell Platform has been updated to the latest 2011.4.0.0 release.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1616481">4.1.4. JBoss AS 7 </h4></div></div></div><a id="id1616488" class="indexterm"></a><a id="id1616496" class="indexterm"></a><div class="para">
+			A slimmed down version of JBoss AS 7 (<span class="emphasis"><em>jboss-as</em></span>) is now packaged for Fedora. JBoss AS 7 is a fast, modular, lightweight, compliant Java EE application server. Currently only the JBoss AS 7 <span class="emphasis"><em>Web Profile</em></span> is supported, support for the <span class="emphasis"><em>Full Profile</em></span> will be added in a later release.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1616522">4.1.5. OpenJDK </h4></div></div></div><a id="id1616528" class="indexterm"></a><div class="para">
+			OpenJDK7 is now the default Java Development Kit in Fedora, replacing OpenJDK6. A full list of the features added in OpenJDK7 is available upstream at <a href="http://openjdk.java.net/projects/jdk7/features/">http://openjdk.java.net/projects/jdk7/features/</a>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1616548">4.1.6. doxygen</h4></div></div></div><a id="id1616554" class="indexterm"></a><div class="para">
+			In addition to numerous bugfixes, <span class="package">doxygen</span> 1.7.6.1 includes: 
+			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						The selected member is now briefly highlighted in the HTML output (when GENERATE_TREEVIEW is enabled).
+					</div></li><li class="listitem"><div class="para">
+						The navigation tree (GENERATE_TREEVIEW) now shows the same information as the index.
+					</div></li><li class="listitem"><div class="para">
+						The navindex section of layout now also controls what is shown in the navigation tree.
+					</div></li><li class="listitem"><div class="para">
+						When a class/structs has many (&gt;15) members of the same type, only the first 10 are shown in the UML diagram.
+					</div></li><li class="listitem"><div class="para">
+						Made the output of the JavaScript based search engine more compact.
+					</div></li><li class="listitem"><div class="para">
+						Update of the French translation.
+					</div></li><li class="listitem"><div class="para">
+						Added support for PHP heredoc and nowdoc constructs.
+					</div></li><li class="listitem"><div class="para">
+						Added support for cross-referencing in case of operator-&gt; overloading. This includes support for std::auto_ptr,std::smart_ptr,std::unique_ptr and std::weak_ptr when BUILTIN_STL_SUPPORT is enabled.
+					</div></li></ul></div>
+
+		</div><div class="para">
+			Project site: <a href="http://www.stack.nl/~dimitri/doxygen/index.html">http://www.stack.nl/~dimitri/doxygen/index.html</a>
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1571235">4.1.7. emacs</h4></div></div></div><a id="id1571242" class="indexterm"></a><div class="para">
+			GNU Emacs is updated to the latest prerelease from upstream, 24.0.93
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1571255">4.1.8. git</h4></div></div></div><a id="id1571261" class="indexterm"></a><div class="para">
+			<span class="package">git</span> has been updated to 1.7.9. Fedora 16 included 1.7.7.
+		</div><div class="para">
+			There are numerous small feature additions. The interested reader should review the <a href="https://raw.github.com/gitster/git/master/Documentation/RelNotes/1.7.9.txt"> changes since 1.7.8</a> and <a href="https://raw.github.com/gitster/git/master/Documentation/RelNotes/1.7.8.txt"> changes since 1.7.7</a> in the upstream release notes.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1571293">4.1.9. rcs</h4></div></div></div><a id="id1571300" class="indexterm"></a><div class="para">
+			The venerable revision control system (<span class="package">rcs</span>) has been updated to 5.8.
+		</div><div class="para">
+			Updates include:
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					License now GPLv3+
+				</div></li><li class="listitem"><div class="para">
+					Change in terminology: from "path" to "file name" (or "file-name")
+				</div></li><li class="listitem"><div class="para">
+					Changes to the RCS package 
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								New documentation in Info format
+							</div></li><li class="listitem"><div class="para">
+								Dropped configure option: --with-diffutils
+							</div></li><li class="listitem"><div class="para">
+								Configuration more strict in some ways, more lax in others.
+							</div></li><li class="listitem"><div class="para">
+								New configure option: --enable-suid[=setreuid]
+							</div></li><li class="listitem"><div class="para">
+								New configure option: --disable-mmap
+							</div></li><li class="listitem"><div class="para">
+								New configure option: --enable-mailer=PROG
+							</div></li><li class="listitem"><div class="para">
+								New configure option: --enable-compat2
+							</div></li><li class="listitem"><div class="para">
+								You can "make check" prior to "make install".
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					Bug fixes 
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								Remove all edit info when removing all revisions.
+							</div></li><li class="listitem"><div class="para">
+								Code no longer uses mktemp.
+							</div></li><li class="listitem"><div class="para">
+								Miscellaneous manpage tweaks / fixes.
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					Other changes 
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								All commands accept ‘--help’ and ‘--version’.
+							</div></li><li class="listitem"><div class="para">
+								A string of all digits is now valid for author, state.
+							</div></li><li class="listitem"><div class="para">
+								Env var RCS_MEM_LIMIT controls stdio threshold.
+							</div></li><li class="listitem"><div class="para">
+								RCS can now work with files larger than 2 gigabytes.
+							</div></li><li class="listitem"><div class="para">
+								Pass-through for RCS file ‘commitid SYMBOL’ now builtin.
+							</div></li><li class="listitem"><div class="para">
+								RCS file top-level grammar frozen.
+							</div></li><li class="listitem"><div class="para">
+								RCS file syntax-validated earlier, completely.
+							</div></li><li class="listitem"><div class="para">
+								Possible to specify an empty log message with ci -m, rcs -m.
+							</div></li><li class="listitem"><div class="para">
+								Date option accepts some more date-only formats
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					Changes to rcsdiff 
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								New handling for option: -U N
+							</div></li><li class="listitem"><div class="para">
+								Refined "same-revision don't call diff" optimization
+							</div></li></ul></div>
+
+				</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1622023">4.1.10. subversion</h4></div></div></div><a id="id1622030" class="indexterm"></a><div class="para">
+			The version control system <span class="package">subversion</span> has been updated from 1.6.17 to 1.7.3. Numerous changes include better use of HTTP, a new remote dumpfile tool, and improved console output, in addition to numerous minor changes. The reader is encouraged to visit <a href="http://subversion.apache.org/docs/release-notes/1.7.html">http://subversion.apache.org/docs/release-notes/1.7.html</a> for more information on these improvements.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1622055">4.1.11. bugzilla</h4></div></div></div><a id="id1622061" class="indexterm"></a><div class="para">
+			<span class="package">bugzilla</span> 4.0.4 fixes a number of security issues with previous versions. In addition, the new release permits system administrators to disable autocomplete and corrects a number of minor bugs. Refer to <a href="http://www.bugzilla.org/">http://www.bugzilla.org/</a> for details.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1622085">4.1.12. bzr</h4></div></div></div><a id="id1622092" class="indexterm"></a><div class="para">
+			Although basically a bugfix release, 2.5 of <span class="package">bzr</span> represents a new stable version from which future bugfixes will be applied.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1622109">4.1.13. highlight</h4></div></div></div><a id="id1622115" class="indexterm"></a><a id="id1622123" class="indexterm"></a><a id="id1622131" class="indexterm"></a><a id="id1622139" class="indexterm"></a><a id="id1622147" class="indexterm"></a><div class="para">
+			Fedora 17 includes <span class="package">highlight</span> 3.7. Improvements over version 3.6 include: 
+			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						support for Biferno
+					</div></li><li class="listitem"><div class="para">
+						support for RPL
+					</div></li><li class="listitem"><div class="para">
+						support for Ceylon
+					</div></li><li class="listitem"><div class="para">
+						fixed Ruby definition
+					</div></li><li class="listitem"><div class="para">
+						HTML font string may contain a list of fonts, which is not enclosed in quotes
+					</div></li><li class="listitem"><div class="para">
+						added --portable command line option to save config files in the current working directory instead of the user directory
+					</div></li></ul></div>
+
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1622216">4.1.14. mercurial</h4></div></div></div><a id="id1622223" class="indexterm"></a><a id="id1622231" class="indexterm"></a><div class="para">
+			<span class="package">mercurial</span> has been upgraded to 2.1. The interested reader should visit <a href="http://mercurial.selenic.com/wiki/WhatsNew">http://mercurial.selenic.com/wiki/WhatsNew</a> for a detailed list of new features and bugfixes.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1622253">4.1.15. monodevelop</h4></div></div></div><a id="id1622260" class="indexterm"></a><a id="id1622268" class="indexterm"></a><div class="para">
+			<span class="package">monodevelop</span> 2.8.5 is included in Fedora 17. Among the numerous new features:
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					Project Management 
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								New Edit References dialog
+							</div></li><li class="listitem"><div class="para">
+								Improved Class and Document Outline pads
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					Source Editing 
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								New editor for syntax highlighting color schemes
+							</div></li><li class="listitem"><div class="para">
+								New default syntax highlighting color scheme
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					Several fixes and enhancements to the Version Control support and to SVN support in particular adding a project which contains linked files to version control is now handled correctly
+				</div></li></ul></div><div class="para">
+			Visit the project web site at <a href="http://monodevelop.com/">http://monodevelop.com/</a> for further details.
+		</div></div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Changes_for_Desktop.html"><strong>Prev</strong>3. Changes in Fedora for Desktop Users</a></li><li class="up"><a accesskey="u" href="#"><strong>Up</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Home</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Specific_Audiences.html"><strong>Next</strong>5. Changes in Fedora for Specific Audiences</a></li></ul></body></html>

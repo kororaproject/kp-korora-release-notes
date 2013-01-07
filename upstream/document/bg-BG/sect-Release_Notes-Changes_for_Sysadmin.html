@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>2. Промени във Fedora за Системни Администратори</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta name="generator" content="publican 2.8" /><meta name="package" content="Fedora-Release_Notes-17-bg-BG-1-0" /><link rel="home" href="index.html" title="Бележки към Изданието" /><link rel="up" href="index.html" title="Бележки към Изданието" /><link rel="prev" href="sect-Release_Notes-Welcome_to_Fedora_17.html" title="1. Добре дошли във Fedora 17" /><link rel="next" href="sect-Release_Notes-Changes_for_Desktop.html" title="3. Промени във Fedora за Настолни Потребители" /></head><body><p id="title"><a class="left" href="http://www.fedoraproject.org"><img src="Common_Content/images/image_left.png" alt="Product Site" /></a><a class="right" href="http://docs.fedoraproject.org"><img src="Common_Content/images/image_right.png" alt="Documentation Site" /></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Welcome_to_Fedora_17.html"><strong>Назад</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Desktop.html"><strong>Напред</strong></a></li></ul><div class="section" id="sect-Release_Notes-Changes_for_Sysadmin"><div class="titlepage"><div><div keep-together.within-column="always"><h2 class="title" id="sect-Release_Notes-Changes_for_Sysadmin">2. Промени във Fedora за Системни Администратори</h2></div></div></div><div xml:lang="bg-BG" class="section" lang="bg-BG"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1648205">2.1. Ядро</h3></div></div></div><a id="id1650975" class="indexterm"></a><a id="id1619962" class="indexterm"></a><div class="para">
+		Fedora 17 представя версията 3.3.4 на ядрото.
+	</div></div><div xml:lang="bg-BG" class="section" lang="bg-BG"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1648208">2.2. Инсталиране</h3></div></div></div><a id="id1605980" class="indexterm"></a><a id="id1562355" class="indexterm"></a><a id="id1602245" class="indexterm"></a><a id="id1567838" class="indexterm"></a><a id="id1539192" class="indexterm"></a><a id="id1567736" class="indexterm"></a><a id="id1530258" class="indexterm"></a><a id="id1536625" class="indexterm"></a><div class="para">
+		<div class="warning"><div class="admonition_header"><h2>Промени в директното зареждане на ядрото</h2></div><div class="admonition"><div class="para">
+				Има значителни промени при инсталирането чрез директно зареждане на ядро, като например PXE. Нормалното инсталиране от инсталационна медия не е променено.
+			</div></div></div>
+
+	</div><div class="para">
+		Напредналите потребители могат да използват който и да е от начините за мрежова инсталация, основно предназначени за създаване на минимално обкръжение на ядрото за осъществяване на инсталацията. Тази операция претърпя значителни промени във Fedora 17.
+	</div><div class="para">
+		Във F16, необходимото в основни линии е да се зададе <span class="emphasis"><em>само</em></span> ядрото и местоположението на initrd, и инсталирането ще тръгне - <code class="code">kernel/initrd</code> взимат <code class="code">stage1</code>, а <code class="code">stage1</code> взима <code class="code">stage2</code>.
+	</div><div class="para">
+		С noloader, това вече не е вариант: при осъществяването на direct kernel boot, трябва да бъде зададено местоположението на <code class="code">stage2</code>. С други думи: подайте <code class="code">repo=</code> или <code class="code">stage2=</code> (или <code class="code">inst.repo=</code> или <code class="code">inst.stage2=</code>, като предпочитано), сочещо към хранилище. Ако <code class="code">stage2</code> образът е на един сървър, но после инсталационните пакети са на някакъв друг сървър, трябва да се използва <code class="code">stage2=</code>: Може да се използва <code class="code">repo=</code> само ако единствен сървър съдържа всичко необходимо за инсталирането (както <code class="code">stage2</code> образа, така <span class="emphasis"><em>и всички</em></span> пакети за инсталирането). Забележете, че <code class="code">stage2=</code> все още очаква да намери 'repository' дърво, Вие не можете просто да подадете директния път към <code class="filename">squashfs.img</code> файл (което е както <code class="code">stage2=</code> работеше преди го имаше в F15 и по-рано).
+	</div><div class="para">
+		Например:
+<pre class="screen">
+label linux
+kernel vmlinuz
+append initrd=initrd.img
+</pre>
+		вече не е валидно. Необходимо е да се определи <code class="code">repo</code>:
+<pre class="screen">
+label linux
+kernel vmlinuz
+append initrd=initrd.img repo=http://dl.fedoraproject.org/pub/fedora/linux/development/17/x86_64/os/
+</pre>
+		или <code class="code">stage2</code>:
+<pre class="screen">
+label linux
+kernel vmlinuz
+append initrd=initrd.img stage2=http://my.internal.server/17/x86_64/os/
+</pre>
+		(или който и да е друг валиден огледален сървър).
+	</div></div><div xml:lang="bg-BG" class="section" lang="bg-BG"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1559406">2.3. Сигурност</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1575782">2.3.1. Проверка качеството на паролата</h4></div></div></div><a id="id1618589" class="indexterm"></a><a id="id1605470" class="indexterm"></a><div class="para">
+			Fedora вече разполага с една единствена конфигурируема библиотека, <a href="https://fedorahosted.org/libpwquality"> libpwquality</a> за проверка качеството на новите пароли, използвани за системните акаунти. Конфигурирането на предоставяната от библиотеката проверка на качеството на паролите е валидно за цялата система и се осъществява чрез промени в конфигурационния файл <code class="filename">/etc/security/pwquality.conf</code>.
+		</div><div class="para">
+			Разработчиците, желаещи да извикват това API от техните приложения, ще намерят необходимото им описание във файла <code class="filename">pwquality.h</code>, съдържащ се в пакета <span class="package">libpwquality-devel</span>. Налична е също и python wrapper, <span class="emphasis"><em>python-pwquality</em></span>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1563316">2.3.2. SELinux Deny Ptrace</h4></div></div></div><a id="id1568097" class="indexterm"></a><div class="para">
+			Добавена е нова SELinux булева променлива, <code class="varname">deny_ptrace</code>. Препоръчително е, потребителите, които не планират да търсят и анализират грешки в приложенията, да зададат стойност "Включено" на тази променлива. Това ще попречи на злосторнически процеси да четат от паметта, или да атакуват други процеси, използвайки инструменти за дебъг, включително <span class="application"><strong>ptrace</strong></span> и <span class="application"><strong>gdb</strong></span>.
+		</div><div class="para">
+			Такива атаки се предотвратяват даже ако злосторническия процес работи с права на потребителя root или атакува процес, работещ със същия SELinux контекст и етикет. За да разрешите за постоянно защитата, осигурявана от <code class="varname">deny_ptrace</code>, изпълнете следната команда като root:
+<pre class="screen">
+# setsebool -P deny_ptrace 1
+</pre>
+
+		</div><div class="para">
+			За да забраните временно защитата, осигурявана от <code class="varname">deny_ptrace</code>, изпълнете следната команда като root:
+		</div><pre class="screen">
+# setsebool deny_ptrace 0
+</pre></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1647837">2.3.3. Частна /tmp за услугите</h4></div></div></div><a id="id1578106" class="indexterm"></a><div class="para">
+			Редица услуги, управлявани от <span class="package">systemd</span>, бяха модифицирани за да се ползва възможността да им се предоставя тяхна собствена <code class="filename">/tmp</code> директория. Привилегировани услуги, ползващи <code class="filename">/tmp</code> и <code class="filename">/var/tmp</code> преди бяха отворени за взаимодействие с непривилегировани потребители, което водеше до възможно повишаване на привилегиите им. Този начин на злоупотреба се предотвратява с използването на частни <code class="filename">/tmp</code> директории за услугите.
+		</div><div class="para">
+			Директивата, добавена във файловете на пакета <span class="package">systemd</span> за модифицираните услуги е:
+<pre class="screen">
+[Service]
+PrivateTmp=true
+</pre>
+
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1558168">2.3.4. Сигурни контейнери</h4></div></div></div><a id="id1539431" class="indexterm"></a><a id="id1539439" class="indexterm"></a><a id="id1539447" class="indexterm"></a><a id="id1539455" class="indexterm"></a><div class="para">
+			Нов инструмент, <span class="package">sandbox</span>, беше създаден за рационализиране на създаването на сигурни <span class="package">libvirt</span> контейнери. При задаване на приложение, <span class="package">sandbox</span> определя точките на монтиране и <span class="package">libvirt</span> информацията за контейнера, необходими за стартирането на приложението в контейнер. След това, контейнерът се създава от <span class="package">libvirt</span> със SELinux контекст, който ще предотвратява взаимодействие с други процеси в системата, включително други контейнери, като се запазва възможността за споделяне на системни данни.
+		</div><div class="para">
+			Това позволява на администраторите няколко едновременни стартирания на една услуга, като в същото време се предотвратява събаряне на хост машината или на други процеси в системата, даже и когато работи като root. За да ползвате <span class="package">sandbox</span>, инсталирайте пакета <span class="package">libvirt-sandbox</span>.
+		</div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="id1569750">2.3.4.1. krb5-workstation</h5></div></div></div><a id="id1569757" class="indexterm"></a><div class="para">
+				Fedora 17 обновява системата за удостоверяване Kerberos до версия 1.10. Това добавя поддръжка за промяна на пароли през NAT и поддръжка на локализация. Добавена е командата <code class="command">kswitch</code> за превключване между credential кешовете. Допълнителна поддръжка на кешове бе добавена към други команди. Изборът на Credential може да се контролира с файла <code class="filename">$HOME/.k5identity</code>.
+			</div></div></div></div><div xml:lang="bg-BG" class="section" lang="bg-BG"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1577952">2.4. Файлови системи</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1599536">2.4.1. Големи файлови системи</h4></div></div></div><a id="id1562523" class="indexterm"></a><a id="id1558378" class="indexterm"></a><a id="id1606520" class="indexterm"></a><div class="para">
+			Fedora 17 ще поддържа файлови системи, по-големи от 16 терабайта с файловата система по подразбиране (ext4). С последната версия на <span class="package">e2fsprogs</span>, файловата система ext4 вече може да е с големина до 100 TB.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1537932">2.4.2. Криптирани файлови системи</h4></div></div></div><a id="id1600810" class="indexterm"></a><a id="id1563240" class="indexterm"></a><a id="id1638047" class="indexterm"></a><a id="id1603114" class="indexterm"></a><div class="para">
+			Fedora 17 използва версия 1.4.1 на пакета <span class="package">cryptsetup</span>, който премахва непрепоръчваните API извиквания. В допълнение, той поддържа поставянето на LUKS заглавни части на различни устройства и създаването на споделени, непрепокриващи се криптирани сегменти на едно устройство.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1576268">2.4.3. btrfs</h4></div></div></div><a id="id1654243" class="indexterm"></a><a id="id1604477" class="indexterm"></a><div class="para">
+			<span class="package">btrfs</span> не е налична като избор на файлова система по време на инсталирането. Това е временно и ще бъде отстранено във Fedora 18. Сега <span class="package">btrfs</span> е достъпна след инсталирането.
+		</div></div></div><div xml:lang="bg-BG" class="section" lang="bg-BG"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1536500">2.5. Виртуализация</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1652353">2.5.1. QEMU</h4></div></div></div><a id="id1598035" class="indexterm"></a><a id="id1573301" class="indexterm"></a><a id="id1534962" class="indexterm"></a><a id="id1600508" class="indexterm"></a><div class="para">
+			Емулаторът на машини с отворен код QEMU беше обновен до версия 1.0. Забележителните промени включват:
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					QEMU сега поддържа жива миграция на работещи гости.
+				</div></li><li class="listitem"><div class="para">
+					KVM потребителите сега могат да стартират профилиращи инструменти на стандартна производителност в KVM гостите.
+				</div></li><li class="listitem"><div class="para">
+					QEMU и <span class="package">libvirt</span> сега поддържат image streaming. Image streaming позволява на администратора да стартира нови виртуални машини бързо, на базата на съществуващи образи; виртуалните машини могат след това да бъдат напълно провизирани във фонов режим, докато работят.
+				</div></li><li class="listitem"><div class="para">
+					QEMU и KVM поддържат новия усъвършенстван SCSI-базиран storage stack, <span class="package">virtio-scsi</span>. Поддръжката за него в <span class="emphasis"><em>libvirt</em></span> ще бъде добавена в по-късна версия.
+				</div></li></ul></div><div class="para">
+			Пълният списък на промените, включени в това издание, е наличен в ъпстрийма на <a href="http://wiki.qemu.org/ChangeLog/1.0">http://wiki.qemu.org/ChangeLog/1.0</a>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1538502">2.5.2. libvirt</h4></div></div></div><a id="id1540546" class="indexterm"></a><div class="para">
+			Комплектът инструменти <span class="package">libvirt</span> за взаимодействие с функционалностите за виртуализация на различни хостове беше обновен до версия 0.9.10. Пълният списък на промените, включени в това издание е наличен в ъпстрийма на <a href="http://libvirt.org/news.html">http://libvirt.org/news.html</a>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1568100">2.5.3. Virtual Machine Manager (virt-manager)</h4></div></div></div><a id="id1568107" class="indexterm"></a><div class="para">
+			Virtual Machine Manager беше обновен до версия 0.9.1. Освен многото отстранени бъгове, в това издание са добавени:
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					Поддръжка за добавяне на USB redirection усктройства.
+				</div></li><li class="listitem"><div class="para">
+					Опция за промяна на USB контролера за поддръжка на USB 2.0.
+				</div></li><li class="listitem"><div class="para">
+					Опция за задаване типа на машината за не-x86 гости.
+				</div></li></ul></div><div class="para">
+			Пълният списък на промените, включени в това издание е наличен в ъпстрийма на <a href="http://virt-manager.org/download.html">http://virt-manager.org/download.html</a>.
+		</div></div></div><div xml:lang="bg-BG" class="section" id="sect_Cloud" lang="bg-BG"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="sect_Cloud">2.6. Работа в облака</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1578066">2.6.1. CloudStack</h4></div></div></div><a id="id1585215" class="indexterm"></a><a id="id1635113" class="indexterm"></a><div class="para">
+			Fedora 17 ще включва пакета <span class="package">CloudStack</span>, който предоставя зряла платформа Инфраструктура като услуга (IaaS).
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1657831">2.6.2. OpenNebula</h4></div></div></div><a id="id1607130" class="indexterm"></a><a id="id1620214" class="indexterm"></a><a id="id1564590" class="indexterm"></a><a id="id1534634" class="indexterm"></a><div class="para">
+			Друга новост във Fedora 17 е <span class="package">OpenNebula</span>. OpenNebula предоставя IaaS платформа, насочена към виртуализация на центрове за данни. Управлението на средата може да се прави от команден ред или графични интерфейси. Включена е съвместимост с Open Cloud Computing Interface (OCCI) на Amazon EC2.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1596667">2.6.3. OpenStack</h4></div></div></div><a id="id1573369" class="indexterm"></a><a id="id1563402" class="indexterm"></a><a id="id1576656" class="indexterm"></a><a id="id1595111" class="indexterm"></a><a id="id1637923" class="indexterm"></a><a id="id1653608" class="indexterm"></a><a id="id1637840" class="indexterm"></a><a id="id1603330" class="indexterm"></a><div class="para">
+			Fedora 17 включва последната версия на комплекта <span class="package">OpenStack</span> с кодово име "Essex". В това ново издание е включена последната версия на уеб интерфейса за управление ("Horizon") и виртуална работа в мрежи ("Quantum"). Употребата на Qpid като алтернатива на RabbitMQ за AQMP backend е новост във Fedora 17. В допълнение, възможността на libguestfs да поддържа многобройни формати на виртуални дискове ще направи предложението OpenStack на Fedora много гъвкаво.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1562253">2.6.4. Open vSwitch</h4></div></div></div><a id="id1562260" class="indexterm"></a><div class="para">
+			Fedora 17 включва Open vSwitch, софтуерен мрежов суич, използван за предоставяне на мрежови услуги на виртуалните машини. Open vSwitch поддържа OpenFlow за лекота на управлението.
+		</div></div></div><div xml:lang="bg-BG" class="section" lang="bg-BG"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1653822">2.7. Сървъри за бази данни</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1570401">2.7.1. mysql</h4></div></div></div><a id="id1563749" class="indexterm"></a><div class="para">
+			Fedora 17 включва <span class="package">mysql</span> 5.5.20, обновен от 5.5.14 in Fedora 16.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1576738">2.7.2. postgresql</h4></div></div></div><a id="id1649884" class="indexterm"></a><div class="para">
+			<span class="package">postgresql</span> бе обновен до 9.1.2
+		</div><div class="warning"><div class="admonition_header"><h2>Потенциално несъвместима промяна</h2></div><div class="admonition"><div class="para">
+				Ако разчитате на изгледа <em class="parameter"><code>information_schema.referential_constraints</code></em>, или ако имате колони от тип <em class="parameter"><code>citext</code></em>, може да се наложи да изпълните специално действие. Вижте <a href="http://www.postgresql.org/docs/9.1/static/release-9-1-2.html">http://www.postgresql.org/docs/9.1/static/release-9-1-2.html</a>.
+			</div></div></div><div class="para">
+			Тази версия е основно отстраняваща грешки.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1635658">2.7.3. sqlite</h4></div></div></div><a id="id1540849" class="indexterm"></a><div class="para">
+			<span class="package">sqlite</span> бе обновен до 3.7.9
+		</div><div class="warning"><div class="admonition_header"><h2>Потенциално несъвместима промяна</h2></div><div class="admonition"><div class="para">
+				Ако токен за търсене (от дясната страна на оператора <code class="command">MATCH</code>) в FTS4 започва с "^", то този токен трябва да е първият в неговото поле на документа.
+			</div></div></div><div class="para">
+			Има редица промени и подобрения:
+			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						Подобрение в производителността на Orders of magnitude за <code class="command">CREATE INDEX</code> върху много големи таблици.
+					</div></li><li class="listitem"><div class="para">
+						Подобрена е windows VFS за по-добра защита от вмешателство на антивирусни програми.
+					</div></li><li class="listitem"><div class="para">
+						Подобрена оптимизация на плана на заявката при наличие на операнд <code class="command">DISTINCT</code>.
+					</div></li><li class="listitem"><div class="para">
+						Allow more system calls to be overridden in the unix VFS - to provide better support for chromium sandboxes.
+					</div></li><li class="listitem"><div class="para">
+						Увеличена е големината по подразбиране на lookahead cache line от 100 до 128 байта.
+					</div></li><li class="listitem"><div class="para">
+						Подобрения в модула <code class="filename">test_quota.c</code> така че да може да проследява preexisting файлове.
+					</div></li><li class="listitem"><div class="para">
+						Добавени опции <code class="command">SQLITE_DBSTATUS_CACHE_HIT</code> и <code class="command">SQLITE_DBSTATUS_CACHE_MISS</code> към интерфейса <code class="function">sqlite3_db_status()</code>.
+					</div></li><li class="listitem"><div class="para">
+						Премахната е поддръжката за <code class="command">SQLITE_ENABLE_STAT2</code>, като е заменена с далеч по-полезната опция <code class="command">SQLITE_ENABLE_STAT3</code>.
+					</div></li><li class="listitem"><div class="para">
+						Подобрения в програмата от инструментариума <span class="application"><strong>sqlite3_analyzer</strong></span>, включващо опциите <code class="command">--pageinfo</code> и <code class="command">--stats</code> и поддръжка за мултиплексирани бази данни.
+					</div></li><li class="listitem"><div class="para">
+						Подобрен е интерфейса <code class="function">sqlite3_data_count()</code> така, че той може да бъде използван за определяне дали <code class="command">SQLITE_DONE</code> е бил срещнат в подготвения израз.
+					</div></li><li class="listitem"><div class="para">
+						Добавена е команда за файлов контрол <code class="command">SQLITE_FCNTL_OVERWRITE</code> по която SQLite ядрото "казва" на VFS, че текущата транзакция ще припокрие целия файл с базата данни.
+					</div></li><li class="listitem"><div class="para">
+						Увеличена е големината по подразбиране на lookaside memory allocator от 100 до 128 байта.
+					</div></li><li class="listitem"><div class="para">
+						Подобрен е планировчика на заявките така, че it can factor terms in and out <code class="command">OR</code> expressions in the <code class="command">WHERE</code> clause in an effort to find better indices.
+					</div></li><li class="listitem"><div class="para">
+						Добавена опция по време на компилирането <code class="command">SQLITE_DIRECT_OVERFLOW_READ</code>, причиняваща четенето на надхвърлящите страници директно от файла с базата данни, заобикаляйки кеша за страници.
+					</div></li><li class="listitem"><div class="para">
+						Remove limits on the magnitude of precision and width value in the format specifiers of the <code class="function">sqlite3_mprintf()</code> family of string rendering routines.
+					</div></li></ul></div>
+
+		</div></div></div><div xml:lang="bg-BG" class="section" lang="bg-BG"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1561305">2.8. Системни Демони</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1537899">2.8.1. pciutils</h4></div></div></div><a id="id1562408" class="indexterm"></a><a id="id1655364" class="indexterm"></a><div class="para">
+			Пакетът <span class="package">pciutils</span>, предоставящ инструменти за инспектиране и конфигуриране на PCI устройства, във Fedora 17 беше обновен до версия 3.1.9. Това добавя поддръжка за полетата скорост на четене и статус на връзката за генерация 3 на PCI Express хардуера.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1605195">2.8.2. brltty</h4></div></div></div><a id="id1652487" class="indexterm"></a><a id="id1601429" class="indexterm"></a><div class="para">
+			Fedora 17 включва версия 4.3 на демона за Брайлов дисплей <span class="package">brltty</span>. Версия 4.3 включва нови опции за конфигуриране и регистриране, както и поддръжка на допълнителни устройства.
+		</div></div></div><div xml:lang="bg-BG" class="section" lang="bg-BG"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1562357">2.9. Xorg</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1574385">2.9.1. Софтуерно рендериране за GNOME Shell</h4></div></div></div><a id="id1605614" class="indexterm"></a><a id="id1650396" class="indexterm"></a><div class="para">
+			Удоволствието от GNOME Shell сега е достъпно на всякакъв хардуер, включително устройства, използващи софтуерно рендериране. Потребителите, все още предпочитащи използването на резервния режим на GNOME, могат да го разрешат ръчно чрез аплета <span class="package">System Info</span>, в <span class="emphasis"><em>Graphics</em></span>, избирайки опцията <span class="emphasis"><em>Forced Fallback Mode</em></span> на <span class="emphasis"><em>ON</em></span>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1564113">2.9.2. Multi-touch поддръжка</h4></div></div></div><a id="id1575880" class="indexterm"></a><a id="id1601415" class="indexterm"></a><div class="para">
+			X сървърът и библиотеките във Fedora 17 поддържат версия 2.2 на разширението <span class="package">XInput</span>, което включва поддръжка на multi-touch. Приложенията, които го изберат, сега ще могат да се възползват от multi-touch поддръжката във Fedora.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1538542">2.9.3. Поддръжка на Smooth Scrolling</h4></div></div></div><a id="id1648533" class="indexterm"></a><div class="para">
+			Обновеният X сървър предоставя също smooth scrolling за драйвери и устройства, които го поддържат. Scroll данните сега се експортват като axis стойности в допълнение към legacy button press събитията. Това позволява приложенията да вземат предвид бързината и да предоставят насладата от по-плавното скролиране. Както и multi-touch, за да се възползват от преимуществата на smooth scrolling поддръжката, клиентските приложения също трябва да са написани така, че да го поддържат.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1568365">2.9.4. DRI2 драйвери</h4></div></div></div><a id="id1657603" class="indexterm"></a><a id="id1575643" class="indexterm"></a><a id="id1574589" class="indexterm"></a><a id="id1595504" class="indexterm"></a><a id="id1564562" class="indexterm"></a><a id="id1564570" class="indexterm"></a><a id="id1564578" class="indexterm"></a><a id="id1564586" class="indexterm"></a><a id="id1598138" class="indexterm"></a><div class="para">
+			<span class="package">i810</span>, <span class="package">mga</span>, <span class="package">r128</span>, <span class="package">savage</span>, <span class="package">sis</span>, <span class="package">tdfx</span>, and <span class="package">unichrome</span> DRI драйверите вече няма да се доставят, тъй като вече няма да бъдат включвани от Mesa. Засегнатият хардуер включва варианти на следните устройства:
+		</div><a id="id1598180" class="indexterm"></a><a id="id1605256" class="indexterm"></a><a id="id1605268" class="indexterm"></a><a id="id1605280" class="indexterm"></a><a id="id1605292" class="indexterm"></a><a id="id1605304" class="indexterm"></a><a id="id1605316" class="indexterm"></a><a id="id1595118" class="indexterm"></a><a id="id1595130" class="indexterm"></a><a id="id1595142" class="indexterm"></a><a id="id1595154" class="indexterm"></a><a id="id1595166" class="indexterm"></a><a id="id1595178" class="indexterm"></a><a id="id1601508" class="indexterm"></a><a id="id1601520" class="indexterm"></a><a id="id1601532" class="indexterm"></a><a id="id1601544" class="indexterm"></a><a id="id1601556" class="indexterm"></a><a id="id1601568" class="indexterm"></a><a id="id1541562" class="indexterm"></a><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					Intel i810 и i815 чипсети на дънни платки
+				</div></li><li class="listitem"><div class="para">
+					Matrox MGA G200, G400, G450 и G550 картите
+				</div></li><li class="listitem"><div class="para">
+					ATI Rage 128 картите
+				</div></li><li class="listitem"><div class="para">
+					S3 Savage 3D и Savage 4 картите
+				</div></li><li class="listitem"><div class="para">
+					SiS 300, 540, 630 и 730 чипсетите
+				</div></li><li class="listitem"><div class="para">
+					3dfx Voodoo 3, Voodoo 4 и Voodoo 5 картите
+				</div></li><li class="listitem"><div class="para">
+					VIA Unichrome и Unichrome Pro чипсетите
+				</div></li></ul></div><div class="para">
+			Този хардуер сега се поддържа от софтуерния 3D драйвер <span class="package">llvmpipe</span>, който, за разлика от старите DRI драйвери, изоставя OpenGL 2.x функционалността.
+		</div></div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Welcome_to_Fedora_17.html"><strong>Назад</strong>1. Добре дошли във Fedora 17</a></li><li class="up"><a accesskey="u" href="#"><strong>Ниво нагоре</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Начало</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Desktop.html"><strong>Напред</strong>3. Промени във Fedora за Настолни Потребители</a></li></ul></body></html>

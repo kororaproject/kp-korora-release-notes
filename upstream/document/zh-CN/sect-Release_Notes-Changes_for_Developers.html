@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>4. Fedora 针​对​开​发​人​员​所​做​的​变​更​</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta name="generator" content="publican 2.8" /><meta name="package" content="Fedora-Release_Notes-17-zh-CN-1-0" /><link rel="home" href="index.html" title="发​行​注​记​" /><link rel="up" href="index.html" title="发​行​注​记​" /><link rel="prev" href="sect-Release_Notes-Changes_for_Desktop.html" title="3. Fedora 针​对​桌​面​用​户​所​做​的​变​更​" /><link rel="next" href="sect-Release_Notes-Changes_for_Specific_Audiences.html" title="5. Fedora 针​对​特​定​爱​好​者​所​做​的​变​更​" /></head><body><p id="title"><a class="left" href="http://www.fedoraproject.org"><img src="Common_Content/images/image_left.png" alt="Product Site" /></a><a class="right" href="http://docs.fedoraproject.org"><img src="Common_Content/images/image_right.png" alt="Documentation Site" /></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Changes_for_Desktop.html"><strong>上一页</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Specific_Audiences.html"><strong>下一页</strong></a></li></ul><div class="section" id="sect-Release_Notes-Changes_for_Developers"><div class="titlepage"><div><div keep-together.within-column="always"><h2 class="title" id="sect-Release_Notes-Changes_for_Developers">4. Fedora 针​对​开​发​人​员​所​做​的​变​更​</h2></div></div></div><div xml:lang="zh-CN" class="section" lang="zh-CN"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id2047471">4.1. 开​发​工​具​</h3></div></div></div><div class="para">
+		Fedora 一​直​以​来​都​带​有​丰​富​的​开​发​工​具​套​件​。​以​下​内​容​概​括​了​本​ Fedora 版​本​集​成​的​开​发​工​具​所​带​来​的​改​进​。​
+	</div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1965560">4.1.1. gcc</h4></div></div></div><a id="id1958019" class="indexterm"></a><a id="id2215590" class="indexterm"></a><a id="id1597139" class="indexterm"></a><a id="id2213943" class="indexterm"></a><a id="id2149823" class="indexterm"></a><a id="id2369548" class="indexterm"></a><a id="id2238790" class="indexterm"></a><a id="id1665522" class="indexterm"></a><a id="id1907033" class="indexterm"></a><a id="id2278158" class="indexterm"></a><a id="id1625680" class="indexterm"></a><div class="para">
+			Fedora 17 采​用​ 4.7.0 版​ <span class="package">gcc</span>、​<span class="emphasis"><em>gcc-c++</em></span>、​<span class="emphasis"><em>gcc-gfortran</em></span>、​<span class="emphasis"><em>gcc-objc</em></span> 以​及​ <span class="emphasis"><em>gcc-gnat</em></span>。​更​新​包​括​对​ gcc 系​列​编​译​器​的​大​量​变​更​，不​仅​是​ C 和​ C++，还​包​括​ Ada 和​ Fortran。​有​关​完​整​信​息​请​参​考​ GCC 4.7 Release Series Changes：<a href="http://gcc.gnu.org/gcc-4.7/changes.html">http://gcc.gnu.org/gcc-4.7/changes.html</a>。​
+		</div><div class="para">
+			部​分​显​著​变​化​：
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					几​个​废​弃​架​构​包​括​ IRIX 6.5、​MIPS OpenBSD、​Solaris、​Tru64 UNIX 5.1 以​及​一​些​老​式​ ARM 平​台​
+				</div></li><li class="listitem"><div class="para">
+					在​ C，C++ 及​ Fortran 上​支​持​ OpenMP 3.1
+				</div></li><li class="listitem"><div class="para">
+					更​多​对​ C11 及​ C++11 标​准​更​新​的​支​持​
+				</div></li><li class="listitem"><div class="para">
+					New debug flexibility for Ada
+				</div></li><li class="listitem"><div class="para">
+					Fortran 有​了​大​量​的​性​能​提​升​
+				</div></li><li class="listitem"><div class="para">
+					许​多​优​化​改​进​
+				</div></li><li class="listitem"><div class="para">
+					新​平​台​：
+					<a id="id2165730" class="indexterm"></a>
+					 <a id="id2165742" class="indexterm"></a>
+					 <a id="id2165754" class="indexterm"></a>
+					 <a id="id2255171" class="indexterm"></a>
+					 <a id="id2255183" class="indexterm"></a>
+					 <a id="id2255195" class="indexterm"></a>
+					 <a id="id2255207" class="indexterm"></a>
+					 <a id="id2255215" class="indexterm"></a>
+					 <a id="id2260996" class="indexterm"></a>
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								ARM Cortex A7
+							</div></li><li class="listitem"><div class="para">
+								AVR XMEGA
+							</div></li><li class="listitem"><div class="para">
+								Texas Instruments C6X
+							</div></li><li class="listitem"><div class="para">
+								National Semiconductor's CR16
+							</div></li><li class="listitem"><div class="para">
+								Tilera TILE-Gx 和​ TILEPro 家​族​
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					此​外​在​ ARM、​AVR、​IA-32/x86-64、​MIPS、​PowerPC/PowerPC64、​SH 及​ SPARC 平​台​中​还​有​平​台​专​有​的​改​进​。​
+				</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1714623">4.1.2. gdb</h4></div></div></div><a id="id1714630" class="indexterm"></a><div class="para">
+			Fedora 17 采​用​了​ <span class="package">gdb</span> 7.4.50.20120120。​如​要​了​解​众​多​新​特​性​，请​访​问​：<a href="http://www.gnu.org/software/gdb/download/ANNOUNCEMENT">http://www.gnu.org/software/gdb/download/ANNOUNCEMENT</a>
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1714652">4.1.3. Haskell</h4></div></div></div><a id="id1714659" class="indexterm"></a><div class="para">
+			Haskell 平​台​已​更​新​至​最​新​版​本​ 2011.4.0.0。​
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1714672">4.1.4. JBoss AS 7</h4></div></div></div><a id="id1714678" class="indexterm"></a><a id="id2053283" class="indexterm"></a><div class="para">
+			Fedora 目​前​采​用​了​ JBoss AS 7 (<span class="emphasis"><em>jboss-as</em></span>) 的​一​个​瘦​身​版​本​。​JBoss AS 7 是​一​个​快​速​、​模​块​化​、​轻​量​级​的​、​兼​容​ Java EE 的​应​用​服​务​器​。​目​前​仅​支​持​ JBoss AS 7 <span class="emphasis"><em>Web Profile</em></span>，对​ <span class="emphasis"><em>Full Profile</em></span> 的​支​持​将​在​后​续​版​本​中​加​入​。​
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2053310">4.1.5. OpenJDK</h4></div></div></div><a id="id2053316" class="indexterm"></a><div class="para">
+			OpenJDK7 目​前​是​ Fedora 默​认​的​ Java 开​发​套​件​，它​取​代​了​ OpenJDK6。​有​关​ OpenJDK7 中​新​增​特​性​的​完​整​列​表​请​访​问​上​游​网​站​ <a href="http://openjdk.java.net/projects/jdk7/features/">http://openjdk.java.net/projects/jdk7/features/</a>。​
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2053337">4.1.6. doxygen</h4></div></div></div><a id="id2053343" class="indexterm"></a><div class="para">
+			除​了​大​量​ bug 修​正​外​，<span class="package">doxygen</span> 1.7.6.1 还​包​括​：
+			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						The selected member is now briefly highlighted in the HTML output (when GENERATE_TREEVIEW is enabled).
+					</div></li><li class="listitem"><div class="para">
+						导​航​树​ (GENERATE_TREEVIEW) 与​索​引​显​示​相​同​信​息​。​
+					</div></li><li class="listitem"><div class="para">
+						布​局​中​的​ navindex 部​分​也​控​制​着​导​航​树​ (navigation tree) 的​显​示​内​容​。​
+					</div></li><li class="listitem"><div class="para">
+						When a class/structs has many (&gt;15) members of the same type, only the first 10 are shown in the UML diagram.
+					</div></li><li class="listitem"><div class="para">
+						让​基​于​ JavaScript 的​搜​索​引​擎​输​出​更​加​紧​凑​。​
+					</div></li><li class="listitem"><div class="para">
+						更​新​了​法​语​翻​译​。​
+					</div></li><li class="listitem"><div class="para">
+						增​加​对​ PHP heredoc 和​ nowdoc 结​构​的​支​持​。​
+					</div></li><li class="listitem"><div class="para">
+						Added support for cross-referencing in case of operator-&gt; overloading. This includes support for std::auto_ptr,std::smart_ptr,std::unique_ptr and std::weak_ptr when BUILTIN_STL_SUPPORT is enabled.
+					</div></li></ul></div>
+
+		</div><div class="para">
+			项​目​网​站​：<a href="http://www.stack.nl/~dimitri/doxygen/index.html">http://www.stack.nl/~dimitri/doxygen/index.html</a>
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2276440">4.1.7. emacs</h4></div></div></div><a id="id2276447" class="indexterm"></a><div class="para">
+			GNU Emacs is updated to the latest prerelease from upstream, 24.0.93
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2276460">4.1.8. git</h4></div></div></div><a id="id2276466" class="indexterm"></a><div class="para">
+			<span class="package">git</span> 由​ Fedora 16 的​ 1.7.7 更​新​至​ 1.7.9。​
+		</div><div class="para">
+			There are numerous small feature additions. The interested reader should review the <a href="https://raw.github.com/gitster/git/master/Documentation/RelNotes/1.7.9.txt"> changes since 1.7.8</a> and <a href="https://raw.github.com/gitster/git/master/Documentation/RelNotes/1.7.8.txt"> changes since 1.7.7</a> in the upstream release notes.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2276498">4.1.9. rcs</h4></div></div></div><a id="id2276504" class="indexterm"></a><div class="para">
+			The venerable revision control system (<span class="package">rcs</span>) has been updated to 5.8.
+		</div><div class="para">
+			更​新​包​括​：
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					许​可​证​采​用​ GPLv3+
+				</div></li><li class="listitem"><div class="para">
+					术​语​变​化​：“​path”​ 更​改​为​ “​file name" (或​ ”​file-name“​)
+				</div></li><li class="listitem"><div class="para">
+					RCS 软​件​包​的​变​化​
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								New documentation in Info format
+							</div></li><li class="listitem"><div class="para">
+								丢​弃​配​置​选​项​：--with-diffutils
+							</div></li><li class="listitem"><div class="para">
+								Configuration more strict in some ways, more lax in others.
+							</div></li><li class="listitem"><div class="para">
+								新​配​置​选​项​：--enable-suid[=setreuid]
+							</div></li><li class="listitem"><div class="para">
+								新​配​置​选​项​：--disable-mmap
+							</div></li><li class="listitem"><div class="para">
+								新​配​置​选​项​：--enable-mailer=PROG
+							</div></li><li class="listitem"><div class="para">
+								新​配​置​选​项​：--enable-compat2
+							</div></li><li class="listitem"><div class="para">
+								在​ “​make install”​ 之​前​可​进​行​ “​make check”​
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					Bug 修​正​
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								移​除​所​有​修​订​时​移​除​所​有​编​辑​信​息​。​
+							</div></li><li class="listitem"><div class="para">
+								代​码​不​再​使​用​ mktemp。​
+							</div></li><li class="listitem"><div class="para">
+								Miscellaneous manpage tweaks / fixes.
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					其​它​变​更​
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								所​有​命​令​均​接​受​ “​--help”​ 和​ “​--version”​ 选​项​。​
+							</div></li><li class="listitem"><div class="para">
+								A string of all digits is now valid for author, state.
+							</div></li><li class="listitem"><div class="para">
+								Env var RCS_MEM_LIMIT controls stdio threshold.
+							</div></li><li class="listitem"><div class="para">
+								RCS 现​在​能​够​处​理​大​于​ 2 G 的​文​件​。​
+							</div></li><li class="listitem"><div class="para">
+								Pass-through for RCS file ‘​commitid SYMBOL’​ now builtin.
+							</div></li><li class="listitem"><div class="para">
+								RCS file top-level grammar frozen.
+							</div></li><li class="listitem"><div class="para">
+								RCS file syntax-validated earlier, completely.
+							</div></li><li class="listitem"><div class="para">
+								Possible to specify an empty log message with ci -m, rcs -m.
+							</div></li><li class="listitem"><div class="para">
+								Date option accepts some more date-only formats
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					Changes to rcsdiff 
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								New handling for option: -U N
+							</div></li><li class="listitem"><div class="para">
+								Refined "same-revision don't call diff" optimization
+							</div></li></ul></div>
+
+				</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2142800">4.1.10. subversion</h4></div></div></div><a id="id2142807" class="indexterm"></a><div class="para">
+			版​本​控​制​系​统​ <span class="package">subversion</span> 由​ 1.6.17 更​新​至​ 1.7.3。​除​了​不​少​的​细​微​变​更​外​，变​更​还​包​括​：更​好​地​利​用​ HTTP，全​新​远​程​转​储​文​件​工​具​以​及​改​进​的​控​制​台​输​出​。​建​议​读​者​访​问​ <a href="http://subversion.apache.org/docs/release-notes/1.7.html">http://subversion.apache.org/docs/release-notes/1.7.html</a> 以​了​解​有​关​改​进​的​更​多​信​息​。​
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2142833">4.1.11. bugzilla</h4></div></div></div><a id="id2142840" class="indexterm"></a><div class="para">
+			<span class="package">bugzilla</span> 4.0.4 解​决​了​上​个​版​本​中​的​很​多​安​全​问​题​。​此​外​，新​版​本​中​允​许​系​统​管​理​员​禁​用​自​动​完​成​，同​时​修​正​了​很​多​小​ bug。​详​情​请​参​考​ <a href="http://www.bugzilla.org/">http://www.bugzilla.org/</a>。​
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2142864">4.1.12. bzr</h4></div></div></div><a id="id2142871" class="indexterm"></a><div class="para">
+			Although basically a bugfix release, 2.5 of <span class="package">bzr</span> represents a new stable version from which future bugfixes will be applied.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2142888">4.1.13. highlight</h4></div></div></div><a id="id2142895" class="indexterm"></a><a id="id1985359" class="indexterm"></a><a id="id1985367" class="indexterm"></a><a id="id1985375" class="indexterm"></a><a id="id1985383" class="indexterm"></a><div class="para">
+			Fedora 17 集​成​了​ <span class="package">highlight</span> 3.7。​3.6 版​本​以​来​的​改​进​包​括​：
+			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						对​ Biferno 的​支​持​
+					</div></li><li class="listitem"><div class="para">
+						对​ RPL 的​支​持​
+					</div></li><li class="listitem"><div class="para">
+						对​ Ceylon 的​支​持​
+					</div></li><li class="listitem"><div class="para">
+						修​正​了​ Ruby 定​义​
+					</div></li><li class="listitem"><div class="para">
+						HTML font string may contain a list of fonts, which is not enclosed in quotes
+					</div></li><li class="listitem"><div class="para">
+						加​入​ --protable 命​令​行​选​项​，以​将​配​置​文​件​保​存​到​当​前​工​作​目​录​，而​不​是​ user 目​录​
+					</div></li></ul></div>
+
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1985452">4.1.14. mercurial</h4></div></div></div><a id="id1985459" class="indexterm"></a><a id="id1985467" class="indexterm"></a><div class="para">
+			<span class="package">mercurial</span> 升​级​至​ 2.1。​感​兴​趣​的​读​者​可​访​问​ <a href="http://mercurial.selenic.com/wiki/WhatsNew">http://mercurial.selenic.com/wiki/WhatsNew</a> 了​解​新​特​性​及​ bug 修​正​的​详​细​信​息​。​
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1985489">4.1.15. monodevelop</h4></div></div></div><a id="id1985495" class="indexterm"></a><a id="id1985503" class="indexterm"></a><div class="para">
+			Fedora 17 集​成​了​ <span class="package">monodevelop</span> 2.8.5。​大​量​新​特​性​包​括​：
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					项​目​管​理​
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								新​的​参​考​编​辑​ (Edit References) 对​话​框​
+							</div></li><li class="listitem"><div class="para">
+								Improved Class and Document Outline pads
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					源​代​码​编​辑​
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								配​合​语​法​高​亮​配​色​方​案​的​新​编​辑​器​
+							</div></li><li class="listitem"><div class="para">
+								新​的​默​认​语​法​高​亮​配​色​方​案​
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					Several fixes and enhancements to the Version Control support and to SVN support in particular adding a project which contains linked files to version control is now handled correctly
+				</div></li></ul></div><div class="para">
+			更​多​信​息​可​访​问​项​目​主​页​ <a href="http://monodevelop.com/">http://monodevelop.com/</a>。​
+		</div></div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Changes_for_Desktop.html"><strong>上一页</strong>3. Fedora 针​对​桌​面​用​户​所​做​的​变​更​</a></li><li class="up"><a accesskey="u" href="#"><strong>上一级</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>起始页</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Specific_Audiences.html"><strong>下一页</strong>5. Fedora 针​对​特​定​爱​好​者​所​做​的​变​更​</a></li></ul></body></html>

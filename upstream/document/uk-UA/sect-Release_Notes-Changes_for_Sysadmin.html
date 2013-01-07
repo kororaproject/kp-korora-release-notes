@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>2. Зміни у Fedora для системних адміністраторів</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta name="generator" content="publican 2.8" /><meta name="package" content="Fedora-Release_Notes-17-uk-UA-1-0" /><link rel="home" href="index.html" title="Нотатки щодо випуску" /><link rel="up" href="index.html" title="Нотатки щодо випуску" /><link rel="prev" href="sect-Release_Notes-Welcome_to_Fedora_17.html" title="1. Ласкаво просимо до Fedora 17" /><link rel="next" href="sect-Release_Notes-Changes_for_Desktop.html" title="3. Зміни у Fedora для звичайних користувачів" /></head><body><p id="title"><a class="left" href="http://www.fedoraproject.org"><img src="Common_Content/images/image_left.png" alt="Product Site" /></a><a class="right" href="http://docs.fedoraproject.org"><img src="Common_Content/images/image_right.png" alt="Documentation Site" /></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Welcome_to_Fedora_17.html"><strong>назад</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Desktop.html"><strong>далі</strong></a></li></ul><div class="section" id="sect-Release_Notes-Changes_for_Sysadmin"><div class="titlepage"><div><div keep-together.within-column="always"><h2 class="title" id="sect-Release_Notes-Changes_for_Sysadmin">2. Зміни у Fedora для системних адміністраторів</h2></div></div></div><div xml:lang="uk-UA" class="section" lang="uk-UA"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1895177">2.1. Ядро</h3></div></div></div><a id="id1780500" class="indexterm"></a><a id="id2191609" class="indexterm"></a><div class="para">
+		Fedora 17 постачається з ядром 3.3.4.
+	</div></div><div xml:lang="uk-UA" class="section" lang="uk-UA"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id2238497">2.2. Встановлення</h3></div></div></div><a id="id2051525" class="indexterm"></a><a id="id1859168" class="indexterm"></a><a id="id2126880" class="indexterm"></a><a id="id2031687" class="indexterm"></a><a id="id1831451" class="indexterm"></a><a id="id1934851" class="indexterm"></a><a id="id1650192" class="indexterm"></a><a id="id2109506" class="indexterm"></a><div class="para">
+		<div class="warning"><div class="admonition_header"><h2>Зміни у завантаження безпосереднього ядра</h2></div><div class="admonition"><div class="para">
+				У встановленні за допомогою завантаження безпосереднього ядра, зокрема PXE, сталися значні зміни. Звичайний спосіб встановлення за допомогою відповідного носія залишився незмінним.
+			</div></div></div>
+
+	</div><div class="para">
+		Досвідчені користувачі можуть скористатися для встановлення системи за допомогою мережі будь-яким з багатьох способів. Загалом кажучи, такі способи передбачають налаштування певного мінімалістичного середовища з ядром для наступного встановлення. У виконанні цієї дії під час встановлення Fedora 17 відбулися значні зміни.
+	</div><div class="para">
+		У F16 <span class="emphasis"><em>достатньо</em></span> було вказати розташування ядра і initrd, щоб встановлення можна було виконати: <code class="code">kernel/initrd</code> отримує <code class="code">stage1</code>, а <code class="code">stage1</code> отримує <code class="code">stage2</code>.
+	</div><div class="para">
+		З noloader подібне вже неможливе: під час завантаження безпосереднього ядра слід вказати розташування <code class="code">stage2</code>. Іншими словами, слід передати ядру параметр <code class="code">repo=</code> або <code class="code">stage2=</code> (або <code class="code">inst.repo=</code>, або <code class="code">inst.stage2=</code>, оскільки таким записам тепер слід надавати перевагу), який вказуватиме на сховище пакунків. Якщо образ <code class="code">stage2</code> зберігається на одному сервері, а пакунки на іншому сервері, слід використовувати <code class="code">stage2=</code>. <code class="code">repo=</code> слід користуватися, лише якщо на одному сервері зберігаються всі дані, потрібні для встановлення (образ <code class="code">stage2</code> <span class="emphasis"><em>та</em></span> всі пакунки, які слід встановити). Зауважте, що <code class="code">stage2=</code> потрібна ієрархія сховища, ви не можете просто передати шлях безпосередньо до файла <code class="filename">squashfs.img</code> (спосіб, у який працював <code class="code">stage2=</code> у F15 та попередніх версіях).
+	</div><div class="para">
+		Приклад:
+<pre class="screen">
+label linux
+kernel vmlinuz
+append initrd=initrd.img
+</pre>
+		вже не можна користуватися. Слід вказати параметр <code class="code">repo</code>:
+<pre class="screen">
+label linux
+kernel vmlinuz
+append initrd=initrd.img repo=http://dl.fedoraproject.org/pub/fedora/linux/development/17/x86_64/os/
+</pre>
+		або <code class="code">stage2</code>:
+<pre class="screen">
+label linux
+kernel vmlinuz
+append initrd=initrd.img stage2=http://my.internal.server/17/x86_64/os/
+</pre>
+		(або будь-яке інше чинне дзеркало даних).
+	</div></div><div xml:lang="uk-UA" class="section" lang="uk-UA"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1791471">2.3. Безпека</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2241950">2.3.1. Перевірка якості паролів</h4></div></div></div><a id="id2313412" class="indexterm"></a><a id="id1979627" class="indexterm"></a><div class="para">
+			У новій версії Fedora передбачено єдину придатну до налаштовування бібліотеку, <a href="https://fedorahosted.org/libpwquality"> libpwquality</a>, для перевірки якості нових паролів, використаних для доступу до облікових записів системи. Цією бібліотекою надаються загальносистемні можливості з перевірки якості паролів. Налаштувати перевірку можна за допомогою файла <code class="filename">/etc/security/pwquality.conf</code>.
+		</div><div class="para">
+			Розробники, охочі до використання програмного інтерфейсу зі створених ними програм, можуть знайти опис цього інтерфейсу у файлі <code class="filename">pwquality.h</code>, який є частиною пакунка <span class="package">libpwquality-devel</span>. Також надається обгортка мовою Python, <span class="emphasis"><em>python-pwquality</em></span>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1985318">2.3.2. SELinux Deny Ptrace</h4></div></div></div><a id="id2290098" class="indexterm"></a><div class="para">
+			Додано новий булевий перемикач SELinux, <code class="varname">deny_ptrace</code>. Рекомендується вмикання цього перемикача для всіх користувачів, які не мають наміру зневаджувати програми. За допомогою цього перемикача можна запобігти читанню областей пам’яті програм сторонніми процесами або іншим спробам нападу за допомогою засобів для зневаджування, зокрема <span class="application"><strong>ptrace</strong></span> та <span class="application"><strong>gdb</strong></span>.
+		</div><div class="para">
+			Перемикач запобігає вказаним спробам нападу, навіть якщо зловмисний процес запущено від імені адміністратора або якщо цей процес працює у одному контексті і з однією міткою SELinux з процесом-жертвою нападу. Щоб увімкнути захист, що надається <code class="varname">deny_ptrace</code>, віддайте таку команду від імені адміністратора:
+<pre class="screen">
+# setsebool -P deny_ptrace 1
+</pre>
+
+		</div><div class="para">
+			Щоб вимкнути захист, що надається <code class="varname">deny_ptrace</code>, на певний час, віддайте таку команду від імені адміністратора:
+		</div><pre class="screen">
+# setsebool deny_ptrace 0
+</pre></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2043187">2.3.3. Окремі каталоги служб у /tmp</h4></div></div></div><a id="id2043245" class="indexterm"></a><div class="para">
+			До багатьох служб, керованих <span class="package">systemd</span>, внесено зміни з метою уможливлення використання окремого каталогу <code class="filename">/tmp</code> служби. Виявилося, що привілейовані служби, що використовують <code class="filename">/tmp</code> та <code class="filename">/var/tmp</code>, у попередніх версіях були доступні для втручання користувачів без відповідних прав доступу, що потенційно могло призводити до небажаного розширення прав доступу. За допомогою окремих каталогів <code class="filename">/tmp</code> для служб можливість використання цієї вади усунено.
+		</div><div class="para">
+			Команда, яку було додано до файлів модулів <span class="package">systemd</span> змінених процесів, є такою:
+<pre class="screen">
+[Service]
+PrivateTmp=true
+</pre>
+
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1566545">2.3.4. Безпечні контейнери</h4></div></div></div><a id="id1566551" class="indexterm"></a><a id="id1566559" class="indexterm"></a><a id="id1566567" class="indexterm"></a><a id="id1566575" class="indexterm"></a><div class="para">
+			Створено новий інструмент, <span class="package">sandbox</span>, призначений для спрощення створення безпечних контейнерів <span class="package">libvirt</span>. Якщо <span class="package">sandbox</span> буде передано назву виконуваного файла, програма визначити точки монтування та дані щодо контейнера <span class="package">libvirt</span>, потрібні для запуску програми у межах контейнера. Після цього контейнер буде запущено засобами <span class="package">libvirt</span> з контекстом SELinux, який запобігає взаємодії запущеної програми з іншими процесами у системі, зокрема з іншими контейнерами, але надає змогу обмінюватися даними з системою.
+		</div><div class="para">
+			Таким чином, адміністратор може запускати декілька екземплярів служби одночасно так, щоб ці екземпляри не зашкодили роботі основної системи або роботі інших процесів системи, навіть якщо програму запущено від імені адміністратора. Щоб скористатися <span class="package">sandbox</span>, встановіть пакунок <span class="package">libvirt-sandbox</span>.
+		</div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="id2367411">2.3.4.1. krb5-workstation</h5></div></div></div><a id="id2367418" class="indexterm"></a><div class="para">
+				У Fedora 17 систему розпізнавання Kerberos оновлено до версії 1.10. У новій версії додано підтримку зміни паролів через NAT та підтримку локалізації. Додано команду <code class="command">kswitch</code>, призначену для перемикання між кешами реєстраційних даних. Додано додаткові можливості з підтримки кешування у інші програми. Вибір реєстраційних даних керується за допомогою файла <code class="filename">$HOME/.k5identity</code>.
+			</div></div></div></div><div xml:lang="uk-UA" class="section" lang="uk-UA"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id2243060">2.4. Файлові системи</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1634777">2.4.1. Великі файлові системи</h4></div></div></div><a id="id1662139" class="indexterm"></a><a id="id1670751" class="indexterm"></a><a id="id2097706" class="indexterm"></a><div class="para">
+			У Fedora 17 передбачено підтримку файлових систем з об’ємом понад 16 terabytes та типовою файловою системою (ext4). У найсвіжішій версії <span class="package">e2fsprogs</span> передбачено підтримку файлових систем об’ємом аж до 100 ТБ.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1978748">2.4.2. Шифровані файлові системи</h4></div></div></div><a id="id2186559" class="indexterm"></a><a id="id2193833" class="indexterm"></a><a id="id2191725" class="indexterm"></a><a id="id1822663" class="indexterm"></a><div class="para">
+			У Fedora 17 використовується версія 1.4.1 пакунка <span class="package">cryptsetup</span>. У цій версії вилучено застарілі виклики програмного інтерфейсу. Крім того, передбачено підтримку розташовування заголовків LUKS на окремих пристроях і створення спільних зашифрованих сегментів, які не перекриваються, на одному пристрої.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1565054">2.4.3. btrfs</h4></div></div></div><a id="id1923085" class="indexterm"></a><a id="id2231357" class="indexterm"></a><div class="para">
+			У новій версії ви не зможете скористатися <span class="package">btrfs</span> як файловою системою призначення під час встановлення системи. Цю ваду буде усунуто у Fedora 18. <span class="package">btrfs</span> у поточній версії можна буде скористатися після встановлення системи.
+		</div></div></div><div xml:lang="uk-UA" class="section" lang="uk-UA"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id2099563">2.5. Віртуалізація</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2152210">2.5.1. QEMU</h4></div></div></div><a id="id1986755" class="indexterm"></a><a id="id2052754" class="indexterm"></a><a id="id1953674" class="indexterm"></a><a id="id1952729" class="indexterm"></a><div class="para">
+			Пакунок емулятора з відкритим кодом віртуальних машин QEMU оновлено до версії 1.0. Серед помітних користувачеві змін слід відзначити такі:
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					У новій версії QEMU передбачено підтримку перенесення гостьових системи без призупинення їх роботи.
+				</div></li><li class="listitem"><div class="para">
+					Користувачі KVM нової версії зможуть запускати стандартні інструменти профілювання безпосередньо з гостьових систем KVM.
+				</div></li><li class="listitem"><div class="para">
+					У нових версіях QEMU і <span class="package">libvirt</span> передбачено передавання потоків образів. За допомогою передавання потоків образів адміністратори систем зможуть швидко запускати нові віртуальні машини на основі вже створених образів. Після запуску таким віртуальним машинам ресурси надаються повністю у фоновому режимі, відповідно до рівня їх роботи.
+				</div></li><li class="listitem"><div class="para">
+					У QEMU і KVM нових версій передбачено підтримку розширеного стосу сховищ даних на основі SCSI, <span class="package">virtio-scsi</span>. Підтримку цього нового стосу сховищ даних буде додано до <span class="emphasis"><em>libvirt</em></span> у наступних випусках.
+				</div></li></ul></div><div class="para">
+			З повним списком змін у новому випуску можна ознайомитися на основній сторінці пакунка: <a href="http://wiki.qemu.org/ChangeLog/1.0">http://wiki.qemu.org/ChangeLog/1.0</a>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1670736">2.5.2. libvirt</h4></div></div></div><a id="id1975539" class="indexterm"></a><div class="para">
+			Пакунки <span class="package">libvirt</span>, набору інструментів для взаємодії з можливостями з віртуалізації різноманітних основних систем, було оновлено до версії 0910. З повним списком змін у цьому випуску можна ознайомитися на основній сторінці проекту: <a href="http://libvirt.org/news.html">http://libvirt.org/news.html</a>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2226668">2.5.3. Керування віртуальними машинами (virt-manager)</h4></div></div></div><a id="id1565979" class="indexterm"></a><div class="para">
+			Інструмент керування віртуальними машинами було оновлено до версії 0.9.1. Окрім численних виправлень вад, у цьому випуску ви зможете скористатися такими перевагами:
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					Підтримкою додавання пристроїв переспрямовування USB.
+				</div></li><li class="listitem"><div class="para">
+					Можливістю змінити версії підтримки контролером USB стандарту до USB 2.0.
+				</div></li><li class="listitem"><div class="para">
+					Можливістю вказати тип машини для гостьових систем, що не є x86-сумісними.
+				</div></li></ul></div><div class="para">
+			З повним списком змін у новому випуску можна ознайомитися на основній сторінці пакунка: <a href="http://virt-managerorg/downloadhtml">http://virt-manager.org/download.html</a>.
+		</div></div></div><div xml:lang="uk-UA" class="section" id="sect_Cloud" lang="uk-UA"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="sect_Cloud">2.6. Хмарні обчислення</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1693010">2.6.1. CloudStack</h4></div></div></div><a id="id1687081" class="indexterm"></a><a id="id1815803" class="indexterm"></a><div class="para">
+			До складу Fedora 17 включено пакунок <span class="package">CloudStack</span>, у якому реалізовано зрілу платформу Infrastructure as a Service (IaaS або «інфраструктура як послуга»).
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1885175">2.6.2. OpenNebula</h4></div></div></div><a id="id2164014" class="indexterm"></a><a id="id2099313" class="indexterm"></a><a id="id2304133" class="indexterm"></a><a id="id2335904" class="indexterm"></a><div class="para">
+			Крім того, новим у Fedora 17 є пакунок <span class="package">OpenNebula</span>. OpenNebula є пакунком платформи IaaS зорієнтованим на віртуалізацію центру обробки даних. Керування середовищем можна здійснювати за допомогою командного рядка або графічних інтерфейсів. Реалізовано сумісність з Open Cloud Computing Interface (OCCI) Amazon EC2.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2331285">2.6.3. OpenStack</h4></div></div></div><a id="id1982664" class="indexterm"></a><a id="id1847983" class="indexterm"></a><a id="id2013555" class="indexterm"></a><a id="id2191662" class="indexterm"></a><a id="id1975573" class="indexterm"></a><a id="id1738570" class="indexterm"></a><a id="id1933613" class="indexterm"></a><a id="id1849370" class="indexterm"></a><div class="para">
+			До складу Fedora 17 включено найсвіжішу версію комплексу програм <span class="package">OpenStack</span> з кодовою назвою «Essex». До цього нового випуску включено найсвіжіші версії інтерфейсу інтернет-керування («Horizon») та роботи у віртуальній мережі («Quantum»). Використання Qpid замість RabbitMQ як програми обробки AQMP є новим у Fedora 17. Крім того, доступність libguestfs з підтримкою багатьох форматів віртуальних дисків робить комплекс OpenStack у Fedora ще гнучкішим.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1849393">2.6.4. Open vSwitch</h4></div></div></div><a id="id1849400" class="indexterm"></a><div class="para">
+			До складу Fedora 17 включено Open vSwitch, програмний комутатор мережі, призначений для забезпечення надання доступу до служб мережі віртуальним машинам. У Open vSwitch передбачено підтримку OpenFlow для полегшення керування системою.
+		</div></div></div><div xml:lang="uk-UA" class="section" lang="uk-UA"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id2028791">2.7. Сервери баз даних</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1945786">2.7.1. mysql</h4></div></div></div><a id="id2051632" class="indexterm"></a><div class="para">
+			До складу Fedora 17 включено пакунок <span class="package">mysql</span> 5.5.20, оновлений з версії 5.5.14 у Fedora 16.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2238310">2.7.2. postgresql</h4></div></div></div><a id="id2087054" class="indexterm"></a><div class="para">
+			Пакунок <span class="package">postgresql</span> оновлено до версії 9.1.2.
+		</div><div class="warning"><div class="admonition_header"><h2>Зміни, що потенційно можуть порушити сумісність</h2></div><div class="admonition"><div class="para">
+				Якщо вам потрібне перегляд <em class="parameter"><code>information_schema.referential_constraints</code></em> або стовпчики типу <em class="parameter"><code>citext</code></em>, вам варто виконати певні додаткові дії. Докладний опис можна знайти тут: <a href="http://www.postgresql.org/docs/9.1/static/release-9-1-2.html">http://www.postgresql.org/docs/9.1/static/release-9-1-2.html</a>.
+			</div></div></div><div class="para">
+			Це, в основному, випуск, спрямований на виправлення вад.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1937987">2.7.3. sqlite</h4></div></div></div><a id="id1670548" class="indexterm"></a><div class="para">
+			Пакунок <span class="package">sqlite</span> було оновлено до версії 3.7.9.
+		</div><div class="warning"><div class="admonition_header"><h2>Зміни, що потенційно можуть порушити сумісність</h2></div><div class="admonition"><div class="para">
+				Якщо ключ пошуку (права частина оператора <code class="command">MATCH</code>) у FTS4 починається з «^», цей ключ має бути першим у його полі документа.
+			</div></div></div><div class="para">
+			Було внесено багато змін та покращено роботу:
+			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						Покращення швидкодії <code class="command">CREATE INDEX</code> у великих таблицях на порядок.
+					</div></li><li class="listitem"><div class="para">
+						Покращено VFS для windows з метою запобігти конфліктам з антивірусним програмним забезпеченням.
+					</div></li><li class="listitem"><div class="para">
+						Покращена оптимізація планування запиту у разі використання ключового слова <code class="command">DISTINCT</code>.
+					</div></li><li class="listitem"><div class="para">
+						Можливість перевизначення більшої кількості системних викликів у віртуальній файловій системі unix з метою кращої підтримки пісочниць chromium.
+					</div></li><li class="listitem"><div class="para">
+						Збільшення типового розміру рядка випереджального пошуку зі 100 до 128 байтів.
+					</div></li><li class="listitem"><div class="para">
+						Покращення у модулі <code class="filename">test_quota.c</code> з метою стеження за попередньо створеними файлами.
+					</div></li><li class="listitem"><div class="para">
+						До інтерфейсу <code class="function">sqlite3_db_status()</code> додано параметри <code class="command">SQLITE_DBSTATUS_CACHE_HIT</code> та <code class="command">SQLITE_DBSTATUS_CACHE_MISS</code>.
+					</div></li><li class="listitem"><div class="para">
+						Вилучено підтримку <code class="command">SQLITE_ENABLE_STAT2</code>. Замінено покращеним варіантом, <code class="command">SQLITE_ENABLE_STAT3</code>.
+					</div></li><li class="listitem"><div class="para">
+						Покращення у допоміжній програмі <span class="application"><strong>sqlite3_analyzer</strong></span>, зокрема додавання параметрів <code class="command">--pageinfo</code> і <code class="command">--stats</code> та підтримка баз даних з ущільненням.
+					</div></li><li class="listitem"><div class="para">
+						Покращення інтерфейсу <code class="function">sqlite3_data_count()</code>. Тепер цим інтерфейсом можна скористатися для визначення, якщо <code class="command">SQLITE_DONE</code> було видимим у приготованій команді.
+					</div></li><li class="listitem"><div class="para">
+						Додано параметр керування файлами <code class="command">SQLITE_FCNTL_OVERWRITE</code>, за допомогою якого ядро SQLite повідомляє віртуальній файловій системі про те, що у результаті поточної дії буде перезаписано весь файл бази даних.
+					</div></li><li class="listitem"><div class="para">
+						Збільшено типовий об’єм отримання пам’яті для асоціативних пошуків зі 100 до 128 байтів.
+					</div></li><li class="listitem"><div class="para">
+						Покращення у плануванні запитів. Тепер вхідні і вихідні значення для виразів <code class="command">OR</code> у <code class="command">WHERE</code> може бути розкладено на складові з метою виявлення кращих індексів.
+					</div></li><li class="listitem"><div class="para">
+						Додано параметр збирання <code class="command">SQLITE_DIRECT_OVERFLOW_READ</code>, за допомогою якого базі даних можна наказати читати дані безпосередньо з файла бази даних, без використання кешу сторінок.
+					</div></li><li class="listitem"><div class="para">
+						Вилучено обмеження на величину значень точності і ширини у визначеннях форматів процедур обробки рядків сімейства <code class="function">sqlite3_mprintf()</code>.
+					</div></li></ul></div>
+
+		</div></div></div><div xml:lang="uk-UA" class="section" lang="uk-UA"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1887691">2.8. Фонові служби системи</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1966404">2.8.1. pciutils</h4></div></div></div><a id="id2051686" class="indexterm"></a><a id="id1627188" class="indexterm"></a><div class="para">
+			Пакунок <span class="package">pciutils</span>, який містить інструменти для перевірки та налаштовування пристроїв PCI, у Fedora 17 оновлено до версії 3.1.9. У цій версії передбачено підтримку роботи зі швидкістю читання даних та полів стану зв’язку для обладнання PCI Express версії стандарту 3.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1738500">2.8.2. brltty</h4></div></div></div><a id="id1739523" class="indexterm"></a><a id="id2313108" class="indexterm"></a><div class="para">
+			До складу Fedora 17 включено версію 4.3 <span class="package">brltty</span>, фонової служби «показу» даних у системі Брайля. У версії 4.3 передбачено нові можливості ведення журналу та параметри налаштування, а також розширеншу пристроїв.
+		</div></div></div><div xml:lang="uk-UA" class="section" lang="uk-UA"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id2025095">2.9. Xorg</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1677116">2.9.1. Програмна обробка для GNOME Shell</h4></div></div></div><a id="id1859088" class="indexterm"></a><a id="id1966654" class="indexterm"></a><div class="para">
+			GNOME Shell тепер можна скористатися на будь-якому обладнанні, зокрема у системах, де використовується лише програмна обробка зображення. Користувачі, які надають перевагу запасному режиму роботи GNOME, можуть увімкнути цей режим вручну за допомогою аплету панелі керування <span class="package">Інформація про систему</span>. Достатньо вибрати пункт <span class="emphasis"><em>Графіка</em></span> і встановити для пункту <span class="emphasis"><em>Примусовий запасний режим</em></span> значення <span class="emphasis"><em>❙</em></span>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2280546">2.9.2. Підтримка роботи з кратним натисканням</h4></div></div></div><a id="id1849352" class="indexterm"></a><a id="id2097846" class="indexterm"></a><div class="para">
+			У графічному сервері та бібліотеках Fedora 17 передбачено підтримку версії 2.2 розширення <span class="package">XInput</span>, зокрема підтримку кратного дотику до сенсорної панелі. Програми, у яких реалізовано відповідні можливості, у новій версії Fedora зможуть використовувати кратний дотик.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1947249">2.9.3. Підтримка плавного гортання</h4></div></div></div><a id="id1741552" class="indexterm"></a><div class="para">
+			У оновленому графічному серверів також передбачено підтримку плавного гортання для драйверів та пристроїв, які здатні використовувати гортання. Дані гортання тепер експортуються у форматі значень координат за вісями, окрім застарілих даних щодо подій натискання кнопок. Таким чином, програми зможуть використовувати дані щодо швидкості руху позиції дотику та забезпечувати плавнішу роботу під час гортання. Подібно до можливості використання кратного дотику, щоб скористатися підтримкою плавного гортання, ви маєте використовувати програмне забезпечення, у якому реалізовано використання відповідних даних від драйвера.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2225292">2.9.4. Драйвери DRI2</h4></div></div></div><a id="id1929837" class="indexterm"></a><a id="id2117266" class="indexterm"></a><a id="id1945759" class="indexterm"></a><a id="id1891466" class="indexterm"></a><a id="id1934765" class="indexterm"></a><a id="id1982602" class="indexterm"></a><a id="id2343924" class="indexterm"></a><a id="id2343932" class="indexterm"></a><a id="id2343940" class="indexterm"></a><div class="para">
+			Підтримки драйверів DRI <span class="package">i810</span>, <span class="package">mga</span>, <span class="package">r128</span>, <span class="package">savage</span>, <span class="package">sis</span>, <span class="package">tdfx</span> та <span class="package">unichrome</span> більше не передбачено, оскільки ці драйвери не включено до нової версії Mesa. Ось перелік обладнання, якого це стосується:
+		</div><a id="id2232017" class="indexterm"></a><a id="id2232029" class="indexterm"></a><a id="id2269633" class="indexterm"></a><a id="id2269645" class="indexterm"></a><a id="id2269657" class="indexterm"></a><a id="id2269669" class="indexterm"></a><a id="id2269681" class="indexterm"></a><a id="id2269693" class="indexterm"></a><a id="id1887756" class="indexterm"></a><a id="id1887768" class="indexterm"></a><a id="id1887780" class="indexterm"></a><a id="id1887792" class="indexterm"></a><a id="id1887804" class="indexterm"></a><a id="id1887816" class="indexterm"></a><a id="id2025788" class="indexterm"></a><a id="id2025800" class="indexterm"></a><a id="id2025812" class="indexterm"></a><a id="id2025824" class="indexterm"></a><a id="id2025836" class="indexterm"></a><a id="id2025844" class="indexterm"></a><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					Набори мікросхем на материнських платах Intel i810 та i815
+				</div></li><li class="listitem"><div class="para">
+					Картки Matrox MGA G200, G400, G450 та G550
+				</div></li><li class="listitem"><div class="para">
+					Картки ATI Rage 128
+				</div></li><li class="listitem"><div class="para">
+					Картки S3 Savage 3D та Savage 4
+				</div></li><li class="listitem"><div class="para">
+					Набори мікросхем SiS 300, 540, 630 та 730
+				</div></li><li class="listitem"><div class="para">
+					Картки 3dfx Voodoo 3, Voodoo 4 та Voodoo 5
+				</div></li><li class="listitem"><div class="para">
+					Набори мікросхем VIA Unichrome та Unichrome Pro
+				</div></li></ul></div><div class="para">
+			Підтримка цього обладнання відтепер здійснюватиметься за допомогою програмного драйвера <span class="package">llvmpipe</span>, який, на відміну від застарілих драйверів DRI, здатен реалізовувати можливості OpenGL 2.x.
+		</div></div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Welcome_to_Fedora_17.html"><strong>назад</strong>1. Ласкаво просимо до Fedora 17</a></li><li class="up"><a accesskey="u" href="#"><strong>Догори</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Початок</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Desktop.html"><strong>далі</strong>3. Зміни у Fedora для звичайних користувачів</a></li></ul></body></html>

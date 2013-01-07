@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>5. Зміни у Fedora для специфічних груп користувачів</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta name="generator" content="publican 2.8" /><meta name="package" content="Fedora-Release_Notes-17-uk-UA-1-0" /><link rel="home" href="index.html" title="Нотатки щодо випуску" /><link rel="up" href="index.html" title="Нотатки щодо випуску" /><link rel="prev" href="sect-Release_Notes-Changes_for_Developers.html" title="4. Зміни у Fedora для розробників" /><link rel="next" href="app-contributors.html" title="A. Автори" /></head><body><p id="title"><a class="left" href="http://www.fedoraproject.org"><img src="Common_Content/images/image_left.png" alt="Product Site" /></a><a class="right" href="http://docs.fedoraproject.org"><img src="Common_Content/images/image_right.png" alt="Documentation Site" /></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Changes_for_Developers.html"><strong>назад</strong></a></li><li class="next"><a accesskey="n" href="app-contributors.html"><strong>далі</strong></a></li></ul><div class="section" id="sect-Release_Notes-Changes_for_Specific_Audiences"><div class="titlepage"><div><div keep-together.within-column="always"><h2 class="title" id="sect-Release_Notes-Changes_for_Specific_Audiences">5. Зміни у Fedora для специфічних груп користувачів</h2></div></div></div><div xml:lang="uk-UA" class="section" lang="uk-UA"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id2345205">5.1. Наукові і технічні пакунки</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2152110">5.1.1. archimedes</h4></div></div></div><a id="id1678109" class="indexterm"></a><a id="id2337053" class="indexterm"></a><a id="id2078105" class="indexterm"></a><a id="id2069562" class="indexterm"></a><a id="id2370770" class="indexterm"></a><div class="para">
+			<span class="package">archimedes</span> — імітатор квантових механізмів у двох вимірах (за методом Монте-Карло) для напівпровідникових пристроїв. Ось список нових можливостей у Fedora 17:
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					Змінено методику обчислення ефективного квантового потенціалу
+				</div></li><li class="listitem"><div class="para">
+					Реалізовано модель потенціалу Бома
+				</div></li><li class="listitem"><div class="para">
+					Реалізовано уточнену модель Бома
+				</div></li><li class="listitem"><div class="para">
+					Виправлено і перевірено обчислення градієнта щільності
+				</div></li><li class="listitem"><div class="para">
+					Повністю реалізовано модель ефективного потенціалу
+				</div></li><li class="listitem"><div class="para">
+					Створено нові тести
+				</div></li><li class="listitem"><div class="para">
+					Перевірено параболічну, повну енергетичні зони та енергетичну зону Кане
+				</div></li><li class="listitem"><div class="para">
+					Повне врахування всіх параметрів енергетичної зони для всіх матеріалів
+				</div></li><li class="listitem"><div class="para">
+					Можна вмикати і вимикати врахування розсіяних фононів
+				</div></li><li class="listitem"><div class="para">
+					Підтримка підходу повної енергетичної зони
+				</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1868330">5.1.2. gnome-chemistry-utils</h4></div></div></div><a id="id1868336" class="indexterm"></a><a id="id1868344" class="indexterm"></a><a id="id1868352" class="indexterm"></a><a id="id1613803" class="indexterm"></a><a id="id1613811" class="indexterm"></a><a id="id1613819" class="indexterm"></a><a id="id1613827" class="indexterm"></a><a id="id1613835" class="indexterm"></a><div class="para">
+			Пакунок <span class="package">gnome-chemistry-utils</span> оновлено до найсвіжішої тестової версії.
+		</div><div class="para">
+			Основні зміни:
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					GChem3d:
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								Імпортування даних з InChI або SMILES.
+							</div></li><li class="listitem"><div class="para">
+								Експортування даних до GChemPaint та GChemCalc.
+							</div></li><li class="listitem"><div class="para">
+								Створення даних у форматах InChI, InChiKey та SMILES.
+							</div></li><li class="listitem"><div class="para">
+								Додано доступ до баз даних.
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					GChemPaint:
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								До дужок у записі молекули можна додавати стехіометричний коефіцієнт.
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					GCrystal:
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								Можна використовувати позначення декількох об’єктів у діалогових вікна атомів та ліній.
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					GSpectrum:
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								Уможливлено використання форматування у заголовках списків та позначках осей.
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					Компонент Goffice:
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								Додано підтримку кристалічних структур.
+							</div></li></ul></div>
+
+				</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1959142">5.1.3. gnuplot</h4></div></div></div><a id="id1959148" class="indexterm"></a><div class="para">
+			Окрім виправлення багатьох вад, у <span class="package">gnuplot</span> 4.4.4 слід відзначити такі зміни:
+			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						для стилю boxxyerrors передбачено можливість зміни кольору
+					</div></li><li class="listitem"><div class="para">
+						у splot у pm3d тепер можна змінювати колір RGB
+					</div></li><li class="listitem"><div class="para">
+						«nonuniform matrix» позначає дані ASCII з явним визначенням x, y
+					</div></li><li class="listitem"><div class="para">
+						columnhead(N) є функцією, що повертає рядок, а не ключовим словом
+					</div></li><li class="listitem"><div class="para">
+						Поділ креслень у даних формату SVG за допомогою &lt;g id="Plot_#"&gt;&lt;заголовок&gt;...
+					</div></li><li class="listitem"><div class="para">
+						xticlabels() працює як з ASCII, так і з двійковими файлами даних
+					</div></li><li class="listitem"><div class="para">
+						«set key maxrows» тепер можна застосовувати не лише до двовимірних креслень, а і до просторових
+					</div></li></ul></div>
+
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2037218">5.1.4. lapack</h4></div></div></div><a id="id2037225" class="indexterm"></a><a id="id2037233" class="indexterm"></a><div class="para">
+			Пакунок <span class="package">lapack</span> оновлено до версії 3.4.0.
+			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						xGEQRT: QR-розклад на множники (покращено інтерфейс). xGEQRT аналогічна до xGEQRF з модифікованим інтерфейсом, який уможливлює кращу швидкодію, якщо блоковані віддзеркалення має бути повторно використано. Супутні підпрограми xGEMQRT використовують віддзеркалення.
+					</div></li><li class="listitem"><div class="para">
+						xGEQRT3: рекурсивний QR-розклад. Рекурсивний QR-розклад уможливлює невикористання кешу та високу швидкодію для високих та вузьких матриць.
+					</div></li><li class="listitem"><div class="para">
+						xTPQRT: послідовні QR-ядра з униканням обміну даними. Ці підпрограми корисні для оновлення QR-розкладу і використовуються у послідовному і паралельному QR-розкладі з униканням обміну даними. Ці підпрограми підтримують загальний випадок трикутника на п’ятикутнику, з частинними випадками так званого трикутника на трикутнику та трикутника на квадраті. Це права версія підпрограми і підпрограми поділено на блоки. Розмір T-матриць та блоків є частиною інтерфейсу. Супутні підпрограми xTPMQRT використовують віддзеркалення.
+					</div></li><li class="listitem"><div class="para">
+						LAPACKE — стандартний програмний інтерфейс мовою C для LAPACK. З LAPACK 3.3.0 до LAPACK включено нові інтерфейси C. З випуском LAPACK 3.4.0 LAPACKE безпосередньо інтегровано до бібліотеки LAPACK і збагачено повним набором підпрограм LAPACK.
+					</div></li></ul></div>
+
+		</div><div class="para">
+			Докладніший опис можна знайти на сторінці <a href="http://www.netlib.org/lapack/lapack-3.4.0.html">http://www.netlib.org/lapack/lapack-3.4.0.html</a>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2037311">5.1.5. mapnik</h4></div></div></div><a id="id2037318" class="indexterm"></a><div class="para">
+			Версія 2.0.0 пакунка <span class="package">mapnik</span> є основним оновленням програми з численними змінами. Щоб ознайомитися з повним списком змін, відвідайте <a href="https://github.com/mapnik/mapnik/wiki/Release2.0.0">цю сторінку</a>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1836172">5.1.6. mathomatic</h4></div></div></div><a id="id1836179" class="indexterm"></a><div class="para">
+			З повним списком змін у <span class="package">mathomatic</span> 15.7.3 можна ознайомитися <a href="http://www.mathomatic.org/NEWS">тут</a>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1836201">5.1.7. octave</h4></div></div></div><a id="id1836208" class="indexterm"></a><a id="id1836216" class="indexterm"></a><a id="id1836224" class="indexterm"></a><div class="para">
+			Пакунок з мовою для виконання обчислень <span class="package">octave</span> було оновлено до версії 3.6.0. Щоб ознайомитися з новими можливостями, будь ласка, прочитайте <a href="http://www.gnu.org/software/octave/NEWS-3.6.html">цю сторінку</a>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1836251">5.1.8. paraview</h4></div></div></div><a id="id1836258" class="indexterm"></a><div class="para">
+			Пакунок з паралельної візуалізації <span class="package">paraview</span> було оновлено до версії 3.12.0. Нотатки щодо випуску можна знайти на <a href="http://www.kitware.com/news/home/browse/367?siteid=12">цій сторінці</a>
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1836281">5.1.9. pspp</h4></div></div></div><a id="id1836288" class="indexterm"></a><a id="id1836296" class="indexterm"></a><div class="para">
+			Зміни у версії 0.7.8 <span class="package">pspp</span>:
+			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						Нові команди:
+						<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+									ADD FILES
+								</div></li><li class="listitem"><div class="para">
+									CORRELATIONS
+								</div></li><li class="listitem"><div class="para">
+									DATAFILE ATTRIBUTES
+								</div></li><li class="listitem"><div class="para">
+									DATASET ACTIVATE
+								</div></li><li class="listitem"><div class="para">
+									DATASET CLOSE
+								</div></li><li class="listitem"><div class="para">
+									DATASET COPY
+								</div></li><li class="listitem"><div class="para">
+									DATASET DECLARE
+								</div></li><li class="listitem"><div class="para">
+									DATASET DISPLAY
+								</div></li><li class="listitem"><div class="para">
+									DATASET NAME
+								</div></li><li class="listitem"><div class="para">
+									MATCH FILES
+								</div></li><li class="listitem"><div class="para">
+									MRSETS
+								</div></li><li class="listitem"><div class="para">
+									PRESERVE і RESTORE
+								</div></li><li class="listitem"><div class="para">
+									QUICK CLUSTER
+								</div></li><li class="listitem"><div class="para">
+									RELIABILITY
+								</div></li><li class="listitem"><div class="para">
+									ROC
+								</div></li><li class="listitem"><div class="para">
+									SAVE TRANSLATE до файлів з відокремленням значень комами і табуляціями
+								</div></li><li class="listitem"><div class="para">
+									UPDATE
+								</div></li><li class="listitem"><div class="para">
+									VARIABLE ATTRIBUTES
+								</div></li></ul></div>
+
+					</div></li><li class="listitem"><div class="para">
+						Зміни у командах попередніх версій:
+						<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+									AUTORECODE містить нову підкоманду GROUP.
+								</div></li><li class="listitem"><div class="para">
+									CROSSTABS було повторно реалізовано з метою виправлення численних вад.
+								</div></li><li class="listitem"><div class="para">
+									Було повторно реалізовано команду DO REPEAT. У новій версії, якщо DO REPEAT містить команду INCLUDE або INSERT, до включеного файла не буде застосовано заміни.
+								</div></li><li class="listitem"><div class="para">
+									HOST оновлено для використання найновішої версії синтаксису.
+								</div></li><li class="listitem"><div class="para">
+									INCLUDE та INSERT містять нову підкоманду ENCODING.
+								</div></li><li class="listitem"><div class="para">
+									MISSING VALUES у новій версії може призначати значення, яких не вистачає, до змінних типу довгого рядка.
+								</div></li><li class="listitem"><div class="para">
+									NPAR TESTS містить нові підкоманди KRUSKAL-WALLIS, SIGN, WILCOXON та RUNS.
+								</div></li><li class="listitem"><div class="para">
+									SET і SHOW більше не містять підкоманд ENDCMD, NULLINE, PROMPT, CPROMPT і DPROMPT. Типовими є тепер фіксовані значення.
+								</div></li><li class="listitem"><div class="para">
+									VALUE LABELS у новій версії може призначати мітки значень, яких не вистачає, до змінних типу довгого рядка.
+								</div></li></ul></div>
+
+					</div></li><li class="listitem"><div class="para">
+						Інші зміни у мові:
+						<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+									Нові команди DATASET замінили розширення «порожнього файла» PSPP, підтримки якого більше не передбачено.
+								</div></li><li class="listitem"><div class="para">
+									У рядках тепер можна використовувати довільні символи Unicode, вказані у шістнадцятковій системі, ось так: U'hhhh'. Наприклад, символ Unicode U+1D11E, скрипковий ключ, можна вказати у форматі U'1D11E'.
+								</div></li><li class="listitem"><div class="para">
+									У попередніх версіях PSPP рядок, вказаний у шістнадцятковому форматі синтаксичної конструкції X'hh', шістнадцяткові цифри виражалися байтами у локальному кодуванні. У новій версії PSPP синтаксичні конструкції X'hh' завжди відповідають символам у кодуванні UTF-8.
+								</div></li></ul></div>
+
+					</div></li><li class="listitem"><div class="para">
+						Покращення у графічному інтерфейсі користувача PSPPIRE:
+						<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+									Додано підтримку символів поза ASCII у рядках, мітках і назвах змінних.
+								</div></li><li class="listitem"><div class="para">
+									Доступна функція «Split Window» («Розділити вікно»), що спрощує перегляд різних частин великого файла даних.
+								</div></li><li class="listitem"><div class="para">
+									Файли даних може бути відкрито визначенням назви як першого аргументу. Це означає, що у належним чином налаштованій стільниці подвійне клацання на піктограмі призведе до відкриття файла.
+								</div></li></ul></div>
+
+					</div></li><li class="listitem"><div class="para">
+						Зміни у виведенні даних:
+						<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+									У новому драйвері виведення даних «cairo» передбачено підтримку виведення у форматах PostScript, PDF і SVG. Його функціональні можливості є надбудовою над можливостями драйвера «postscript», який було вилучено. Вам слід встановити Cairo і Pango, щоб зібрати драйвер «cairo».
+								</div></li><li class="listitem"><div class="para">
+									Діаграми створюються за допомогою Cairo і Pango замість libplot. Без цих бібліотек нові графічні можливості не працюватимуть. Якщо у вашій системі не встановлено Cairo і Pango, вам слід запустити «configure» з параметром --without-cairo.
+								</div></li><li class="listitem"><div class="para">
+									У драйвері виведення звичайного тексту тепер належним чином підтримується багатобайтові символи UTF-8, зокрема символи подвійної ширини та комбіновані акценти.
+								</div></li></ul></div>
+
+					</div></li><li class="listitem"><div class="para">
+						У програмі «pspp» передбачено новий параметр, --batch (або -b), який переводить програму у пакетний режим. У попередніх версіях PSPP це синтаксичний режим був типовим. У новій версії типовим є новий режим синтаксису, «auto». У режимі «auto» PSPP обробляє більшість синтаксичних файлів належним чином, незалежно від передбаченого у них режиму синтаксису.
+					</div></li><li class="listitem"><div class="para">
+						У програмі «pspp» передбачено новий параметр, --syntax-encoding, який визначає кодування синтаксичних файлів, перелічених у командному рядку, а також типове кодування синтаксичних файлів, включених за допомогою INCLUDE або INSERT. Типовим є прийняття кодування системної локалі, UTF-8, UTF-16 або UTF-32. Програма автоматично визначає кодування системного файла.
+					</div></li><li class="listitem"><div class="para">
+						Новий модуль Perl надає змогу програмам мовою Perl читати і записувати системні файли PSPP.
+					</div></li><li class="listitem"><div class="para">
+						До підручника користувача додано главу з настановами.
+					</div></li></ul></div>
+
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2158855">5.1.10. R</h4></div></div></div><a id="id2158862" class="indexterm"></a><a id="id2158870" class="indexterm"></a><div class="para">
+			Версію пакунка мови обробки статистичних даних <span class="package">R</span> було оновлено до версії <span class="emphasis"><em>December Snowflakes</em></span>. Основні зміни:
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					Нові можливості:
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								Еталонні класи тепер зберігають запис щодо полів, які було заблоковано. $lock() без аргументів повертає назви заблокованих полів.
+							</div></li><li class="listitem"><div class="para">
+								HoltWinters() повертає попередження, а не повідомлення про помилку у разі деяких помилок оптимізації (де відповідь може бути корисною).
+							</div></li><li class="listitem"><div class="para">
+								tools::dependsOnPkg() у новій версії може приймати скорочення для всіх залежностей = "all".
+							</div></li><li class="listitem"><div class="para">
+								parallel::clusterExport() тепер уможливлює визначення середовища, з якого слід виконувати експортування.
+							</div></li><li class="listitem"><div class="para">
+								tempfile() у середовищах Unix тепер бере до уваги ідентифікатор процесу. Таке врахування потрібне у багатоядерних системах (як частині систем паралельного розрахунку), оскільки основний процес і всі дочірні процеси спільно використовують теку тимчасових даних і можуть спільно використовувати потік псевдовипадкових чисел C. Крім того, два дочірніх процеси можуть викликати tempfile() одночасно.
+							</div></li><li class="listitem"><div class="para">
+								Параметр print у драйвері RweaveLatex() Sweave тепер емулює автодрук а не друк (відмінність можна помітити для об’єкта S4: буде викликано show(), а не print()).
+							</div></li><li class="listitem"><div class="para">
+								filled.contour() тепер може приймати нескінченні значення. У попередніх версіях такі значення могли призвести до некоректних графічних файлів (файлів, що містили значення NaN).
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					Встановлення пакунків:
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								R CMD INSTALL у новій версії виконує тестове завантаження всіх підархітектур для коду, який буде зібрано (не лише коду основної архітектури).
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					Інструменти:
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								Під час перевірки прикладів, для яких передбачено декілька архітектур R CMD у новій версії використовує окремий каталог examples_arch для кожної з підархітектур і зберігає виведені дані до файла pkgname-Ex_arch.Rout. Приклади деяких з пакунків слід запускати у порожньому каталозі.
+							</div></li></ul></div>
+
+				</div></li></ul></div><div class="para">
+			З повним списком змін та виправлень вад можна ознайомитися <a href="https://stat.ethz.ch/pipermail/r-announce/2011/000548.html">тут</a>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1899927">5.1.11. R-qcc</h4></div></div></div><a id="id1899934" class="indexterm"></a><a id="id1899942" class="indexterm"></a><a id="id1899950" class="indexterm"></a><a id="id1899957" class="indexterm"></a><a id="id1899965" class="indexterm"></a><a id="id1899973" class="indexterm"></a><a id="id1899981" class="indexterm"></a><a id="id1899989" class="indexterm"></a><a id="id1899997" class="indexterm"></a><a id="id1900005" class="indexterm"></a><div class="para">
+			<span class="package">R-qcc</span> є новим пакунком у Fedora. <span class="emphasis"><em>R-qcc</em></span> — пакунок <span class="emphasis"><em>R</em></span>, який містить широкий набір інструментів контролю якості та контролю статистичної обробки, зокрема такі інструменти:
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					Креслення карт контролю якості Шухарта.
+				</div></li><li class="listitem"><div class="para">
+					Креслення графіків Cusum та EMWA на основі неперервного потоку даних
+				</div></li><li class="listitem"><div class="para">
+					Креслення кривих робочих характеристик
+				</div></li><li class="listitem"><div class="para">
+					Виконання аналізу можливостей процесу
+				</div></li><li class="listitem"><div class="para">
+					Креслення діаграм Парето та діаграм Ісікави
+				</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1900075">5.1.12. R-qtl</h4></div></div></div><a id="id1900082" class="indexterm"></a><div class="para">
+			Пакунок <span class="package">R-qtl</span> було оновлено до версії 1.22.21. Серед основних змін оновлення plot.map з метою уможливлення обробки пар карт з позначками у різному порядку (або позначками, які є лише на одній карті) та оновлення scantwo з метою уможливити аналіз індивідуальних пар хромосом та перевпорядкування способу, у який виконуються переставляння у scantwo (спочатку підсумовування кожної пари хромосом, потім загальне).
+		</div><div class="para">
+			З повним списком змін та покращень можна ознайомитися <a href="http://www.rqtl.org/STATUS.txt">тут</a>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1900115">5.1.13. R-zoo</h4></div></div></div><a id="id1900122" class="indexterm"></a><div class="para">
+			Пакунок <span class="package">R-zoo</span> оновлено з версії 1.6 до версії 1.7.6. Серед основних змін такі:
+		</div><div class="para">
+			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						Вилучено залежність від fCalendar. Ця залежність зберігалася лише з історичних міркувань. timeDate з zoo можна використовувати замість fCalendar десь так: vignette("zoo", package = "zoo")
+					</div></li><li class="listitem"><div class="para">
+						у read.zoo index.column може посилатися на назви або номери стовпчиків (у попередніх версіях можна було використовувати лише номери)
+					</div></li><li class="listitem"><div class="para">
+						повний експорт всіх методів as.Date.*, отже користуватися ними стало простіше (тобто додаткова реєстрація не потрібна) з as.Date() з інших пакунків (зокрема base).
+					</div></li><li class="listitem"><div class="para">
+						read.zoo() отримує аргумент text= подібно до того, як у новій read.table()
+					</div></li><li class="listitem"><div class="para">
+						До методу merge() додано новий аргумент drop=TRUE. Якщо буде встановлено drop=FALSE, це надасть змогу об’єднувати послідовності з нульового стовпчика з векторами zoo у одну матрицю з одним стовпчиком. Така поведінка є тепер типовою для методу cbind().
+					</div></li><li class="listitem"><div class="para">
+						Покращення у методі $&lt;-. Тепер значення z$a &lt;- працюватиме, навіть якщо z є послідовністю zoo без даних.
+					</div></li><li class="listitem"><div class="para">
+						as.Date.numeric(x, origin = "0000-00-00") у новій версії є прийнятним і еквівалентним до origin = as.Date("0000-01-01") - 1. (для дат MATLAB)
+					</div></li><li class="listitem"><div class="para">
+						Було додано метод [&lt;-. Його робота тепер сумісна з методом [.
+					</div></li><li class="listitem"><div class="para">
+						Типовим значенням аргументу check.names метода merge() тепер є FALSE.
+					</div></li><li class="listitem"><div class="para">
+						Додано новий метод as.zoo() для об’єктів типу «matrix» з метою збереження назв стовпчиків. Крім того, новий метод «data.frame» транслює метод «matrix».
+					</div></li><li class="listitem"><div class="para">
+						У rollapply() ширина може бути списком, компоненти якого є відступами. Підтримки аргументу ascending більше не передбачено, замість нього слід використовувати список ширин.
+					</div></li><li class="listitem"><div class="para">
+						У rollapply() передбачено нові аргументи, partial і fill. Аргумент na.pad тепер вважається застарілим.
+					</div></li><li class="listitem"><div class="para">
+						rollapply() з FUN = mean більше не викликає rollmean, якщо у даних є значення NA.
+					</div></li><li class="listitem"><div class="para">
+						додано аргумент yax.flip argument до методу plot() для об’єктів «zoo» з метою збереження сумісності з методом «ts».
+					</div></li><li class="listitem"><div class="para">
+						Новий метод vignette("zoo-read") додає read.zoo(), зокрема декілька нових можливостей (додаткову інформацію наведено нижче).
+					</div></li><li class="listitem"><div class="para">
+						у read.zoo(), якщо не вказано FUN, але вказано FUN2, замість FUN буде застосовано FUN2. Раніше у цьому випадку FUN2 просто ігнорувалася. Крім того, аргументами format і tz може бути NULL (у цьому випадку вважатиметься, що аргументи пропущено).
+					</div></li><li class="listitem"><div class="para">
+						read.zoo() може приймати вектор з назв файлів. Кожен з таких файлів буде прочитано і повернуто єдиний об’єкт zoo, який буде сформовано об’єднанням даних з окремих файлів.
+					</div></li><li class="listitem"><div class="para">
+						Якщо у read.zoo() пропущено FUN, а index.column визначає декілька стовпчиків, стовпчики вставляються разом з відокремленням пробілами, обробка продовжується так, наче всі ці стовпчики були єдиним стовпчиком.
+					</div></li><li class="listitem"><div class="para">
+						у read.zoo() index.column = 0 тепер є коректним значення. У разі його використання індексом вважатиметься 1, 2, 3...
+					</div></li><li class="listitem"><div class="para">
+						read.zoo() у новій версії може читати об’єкт zoo з індексом, але без даних
+					</div></li><li class="listitem"><div class="para">
+						нові обгортки roll*r() з типовим значенням вирівнювання "right" («праворуч»).
+					</div></li><li class="listitem"><div class="para">
+						нова функція na.fill().
+					</div></li><li class="listitem"><div class="para">
+						нова функція na.StructTS() для періодичної інтерполяції NA з використанням StructTS() R.
+					</div></li><li class="listitem"><div class="para">
+						додано метод rev() method для об’єктів zooreg.
+					</div></li><li class="listitem"><div class="para">
+						додано метод transform().
+					</div></li><li class="listitem"><div class="para">
+						до загального методу as.zooreg() та пов’язаних з ним методів додано аргумент «frequency».
+					</div></li></ul></div>
+
+		</div><div class="para">
+			З повним списком змін можна ознайомитися <a href="http://cran.r-project.org/web/packages/zoo/NEWS">тут</a>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1928553">5.1.14. veusz</h4></div></div></div><a id="id1928560" class="indexterm"></a><div class="para">
+			Основні зміни у пакунку <span class="package">veusz</span> 1.14:
+			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						Додано інтерактивний підручник
+					</div></li><li class="listitem"><div class="para">
+						Точки на графіках може бути розфарбовано на основі іншого набору даних, а на віджеті панелі кольорів буде показано масштаб
+					</div></li><li class="listitem"><div class="para">
+						покращено імпортування у форматі CSV
+						<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+									покращено можливості з виявлення типів даних
+								</div></li><li class="listitem"><div class="para">
+									використання місцевих форматів запису чисел та дат
+								</div></li><li class="listitem"><div class="para">
+									режими одного, декількох та жодного заголовка
+								</div></li><li class="listitem"><div class="para">
+									параметри, за допомогою якого можна наказати програмі пропустити певну кількість рядків на початку файла
+								</div></li><li class="listitem"><div class="para">
+									краща обробка пропущених значень
+								</div></li></ul></div>
+
+					</div></li><li class="listitem"><div class="para">
+						можливість імпортування даних з буфера обміну даними
+					</div></li><li class="listitem"><div class="para">
+						значне зменшення розміру виведених файлів SVG
+					</div></li><li class="listitem"><div class="para">
+						у стандартному інструменті імпортування даних дескриптор можна не вказувати. У такому разі буде створено набір даних з назвами colX.
+					</div></li><li class="listitem"><div class="para">
+						можна інтерактивно змінювати діапазон креслення за вісями
+					</div></li><li class="listitem"><div class="para">
+						якщо дані вісі вказано у форматі дата-час, мінімальне і максимальне значення також буде показано у форматі дата-час
+					</div></li><li class="listitem"><div class="para">
+						віджет ImageFile може містити дані зображення, вбудовані до файла документа
+					</div></li><li class="listitem"><div class="para">
+						інтерполяція віджета може оновлювати параметри інтерполяції та якість інтерполяції для віджета мітки
+					</div></li><li class="listitem"><div class="para">
+						уможливлено редагування двовимірних наборів даних у діалоговому вікні редагування даних
+					</div></li><li class="listitem"><div class="para">
+						до контекстного меню панелі навігації наборами даних додано пункти копіювання та вставлення наборів даних
+					</div></li></ul></div>
+
+		</div><div class="para">
+			З повним списком змін можна ознайомитися <a href="http://home.gna.org/veusz/releasenotes/1.14.txt">тут</a>.
+		</div></div></div><div xml:lang="uk-UA" class="section" lang="uk-UA"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id2096664">5.2. Схемотехніка</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1978125">5.2.1. gerbv</h4></div></div></div><a id="id1966464" class="indexterm"></a><a id="id1883498" class="indexterm"></a><div class="para">
+			Пакунок <span class="package">gerbv</span> оновлено з версії 2.5.0 до версії 2.6.0. Серед основних змін слід відзначити такі:
+			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						Вищу точність
+					</div></li><li class="listitem"><div class="para">
+						Підтримку панелізації
+					</div></li><li class="listitem"><div class="para">
+						Виправлення багатьох вад
+					</div></li></ul></div>
+
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2256270">5.2.2. gtkwave</h4></div></div></div><a id="id1983152" class="indexterm"></a><div class="para">
+			Пакунок <span class="package">gtkwave</span> (<a href="http://gtkwave.sourceforge.net">http://gtkwave.sourceforge.net</a>) оновлено з версії 3.3.25 до версії 3.3.31.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2117275">5.2.3. kicad</h4></div></div></div><a id="id2070584" class="indexterm"></a><div class="para">
+			Пакунок <span class="package">kicad</span> оновлено з версії 2011.07.12 до версії 2012.01.19. Сайт проекту розташовано <a href="https://launchpad.net/kicad">тут</a>
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1859113">5.2.4. pcb</h4></div></div></div><a id="id1533156" class="indexterm"></a><a id="id1650180" class="indexterm"></a><div class="para">
+			Пакунок <span class="package">pcb</span> оновлено з версії 0.20100929 до версії 0.20110918. Окрім численних виправлень вад, внесено такі значні зміни:
+			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						Внутрішній простір координат тепер є метричним. Це має виправити ваду з розташуванням виступів у метричній сітці. Крім того, передбачено можливість визначення одиниць майже для всіх координат на друкованій схемі. Приклад: 5.4in, 10cm, 0.55mm.
+					</div></li><li class="listitem"><div class="para">
+						Передбачено новий параметр збирання, --enable-coord64, для примусового використання 64-бітових типів координат у 32-бітових системах (якщо вам потрібна схема з лінійним розміром більше 1 метра). Точність обчислень у програмі складає 1 нанометр.
+					</div></li><li class="listitem"><div class="para">
+						Новий віджет GTK для перегляду і вибору шарів та інші покращення у графічному інтерфейсі.
+					</div></li><li class="listitem"><div class="para">
+						Діалогове вікно GTK з попередженням щодо того, що файл *.pcb було змінено на диску.
+					</div></li><li class="listitem"><div class="para">
+						Покращені алгоритми прилипання до сітки.
+					</div></li><li class="listitem"><div class="para">
+						Вибір і формування звітів щодо мереж за назвами.
+					</div></li><li class="listitem"><div class="para">
+						Вилучено можливість автоматичного панорамування.
+					</div></li><li class="listitem"><div class="para">
+						Можливе збільшення масштабу областей за межами друкованої плати.
+					</div></li><li class="listitem"><div class="para">
+						У файлах PCB більше не зберігається даних, за якими можна було визначити особу того, хто їх створив.
+					</div></li><li class="listitem"><div class="para">
+						Можливість зворотного перемикання міжшарових отворів з незаповнених на заповнені.
+					</div></li><li class="listitem"><div class="para">
+						У засобі експортування до Gerber передбачено можливості включення ескізів на інших рівнях.
+					</div></li><li class="listitem"><div class="para">
+						Редаговані файли відбитків зберігаються як відбитки, а не файли pcb.
+					</div></li><li class="listitem"><div class="para">
+						Діалогове вікно поступу для автоматичної маршрутизації.
+					</div></li><li class="listitem"><div class="para">
+						Заборона вилучення останнього верхнього або нижнього шару.
+					</div></li><li class="listitem"><div class="para">
+						Доріжки з отворами можуть перекриватися.
+					</div></li></ul></div>
+
+		</div><div class="para">
+			Щоб дізнатися більше, зокрема ознайомитися зі списком виправлених вад, зверніться до <a href="http://pcb.geda-project.org/news.html">цієї сторінки</a>.
+		</div></div></div><div xml:lang="uk-UA" class="section" id="sect-Embedded_Development" lang="uk-UA"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="sect-Embedded_Development">5.3. Розробка для вбудованих систем</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1976646">5.3.1. avarice</h4></div></div></div><a id="id1893857" class="indexterm"></a><a id="id2097748" class="indexterm"></a><a id="id2077960" class="indexterm"></a><a id="id2077212" class="indexterm"></a><a id="id1822698" class="indexterm"></a><a id="id2167169" class="indexterm"></a><div class="para">
+			Пакунок <span class="package">avarice</span> було оновлено з версії 2.10 до версії 2.12. Переваги оновленої версії:
+			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						Нові пристрої:
+						<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+									ATxmega256A3
+								</div></li><li class="listitem"><div class="para">
+									ATxmega16D4
+								</div></li><li class="listitem"><div class="para">
+									ATtiny4313
+								</div></li></ul></div>
+
+					</div></li><li class="listitem"><div class="para">
+						Реалізації зневаджування PDI (JTAGICEmkII / Xmega).
+					</div></li><li class="listitem"><div class="para">
+						Виправлення вад
+					</div></li></ul></div>
+
+		</div><div class="para">
+			Додаткові відомості можна знайти на сайті проекту: <a href="http://sourceforge.net/projects/avarice">http://sourceforge.net/projects/avarice</a>
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1841535">5.3.2. avr-gcc</h4></div></div></div><a id="id2229540" class="indexterm"></a><div class="para">
+			Відповідно до версії <span class="package">gcc</span>, <span class="emphasis"><em>avr-gcc</em></span> та <span class="emphasis"><em>avr-gcc-c++</em></span> було оновлено до версії 4.6.2.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2229565">5.3.3. avrdude</h4></div></div></div><a id="id2314413" class="indexterm"></a><a id="id2314421" class="indexterm"></a><a id="id2314433" class="indexterm"></a><a id="id2314445" class="indexterm"></a><a id="id2314457" class="indexterm"></a><a id="id1882558" class="indexterm"></a><a id="id1882569" class="indexterm"></a><a id="id1882581" class="indexterm"></a><a id="id1882593" class="indexterm"></a><a id="id1882604" class="indexterm"></a><div class="para">
+			До складу Fedora 17 включено версію 5.11.1 пакунка <span class="package">avrdude</span>.
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					Підтримка нових пристроїв:
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								ATmega88P/168P
+							</div></li><li class="listitem"><div class="para">
+								ATmega8U2/16U2/32U2
+							</div></li><li class="listitem"><div class="para">
+								ATtiny4313
+							</div></li></ul></div>
+
+				</div></li></ul></div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					Підтримка нових програматорів:
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								Програмування TPI за допомогою програматорів bitbang (послідовних і паралельних)
+							</div></li><li class="listitem"><div class="para">
+								Засновані на FT2232 (та сумісні) програматори (режим bitbang MPSSE)
+							</div></li><li class="listitem"><div class="para">
+								Середовище Wiring (<a href="http://wiring.org.co">http://wiring.org.co</a>)
+							</div></li><li class="listitem"><div class="para">
+								Завантажувач butterfly-style пристрою Mikrokopter.de
+							</div></li></ul></div>
+
+				</div></li></ul></div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					Виправлення вад
+				</div></li></ul></div></div></div><div xml:lang="uk-UA" class="section" lang="uk-UA"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1972034">5.4. Аматорське радіомовлення</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1853920">5.4.1. chirp</h4></div></div></div><a id="id2043562" class="indexterm"></a><a id="id1912587" class="indexterm"></a><a id="id1566458" class="indexterm"></a><a id="id1564417" class="indexterm"></a><div class="para">
+			<span class="package">chirp</span> — програма для програмування різноманітних варіантів радіостанцій. Частоти, поділи, тони тощо вводяться у форму, подібну до електронної таблиці і вивантажуються на радіостанцію. Також передбачено читання даних з пам’яті радіостанції. Передбачено підтримку можливостей DStar. <span class="emphasis"><em>chirp</em></span> є новим пакунком у цьому випуску Fedora.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1934728">5.4.2. fldigi</h4></div></div></div><a id="id1679779" class="indexterm"></a><a id="id1965469" class="indexterm"></a><a id="id1899769" class="indexterm"></a><a id="id2013484" class="indexterm"></a><a id="id1960759" class="indexterm"></a><a id="id1564456" class="indexterm"></a><a id="id2208691" class="indexterm"></a><a id="id1899272" class="indexterm"></a><a id="id1929922" class="indexterm"></a><div class="para">
+			Пакунок <span class="package">fldigi</span> оновлено до версії 3.21.27 з версії 3.21.7. До програми внесено багато відносно незначних (для більшості користувачів) змін. Серед цих змін можна відзначити:
+			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						Додаткові варіанти вибору Olivia
+					</div></li><li class="listitem"><div class="para">
+						Сповіщення про контакти
+					</div></li><li class="listitem"><div class="para">
+						Покращення у діалогових вікнах налаштовування
+					</div></li><li class="listitem"><div class="para">
+						Можливість експортування журналу у форматі ADIF
+					</div></li><li class="listitem"><div class="para">
+						Інтерфейс до fllog
+					</div></li><li class="listitem"><div class="para">
+						Багато нових та покращених макросів
+					</div></li><li class="listitem"><div class="para">
+						Декілька покращень у роботі з неперервними коливаннями
+					</div></li><li class="listitem"><div class="para">
+						Фільтр HamQTH
+					</div></li><li class="listitem"><div class="para">
+						Зміни у каталогах NBEMS для flmsg
+					</div></li><li class="listitem"><div class="para">
+						Покращення у WeFAX
+					</div></li><li class="listitem"><div class="para">
+						Contestia 64/1000
+					</div></li><li class="listitem"><div class="para">
+						Багато оновлень, пов’язаних з локалізацією
+					</div></li></ul></div>
+
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2098882">5.4.3. gnuradio</h4></div></div></div><a id="id2098888" class="indexterm"></a><div class="para">
+			Пакунок <span class="package">gnuradio</span> оновлено з версії 3.4.0 до версії 3.5.1. Сайт проекту: <a href="http://www.gnuradio.org">http://www.gnuradio.org</a>
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2098911">5.4.4. hamlib</h4></div></div></div><a id="id2098918" class="indexterm"></a><div class="para">
+			До Fedora 17 включено пакунок <span class="package">hamlib</span> (<a href="http://hamlib.sourceforge.net">http://hamlib.sourceforge.net</a>), оновлений до версії 1.2.15 з версії 1.2.14.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2370500">5.4.5. qrq</h4></div></div></div><a id="id2370506" class="indexterm"></a><a id="id2370514" class="indexterm"></a><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					Параметри неперервних коливань може бути змінено під час спроб інтерактивно
+				</div></li><li class="listitem"><div class="para">
+					Можна переривати спроби без переривання роботи програми
+				</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2370546">5.4.6. qtel</h4></div></div></div><a id="id2370552" class="indexterm"></a><a id="id2370560" class="indexterm"></a><a id="id2370568" class="indexterm"></a><a id="id2370576" class="indexterm"></a><a id="id2370584" class="indexterm"></a><a id="id2370592" class="indexterm"></a><a id="id2370600" class="indexterm"></a><a id="id2166739" class="indexterm"></a><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					Можна окремо вказувати звукові пристрої для мікрофона та гучномовця.
+				</div></li><li class="listitem"><div class="para">
+					Вікно інформації та спілкування поділено на два окремих вікна.
+				</div></li><li class="listitem"><div class="para">
+					У новій версії можна вказувати кодування символів у вікні балачки за допомогою діалогового вікна параметрів.
+				</div></li><li class="listitem"><div class="para">
+					У новій версії VOX типово вимкнено.
+				</div></li><li class="listitem"><div class="para">
+					Типовим звуковим пристроєм тепер є alsa:default.
+				</div></li><li class="listitem"><div class="para">
+					Додано підтримку використання звукового кодека Speex у з’єднаннях за допомогою EchoLink. У поточній версії це працюватиме лише зі з’єднаннями з іншими програмами SvxLink. У інших з’єднаннях використовуватиметься звуковий кодек GSM.
+				</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2166811">5.4.7. splat</h4></div></div></div><a id="id2166818" class="indexterm"></a><a id="id2166826" class="indexterm"></a><a id="id2166834" class="indexterm"></a><a id="id2166841" class="indexterm"></a><a id="id2166853" class="indexterm"></a><a id="id2166861" class="indexterm"></a><a id="id1937665" class="indexterm"></a><a id="id1937673" class="indexterm"></a><a id="id1937681" class="indexterm"></a><a id="id1937688" class="indexterm"></a><a id="id1937696" class="indexterm"></a><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					Доповнено код моделі Лонглі-Райса поширення сигналу вздовж поверхні неправильної форми (ITM версії 7.0) врахуванням покращеної моделі неправильної поверхні з перешкодами (ITWOM версії 3.0), розробленої Сідом Шумейтом (Sid Shumate)/ Givens &amp; Bell, Inc. У новому коді виправлено декілька помилок початкового варіанта коду ITM, а також реалізовано обчислення за допомогою рушія перенесення випромінення (RTE) у діапазоні видимості. Використати застарілу модель ITM з попередніх випусків SPLAT! можна за допомогою параметра командного рядка -olditm.
+				</div></li><li class="listitem"><div class="para">
+					Реалізовано новий параметр командного рядка -sc, за допомогою якого можна виконати згладжування контурів.
+				</div></li><li class="listitem"><div class="para">
+					До накладок контурів сигналу на карті GoogleEarth додано позначки втрат на шляху та потужності сигналу.
+				</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1937744">5.4.8. svxlink-server</h4></div></div></div><a id="id1937751" class="indexterm"></a><a id="id1937759" class="indexterm"></a><a id="id1937767" class="indexterm"></a><a id="id1937775" class="indexterm"></a><a id="id1937783" class="indexterm"></a><a id="id1937795" class="indexterm"></a><a id="id1985023" class="indexterm"></a><a id="id1985031" class="indexterm"></a><a id="id1985039" class="indexterm"></a><a id="id1985046" class="indexterm"></a><a id="id1985054" class="indexterm"></a><a id="id1985062" class="indexterm"></a><a id="id1985074" class="indexterm"></a><a id="id1985082" class="indexterm"></a><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					Додано вибіркову систему виклику Motorola QC2.
+				</div></li><li class="listitem"><div class="para">
+					Нова можливість: вимикання тону виклику 1750 Гц. Щоб увімкнути цю нову можливість, скористайтеся параметром налаштувань 1750_MUTING у розділі налаштувань локального приймача. Код цієї можливості було надано Adi / DL1HRC.
+				</div></li><li class="listitem"><div class="para">
+					Додано можливість запису QSO з записом всіх даних, переданих каналом. Записувач QSO можна увімкнути або вимкнути за допомогою команди DTMF. Нові змінні налаштування: QSO_RECORDER_DIR та QSO_RECORDER_CMD.
+				</div></li><li class="listitem"><div class="para">
+					Модуль голосової пошти тепер зберігає повідомлення у файлах WAV. Старі повідомлення буде вилучено або перетворено на дані у форматі WAV. Формат назв старих файлів: YYYYMMDD_hhmmss_UUU{.subj,.mesg} Формат назв нових файлів: YYYYMMDD_hhmmss_UUU{_subj,_mesg}.wav
+				</div></li><li class="listitem"><div class="para">
+					Введено максимальний час обмеження за тривалістю для повідомлень голосової пошти. Типовою тривалістю для теми є 10 секунд, а для самого повідомлення — 2 хвилини.
+				</div></li><li class="listitem"><div class="para">
+					У новій версії можна користуватися «локальним» підкаталогом у каталозі events.d. Файли TCL з локального каталогу матимуть пріоритет над файлами TCL з каталогу events.d.
+				</div></li><li class="listitem"><div class="para">
+					Додано порогове значення для виявлення тону, щоб запобігти помилковому спрацьовуванню у відповідь на тишу. Ця проблема виникала у разі використання придушення шуму CTCSS на радіостанціях, керованих з закритим придушенням шуму.
+				</div></li><li class="listitem"><div class="para">
+					Реалізовано механізм передавання даних щодо рівня сигналу, заснований на декількох тонах, по одному на кожен рівень сигналу у спектрі високих частот звуку (5,5–6,5 кГц). Цим механізмом можна скористатися для прив’язування до віддалених приймачів через RF, але вимірювання потужності сигналу все ще відбуватиметься на стороні віддаленого приймача. Щоб пов’язати рівень сигналу з частотами тонів на боці віддаленого приймача, можна скористатися або RemoteTrx, або Atmel AVR ATmega8 (компактніше рішення). Рішення на основі мікроконтролера AVR отримує дані щодо різниці потенціалів для рівня сигналу і перетворює дані на один з десяти тонів, які накладаються на пов’язаний звуковий сигнал. Зауваження: передавання тону у RemoteTrx працюватиме, лише якщо програму зібрано у режимі 16 кГц. Причиною цього є використання вищих частот тонів.
+				</div></li><li class="listitem"><div class="para">
+					Нова можливість: попросити користувачів ретранслятора, яких не ідентифіковано, ідентифікувати себе. Час очікування на ідентифікацію після задіяння ретранслятора встановлюється за допомогою змінної налаштування IDENT_NAG_TIMEOUT. Коректною ідентифікацією вважатиметься передавання даних протягом проміжку часу, довшого за проміжок часу, визначений змінною налаштування IDENT_NAG_MIN_TIME. Насправді цього недостатньо для ідентифікації, але це найкращий з можливих варіантів.
+				</div></li><li class="listitem"><div class="para">
+					Нова можливість: можна наказати ретранслятору увімкнутися знову, якщо буде увімкнено придушення шуму протягом вказаного часу з вимикання ретранслятора. Для налаштовування слід скористатися новою змінною OPEN_ON_SQL_AFTER_RPT_CLOSE.
+				</div></li><li class="listitem"><div class="para">
+					Можливість TX_CTCSS у новій версії розширено так, щоб тон CTCSS може бути передано, якщо надходять вхідні дані з іншого логічного ядра (LOGIC), модуля (MODULE) або якщо було відтворено оголошення (ANNOUNCEMENT). У попередній версії можна було скористатися лише двома варіантами: надіслати тон CTCSS, якщо було розпочато придушення шуму (використано ретранслятор), або робити це завжди.
+				</div></li><li class="listitem"><div class="para">
+					Новий модуль, PropagationMonitor. Модуль стеження за поширенням сигналу, отримує повідомлення електронної пошти з vhfdx.net (або gooddx.net) і виголошує попередження щодо поширення за допомогою голосових повідомлень.
+				</div></li><li class="listitem"><div class="para">
+					Новий модуль, MetarInfo. Отримує дані METAR (прогноз погоди) з наперед визначених місць ICAO та поширює отримані дані. Зазвичай, дані надаються аеропортами.
+				</div></li><li class="listitem"><div class="para">
+					Додано діалогове вікно мовлення до інструмента визначення тону та декодувальника DTMF з метою покращення вилучення позадіапазонного звуку.
+				</div></li><li class="listitem"><div class="para">
+					У новій версії можна надсилати команди до ядра та до інших модулів, навіть якщо активним є інший модуль. Цього досягнуто додаванням перед командою символу «*». Якщо, наприклад, активним є модуль EchoLink і вам потрібно перевірити, чи надійшли якісь голосові повідомлення, команда, яку можна віддати, виглядатиме так: *3001#.
+				</div></li><li class="listitem"><div class="para">
+					Команду «з’єднатися з позивним» змінено з «*» на «6*».
+				</div></li><li class="listitem"><div class="para">
+					Модуль help тепер може приймати команди, навіть якщо він не є активним. У відповідь буде прочитано довідку щодо вказаного за ідентифікатором модуля. Наприклад, команда 01# призведе до відтворення довідкового повідомлення для модуля parrot.
+				</div></li><li class="listitem"><div class="para">
+					Модуль parrot тепер може приймати команди, навіть якщо він не є активним. Єдиною дією, яку може виконувати цей модуль, є читання введених цифр. Наприклад, у відповідь на команду 1123# модуль прочитає «one two three».
+				</div></li><li class="listitem"><div class="para">
+					Модуль EchoLink тепер може приймати команди, навіть якщо він не є активним. У поточній версії єдиною можливою командою є «2». У відповідь на цю команду буде прочитано ідентифікатор локального вузла. Приклад: 22#
+				</div></li><li class="listitem"><div class="para">
+					Тепер користувачі можуть перевіряти, чи є голосові поштові повідомлення, без входу до системи. Ідея належить Мартіну Буркгарту (Martin Burkhardt). Команда має бути такою: &lt;ідентифікатор модуль&gt;&lt;ідентифікатор користувача&gt;, отже, якщо ідентифікатором модуля для голосової пошти є 3, ідентифікатор користувача — 001, командою для перевірки, чи надійшли голосові повідомлення, є 3001#.
+				</div></li><li class="listitem"><div class="para">
+					Модуль ретранслятора DTMF тепер може приймати команди, навіть якщо він не є активним. У відповідь на команду буде прочитано введені цифри. Наприклад, у відповідь на команду 4123# модуль прочитає цифри DTMF «one two three».
+				</div></li><li class="listitem"><div class="para">
+					Макрокоманду тепер може бути вказано без назви модуля. Втім, доведеться використовувати двокрапку як роздільник. Якщо не буде вказано назви модуля, команду буде надіслано обробнику DTMF без початкової активації модуля.
+				</div></li><li class="listitem"><div class="para">
+					Тепер можна включати позначку решітки у макрокоманду вказуванням «H» у рядку команди. «H» буде перетворено на «#» обробником команд, отже символ не вважатиметься кінцем команди. Це може бути корисним, наприклад, якщо ви хочете передати DTMF # за допомогою модуля ретранслятора DTMF. Специфікація макроса виглядатиме десь так: 10=412345H#. У відповідь буде задіяно макрос 10 і передано послідовність DTMF 12345#.
+				</div></li><li class="listitem"><div class="para">
+					Тепер можна поєднувати декілька логічних ядер. Змінні налаштування LOGIC1 і LOGIC2 було замінено новою змінною налаштування з назвою CONNECT_LOGICS.
+				</div></li><li class="listitem"><div class="para">
+					Нова змінна налаштування MUTE_TX_ON_RX для NetUplink у RemoteTrx. Ця змінна заборонятиме передавачеві передавати, якщо на приймачі увімкнено придушення шуму.
+				</div></li><li class="listitem"><div class="para">
+					Додано підтримку активованих функцій selcall. Нові змінні налаштування: Logic/SEL5_MACRO_RANGE, RepeaterLogic/OPEN_ON_SEL5, LocalRx/SEL5_TYPE і LocalRx/SEL5_DEC_TYPE. Щоб дізнатися більше, ознайомтеся зі сторінкою довідника (man) svxlink.conf(5).
+				</div></li><li class="listitem"><div class="para">
+					Новий модуль, SelCallEnc. Цей модуль використовується для надсилання вибіркових послідовностей виклику на частоті за запитом користувача.
+				</div></li><li class="listitem"><div class="para">
+					Однією програмою RemoteTrx тепер можна скористатися для запуску декількох віддалених приймачів-передавачів. Раніше для роботи з двома приймачами-передавачами слід було запускати два екземпляри RemoteTrx. Це вимагало використання двох звукових карток. Тепер для підтримки двох приймачів-передавачів достатньо однієї звукової картки. Через цю зміну трохи змінилися налаштування. Щоб не втратити даних, створіть резервну копію старого файла налаштувань remotetrx.conf і скористайтеся новим типовим файлом налаштувань для початкового налаштування. Потім пересуньте значення налаштувань зі старого файла до нового, ретельно читаючи оновлену сторінку підручника (man), remotetrx.conf(5), щоб не помилитися.
+				</div></li><li class="listitem"><div class="para">
+					Тепер можна встановити час переривання сеансу PTT для локального типу tx. Цим часом можна скористатися для вмикання передавача у поєднанні з придушенням шуму. Якщо передавачу наказано призупинити передачу, тон буде негайно вимкнено, що призведе до вимикання придушення шуму на іншому боці. Оскільки передавач передаватиме сигнал ще деякий час, залишок сигналу придушення тону не буде чути.
+				</div></li><li class="listitem"><div class="para">
+					Модуль ретранслятора DTMF тепер очікує на відтворення всіх оголошень перед передаванням цифр.
+				</div></li><li class="listitem"><div class="para">
+					Тепер модуль EchoLink може використовувати звуковий кодек Speex для з’єднань між двома вузлами SvxLink, що значно покращує якість звуку. Латку надіслано Steve / DH1DM.
+				</div></li><li class="listitem"><div class="para">
+					Додано режим резервного ретранслятора до RemoteTrx. Цим режимом можна скористатися, якщо використовувати його з RX і TX для ретранслятора. Якщо мережеве з’єднання втрачено ретранслятором, RemoteTrx активує базовий режим ретранслятора, просто з’єднавши RX з TX.
+				</div></li><li class="listitem"><div class="para">
+					Змінну налаштування VOX_LIMIT перейменовано на VOX_THRESH.
+				</div></li><li class="listitem"><div class="para">
+					Загальносистемні файли налаштувань SvxLink тепер зберігаються у каталозі /etc/svxlink.
+				</div></li><li class="listitem"><div class="para">
+					Нова розкладка каталогів для скриптів подій і звукових кліпів. Основні скрипти подій тепер зберігаються у /usr/share/svxlink/events.d. Файли звукових кліпів зберігаються у /usr/share/svxlink/sounds/&lt;код_мови&gt;. Модулі TCL від’єднано від обробників подій, вони зберігаються у /usr/share/svxlink/modules.d
+				</div></li><li class="listitem"><div class="para">
+					Нова змінна налаштування DEFAULT_LANG, яка визначає типову мову, яку слід використовувати.
+				</div></li><li class="listitem"><div class="para">
+					Новий тип детектора придушення шуму: EVDEV. Цей детектор придушення шуму читає події з вузла пристрою /dev/input/eventX. Цим, наприклад, можна скористатися, якщо у вас є звуковий пристрій USB з якимись кнопками. Якщо все буде гаразд, ці кнопки надсилатимуть повідомлення про події у відповідь на натискання.
+				</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1550882">5.4.9. trustedqsl</h4></div></div></div><a id="id1550889" class="indexterm"></a><a id="id1550897" class="indexterm"></a><a id="id1550905" class="indexterm"></a><a id="id1550917" class="indexterm"></a><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					Під час показу запиту до введення пароля для розблокування особистого ключа програма показує дані щодо позивного, який відповідає ключу.
+				</div></li><li class="listitem"><div class="para">
+					Запам’ятовуються запити щодо сертифікації, програма допомагає користувачеві у імпортуванні .tq6.
+				</div></li><li class="listitem"><div class="para">
+					Користувачеві надсилається запит щодо збереження сертифіката після імпортування підписаних сертифікатів .tq6.
+				</div></li><li class="listitem"><div class="para">
+					Придушено показ повідомлень щодо замінених сертифікатів. Тепер керування можна здійснювати за допомогою діалогового вікна параметрів tqslcert.
+				</div></li><li class="listitem"><div class="para">
+					Виправлено вади пов’язані з аварійним завершенням роботи у wxWidgets на Windows у деяких майстрах (оновлення сертифікатів, створення сертифіката тощо)
+				</div></li><li class="listitem"><div class="para">
+					Додано пункт налаштувань для пропускання вибору стану.
+				</div></li><li class="listitem"><div class="para">
+					Виправлено аварійне завершення програми у Windows у відповідь на відкриття нового вікна запиту щодо сертифікації.
+				</div></li><li class="listitem"><div class="para">
+					Додано підтримку перевірки номерів зон та запиту щодо них.
+				</div></li><li class="listitem"><div class="para">
+					Уможливлено пакетний режим роботи (-x) без показу вікон
+				</div></li><li class="listitem"><div class="para">
+					Подвійне клацання на пункті у діалоговому вікні «Edit Station Locations» («Редагування розташувань станці») відкриває запис для редагування, а не просто закриває модальне діалогове вікно.
+				</div></li><li class="listitem"><div class="para">
+					Напис на кнопці «OK» («Гаразд») у вікні «Edit Station Locations» («Редагування розташування станцій») змінено на «Close» («Закрити»), оскільки саме таким і є призначення цієї кнопки.
+				</div></li><li class="listitem"><div class="para">
+					Оновлено діалогові вікна введення паролів з метою уможливлення використання клавіші Enter для введення даних.
+				</div></li><li class="listitem"><div class="para">
+					Для tqsl додано параметри командного рядка «-p &lt;пароль&gt;» та «-o &lt;файл виведення даних&gt;».
+				</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1602756">5.4.10. xdemorse</h4></div></div></div><a id="id1602762" class="indexterm"></a><a id="id1602770" class="indexterm"></a><a id="id1602778" class="indexterm"></a><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					У новій версії використовується звуковий інтерфейс ALSA замість застарілого (і типово непрацездатного) інтерфейсу OSS
+				</div></li><li class="listitem"><div class="para">
+					Декілька змін у коді приймача-передавача CAT з метою кращої обробки умов помилок та уможливлення вмикання за допомогою кнопки «Receive», щоб CAT було увімкнено, лише коли xdemorse справді отримує сигнали азбуки Морзе.
+				</div></li><li class="listitem"><div class="para">
+					Збільшено висоту панелей діапазону та каскаду з метою покращення вигляду.
+				</div></li><li class="listitem"><div class="para">
+					Додано рамку для позначки «Auto Speed» (автоматична швидкість).
+				</div></li><li class="listitem"><div class="para">
+					Змінено схему виявлення позначок і пробілів на вимірювання середнього значення нахилу детектора Герцеля.
+				</div></li></ul></div></div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Changes_for_Developers.html"><strong>назад</strong>4. Зміни у Fedora для розробників</a></li><li class="up"><a accesskey="u" href="#"><strong>Догори</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Початок</strong></a></li><li class="next"><a accesskey="n" href="app-contributors.html"><strong>далі</strong>A. Автори</a></li></ul></body></html>

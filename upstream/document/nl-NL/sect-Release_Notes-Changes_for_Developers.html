@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>4. Veranderingen in Fedora voor ontwikkelaars</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta name="generator" content="publican 2.8" /><meta name="package" content="Fedora-Release_Notes-17-nl-NL-1-0" /><link rel="home" href="index.html" title="Vrijgave informatie" /><link rel="up" href="index.html" title="Vrijgave informatie" /><link rel="prev" href="sect-Release_Notes-Changes_for_Desktop.html" title="3. Veranderingen in Fedora voor bureaubladgebruikers" /><link rel="next" href="sect-Release_Notes-Changes_for_Specific_Audiences.html" title="5. Veranderingen in Fedora voor specifieke doelgroepen" /></head><body><p id="title"><a class="left" href="http://www.fedoraproject.org"><img src="Common_Content/images/image_left.png" alt="Product Site" /></a><a class="right" href="http://docs.fedoraproject.org"><img src="Common_Content/images/image_right.png" alt="Documentation Site" /></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Changes_for_Desktop.html"><strong>Terug</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Specific_Audiences.html"><strong>Volgende</strong></a></li></ul><div class="section" id="sect-Release_Notes-Changes_for_Developers"><div class="titlepage"><div><div keep-together.within-column="always"><h2 class="title" id="sect-Release_Notes-Changes_for_Developers">4. Veranderingen in Fedora voor ontwikkelaars</h2></div></div></div><div xml:lang="nl-NL" class="section" lang="nl-NL"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id2288330">4.1. Ontwikkelgereedschappen</h3></div></div></div><div class="para">
+		Fedora bevat traditioneel een rijke set ontwikkelgereedschappen. De volgende zijn hoogtepunten in de vele verbeteringen van de ontwikkelgereedschappen die opgenomen zijn in deze vrijgave van Fedora.
+	</div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1638670">4.1.1. gcc</h4></div></div></div><a id="id1882652" class="indexterm"></a><a id="id1542398" class="indexterm"></a><a id="id1965558" class="indexterm"></a><a id="id1815625" class="indexterm"></a><a id="id1626071" class="indexterm"></a><a id="id1899689" class="indexterm"></a><a id="id1899197" class="indexterm"></a><a id="id2158969" class="indexterm"></a><a id="id1789969" class="indexterm"></a><a id="id1928470" class="indexterm"></a><a id="id1734142" class="indexterm"></a><div class="para">
+			Fedora 17 bevat versie 4.7.0 of <span class="package">gcc</span>, <span class="emphasis"><em>gcc-c++</em></span>, <span class="emphasis"><em>gcc-gfortran</em></span>, <span class="emphasis"><em>gcc-objc</em></span> en <span class="emphasis"><em>gcc-gnat</em></span>. De vernieuwing bevat een groot aantal veranderingen in de gcc compiler serie, niet alleen C en C++, maar ook voor Ada en Fortran. Voor alle details refereer je naar de GCC 4.7 Release Series Changes op <a href="http://gcc.gnu.org/gcc-4.7/changes.html">http://gcc.gnu.org/gcc-4.7/changes.html</a>.
+		</div><div class="para">
+			Enkele hoogtepunten:
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					Verscheidene verouderde architecturen zoals IRIX 6.5, MIPS OpenBSD, Solaris, Tru64 UNIX 5.1 en een aantal legacy ARM platforms.
+				</div></li><li class="listitem"><div class="para">
+					Ondersteuning voor OpenMP 3.1 met C, C++ en Fortran
+				</div></li><li class="listitem"><div class="para">
+					Meer ondersteuning voor de C11 en C++11 standaard vernieuwingen
+				</div></li><li class="listitem"><div class="para">
+					Nieuwe debug flexibiliteit voor Ada
+				</div></li><li class="listitem"><div class="para">
+					Een aantal performance verbeteringen in Fortran
+				</div></li><li class="listitem"><div class="para">
+					Vele optimizer verbeteringen
+				</div></li><li class="listitem"><div class="para">
+					Nieuwe platforms: 
+					<a id="id1882223" class="indexterm"></a>
+					 <a id="id1882235" class="indexterm"></a>
+					 <a id="id1882247" class="indexterm"></a>
+					 <a id="id1882259" class="indexterm"></a>
+					 <a id="id1882271" class="indexterm"></a>
+					 <a id="id1882454" class="indexterm"></a>
+					 <a id="id1882466" class="indexterm"></a>
+					 <a id="id1882474" class="indexterm"></a>
+					 <a id="id1882486" class="indexterm"></a>
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								ARM Cortex A7
+							</div></li><li class="listitem"><div class="para">
+								AVR XMEGA
+							</div></li><li class="listitem"><div class="para">
+								Texas Instruments C6X
+							</div></li><li class="listitem"><div class="para">
+								National Semiconductor's CR16
+							</div></li><li class="listitem"><div class="para">
+								Tilera TILE-Gx en TILEPro families
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					Daarnaast zijn er platform-specifieke verbeteringen in ARM, AVR, IA-32/x86-64, MIPS, PowerPC/PowerPC64, SH en SPARC.
+				</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1613952">4.1.2. gdb</h4></div></div></div><a id="id1613958" class="indexterm"></a><div class="para">
+			Fedora 17 bevat nu <span class="package">gdb</span> 7.4.50.20120120. Om de vele nieuwe eigenschappen te bekijken refereer je naar <a href="http://www.gnu.org/software/gdb/download/ANNOUNCEMENT">http://www.gnu.org/software/gdb/download/ANNOUNCEMENT</a>
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2032029">4.1.3. Haskell</h4></div></div></div><a id="id2032036" class="indexterm"></a><div class="para">
+			Het Haskell platform is vernieuwd naar de laatste 2011.4.0.0 vrijgave.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2032049">4.1.4. JBoss AS 7</h4></div></div></div><a id="id2032056" class="indexterm"></a><a id="id2032064" class="indexterm"></a><div class="para">
+			Een afgeslankte versie van JBoss AS 7 (<span class="emphasis"><em>jboss-as</em></span>) is nu als pakket beschikbaar voor Fedora. JBoss AS 7 is een snelle, modulaire, lichtgewicht, compliant Java EE toepassingsserver. Op dit moment wordt alleen het JBoss AS 7 <span class="emphasis"><em>Web Profile</em></span> ondersteund, ondersteuning voor het <span class="emphasis"><em>Full Profile</em></span> zal in een komende vrijgave toegevoegd worden.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2032090">4.1.5. OpenJDK</h4></div></div></div><a id="id2032096" class="indexterm"></a><div class="para">
+			OpenJDK7 is nu de standaard Java Development Kit in Fedora en vervangt OpenJDK6. Een volledige lijst met de eigenschappen die toegevoegd zijn in OpenJDK7 is beschikbaar op <a href="http://openjdk.java.net/projects/jdk7/features/">http://openjdk.java.net/projects/jdk7/features/</a>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2341346">4.1.6. doxygen</h4></div></div></div><a id="id2341352" class="indexterm"></a><div class="para">
+			Naast talrijke foutreparaties, bevat <span class="package">doxygen</span> 1.7.6.1:
+			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						Het geselecteerde lid wordt nu beknopt gemarkeerd in de HTML output (als GENERATE_TREEVIEW aangezet is).
+					</div></li><li class="listitem"><div class="para">
+						De navigatie boom (GENERATE_TREEVIEW) toont nu dezelfde informatie als de index.
+					</div></li><li class="listitem"><div class="para">
+						De navindex sectie van de indeling bepaalt nu ook wat getoond wordt in de navigatie boom.
+					</div></li><li class="listitem"><div class="para">
+						Als een class/structs veel (&gt;15) leden van hetzelfde type heeft, worden alleen de eerste 10 in het UML diagram getoond.
+					</div></li><li class="listitem"><div class="para">
+						De output van de op JavaScript gebaseerde zoekmachine is compacter gemaakt.
+					</div></li><li class="listitem"><div class="para">
+						Vernieuwing van de Franse vertaling
+					</div></li><li class="listitem"><div class="para">
+						Ondersteuning toegevoegd voor PHP heredoc en nowdoc constructies.
+					</div></li><li class="listitem"><div class="para">
+						Ondersteuning toegevoegd voor cross-referentie in het geval van operator-&gt; overloading. Dit omvat ondersteuning voor std::auto_ptr,std::smart_ptr,std::unique_ptr and std::weak_ptr als BUILTIN_STL_SUPPORT aangezet is.
+					</div></li></ul></div>
+
+		</div><div class="para">
+			Project site: <a href="http://www.stack.nl/~dimitri/doxygen/index.html">http://www.stack.nl/~dimitri/doxygen/index.html</a>
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2341449">4.1.7. emacs</h4></div></div></div><a id="id2341455" class="indexterm"></a><div class="para">
+			GNU Emacs is vernieuwd naar de laatste prerelease upstream versie, 24.0.93
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2341468">4.1.8. git</h4></div></div></div><a id="id1885289" class="indexterm"></a><div class="para">
+			<span class="package">git</span> is vernieuwd naar 1.7.9. Fedora 16 bevatte 1.7.7.
+		</div><div class="para">
+			Er zijn talrijke toevoegingen van kleine kenmerken. De geïnteresseerde lezer moet de <a href="https://raw.github.com/gitster/git/master/Documentation/RelNotes/1.7.9.txt"> veranderingen sinds 1.7.8</a> en de <a href="https://raw.github.com/gitster/git/master/Documentation/RelNotes/1.7.8.txt"> veranderingen sinds 1.7.7</a> bekijken in de upstream release notes.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1885320">4.1.9. rcs</h4></div></div></div><a id="id1885326" class="indexterm"></a><div class="para">
+			Het eerbiedwaardig revisie controle systeem (<span class="package">rcs</span>) is vernieuwd naar 5.8.
+		</div><div class="para">
+			De vernieuwingen omvatten:
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					De licentie is nu GPLv3+
+				</div></li><li class="listitem"><div class="para">
+					Verandering in terminologie: van "path" naar "file name" (of "file-name")
+				</div></li><li class="listitem"><div class="para">
+					Veranderingen in het RCS pakket
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								Nieuwe documentatie in info formaat
+							</div></li><li class="listitem"><div class="para">
+								Vervallen configuratie optie: --with-diffutils
+							</div></li><li class="listitem"><div class="para">
+								Configuratie in sommige opzichten strakker, in andere meer relaxt.
+							</div></li><li class="listitem"><div class="para">
+								Nieuwe configuratie optie: --enable-suid[=setreuid]
+							</div></li><li class="listitem"><div class="para">
+								Nieuwe configuratie optie: --disable-mmap
+							</div></li><li class="listitem"><div class="para">
+								Nieuwe configuratie optie: --enable-mailer=PROG
+							</div></li><li class="listitem"><div class="para">
+								Nieuwe configuratie optie: --enable-compat2
+							</div></li><li class="listitem"><div class="para">
+								Je kunt "make check" voor "make install" uitvoeren.
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					Foutreparaties
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								Verwijder alle bewerkingsinfo bij het verwijderen van alle revisies.
+							</div></li><li class="listitem"><div class="para">
+								Code gebruikt mktemp niet meer.
+							</div></li><li class="listitem"><div class="para">
+								Verschillende man pagina aanpassingen / reparaties.
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					Andere veranderingen
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								Alle commando's accepteren ‘--help’ en ‘--version’.
+							</div></li><li class="listitem"><div class="para">
+								Een string met alleen getallen is nu geldig voor auteur en staat.
+							</div></li><li class="listitem"><div class="para">
+								Omgevingsvariabele RCS_MEM_LIMIT controleert de stdio drempel.
+							</div></li><li class="listitem"><div class="para">
+								RCS kan nu werken met bestanden groter dan 2 gigabytes.
+							</div></li><li class="listitem"><div class="para">
+								Doorgeven van RCS bestand ‘commitid SYMBOL’ is nu ingebouwd.
+							</div></li><li class="listitem"><div class="para">
+								RCS bestand topniveau grammatica is bevroren.
+							</div></li><li class="listitem"><div class="para">
+								RCS bestand syntax-validated vroeger, compleet.
+							</div></li><li class="listitem"><div class="para">
+								Het is mogelijk om een lege log boodschap de specificeren met ci -m, rcs -m.
+							</div></li><li class="listitem"><div class="para">
+								Datum optie accepteert nog enkele alleen-datum formaten
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					Veranderingen in rcsdiff
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								Nieuwe afhandeling voor optie: -U N
+							</div></li><li class="listitem"><div class="para">
+								Verbeterde "same-revision don't call diff" optimalisatie
+							</div></li></ul></div>
+
+				</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1599919">4.1.10. subversion</h4></div></div></div><a id="id1599926" class="indexterm"></a><div class="para">
+			Het versie controle systeem <span class="package">subversion</span> is vernieuwd van 1.6.17 naar 1.7.3. Verschillende veranderingen waaronder beter gebruik van HTTP, een nieuw dumpfile gereedschap op afstand en verbeterde console output, dit naast meerdere kleine veranderingen. De lezer wordt aangemoedigd om <a href="http://subversion.apache.org/docs/release-notes/1.7.html">http://subversion.apache.org/docs/release-notes/1.7.html</a> te bezoeken voor meer informatie over deze verbeteringen.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1599952">4.1.11. bugzilla</h4></div></div></div><a id="id1599958" class="indexterm"></a><div class="para">
+			<span class="package">bugzilla</span> 4.0.4 repareert een aantal beveiligingsproblemen met vorige versies. Daarnaast staat de nieuwe vrijgave systeembeheerder toe om autocomplete uit te zetten en zijn een aantal kleine fouten gecorrigeerd. Refereer naar <a href="http://www.bugzilla.org/">http://www.bugzilla.org/</a> voor details.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1599983">4.1.12. bzr</h4></div></div></div><a id="id1599989" class="indexterm"></a><div class="para">
+			Hoewel het voornamelijk een foutreparatie vrijgave is, representeert <span class="package">bzr</span> 2.5 een nieuwe stabiele versie waarop in de toekomst foutreparaties toegepast zullen worden.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1600006">4.1.13. highlight</h4></div></div></div><a id="id1600013" class="indexterm"></a><a id="id1600021" class="indexterm"></a><a id="id1600029" class="indexterm"></a><a id="id1600037" class="indexterm"></a><a id="id1600045" class="indexterm"></a><div class="para">
+			Fedora 17 bevat <span class="package">highlight</span> 3.7. Verbeteringen vergeleken met versie 3.6 zijn:
+			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						ondersteuning voor Biferno
+					</div></li><li class="listitem"><div class="para">
+						ondersteuning voor RPL
+					</div></li><li class="listitem"><div class="para">
+						ondersteuning voor Ceylon
+					</div></li><li class="listitem"><div class="para">
+						gerepareerde Ruby definitie
+					</div></li><li class="listitem"><div class="para">
+						HTML lettertype string mag een lijst met lettertypes bevatten, welke niet omsloten worden met aanhalingstekens
+					</div></li><li class="listitem"><div class="para">
+						--portable commandoregel optie is toegevoegd om config bestanden op te slaan in de huidige werkmap in plaats van in de gebruikersmap
+					</div></li></ul></div>
+
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1852693">4.1.14. mercurial</h4></div></div></div><a id="id1852699" class="indexterm"></a><a id="id1852707" class="indexterm"></a><div class="para">
+			<span class="package">mercurial</span> is vernieuwd naar 2.1. Als je geïnteresseerd bent bezoek je <a href="http://mercurial.selenic.com/wiki/WhatsNew">http://mercurial.selenic.com/wiki/WhatsNew</a> voor een gedetailleerde lijst met nieuwe eigenschappen en foutreparaties.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1852730">4.1.15. monodevelop</h4></div></div></div><a id="id1852737" class="indexterm"></a><a id="id1852745" class="indexterm"></a><div class="para">
+			<span class="package">monodevelop</span> 2.8.5 is opgenomen in Fedora 17. Enkele van de vele nieuwe eigenschappen:
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					Project beheer
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								Nieuww Bewerk referenties dialoog
+							</div></li><li class="listitem"><div class="para">
+								Verbeterde Class en Document overzicht pads
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					Bron bewerking
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								Nieuwe editor voor syntax markeer kleurschema's
+							</div></li><li class="listitem"><div class="para">
+								Nieuwe standaard syntax markeer kleurschema
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					Verschillende reparaties en verbeteringen voor de Version Control ondersteuning en voor SVN ondersteuning in het bijzonder het toevoegen van een project welke bestanden bevat met links naar versie controle wordt nu correct afgehandeld
+				</div></li></ul></div><div class="para">
+			Bezoek de project website op <a href="http://monodevelop.com/">http://monodevelop.com/</a> voor verdere details.
+		</div></div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Changes_for_Desktop.html"><strong>Terug</strong>3. Veranderingen in Fedora voor bureaubladgebruik...</a></li><li class="up"><a accesskey="u" href="#"><strong>Omhoog</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Begin</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Specific_Audiences.html"><strong>Volgende</strong>5. Veranderingen in Fedora voor specifieke doelgr...</a></li></ul></body></html>

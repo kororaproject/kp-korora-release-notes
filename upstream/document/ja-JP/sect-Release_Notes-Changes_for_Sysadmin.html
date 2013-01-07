@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>2. Fedora の変更点 - システム管理者向け</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta name="generator" content="publican 2.8" /><meta name="package" content="Fedora-Release_Notes-17-ja-JP-1-0" /><link rel="home" href="index.html" title="リリースノート" /><link rel="up" href="index.html" title="リリースノート" /><link rel="prev" href="sect-Release_Notes-Welcome_to_Fedora_17.html" title="1. Fedora 17 へようこそ" /><link rel="next" href="sect-Release_Notes-Changes_for_Desktop.html" title="3. Fedora の変更点 - デスクトップユーザー向け" /></head><body><p id="title"><a class="left" href="http://www.fedoraproject.org"><img src="Common_Content/images/image_left.png" alt="Product Site" /></a><a class="right" href="http://docs.fedoraproject.org"><img src="Common_Content/images/image_right.png" alt="Documentation Site" /></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Welcome_to_Fedora_17.html"><strong>戻る</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Desktop.html"><strong>次へ</strong></a></li></ul><div class="section" id="sect-Release_Notes-Changes_for_Sysadmin"><div class="titlepage"><div><div keep-together.within-column="always"><h2 class="title" id="sect-Release_Notes-Changes_for_Sysadmin">2. Fedora の変更点 - システム管理者向け</h2></div></div></div><div xml:lang="ja-JP" class="section" lang="ja-JP"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id2086706">2.1. カーネル</h3></div></div></div><a id="id2309866" class="indexterm"></a><a id="id1938094" class="indexterm"></a><div class="para">
+		Fedora 17 はカーネル 3.3.4 を特徴とします。
+	</div></div><div xml:lang="ja-JP" class="section" lang="ja-JP"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1967598">2.2. インストール</h3></div></div></div><a id="id1965171" class="indexterm"></a><a id="id2086815" class="indexterm"></a><a id="id1528875" class="indexterm"></a><a id="id2324329" class="indexterm"></a><a id="id1976110" class="indexterm"></a><a id="id1781720" class="indexterm"></a><a id="id2242778" class="indexterm"></a><a id="id1919247" class="indexterm"></a><div class="para">
+		<div class="warning"><div class="admonition_header"><h2>カーネル直接ブートへの変更</h2></div><div class="admonition"><div class="para">
+				PXE のようなカーネル直接ブート経由でインストールするときに重要な変更があります。インストールメディアからの通常のインストールは影響を受けません。
+			</div></div></div>
+
+	</div><div class="para">
+		高度なユーザーは、一般的にインストールを実行するために最小のカーネル環境をセットアップすることに関連した、さまざまな種類のネットワークインストールを実行するかもしれません。Fedora 17 では大幅な変更を行いました。
+	</div><div class="para">
+		Fedora 16 では、一般的にカーネルおよび initrd の場所を指定することのみが必要とされます。そして、インストーラーが動作します - <code class="code">kernel/initrd</code> が <code class="code">stage1</code> を取得して、<code class="code">stage1</code> が <code class="code">stage2</code> を取得します。
+	</div><div class="para">
+		ローダーを用いない場合、これは当てはまりません: カーネル直接ブートを実行するとき、<code class="code">stage2</code> の場所を指定する必要があります。言い換えると: リポジトリーを指示するために、<code class="code">repo=</code> または <code class="code">stage2=</code> (もしくは、現在はこちらのほうが好ましい、 <code class="code">inst.repo=</code> または <code class="code">inst.stage2=</code>) を渡す必要があります。<code class="code">stage2</code> イメージが一つのサーバーにあるが、インストールパッケージが複数のサーバーにあれば、<code class="code">stage2=</code> を使用する必要があります: インストールのために必要となるものすべて (<code class="code">stage2</code> イメージ <span class="emphasis"><em>および</em></span> インストールするパッケージすべて) が一つのサーバーに含まれるならば、<code class="code">repo=</code> のみを使用すべきです。<code class="code">stage2=</code> はリポジトリーのツリーを参照することが期待されていることに注意してください。<code class="filename">squashfs.img</code> ファイルへの直接のパスを渡すことはできません (Fedora 15 およびそれ以前において存在するとき <code class="code">stage2=</code> が動作するためです) 。
+	</div><div class="para">
+		例:
+<pre class="screen">
+label linux
+kernel vmlinuz
+append initrd=initrd.img
+</pre>
+		これが有効でなければ、<code class="code">repo</code> を指定する必要があります:
+<pre class="screen">
+label linux
+kernel vmlinuz
+append initrd=initrd.img repo=http://dl.fedoraproject.org/pub/fedora/linux/development/17/x86_64/os/
+</pre>
+		もしくは <code class="code">stage2</code> オプションで指定します。
+<pre class="screen">
+label linux
+kernel vmlinuz
+append initrd=initrd.img stage2=http://my.internal.server/17/x86_64/os/
+</pre>
+		(または、他の有効なミラー)。
+	</div></div><div xml:lang="ja-JP" class="section" lang="ja-JP"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1526967">2.3. セキュリティ</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1519095">2.3.1. パスワード品質チェック</h4></div></div></div><a id="id1539164" class="indexterm"></a><a id="id1785263" class="indexterm"></a><div class="para">
+			Fedora は現在、システムアカウントのために使用される新しいパスワードの品質をチェックするために、設定可能な単一ライブラリー <a href="https://fedorahosted.org/libpwquality">libpwquality</a> があります。このライブラリーにより提供される、システム全体にわたるパスワード品質チェックは <code class="filename">/etc/security/pwquality.conf</code> 設定ファイルを編集することにより設定されます。
+		</div><div class="para">
+			自身のアプリケーションからこの API を呼び出したい開発者は、<span class="package">libpwquality-devel</span> パッケージにより提供される <code class="filename">pwquality.h</code> ファイルにおいて API の説明を見つけられます。python ラッパーの <span class="emphasis"><em>python-pwquality</em></span> も提供されます。
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1529203">2.3.2. SELinux Deny Ptrace</h4></div></div></div><a id="id1553725" class="indexterm"></a><div class="para">
+			新しい SELinux 論理値 <code class="varname">deny_ptrace</code> が追加されました。自身のマシンにおいてアプリケーションをデバッグする予定がないユーザーは、この論理値をオンにすることが推奨されます。この論理値により、異常なプロセスが、<span class="application"><strong>ptrace</strong></span> や <span class="application"><strong>gdb</strong></span> を含むデバッグアプリケーションを使用して、メモリー、異なる攻撃または他のプロセスを読み込めなくなります。
+		</div><div class="para">
+			そのような攻撃は、危険なプロセスが root として実行されている、または同じ SELinux コンテキストとラベルで実行中のプロセスを攻撃していることさえ防ぎます。<code class="varname">deny_ptrace</code> 論理値により提供される保護を永続的に有効化するには、以下のコマンドを root として実行します:
+<pre class="screen">
+# setsebool -P deny_ptrace 1
+</pre>
+
+		</div><div class="para">
+			<code class="varname">deny_ptrace</code> 論理値により提供される保護を一時的に無効にするには、以下のコマンドを root として実行します:
+		</div><pre class="screen">
+# setsebool deny_ptrace 0
+</pre></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1893751">2.3.3. サービス個別の /tmp</h4></div></div></div><a id="id2324226" class="indexterm"></a><div class="para">
+			<span class="package">systemd</span> により管理される多くのサービスは、プライベート <code class="filename">/tmp</code> ディレクトリーを提供するために、その機能を使用するよう変更されてきました。<code class="filename">/tmp</code> および <code class="filename">/var/tmp</code> を使用する特権サービスは、潜在的に権限昇格を引き起こす、非特権ユーザーにより横取りするために、開かれることを以前からわかってきました。プライベート <code class="filename">/tmp</code> ディレクトリーを使用することにより、この種のエクスプロイトを防ぎます。
+		</div><div class="para">
+			変更されたサービスに対する <span class="package">systemd</span> ユニットファイルに追加されたディレクティブは次のとおりです:
+<pre class="screen">
+[Service]
+PrivateTmp=true
+</pre>
+
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2303635">2.3.4. セキュアーコンテナー</h4></div></div></div><a id="id2303642" class="indexterm"></a><a id="id2303649" class="indexterm"></a><a id="id2303657" class="indexterm"></a><a id="id2303665" class="indexterm"></a><div class="para">
+			新規ツール <span class="package">sandbox</span> が、セキュアな <span class="package">libvirt</span> コンテナーの作成を簡素化するために作成されました。実行可能な <span class="package">sandbox</span> とともに提供されるとき、コンテナーにおいてアプリケーションを実行するために必要とされるマウントポイントおよび <span class="package">libvirt</span> コンテナーの情報を決定します。そしてコンテナーは、システムデータを共有できるようにしながら、他のコンテナーを含めてシステムにある他のプロセスと通信することを防ぐ SELinux コンテキストを持つ <span class="package">libvirt</span> により起動されます。
+		</div><div class="para">
+			システム管理者はこれにより複数のサービスのインスタンスを同時に実行できます。ここで root として実行しているときさえ、それらがホストマシンやシステムの他のプロセスを壊すことができません。<span class="package">sandbox</span> を使用するには、<span class="package">libvirt-sandbox</span> パッケージをインストールします。
+		</div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="id1840963">2.3.4.1. krb5-workstation</h5></div></div></div><a id="id1840970" class="indexterm"></a><div class="para">
+				Fedora 17 は Kerberos 認証システムがバージョン 1.10 に更新されました。これにより、NAT 経由のパスワード変更のサポート、および地域化のサポートが追加されます。<code class="command">kswitch</code> コマンドはクレディンシャルキャッシュ間で切り替えるために追加されました。追加のキャッシュサポートが他のコマンドに追加されてきました。クレディンシャルの選択は <code class="filename">$HOME/.k5identity</code> により制御できます。
+			</div></div></div></div><div xml:lang="ja-JP" class="section" lang="ja-JP"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1655277">2.4. ファイルシステム</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1972231">2.4.1. 大規模ファイルシステム</h4></div></div></div><a id="id1931378" class="indexterm"></a><a id="id2070508" class="indexterm"></a><a id="id1838946" class="indexterm"></a><div class="para">
+			Fedora 17 はデフォルトのファイルシステム (ext4) において 16 テラバイトより大きなファイルシステムをサポートします。<span class="package">e2fsprogs</span> の最新バージョンを用いると、ext4 ファイルシステムは現在 100 TB まで使用できます。
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1790188">2.4.2. 暗号化ファイルシステム</h4></div></div></div><a id="id1785459" class="indexterm"></a><a id="id1814520" class="indexterm"></a><a id="id2119963" class="indexterm"></a><a id="id1533361" class="indexterm"></a><div class="para">
+			Fedora 17 は <span class="package">cryptsetup</span> パッケージのバージョン 1.4.1 を使用します。これは推奨されない API コールを削除しています。さらに、分離されたデバイスに LUKS ヘッダーを置いておくこと、および単一のディスクにおいて共有の非オーバーラップ暗号化セグメントの作成をサポートします。
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2312980">2.4.3. btrfs</h4></div></div></div><a id="id2003600" class="indexterm"></a><a id="id1528998" class="indexterm"></a><div class="para">
+			<span class="package">btrfs</span> はインストール中の対象ファイルシステムとして利用できません。これは一時的な状況で、Fedora 18 において解決される予定です。<span class="package">btrfs</span> はインストール後に利用可能になります。
+		</div></div></div><div xml:lang="ja-JP" class="section" lang="ja-JP"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1952768">2.5. 仮想化</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2107697">2.5.1. QEMU</h4></div></div></div><a id="id1598655" class="indexterm"></a><a id="id1899114" class="indexterm"></a><a id="id1893297" class="indexterm"></a><a id="id1542754" class="indexterm"></a><div class="para">
+			QEMU オープンソース・マシンエミュレーターがバージョン 1.0 に更新されました。次の重要な機能が含まれます:
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					QEMU は実行中の仮想マシンのライブマイグレーションをサポートします。
+				</div></li><li class="listitem"><div class="para">
+					KVM の利用者は KVM 仮想マシンの中で標準的な性能分析ツールを実行できます。
+				</div></li><li class="listitem"><div class="para">
+					QEMU および <span class="package">libvirt</span> は現在イメージストリーミングをサポートします。イメージストリーミングにより、管理者は既存のイメージに基づいて素早く新しい仮想マシンを開始できるようになります。そして仮想マシンは実行しているバックグラウンドで完全にプロビジョニングされます。
+				</div></li><li class="listitem"><div class="para">
+					QEMU および KVM は現在新しく高度な SCSI ベースのストレージスタック <span class="package">virtio-scsi</span> をサポートします。この新しいストレージスタックは将来のリリースにおいて <span class="emphasis"><em>libvirt</em></span> に追加されます。
+				</div></li></ul></div><div class="para">
+			このリリースに含まれる変更の完全な一覧は、アップストリームの <a href="http://wiki.qemu.org/ChangeLog/1.0">http://wiki.qemu.org/ChangeLog/1.0</a> において入手可能です。
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1528063">2.5.2. libvirt</h4></div></div></div><a id="id1977880" class="indexterm"></a><div class="para">
+			さまざまなホストの仮想化機能を対話的に管理できる <span class="package">libvirt</span> ツールキットがバージョン 0.9.10 に更新されました。このリリースに含まれる変更の完全な一覧は、アップストリームの <a href="http://libvirt.org/news.html">http://libvirt.org/news.html</a> において利用可能です。
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1972762">2.5.3. 仮想マシンマネージャー (virt-manager)</h4></div></div></div><a id="id1972768" class="indexterm"></a><div class="para">
+			仮想マシンマネージャーはバージョン 0.9.1 に更新されました。多くのバグ修正だけではなく、このリリースは以下のものが追加されました:
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					USB リダイレクトデバイスの追加機能のサポート
+				</div></li><li class="listitem"><div class="para">
+					USB 2.0 をサポートするよう USB コントローラーを変更するオプション
+				</div></li><li class="listitem"><div class="para">
+					非 x86 仮想マシンのマシン形式を指定するオプション
+				</div></li></ul></div><div class="para">
+			このリリースに含まれる変更の完全な一覧は、アップストリームの <a href="http://virt-manager.org/download.html">http://virt-manager.org/download.html</a> において参照可能です。
+		</div></div></div><div xml:lang="ja-JP" class="section" id="sect_Cloud" lang="ja-JP"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="sect_Cloud">2.6. クラウド</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1638774">2.6.1. CloudStack</h4></div></div></div><a id="id2081944" class="indexterm"></a><a id="id1550758" class="indexterm"></a><div class="para">
+			Fedora 17 は <span class="package">CloudStack</span> パッケージを含みます。これは成熟した Infrastructure as a Service (IaaS) プラットフォームを提供します。
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1953010">2.6.2. OpenNebula</h4></div></div></div><a id="id1958928" class="indexterm"></a><a id="id1638876" class="indexterm"></a><a id="id1774277" class="indexterm"></a><a id="id1907382" class="indexterm"></a><div class="para">
+			Fedora 17 は新しく <span class="package">OpenNebula</span> を追加しました。OpenNebula はデータセンター仮想化に適合した IaaS プラットフォームを提供します。環境の管理はコマンドラインまたはグラフィカルインターフェースを通して実行できます。Amazon EC2 the Open Cloud Computing Interface (OCCI) との互換性が含まれます。
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1882083">2.6.3. OpenStack</h4></div></div></div><a id="id1600060" class="indexterm"></a><a id="id1600157" class="indexterm"></a><a id="id1957185" class="indexterm"></a><a id="id2004456" class="indexterm"></a><a id="id1815015" class="indexterm"></a><a id="id1981109" class="indexterm"></a><a id="id1842155" class="indexterm"></a><a id="id1785922" class="indexterm"></a><div class="para">
+			Fedora 17 は <span class="package">OpenStack</span> スイートの最新バージョン、コードネーム "Essex" が含まれています。この新しいリリースに含まれるのは、最新バージョンのウェブ管理インターフェース ("Horizon") および仮想ネットワーク ("Quantum") です。AQMP バックエンドに対する RabbitMQ の代替として Qpid が新しく Fedora 17 において使用されます。さらに、複数の仮想ディスク形式をサポートするために libguestfs の利用により、Fedora の OpenStack はより柔軟性を提供できます。
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1785944">2.6.4. Open vSwitch</h4></div></div></div><a id="id1785951" class="indexterm"></a><div class="para">
+			Fedora 17 は Open vSwitch を含みます。これは仮想マシンにネットワークサービスを提供するために使用されるソフトウェアによるネットワークスイッチです。Open vSwitch は管理しやすくするために OpenFlow をサポートします。
+		</div></div></div><div xml:lang="ja-JP" class="section" lang="ja-JP"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1931123">2.7. データベースサーバー</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1989003">2.7.1. mysql</h4></div></div></div><a id="id2087159" class="indexterm"></a><div class="para">
+			Fedora 17 は、Fedora 16 にあった 5.5.14 から更新された、<span class="package">mysql</span> 5.5.20 が含まれます。
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1600010">2.7.2. postgresql</h4></div></div></div><a id="id1539418" class="indexterm"></a><div class="para">
+			<span class="package">postgresql</span> が 9.1.2 に更新されました。
+		</div><div class="warning"><div class="admonition_header"><h2>潜在的な非互換のある変更</h2></div><div class="admonition"><div class="para">
+				<em class="parameter"><code>information_schema.referential_constraints</code></em> ビューに依存しているならば、または <em class="parameter"><code>citext</code></em> 形式のカラムがあるならば、特別な作業を行う必要があります。<a href="http://www.postgresql.org/docs/9.1/static/release-9-1-2.html">http://www.postgresql.org/docs/9.1/static/release-9-1-2.html</a> を参照してください。
+			</div></div></div><div class="para">
+			これは主にバグ修正のリリースです。
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1893882">2.7.3. sqlite</h4></div></div></div><a id="id1554545" class="indexterm"></a><div class="para">
+			<span class="package">sqlite</span> が 3.7.9 に更新されました。
+		</div><div class="warning"><div class="admonition_header"><h2>潜在的な非互換のある変更</h2></div><div class="admonition"><div class="para">
+				FTS4 の検索トークン (<code class="command">MATCH</code> オペレーターの右側) が "^" で開始するときは、そのトークンがその文書のフィールドの中で最初でなくてはいけません。
+			</div></div></div><div class="para">
+			多くの変更と改善点があります:
+			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						とても大きいテーブルでの <code class="command">CREATE INDEX</code> の性能が、１けた以上改善しました。
+					</div></li><li class="listitem"><div class="para">
+						windows VFS は、ウイルス対策ソフトウエアからの干渉を、より受けにくくなりました。
+					</div></li><li class="listitem"><div class="para">
+						<code class="command">DISTINCT</code> キーワードがあるときの、問い合わせ計画の最適化を改善しました。
+					</div></li><li class="listitem"><div class="para">
+						chromium sandbox のサポートを改善するため、unix VFS においてより多くのシステムコールがオーバーライドできるようになりました。
+					</div></li><li class="listitem"><div class="para">
+						先読みキャッシュラインのデフォルト長を、100 から 128 バイトに増やしました。
+					</div></li><li class="listitem"><div class="para">
+						<code class="filename">test_quota.c</code> モジュールを改善して、既存のファイルを追跡できるようにしました。
+					</div></li><li class="listitem"><div class="para">
+						<code class="command">SQLITE_DBSTATUS_CACHE_HIT</code> と <code class="command">SQLITE_DBSTATUS_CACHE_MISS</code> オプションを、<code class="function">sqlite3_db_status()</code> インタフェースに追加しました。
+					</div></li><li class="listitem"><div class="para">
+						<code class="command">SQLITE_ENABLE_STAT2</code> のサポートを取りやめ、より高機能な <code class="command">SQLITE_ENABLE_STAT3</code> オプションに代替しました。
+					</div></li><li class="listitem"><div class="para">
+						<span class="application"><strong>sqlite3_analyzer</strong></span> ユティリティプログラムの改善。例えば、 <code class="command">--pageinfo</code> と <code class="command">--stats</code> オプションは、マルチプレックスされたデータベースについてサポートされます
+					</div></li><li class="listitem"><div class="para">
+						<code class="function">sqlite3_data_count()</code> インタフェースを改善して、プリペア済みのステートメント中に、<code class="command">SQLITE_DONE</code> があるかを判断できるようにしました。
+					</div></li><li class="listitem"><div class="para">
+						<code class="command">SQLITE_FCNTL_OVERWRITE</code> ファイルコントロールを追加して、SQLite コアが VFS に、現在のトランザクションはデータベースファイル全体を上書きするかを指示できるようにしました。
+					</div></li><li class="listitem"><div class="para">
+						デフォルトの lookaside メモリーアロケーターの確保長を、100 から 128 バイトに増やしました。
+					</div></li><li class="listitem"><div class="para">
+						問い合わせのプランナーを改善して、<code class="command">WHERE</code> クローズの <code class="command">OR</code> 式から項目を入れたり出したりすることで、よりよいインデックスを探せるようにしました。
+					</div></li><li class="listitem"><div class="para">
+						<code class="command">SQLITE_DIRECT_OVERFLOW_READ</code> コンパイル時オプションを追加し、オーバーフローページがページキャッシュをバイパスしてデータベースファイルから直接読まれることができるようにしました。
+					</div></li><li class="listitem"><div class="para">
+						<code class="function">sqlite3_mprintf()</code> ファミリーの文字列展開ルーチンのフォーマット指定子において、精度と表示幅の値の制限をなくしました。
+					</div></li></ul></div>
+
+		</div></div></div><div xml:lang="ja-JP" class="section" lang="ja-JP"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1974218">2.8. システムデーモン</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1988970">2.8.1. pciutils</h4></div></div></div><a id="id2228129" class="indexterm"></a><a id="id1554457" class="indexterm"></a><div class="para">
+			<span class="package">pciutils</span> パッケージ (PCI デバイスの検査および設定するツールを提供します) は、Fedora 17 においてバージョン 3.1.9 に更新されました。これにより、第 3 世代 PCI Express ハードウェアの通信速度およびリンク状態フィールドを読み込むことがサポートされます。
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1599820">2.8.2. brltty</h4></div></div></div><a id="id1955338" class="indexterm"></a><a id="id2070163" class="indexterm"></a><div class="para">
+			Fedora 17 は <span class="package">brltty</span> (Braille ディスプレイデーモン) のバージョン 4.3 を含みます。バージョン 4.3 は、新しいロギングおよび設定オプション、さらなるデバイスのサポートが含まれます。
+		</div></div></div><div xml:lang="ja-JP" class="section" lang="ja-JP"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1640842">2.9. Xorg</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1621410">2.9.1. GNOME シェルのソフトウェア描画</h4></div></div></div><a id="id1600274" class="indexterm"></a><a id="id1841614" class="indexterm"></a><div class="para">
+			GNOME シェルは現在、ソフトウェア描画を使用するデバイスを含む全てのハードウェアで使用できます。まだ GNOME のフォールバックモードの使用を希望されるユーザーは、<span class="package">システム情報</span> 制御パネルアプレットにアクセスしてから、<span class="emphasis"><em>グラフィクス</em></span> を選択して、<span class="emphasis"><em>強制フォールバックモード</em></span> オプションを <span class="emphasis"><em>ON</em></span> にセットすることで手動でモードを有効にすることができます。
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1617831">2.9.2. マルチタッチのサポート</h4></div></div></div><a id="id1972744" class="indexterm"></a><a id="id2309695" class="indexterm"></a><div class="para">
+			Fedora 17 の X サーバーとライブラリは、<span class="package">XInput</span> 拡張のバージョン 2.2 をサポートし、これにはマルチタッチサポートが含まれています。これを採用するアプリケーションは、今後 Fedora でのマルチタッチのサポートの恩恵を受けることができるでしょう。
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1609386">2.9.3. スムーズスクロールのサポート</h4></div></div></div><a id="id1907188" class="indexterm"></a><div class="para">
+			更新された X サーバーはまた、対応するドライバーとデバイスの為のスムーズスクロール機能も提供します。スクロールデータはレガシーなボタン押下イベントに加えて、主要な値としてエキスポートされます。これにより、アプリケーションはスピードを獲得し、スムーズなスクロール動作を提供できるようになります。マルチタッチと同様に、スムーズスクロールの恩恵を得るには、そのサポートがクライアントアプリケーションそのものに書き込まれる必要があります。
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1528173">2.9.4. DRI2 ドライバー</h4></div></div></div><a id="id1985307" class="indexterm"></a><a id="id1962589" class="indexterm"></a><a id="id1973184" class="indexterm"></a><a id="id2326482" class="indexterm"></a><a id="id1526695" class="indexterm"></a><a id="id1645582" class="indexterm"></a><a id="id1645590" class="indexterm"></a><a id="id1645598" class="indexterm"></a><a id="id1645606" class="indexterm"></a><div class="para">
+			<span class="package">i810</span>, <span class="package">mga</span>, <span class="package">r128</span>, <span class="package">savage</span>, <span class="package">sis</span>, <span class="package">tdfx</span>, and <span class="package">unichrome</span> DRI ドライバーはもはや Mesa に含まれないため、それらはもはや提供されません。影響を受けるハードウェアは以下のデバイス種別が含まれます:
+		</div><a id="id1958967" class="indexterm"></a><a id="id1958979" class="indexterm"></a><a id="id1882698" class="indexterm"></a><a id="id1882710" class="indexterm"></a><a id="id1882722" class="indexterm"></a><a id="id1882734" class="indexterm"></a><a id="id1882746" class="indexterm"></a><a id="id1882758" class="indexterm"></a><a id="id1530206" class="indexterm"></a><a id="id1530218" class="indexterm"></a><a id="id1530230" class="indexterm"></a><a id="id1530242" class="indexterm"></a><a id="id1530254" class="indexterm"></a><a id="id1530266" class="indexterm"></a><a id="id1565795" class="indexterm"></a><a id="id1565807" class="indexterm"></a><a id="id1565819" class="indexterm"></a><a id="id1565831" class="indexterm"></a><a id="id1565843" class="indexterm"></a><a id="id1565851" class="indexterm"></a><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					Intel i810 および i815 マザーボードのチップセット
+				</div></li><li class="listitem"><div class="para">
+					Matrox MGA G200, G400, G450 および G550 カード
+				</div></li><li class="listitem"><div class="para">
+					ATI Rage 128 カード
+				</div></li><li class="listitem"><div class="para">
+					S3 Savage 3D および Savage 4 カード
+				</div></li><li class="listitem"><div class="para">
+					SiS 300, 540, 630, および 730 チップセット
+				</div></li><li class="listitem"><div class="para">
+					3dfx Voodoo 3, Voodoo 4, および Voodoo 5 カード
+				</div></li><li class="listitem"><div class="para">
+					VIA Unichrome および Unichrome Pro チップセット
+				</div></li></ul></div><div class="para">
+			このハードウェアは今回、<span class="package">llvmpipe</span> ソフトウェア 3D ドライバーによりサポートされていて、旧来の DRI ドライバーとは異なり、OpenGL 2.x 機能を表現します。
+		</div></div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Welcome_to_Fedora_17.html"><strong>戻る</strong>1. Fedora 17 へようこそ</a></li><li class="up"><a accesskey="u" href="#"><strong>上に戻る</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>ホーム</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Desktop.html"><strong>次へ</strong>3. Fedora の変更点 - デスクトップユーザー向け</a></li></ul></body></html>

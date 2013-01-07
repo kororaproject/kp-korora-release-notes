@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>3. Зміни у Fedora для звичайних користувачів</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta name="generator" content="publican 2.8" /><meta name="package" content="Fedora-Release_Notes-17-uk-UA-1-0" /><link rel="home" href="index.html" title="Нотатки щодо випуску" /><link rel="up" href="index.html" title="Нотатки щодо випуску" /><link rel="prev" href="sect-Release_Notes-Changes_for_Sysadmin.html" title="2. Зміни у Fedora для системних адміністраторів" /><link rel="next" href="sect-Release_Notes-Changes_for_Developers.html" title="4. Зміни у Fedora для розробників" /></head><body><p id="title"><a class="left" href="http://www.fedoraproject.org"><img src="Common_Content/images/image_left.png" alt="Product Site" /></a><a class="right" href="http://docs.fedoraproject.org"><img src="Common_Content/images/image_right.png" alt="Documentation Site" /></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Changes_for_Sysadmin.html"><strong>назад</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Developers.html"><strong>далі</strong></a></li></ul><div class="section" id="sect-Release_Notes-Changes_for_Desktop"><div class="titlepage"><div><div keep-together.within-column="always"><h2 class="title" id="sect-Release_Notes-Changes_for_Desktop">3. Зміни у Fedora для звичайних користувачів</h2></div></div></div><div xml:lang="uk-UA" class="section" id="sect-Desktop" lang="uk-UA"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="sect-Desktop">3.1. Стільниця</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2077747">3.1.1. KDE</h4></div></div></div><a id="id1850857" class="indexterm"></a><a id="id1627274" class="indexterm"></a><div class="para">
+			До складу Fedora 17 включено збірку програмного забезпечення KDE 4.8. Збірка KDE складається з трьох частин. Платформа KDE є основою для всіх програм, які засновано на KDE. Робочий простір Плазми KDE надає користувачам змогу керувати використанням програм. І нарешті, програми KDE використовують платформу та робочий простір Плазми для забезпечення повної інтеграції з робочим середовищем користувача.
+		</div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="id1566021">3.1.1.1. Платформа KDE</h5></div></div></div><a id="id2167164" class="indexterm"></a><a id="id1689221" class="indexterm"></a><a id="id1987041" class="indexterm"></a><div class="para">
+				Платформа KDE надає у розпорядження всіх заснованих на KDE програм та робочих просторів Плазми служби обробки даних. У версії платформи KDE 4.8 ви зможете скористатися новими технологіями та значним покращенням швидкодії та стабільності роботи.
+			</div><div class="para">
+				У KDE нової версії можна скористатися <a href="https://qt.nokia.com/qtquick/"> QtQuick</a>. QtQuick є простим засобом створення невеличких програм (аплетів) для середовищ Qt, зокрема KDE. У KDE передбачено <span class="package">Компоненти Плазми QtQuick</span>, за допомогою яких спрощується та пришвидшується написання програм для робочих просторів Плазми KDE.
+			</div><div class="para">
+				<span class="package">KSecretService</span> — нова безпечна система зберігання паролів. <span class="package">KWallet</span> керує паролями для програм KDE, а <span class="package">KSecretService</span> надає змогу користуватися цими паролями програмам, які не є частиною KDE.
+			</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="id2082384">3.1.1.2. Робочі простори Плазми KDE</h5></div></div></div><a id="id2053327" class="indexterm"></a><div class="para">
+				Робочі простори Плазми KDE — два стільничних середовища, за допомогою яких можна керувати способом роботи програм. Робоче середовище для звичайних комп’ютерів має традиційний вигляд, а робочий простір Плазми для нетбуків — модифікований з метою покращення роботи на малих екранах та мобільних пристроях.
+			</div><div class="para">
+				Для <span class="package">засобу перемикання вікон</span> передбачено шість можливих компонувань. Ви можете вибрати одне з цих компонувань за допомогою програми <span class="package">Системні параметри</span>.
+			</div><div class="para">
+				Покращено роботу засобу керування вікнами <span class="package">KWin</span>. Нова версія <span class="package">KWin</span> працює значно швидше за попередню.
+			</div><div class="para">
+				Змінено компонування та спрощено панель «Керування живленням» <span class="package">Системних параметрів</span>. У новій версії параметри керування живленням працюють на пристроях з декількома дисплеями. Крім того, ви можете визначати окремі параметри для кожного з просторів дій.
+			</div><div class="para">
+				Ви можете скористатися новим віджетом Плазми, <span class="emphasis"><em>Піктограми завдань</em></span> для перетворення пунктів ваших програм на панелі задач на піктограми, подібно до інших популярних операційних систем.
+			</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="id1539355">3.1.1.3. Програми KDE</h5></div></div></div><a id="id1969643" class="indexterm"></a><a id="id1969651" class="indexterm"></a><a id="id1969659" class="indexterm"></a><a id="id1969667" class="indexterm"></a><a id="id1969675" class="indexterm"></a><a id="id1969683" class="indexterm"></a><a id="id1969691" class="indexterm"></a><div class="para">
+				Серед програм KDE всі базові програми для роботи у системі, а також декілька програм з широкими можливостями.
+			</div><div class="para">
+				<span class="package">Dolphin</span> — програма для керування файлами. Нова версія <span class="package">Dolphin</span> показує файли точніше, відповідно до можливостей обладнання, вигляд списку файлів став набагато приємнішим.
+			</div><div class="para">
+				<span class="package">Gwenview</span> — програма для перегляду зображень. У новій версії програми за допомогою нового прозорого індикатора позиції ви зможете точно визначити місце на зображенні, яке ви зараз переглядаєте. Ви також можете помітити невеличкі покращення у вигляді та швидкодії програми.
+			</div><div class="para">
+				<span class="package">Okular</span> — програма для перегляду текстових документів. У новій версії стало простіше позначити фрагмент тексту. Виправлено декілька вад, тепер текст у декілька колонок позначається належним чином.
+			</div><div class="para">
+				У новій версії текстового редактора <span class="package">Kate</span> ви зможете скористатися додатком пошуку із заміною, позначками змінених рядків та новим редактором налаштувань, за допомогою якого можна визначати змінні документа, зокрема змінні, що керують використанням табуляцій та пробілів. У Fedora 17 оновлено документацію до <span class="package">Kate</span>, доступ до цієї документації можна отримати за допомогою меню «Довідка».
+			</div><div class="para">
+				<span class="package">Cantor</span> — інтерфейс до математичних пакунків. У новій версії <span class="package">Cantor</span> передбачено підтримку Qalculate і Scilab.
+			</div><div class="para">
+				Нову версію <span class="package">Marble</span>, програми віртуального глобуса і атласу, інтегровано з <span class="package">KRunner</span>. Тепер ви можете виконувати пошук координат GPS та закладок <span class="package">Marble</span> безпосередньо з <span class="package">KRunner</span>. Ви також зможете переглядати дані щодо висоти точок маршруту, стежити за супутниками Землі та переглядати файли OpenStreetMap у векторному форматі.
+			</div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1979455">3.1.2. GNOME</h4></div></div></div><a id="id1979462" class="indexterm"></a><a id="id1979470" class="indexterm"></a><a id="id1979478" class="indexterm"></a><a id="id1979486" class="indexterm"></a><div class="para">
+			До складу Fedora 17 включено стільничне середовище GNOME 3.4.
+		</div><div class="para">
+			Серед основних переваг GNOME 3.4 можна відзначити такі:
+			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						Меню деяких з програм у новій версії інтегровано з GNOME Shell. Нові меню зменшують кількість візуальних елементів на екрані та сприяють уніфікації вигляду програм.
+					</div></li><li class="listitem"><div class="para">
+						<span class="package">Коробки</span> — нова програма GNOME 3. За допомогою «Коробок» ви зможете отримати доступ до інших комп’ютерів та віртуальних машин, встановлених на вашому або іншому комп’ютері.
+					</div></li><li class="listitem"><div class="para">
+						Покращено роботу програми <span class="package">Документи</span>, знайомої вам з попередніх версій. Серед нових можливостей збірки, підтримка портативних пристроїв зберігання даних, підтримка оприлюднення документів, підтримка друку документів, книжковий режим та інтеграція з панеллю оглядового пошуку GNOME Shell.
+					</div></li><li class="listitem"><div class="para">
+						Піктограми теми високої контрастності та зворотної високої контрастності краще сполучаються з піктограмами стандартної теми.
+					</div></li><li class="listitem"><div class="para">
+						Користувачі з особливими зоровими потребами зможуть налаштувати яскравість та контрастність зображення на дисплеї за допомогою GNOME Shell.
+					</div></li><li class="listitem"><div class="para">
+						Змінено компонування панелі мережі. Нова панель здатна показувати стан з’єднання з мережею, містить перемикач «режиму літака» для вимикання роботи у мережі, кнопку «забути мережу» для вилучення небажаних з’єднань та вбудоване діалогове вікно введення пароля.
+					</div></li><li class="listitem"><div class="para">
+						Діалогові вікна В’язки ключів GNOME тепер інтегровано до GNOME Shell.
+					</div></li><li class="listitem"><div class="para">
+						Нові можливості для користувачів графічних планшетів Wacom:
+						<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+									калібрування планшетів
+								</div></li><li class="listitem"><div class="para">
+									налаштовування відповідності кнопок
+								</div></li><li class="listitem"><div class="para">
+									прив’язування моніторів до пристрою
+								</div></li><li class="listitem"><div class="para">
+									робота з багатьма планшетами одночасно
+								</div></li><li class="listitem"><div class="para">
+									збереження окремих налаштувань для кожного з пристроїв
+								</div></li><li class="listitem"><div class="para">
+									розпізнавання планшетів та можливостей планшетів
+								</div></li></ul></div>
+
+					</div></li><li class="listitem"><div class="para">
+						Більше можливостей з налаштування вбудованої можливості збільшення частин зображення на екрані у GNOME Shell.
+					</div></li></ul></div>
+
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2166151">3.1.3. Sugar</h4></div></div></div><a id="id2166158" class="indexterm"></a><a id="id2166166" class="indexterm"></a><a id="id2166174" class="indexterm"></a><div class="para">
+			До складу Fedora 17 включено стільничне середовище Sugar 0.96. Ось деякі з його можливостей:
+			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						Вилучення HippoCanvas з метою переходу на GTK+ 3
+					</div></li><li class="listitem"><div class="para">
+						Підтримка NetworkManager 0.9
+					</div></li><li class="listitem"><div class="para">
+						sugar-toolkit, заснований на GTK+ 3
+					</div></li><li class="listitem"><div class="para">
+						Початкова підтримка PyPi
+					</div></li><li class="listitem"><div class="para">
+						Новий режим перегляду інтернету на основі GTK+ 3, webkitgtk та інтроспекції gobject
+					</div></li><li class="listitem"><div class="para">
+						Новий режим читання на основі GTK+ 3 та інтроспекції gobject
+					</div></li><li class="listitem"><div class="para">
+						Виправлено різноманітні вади та покращено можливості декількох режимів перегляду
+					</div></li></ul></div>
+
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1891719">3.1.4. Змінилися точки монтування портативних носіїв даних</h4></div></div></div><div class="para">
+			Портативні носії даних, які було змонтовано у сеансі користувача, зокрема флеш-носії USB, буде змонтовано у окремий каталог користувача. Точки монтування буде розташовано у <code class="filename">/run/media/$USER/</code> з виключними правами доступу для користувача <em class="parameter"><code>$USER</code></em>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1891741">3.1.5. Робота за одним комп’ютером декількох користувачів</h4></div></div></div><a id="id1891747" class="indexterm"></a><a id="id1891755" class="indexterm"></a><div class="para">
+			У Linux вже деякий час можна було користуватися системами з основним комп’ютером і приєднуваними робочими місцями для декількох користувачів, але у попередніх версіях це потребувало доволі складних маніпуляцій. У Fedora 17 вперше передбачено повністю автоматизоване створення подібних програмно-апаратних робочих місць.
+		</div><div class="para">
+			Щоб скористатися цією можливістю, вам просто слід з’єднати з USB базову частину, наприклад <a href="http://www.amazon.com/Plugable-Universal-DisplayLink-1920x1080-High-Speed/dp/B002PONXAI/ref=sr_1_3?ie=UTF8&amp;qid=1335904746&amp;sr=8-3">приєднувану базову станцію</a>, з монітором, мишею та клавіатурою. Все, можна працювати.
+		</div><div class="para">
+			Щоб дізнатися більше про нову можливість, зверніться до цих статей:
+			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						<a href="http://0pointer.de/blog/projects/multi-seat.html">http://0pointer.de/blog/projects/multi-seat.html</a>
+					</div></li><li class="listitem"><div class="para">
+						<a href="http://www.phoronix.com/scan.php?page=article&amp;item=plugable_multiseat_kick">http://www.phoronix.com/scan.php?page=article&amp;item=plugable_multiseat_kick</a>
+					</div></li></ul></div>
+
+		</div></div></div><div xml:lang="uk-UA" class="section" lang="uk-UA"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id2191723">3.2. Офісні програми</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1670456">3.2.1. cherrytree</h4></div></div></div><a id="id1891796" class="indexterm"></a><a id="id2143405" class="indexterm"></a><a id="id2097808" class="indexterm"></a><div class="para">
+			Пакунок <span class="package">cherrytree</span> є новим у Fedora. Це програма для роботи з ієрархічною структурою нотаток з можливістю використання розширеного форматування та підсвічування синтаксичних конструкцій, зберігання даних у окремому файлі XML або SQLite.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2031202">3.2.2. evolution</h4></div></div></div><a id="id2280505" class="indexterm"></a><div class="para">
+			Пакунки <span class="package">evolution</span> оновлено до версії 3.3.5. У новому випуску виправлено вади попередніх.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2164890">3.2.3. libreoffice</h4></div></div></div><a id="id2252386" class="indexterm"></a><div class="para">
+			Пакунки <span class="package">libreoffice</span> оновлено до версії 3.5.0.3.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1738605">3.2.4. lemonpos</h4></div></div></div><a id="id1959346" class="indexterm"></a><a id="id2077776" class="indexterm"></a><a id="id1920111" class="indexterm"></a><div class="para">
+			<span class="package">lemonpos</span> або скорочено Lemon, є касовою оболонкою з відкритим кодом, призначеною для малого та середнього бізнесу. Для керування та зберігання даних використовується MySQ. Можливе використання єдиної бази даних з багатьма терміналами у мережі.
+		</div><div class="para">
+			У Lemon передбачено сучасний і простий у користуванні інтерфейс, панель пошуку, інструмент створення чеків, інструмент адміністрування для керування вашою крамницею, засіб друку звітів тощо.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1561439">3.2.5. rachota</h4></div></div></div><a id="id1831694" class="indexterm"></a><a id="id1831702" class="indexterm"></a><div class="para">
+			<span class="package">rachota</span> є ще одним новим пакунком у Fedora. Це програма для стеження за часом, витраченим на виконання різних завдань, яка здатна працювати на багатьох платформах. Фактично, вона може працювати будь-де. Програма здатна показувати дані щодо часу у форматі діаграми, створювати звіти та фактури та аналізувати дані вимірів і пропонувати підказки щодо оптимального використання часу. Це портативний і особистий інструмент.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2261086">3.2.6. scribus</h4></div></div></div><a id="id2261093" class="indexterm"></a><a id="id2261101" class="indexterm"></a><a id="id1868201" class="indexterm"></a><a id="id1868213" class="indexterm"></a><a id="id1868225" class="indexterm"></a><a id="id1868237" class="indexterm"></a><a id="id1868249" class="indexterm"></a><a id="id1676845" class="indexterm"></a><a id="id1676853" class="indexterm"></a><a id="id1676861" class="indexterm"></a><a id="id1676869" class="indexterm"></a><a id="id1676877" class="indexterm"></a><a id="id1676885" class="indexterm"></a><a id="id1676893" class="indexterm"></a><a id="id1676901" class="indexterm"></a><a id="id1841982" class="indexterm"></a><div class="para">
+			Пакунок Scribus було оновлено до версії 1.4.0, нового кроку у розвитку програми.
+			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						Покращення у можливостях обробки об’єктів (зокрема інструменти перетворення, подібні до реалізованих у програмах для малювання) з покращеннями у вже реалізованих можливостях, зокрема альбомі фрагментів та засобі керування зображеннями.
+					</div></li><li class="listitem"><div class="para">
+						Багато додаткових можливостей з оформлення тексту та приготування до друку, зокрема стилі символів, оптичні поля та розширення гліфів. Нарешті реалізовано дії зі скасування та повторення для всіх пов’язаних з текстом операцій. Новий сценарій уможливлює заміну прямих лапок у тексті на правильні типографські лапки на основі відповідних параметрів мови. Стало зручнішим користування програми, зокрема покращено механізм розташовування та руху курсора, пришвидшено компонування на полотні та взаємодію між пов’язаними областями.
+					</div></li><li class="listitem"><div class="para">
+						Нові можливості для векторних об’єктів, зокрема булеві операції над контурами, ефекти векторної графіки та редактор стилів ліній.
+					</div></li><li class="listitem"><div class="para">
+						Значні покращення у обробці заливання, зокрема заливання візерунком, більше типів градієнтів, підтримка зовнішніх форматів палітр кольорів (AI, EPS, GPL, PostScript, SOC), багато нових палітр, зокрема комерційних палітр від студій Resene та dtp, а також національних та урядових стандартів.
+					</div></li><li class="listitem"><div class="para">
+						За допомогою нової області з назвою «Область обробки» («Render Frame») ви зможете обробити (і потім експортувати) дані, виведені будь-якою програмою, яка здатна створювати файли PostScript, PDF або PNG на основі рядка команди (наприклад LaTeX, Lilypond, POV-Ray) з вікна Scribus. Початкову версію цієї області було розроблено у межах проекту Google Summer of Code. Проект було розвинено з метою уможливити імпортування створених поза межами програми документів, наукових публікацій та формул. За допомогою простого файла налаштувань можна додати засоби обробки відмінні від типових.
+					</div></li><li class="listitem"><div class="para">
+						Фільтри імпортування векторної графіки: у Scribus 1.4.0 передбачено нові фільтри для файлів у таких форматах: Adobe Illustrator (на основі EPS і PDF), Macintosh Picture (PICT), Windows Metafile (WMF), Xfig (FIG), векторна графіка Calamus (CVG), шаблони Kivio (SML) та форми DIA (SHAPE).
+					</div></li><li class="listitem"><div class="para">
+						Щодо растрових зображень: значно покращено обробку файлів Photoshop, зокрема підтримку декількох контурів обрізання або шарів PSD. Засіб керування зображеннями було переписано, додано нові неруйнівні ефекти зображень. Крім того, у Scribus 1.4.0 передбачено підтримку роботи з даними EXIF у зображеннях та імпортування растрових зображень Windows та OS/2 (BMP).
+					</div></li><li class="listitem"><div class="para">
+						Серед важливих покращень можливостей приготування даних до друку у Scribus передбачено додавання друкарської розмітки та показ вкривної здатності типографської фарби на зображенні попереднього перегляду. Крім того, у новій версії Scribus уможливлено перетворення у одне клацання кнопкою миші спеціальних кольорів на робочі кольори під час експортування до PDF або PostScript.
+					</div></li><li class="listitem"><div class="para">
+						Також значно покращено можливості експортування даних у форматі PDF. У новій версії Scribus дані можна експортувати у форматі версії PDF 1.5, зокрема використовувати шари PDF. Крім того, тепер можна вбудовувати файли EPS та PDF у експортований файл PDF замість растеризації векторних даних. Покращено також можливості вбудовування та заміни шрифтів у PDF.
+					</div></li><li class="listitem"><div class="para">
+						У Scribus 1.4.0 передбачено керування кольорами на основі littleCMS версій 1 і 2. Крім того, керування кольорами можна увімкнути єдиним клацанням у головному вікні програми.
+					</div></li><li class="listitem"><div class="para">
+						Крім того, командою розробників Scribus додано можливість імітувати зображення, яке бачать ті, хто не може розрізняти кольорів.
+					</div></li><li class="listitem"><div class="para">
+						Було також додано безліч незначних та значних покращень у користуванні програмою.
+					</div></li><li class="listitem"><div class="para">
+						Оновлено включені до пакунка сценарії, зокрема до меню «Сценарій» додано сценарій «Автолапки», який перетворює прямі лапки у текстових фрагментах на правильні типографські лапки відповідної мови.
+					</div></li><li class="listitem"><div class="para">
+						До складу Scribus 1.4.0 включено набагато більше шаблонів, ніж це було у попередніх версіях програми.
+					</div></li><li class="listitem"><div class="para">
+						Вміст довідки до програми було переписано і оновлено.
+					</div></li></ul></div>
+
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2255507">3.2.7. timeline</h4></div></div></div><a id="id1576177" class="indexterm"></a><div class="para">
+			Крім того, новим пакунком у Fedora 17 є <span class="package">timeline</span>, програма для показу та навігації записами подій у розкладі, яка може працювати на багатьох платформах. Програма може таке:
+			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						Впорядковувати записи подій у ієрархічні категорії.
+					</div></li><li class="listitem"><div class="para">
+						Пересувати записи і змінювати час подій за допомогою миші.
+					</div></li><li class="listitem"><div class="para">
+						Дублювати записи подій.
+					</div></li><li class="listitem"><div class="para">
+						Шукати записи подій.
+					</div></li><li class="listitem"><div class="para">
+						Переходити до певної дати.
+					</div></li><li class="listitem"><div class="para">
+						Показувати дані у різному форматі, залежно від масштабу.
+					</div></li><li class="listitem"><div class="para">
+						Експортувати дані у форматі зображення.
+					</div></li></ul></div>
+
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1576257">3.2.8. vym</h4></div></div></div><a id="id1576264" class="indexterm"></a><div class="para">
+			Пакунок <span class="package">vym</span> оновлено до версії 2.0.6. У новій версії ви зможете скористатися багатьма новими можливостями:
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					Загальне
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								Обробка файлів
+								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+											Автозбереження
+										</div></li><li class="listitem"><div class="para">
+											Автоматичне створення резервних копій
+										</div></li><li class="listitem"><div class="para">
+											нова версія vym регулярно перевіряє, чи не було змінено карту на диску і
+										</div></li><li class="listitem"><div class="para">
+											під час завантаження карт і зображень можна вибирати декілька файлів
+										</div></li><li class="listitem"><div class="para">
+											відновлення попереднього сеансу
+										</div></li></ul></div>
+
+							</div></li><li class="listitem"><div class="para">
+								декілька центрів карти на одній карті
+							</div></li><li class="listitem"><div class="para">
+								Додано сторінку довідника (man)
+							</div></li><li class="listitem"><div class="para">
+								Нові переклади
+							</div></li><li class="listitem"><div class="para">
+								Код
+								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+											Повністю портовано на Qt4.
+										</div></li><li class="listitem"><div class="para">
+											Експортування до HTML без проміжного перетворення XSLT
+										</div></li><li class="listitem"><div class="para">
+											Підтримка D-Bus (часткова)
+										</div></li></ul></div>
+
+							</div></li></ul></div>
+
+				</div></li></ul></div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					Імпортування/Експортування
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								Можна повторювати останню дію з експортування
+							</div></li><li class="listitem"><div class="para">
+								Просте експортування до таблиці у форматі CSV
+							</div></li><li class="listitem"><div class="para">
+								Найважливішими діями з експортування тепер можна керувати зі скриптів
+							</div></li><li class="listitem"><div class="para">
+								У експортованих даних у форматі ASCII тепер показуються адреси
+							</div></li><li class="listitem"><div class="para">
+								Імпортування даних у форматі карт FreeMind
+							</div></li></ul></div>
+
+				</div></li></ul></div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					Обробка даних
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								Швидке впорядковування та пересування за допомогою «цілей»
+								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+											Цілі можна визначати однією комбінацією клавіш
+										</div></li><li class="listitem"><div class="para">
+											Після переходу ціль позначається
+										</div></li><li class="listitem"><div class="para">
+											«Перейти до» пересуває позначення цілі без пересування області перегляду. Дуже зручно для швидкого впорядковування.
+										</div></li></ul></div>
+
+							</div></li><li class="listitem"><div class="para">
+								Режим «мозкового штурму»
+							</div></li><li class="listitem"><div class="para">
+								Додавання/Вилучення
+								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+											Вставлення гілки і позначення її дочірніх елементів
+										</div></li><li class="listitem"><div class="para">
+											Вилучення дочірніх елементів з гілки
+										</div></li><li class="listitem"><div class="para">
+											Вилучення гілки зі збереженням дочірніх елементів
+										</div></li></ul></div>
+
+							</div></li><li class="listitem"><div class="para">
+								Перехресні посилання
+								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+											Тепер можна зручно позначати клацанням
+										</div></li><li class="listitem"><div class="para">
+											Дуже просто переходити за перехресним посиланням клацанням на куті гілки, місці, звідки вона починається
+										</div></li><li class="listitem"><div class="para">
+											Крім того, для переходу можна скористатися натисканням клавіші «F»
+										</div></li></ul></div>
+
+							</div></li><li class="listitem"><div class="para">
+								Посилання/Адреси
+								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+											Відкриття всіх vymLink-ів у піддереві
+										</div></li><li class="listitem"><div class="para">
+											Відкриття всіх адрес у піддереві
+										</div></li><li class="listitem"><div class="para">
+											Інтеграція з Bugzilla
+											<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+														vym може отримувати дані безпосередньо з Bugzilla (слід встановити додаткові пакунки, див. підручник)
+													</div></li><li class="listitem"><div class="para">
+														Швидкі перевірки станів вад: всі вади у піддереві може бути оновлено натисканням однієї комбінації клавіш
+													</div></li><li class="listitem"><div class="para">
+														Підтримка запитів до Bugzilla
+													</div></li></ul></div>
+
+										</div></li></ul></div>
+
+							</div></li><li class="listitem"><div class="para">
+								Копіювання з наступних записів у журналі до поточного
+							</div></li><li class="listitem"><div class="para">
+								Додавання часової позначки до гілки
+							</div></li><li class="listitem"><div class="para">
+								Лексичне впорядковування (вперед і назад)
+							</div></li><li class="listitem"><div class="para">
+								Створення нової карти з поточним позначеним елементом як центром карти
+							</div></li><li class="listitem"><div class="para">
+								Від’єднання гілки для створення на її основі нового центру карти
+							</div></li><li class="listitem"><div class="para">
+								Перехід вперед і назад у журналі позначення
+							</div></li></ul></div>
+
+				</div></li></ul></div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					Віджети
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								Редактори
+								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+											Додано редактор ієрархії
+										</div></li><li class="listitem"><div class="para">
+											Додано редактор заголовків
+										</div></li></ul></div>
+
+							</div></li><li class="listitem"><div class="para">
+								Нове вікно пошуку
+								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+											Чіткий показ всіх відповідників, гілок і нотаток
+										</div></li><li class="listitem"><div class="para">
+											Полегшення позначення відповідників у редакторах
+										</div></li></ul></div>
+
+							</div></li><li class="listitem"><div class="para">
+								Більше діалогових вікон тепер запам’ятовують вимикання попереджень
+							</div></li><li class="listitem"><div class="para">
+								На панелі поступу показується назва файла поточної карти, що завантажується
+							</div></li><li class="listitem"><div class="para">
+								Віджети панелей
+								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+											Можливе довільне розташовування
+											<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+														Рухомі панелі поруч з основним вікном
+													</div></li><li class="listitem"><div class="para">
+														Інтегровані (вгорі, ліворуч, праворуч, внизу) до головного вікна
+													</div></li></ul></div>
+
+										</div></li><li class="listitem"><div class="para">
+											Редактор нотаток
+										</div></li><li class="listitem"><div class="para">
+											Вікно пошуку
+										</div></li></ul></div>
+
+							</div></li></ul></div>
+
+				</div></li></ul></div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					Графіка
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								Анімація
+								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+											Панорамування
+										</div></li><li class="listitem"><div class="para">
+											Виправлення
+										</div></li></ul></div>
+
+							</div></li><li class="listitem"><div class="para">
+								Зображення
+								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+											Базова підтримка SVG
+										</div></li><li class="listitem"><div class="para">
+											Можливість зміни розмірів зображень
+										</div></li><li class="listitem"><div class="para">
+											Нові стандартні прапорці
+										</div></li></ul></div>
+
+							</div></li><li class="listitem"><div class="para">
+								Рамки
+								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+											Включення піддерева до рамки
+										</div></li><li class="listitem"><div class="para">
+											Новий тип рамок: хмара
+										</div></li></ul></div>
+
+							</div></li><li class="listitem"><div class="para">
+								Масштабування
+								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+											Зміна масштабу за допомогою коліщатка миші (натисніть клавішу Ctrl)
+										</div></li><li class="listitem"><div class="para">
+											Масштаб зберігається і відновлюється під час завантаження
+										</div></li><li class="listitem"><div class="para">
+											Центрування позначеної області за допомогою «.», відновлення масштабу за допомогою «,»
+										</div></li></ul></div>
+
+							</div></li><li class="listitem"><div class="para">
+								Автоматичне компонування (виявлення перетинів)
+							</div></li><li class="listitem"><div class="para">
+								Шрифти
+								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+											Встановлення типового шрифту
+										</div></li><li class="listitem"><div class="para">
+											Можливість використання форматованого тексту у заголовках гілок
+										</div></li></ul></div>
+
+							</div></li></ul></div>
+
+				</div></li></ul></div></div></div><div xml:lang="uk-UA" class="section" lang="uk-UA"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1634821">3.3. Інтернаціоналізація</h3></div></div></div><div class="para">
+	</div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1934747">3.3.1. IBus</h4></div></div></div><a id="id2152195" class="indexterm"></a><a id="id1964047" class="indexterm"></a><a id="id1960677" class="indexterm"></a><a id="id1660027" class="indexterm"></a><a id="id2361055" class="indexterm"></a><a id="id2268490" class="indexterm"></a><a id="id1561374" class="indexterm"></a><a id="id1613723" class="indexterm"></a><a id="id2191686" class="indexterm"></a><a id="id1969387" class="indexterm"></a><a id="id1986836" class="indexterm"></a><a id="id2029519" class="indexterm"></a><a id="id1525407" class="indexterm"></a><a id="id1922312" class="indexterm"></a><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					У новій версії IBus передбачено новий перемикач способів введення з контекстним вікном, у якому буде показано список доступних рушіїв способів введення, щось подібне до Alt-Tab у засобах керування вікнами. Крім того, нова версія IBus краще і точніше обробляє дані щодо розкладок клавіатури від графічного сервера.
+				</div></li><li class="listitem"><div class="para">
+					У IBus змінено поведінку щодо спільного використання рушіїв способів введення та даних щодо стану різними програмами.
+				</div></li><li class="listitem"><div class="para">
+					У новій версії ibus-m17n деякі з рушіїв m17n типово вимкнено, зокрема вимкнено zh-pinyin, ko-han2 та більшість рушіїв kbd, оскільки вони конфліктують з певними способами введення, зокрема ibus-pinyin та ibus-hangul.
+				</div></li><li class="listitem"><div class="para">
+					ibus-fep є новою клієнтською оболонкою IBus, якою можна скористатися у консолях і графічних терміналах.
+				</div></li><li class="listitem"><div class="para">
+					У новій версії пришвидшувача введення індійською (Indic Typing Booster) передбачено підтримку бенгальської мови, а також тестову підтримку мов мараті, хінді, гуджараті та тамільської мови.
+				</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1978778">3.3.2. Шрифти азійських писемностей</h4></div></div></div><a id="id1983287" class="indexterm"></a><a id="id1983295" class="indexterm"></a><a id="id1983303" class="indexterm"></a><a id="id1983311" class="indexterm"></a><a id="id1983319" class="indexterm"></a><a id="id1983327" class="indexterm"></a><a id="id1983335" class="indexterm"></a><a id="id1983343" class="indexterm"></a><a id="id1965642" class="indexterm"></a><a id="id1965650" class="indexterm"></a><a id="id1965658" class="indexterm"></a><a id="id1965666" class="indexterm"></a><a id="id1965674" class="indexterm"></a><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					Змінено типовий шрифт запису корейської мови з «Un» на «Nanum». Причиною є те, що символи «Nanum» виглядають краще за символи «Un», крім того, «Nanum» має одноширинний варіант.
+				</div></li><li class="listitem"><div class="para">
+					Типовий шрифт для запису спрощеної китайської ієрогліфіки змінено з «WenQuanYi Zen Hei» на «WenQuanYi Zen Hei Sharp». У цьому шрифті використано вбудовані растрові зображення, які забезпечують краще відтворення ієрогліфів малих розмірів. Щоб змінити типовий шрифт спрощеної китайської на попередній варіант, можна скористатися програмою zenheiset.
+				</div></li><li class="listitem"><div class="para">
+					Умови ліцензування шрифтів Lohit змінено на SIL OFL.
+				</div></li><li class="listitem"><div class="para">
+					Додано нові пакунки шрифтів каннада, gubbi-fonts та navilu-fonts.
+				</div></li><li class="listitem"><div class="para">
+					Шрифти Culmus оновлено до версії 0.121, у якій повністю перероблено гарнітуру Frank Ruehl. У новій гарнітурі передбачено підтримку діакритичних символів та кернінґу.
+				</div></li></ul></div></div></div><div xml:lang="uk-UA" class="section" id="sect_Multimedia" lang="uk-UA"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="sect_Multimedia">3.4. Звук та відео</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1947273">3.4.1. blender</h4></div></div></div><a id="id2030078" class="indexterm"></a><a id="id2241943" class="indexterm"></a><a id="id1966538" class="indexterm"></a><a id="id1626034" class="indexterm"></a><a id="id2028813" class="indexterm"></a><div class="para">
+			Пакунок <span class="package">blender</span> оновлено до версії 2.6.1. У новому випуску ви зможете скористатися новим пришвидшеним рушієм обробки зображення, стеженням за рухом, динамічним малюванням, імітацією хвиль тощо. Додаткову інформацію можна знайти <a href="http://www.blender.org/development/release-logs/blender-260/">тут</a> і <a href="http://www.blender.org/development/release-logs/blender-261/">тут</a>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2230359">3.4.2. calibre</h4></div></div></div><a id="id2349696" class="indexterm"></a><div class="para">
+			Пакунок <span class="package">calibre</span> оновлено з версії 0.8.11 до версії 0.8.39. Серед багатьох покращень слід відзначити такі: вилучені книги пересуваються до теки смітника, а не вилучаються остаточно, програмі можна передати у командному рядку декілька назв файлів, передбачено можливість зміни кроку зміни шрифту у відповідь на натискання кнопки збільшення або зменшення, можна вимкнути контекстне вікно з запитом щодо перетворення форматів, створено і оновлено багато рецептів тощо.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2298270">3.4.3. epris</h4></div></div></div><div class="para">
+			<span class="package">epris</span> — простий невибагливий до ресурсів програвач музики. <span class="emphasis"><em>epris</em></span> є новою програмою у Fedora 17. З коротким оглядом можна ознайомитися <a href="http://code.google.com/p/epris/">тут</a>
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1665392">3.4.4. epstool</h4></div></div></div><a id="id2325482" class="indexterm"></a><div class="para">
+			<span class="package">epstool</span> — програма для створення або видобування зображень попереднього перегляду у файлах EPS, виправлення меж рисунків і перетворення зображень у растрові формати. Ця програма є новою у Fedora 17.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2202844">3.4.5. gimp</h4></div></div></div><a id="id2202851" class="indexterm"></a><div class="para">
+			Пакунок <span class="package">gimp</span> оновлено до версії 2.8.0. У програмі відбулося багато змін, деякі з них є суттєвими. Серед основних змін слід відзначити такі:
+			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						У <span class="package">gimp</span> 2.8 вперше передбачено додатковий режим одного вікна. Перемикання між типовим багатовіконним режимом та новим одновіконним режимом можна здійснювати за допомогою пункту «Одновіконний режим» у меню «Вікна».
+					</div></li><li class="listitem"><div class="para">
+						У новій версії <span class="package">gimp</span> передбачено швартування діалогових вікон на панелі вікон у декілька стовпчиків.
+					</div></li><li class="listitem"><div class="para">
+						Швартовані панелі вилучено з інтерфейсу і замінено на панелі контекстних підказок. Вилучено елемент керування для швартування перетягуванням, кнопку швартованого меню пересунуто до вкладок. Додано новий стиль автоматичного розташовування вкладок, за використання якого вкладки займають менше місця.
+					</div></li><li class="listitem"><div class="para">
+						Доволі значною зміною є відокремлення дій зі збереження та експортування зображень. Зберегти зображення можна лише у форматі XCF, який є рідним форматом GIMP. У цьому форматі можна зберегти будь-які дані, потрібні для поточного редагування.
+					</div></li><li class="listitem"><div class="para">
+						У складних композиціях можливості плоскої структури шарів є доволі обмеженими. У GIMP 2.8 користувачі зможуть краще впорядкувати композиції за допомогою нової можливості групування шарів, яка надає змогу створювати ієрархічні структури шарів. Керування групами шарів є повністю керованим за допомогою програмного інтерфейсу додатків GIMP.
+					</div></li><li class="listitem"><div class="para">
+						Редагування тексту за допомогою відповідного інструмента тепер відбувається на полотні, замість редагування у окремому вікні.
+					</div></li><li class="listitem"><div class="para">
+						Крім того, покращено віджет введення розмірів, який використовується для введення більшості параметрів координат, ширини та висоти. Наприклад, у діалоговому вікні масштабу можна вказати «50%» у полі «Ширина», щоб визначити масштаб у 50% за шириною. Крім того можна скористатися цілими виразами, наприклад «30in + 40px» або «4 * 5.4in».
+					</div></li></ul></div>
+
+		</div><div class="para">
+			З багатьма іншими покращеннями можна ознайомитися <a href="http://www.gimp.org/release-notes/gimp-2.8.html">тут</a>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2027037">3.4.6. idjc</h4></div></div></div><a id="id2027043" class="indexterm"></a><a id="id2027051" class="indexterm"></a><a id="id1983572" class="indexterm"></a><a id="id1983584" class="indexterm"></a><a id="id1983592" class="indexterm"></a><div class="para">
+			Internet DJ Console — проект зі створення потужної, але простої у користування клієнтської програми для тих, хто захоплюється створенням інтерактивних радіошоу за допомогою інтернету та серверів Shoutcast або Icecast. <span class="package">idjc</span> є новим пакунком у Fedora.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1983612">3.4.7. vpmk</h4></div></div></div><a id="id1983619" class="indexterm"></a><a id="id1983627" class="indexterm"></a><a id="id1983635" class="indexterm"></a><div class="para">
+			Віртуальна MIDI-клавіатура піаніно (Virtual MIDI Piano Keyboard) є програмою для створення та отримання даних подій MIDI. Сама програма не здатна видавати звукові дані, але може використовувати для цього синтезатор MIDI (програмний або апаратний, вбудований або зовнішній). <span class="package">vpmk</span> є новим пакунком у Fedora.
+		</div></div></div><div xml:lang="uk-UA" class="section" lang="uk-UA"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1784991">3.5. Друк</h3></div></div></div><a id="id2191664" class="indexterm"></a><a id="id1575937" class="indexterm"></a><a id="id1649833" class="indexterm"></a><div class="para">
+	</div><div class="para">
+		У Fedora 17 ви зможете скористатися підтримкою служби вибору профілів кольорів для CUPS на основі colord. За допомогою цієї служби користувач може визначати профілі кольорів, які покращуватимуть рівень відповідності кольорів друкованого матеріалу.
+	</div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Changes_for_Sysadmin.html"><strong>назад</strong>2. Зміни у Fedora для системних адміністраторів</a></li><li class="up"><a accesskey="u" href="#"><strong>Догори</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Початок</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Developers.html"><strong>далі</strong>4. Зміни у Fedora для розробників</a></li></ul></body></html>
