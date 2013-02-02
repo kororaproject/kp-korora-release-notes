@@ -1,179 +1,240 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>2. Changes in Fedora for System Administrators</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta name="generator" content="publican 2.8" /><meta name="package" content="Fedora-Release_Notes-17-en-US-1-0" /><link rel="home" href="index.html" title="Release Notes" /><link rel="up" href="index.html" title="Release Notes" /><link rel="prev" href="sect-Release_Notes-Welcome_to_Fedora_17.html" title="1. Welcome to Fedora 17" /><link rel="next" href="sect-Release_Notes-Changes_for_Desktop.html" title="3. Changes in Fedora for Desktop Users" /></head><body><p id="title"><a class="left" href="http://www.fedoraproject.org"><img src="Common_Content/images/image_left.png" alt="Product Site" /></a><a class="right" href="http://docs.fedoraproject.org"><img src="Common_Content/images/image_right.png" alt="Documentation Site" /></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Welcome_to_Fedora_17.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Desktop.html"><strong>Next</strong></a></li></ul><div class="section" id="sect-Release_Notes-Changes_for_Sysadmin"><div class="titlepage"><div><div keep-together.within-column="always"><h2 class="title" id="sect-Release_Notes-Changes_for_Sysadmin">2. Changes in Fedora for System Administrators</h2></div></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1644720">2.1. Kernel</h3></div></div></div><a id="id1526332" class="indexterm"></a><a id="id1551171" class="indexterm"></a><div class="para">
-		Fedora 17 features the 3.3.4 kernel.
-	</div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1656955">2.2. Installation</h3></div></div></div><a id="id1540903" class="indexterm"></a><a id="id1598265" class="indexterm"></a><a id="id1526103" class="indexterm"></a><a id="id1541911" class="indexterm"></a><a id="id1526002" class="indexterm"></a><a id="id1597903" class="indexterm"></a><a id="id1582405" class="indexterm"></a><a id="id1637404" class="indexterm"></a><div class="para">
-		<div class="warning"><div class="admonition_header"><h2>Changes to Direct Kernel Boot</h2></div><div class="admonition"><div class="para">
-				There are significant changes when installing via a direct kernel boot such as PXE. Normal installation from installation media is unaffected.
-			</div></div></div>
-
-	</div><div class="para">
-		Advanced users may do any of a number of styles of network installation, generally involving setting up some minimal kernel environment to perform the installation. This operation has undergone significant changes in Fedora 17.
-	</div><div class="para">
-		In F16, it is generally <span class="emphasis"><em>only</em></span> necessary to specify the kernel and initrd location, and the install would work - <code class="code">kernel/initrd</code> gets <code class="code">stage1</code>, and <code class="code">stage1</code> gets <code class="code">stage2</code>.
-	</div><div class="para">
-		With noloader, this is no longer the case: when doing a direct kernel boot, the location for <code class="code">stage2</code> must be specified. In other words: pass <code class="code">repo=</code> or <code class="code">stage2=</code> (or <code class="code">inst.repo=</code> or <code class="code">inst.stage2=</code>, as is now preferred), pointing to a repository. If the <code class="code">stage2</code> image is on one server but then the installation packages are on some other server, <code class="code">stage2=</code> must be used: <code class="code">repo=</code> should only be used if the single server contains everything needed for the install (both the <code class="code">stage2</code> image <span class="emphasis"><em>and</em></span> all the packages to install). Note that <code class="code">stage2=</code> still expects to see a 'repository' tree, you cannot just pass the path direct to a <code class="filename">squashfs.img</code> file (which is how <code class="code">stage2=</code> worked when it previously existed in F15 and earlier).
-	</div><div class="para">
-		For example: 
-<pre class="screen">
-label linux
-kernel vmlinuz
-append initrd=initrd.img
-</pre>
-		 is no longer valid. It is necessary to specify <code class="code">repo</code>: 
-<pre class="screen">
-label linux
-kernel vmlinuz
-append initrd=initrd.img repo=http://dl.fedoraproject.org/pub/fedora/linux/development/17/x86_64/os/
-</pre>
-		 or <code class="code">stage2</code>: 
-<pre class="screen">
-label linux
-kernel vmlinuz
-append initrd=initrd.img stage2=http://my.internal.server/17/x86_64/os/
-</pre>
-		 (or any other valid mirror).
-	</div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1649490">2.3. Security</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2342997">2.3.1. Password Quality Checking</h4></div></div></div><a id="id2341716" class="indexterm"></a><a id="id1616170" class="indexterm"></a><div class="para">
-			Fedora now has a single configurable library, <a href="https://fedorahosted.org/libpwquality"> libpwquality</a>, for checking the quality of new passwords used for system accounts. The system wide password quality checks provided by this library are configured by modifying the <code class="filename">/etc/security/pwquality.conf</code> configuration file.
-		</div><div class="para">
-			Developers wishing to call this API from their applications will find the API description in the <code class="filename">pwquality.h</code> file provided by the <span class="package">libpwquality-devel</span> package. A python wrapper, <span class="emphasis"><em>python-pwquality</em></span>, is also provided.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2310383">2.3.2. SELinux Deny Ptrace</h4></div></div></div><a id="id1576480" class="indexterm"></a><div class="para">
-			A new SELinux boolean, <code class="varname">deny_ptrace</code>, has been added. It is recommended that users who do not plan to debug applications on their machine turn this boolean on. The boolean prevents rogue processes from being able to read the memory of, or otherwise attack, other processes using debugging tools including <span class="application"><strong>ptrace</strong></span> and <span class="application"><strong>gdb</strong></span>.
-		</div><div class="para">
-			Such attacks are prevented even where the rogue process is running as the root user or attacking a process running with the same SELinux context and label. To permanently enable the protection provided by the <code class="varname">deny_ptrace</code> boolean, execute the following command as root: 
-<pre class="screen">
-# setsebool -P deny_ptrace 1
-</pre>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>2. Changes in Fedora for System Administrators</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta name="generator" content="publican 2.8" /><meta name="package" content="Fedora-Release_Notes-18-en-US-1-0" /><link rel="home" href="index.html" title="Release Notes" /><link rel="up" href="index.html" title="Release Notes" /><link rel="prev" href="sect-Release_Notes-Welcome_to_Fedora_18.html" title="1. Welcome to Fedora 18" /><link rel="next" href="sect-Release_Notes-Changes_for_Desktop.html" title="3. Changes in Fedora for Desktop Users" /></head><body><p id="title"><a class="left" href="http://www.fedoraproject.org"><img src="Common_Content/images/image_left.png" alt="Product Site" /></a><a class="right" href="http://docs.fedoraproject.org"><img src="Common_Content/images/image_right.png" alt="Documentation Site" /></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Welcome_to_Fedora_18.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Desktop.html"><strong>Next</strong></a></li></ul><div class="section" id="sect-Release_Notes-Changes_for_Sysadmin"><div class="titlepage"><div><div keep-together.within-column="always"><h2 class="title" id="sect-Release_Notes-Changes_for_Sysadmin">2. Changes in Fedora for System Administrators</h2></div></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp16673328">2.1. Kernel</h3></div></div></div><a id="idp17616544" class="indexterm"></a><a id="idp22058864" class="indexterm"></a><div class="para">
+		Fedora 18 features the 3.6.0 kernel.
+	</div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp24464816">2.2. Installation</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp26029536">2.2.1. Dual booting with <span class="productname">Windows 8</span>
+		</h4></div></div></div><div class="para">
+			<div class="warning"><div class="admonition_header"><h2><span class="productname">Windows 8</span> <code class="function">Fast Restart</code></h2></div><div class="admonition"><div class="para">
+					Using the <code class="function">fast restart</code> feature of <span class="productname">Windows 8</span> and rebooting into Fedora may lead to data loss. Files written to the <span class="productname">Windows</span> partition by Fedora may be deleted when rebooting into <span class="productname">Windows 8</span>. This may be avoided by disabling the <code class="function">fast restart</code> feature in <span class="productname">Windows 8</span>.
+				</div></div></div>
 
 		</div><div class="para">
-			To disable the protection provided by the <code class="varname">deny_ptrace</code> boolean temporarily, execute the following command as root:
-		</div><pre class="screen">
-# setsebool deny_ptrace 0
-</pre></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1637445">2.3.3. Services Private /tmp</h4></div></div></div><a id="id1541327" class="indexterm"></a><div class="para">
-			A number of services managed by <span class="package">systemd</span> have been modified to make use of its ability to provide them with a private <code class="filename">/tmp</code> directory. Privileged services using <code class="filename">/tmp</code> and <code class="filename">/var/tmp</code> have previously been found to be open to being interfered with by unprivileged users, potentially leading to privilege escalation. Using private <code class="filename">/tmp</code> directories for services prevents this style of exploit.
-		</div><div class="para">
-			The directive added to the <span class="package">systemd</span> unit files for the modified services is: 
+			The <span class="package">ntfs-3g</span> driver used by Fedora 18 for <code class="function">NTFS</code> filesystems will attempt to detect the dangerous situation and prevent mounting to avoid data loss. This is less true of previous Fedora releases, and <code class="function">fast restart</code> <span class="emphasis"><em>should still be disabled</em></span> to ensure proper function and prevent data loss.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp17739200">2.2.2. New Installer User Interface</h4></div></div></div><div class="para">
+			The <span class="application"><strong>anaconda</strong></span> installer has been totally redesigned for Fedora 18. Users will now have more flexibility in how they configure their installation. Some tasks will run in the background to speed the installation process. Consult the Fedora 18 <span class="productname">Installation Guide</span> at <a href="https://docs.fedoraproject.org">https://docs.fedoraproject.org</a> for more information.
+		</div><div class="note"><div class="admonition_header"><h2>Advanced Features</h2></div><div class="admonition"><div class="para">
+				System configuration with <span class="application"><strong>anaconda</strong></span> is more powerful and flexible through the use of <code class="function">kickstart</code> files. Kickstart files automate installation and accommodate advanced requirements not presented in the GUI, such as multiple desktop environments, atypical storage, and more. Learn more about kickstart options in the <span class="productname">Installation Guide</span>.
+			</div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp16861072">2.2.2.1. Installing grub</h5></div></div></div><div class="para">
+				Fedora has used <span class="application"><strong>GRUB2</strong></span> for several releases. A great improvement over legacy <span class="application"><strong>GRUB</strong></span>, <span class="application"><strong>GRUB2</strong></span> supports more filesystems, virtual block devices such as <span class="application"><strong>mdadm</strong></span> and <span class="application"><strong>LVM</strong></span>, automatically scans for and configures available operating systems, and presents visual improvements. This added functionality makes the lives of Fedora users much easier, but comes at the cost of size. <span class="application"><strong>GRUB2</strong></span> fits in the <code class="function">Master Boot Record</code> of a drive, but many filesystems do not leave room on a partition for <span class="application"><strong>GRUB2</strong></span> without special configuration.
+			</div><div class="para">
+				<span class="application"><strong>Anaconda</strong></span> now follows the recommendation of upstream <span class="application"><strong>GRUB</strong></span> developers and does not install <span class="application"><strong>GRUB2</strong></span> to partitions. Users with multiboot systems are encouraged to make use of GRUB's OS detection: 
 <pre class="screen">
-[Service]
-PrivateTmp=true
+	  <code class="command"> # grub2-mkconfig -o /boot/grub2/grub.cfg </code>
+</pre>
+				 Users can also choose to skip bootloader installation with anaconda. GRUB can be manually installed to a partition with the <code class="function">force</code> option, at the risk of filesystem damage, or another bootloader can be used.
+			</div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idm4499088">2.2.3. Changed package group names</h4></div></div></div><div class="para">
+			For those doing <code class="function">kickstart</code> installs, many package group names have changed in Fedora 18. In particular, the <code class="literal">Base</code> group has been renamed to <code class="literal">Standard</code>. In order to install this group, it must be <span class="emphasis"><em>explicitly</em></span> specified in the <code class="function">kickstart</code> file.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idm4495376">2.2.4. <code class="function">--nobase</code></h4></div></div></div><div class="para">
+			The <code class="function">--nobase</code> flag used to supress the installation of the <code class="literal">Base</code> package group has been deprecated.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idm1502128">2.2.5. Upgrade with <span class="application"><strong>fedUP</strong></span></h4></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idm1501008">2.2.5.1. What is <span class="application"><strong>fedUP</strong></span> ?</h5></div></div></div><div class="para">
+				<span class="application"><strong>Fedup</strong></span> is a new tool for upgrading Fedora installations that is replacing preupgrade and the DVD methods of upgrading that have been used in previous Fedora releases. It utilizes <span class="application"><strong>systemd</strong></span> for much of the upgrade functionality and will eventually be able to source packages from a DVD and use the standard repository instead of an upgrade specific side repo.
+			</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idm1497808">2.2.5.2.  Upgrade Sources </h5></div></div></div><div class="para">
+				<span class="application"><strong>FedUP</strong></span> can use several sources to perform an upgrade. The Fedora mirrors are used by default. It can also use an installation image with the <code class="function">--iso</code> argument, or use the <code class="function">--device</code> to use a device or mountpoint as a source. Options are also available to enable or disable network repositories.
+			</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idm5003200">2.2.5.3. Doing an Upgrade</h5></div></div></div><div class="para">
+				This is the current process for doing an upgrade from F17 to F18 using fedup. This documentation will change over time as the process evolves.
+			</div><div class="note"><div class="admonition_header"><h2>sudo or root</h2></div><div class="admonition"><div class="para">
+					The commands listed below use sudo but could also be run as root
+				</div></div></div><div class="para">
+				It is possible to install <span class="application"><strong>fedup</strong></span> on an Fedora 17 system using <span class="application"><strong>yum</strong></span>: 
+<pre class="screen"><code class="command">yum install fedup</code></pre>
+
+			</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idm4998208">2.2.5.4. Using FedUP</h5></div></div></div><div class="para">
+				Using the <span class="application"><strong>fedup-cli</strong></span> command, prepare the upgrade using the following command:
+			</div><div class="para">
+				
+<pre class="screen"><code class="command">sudo fedup-cli --network 18 --debuglog fedupdebug.log </code></pre>
+
+			</div><div class="para">
+				At this point, the Fedora 17 system is ready for upgrade.
+			</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp16826320">2.2.5.5. Running the Upgrade</h5></div></div></div><div class="para">
+				Once you reboot, there will be a 'System Upgrade' boot option at the grub prompt. The system will boot into a special environment to perform the upgrade.The screen will show a graphical progress screen during upgrade.
+			</div><div class="note"><div class="admonition_header"><h2>Go get some coffee</h2></div><div class="admonition"><div class="para">
+					The upgrade process usually takes a while (anywhere from 45-90 minutes, depending on the system), be patient and wait for it to finish. The system will boot into the new version of Fedora when the upgrade is complete.
+				</div></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp16829616">2.2.5.6. Enabling the Upgrade Shell</h5></div></div></div><div class="para">
+				In order to enable the Upgrade debug shell, select the <span class="emphasis"><em>System Upgrade</em></span> boot option, and append <code class="command">rd.upgrade.debugshell</code> to the end of the kernel boot arguments.
+			</div><div class="note"><div class="admonition_header"><h2>Advanced logging during upgrade</h2></div><div class="admonition"><div class="para">
+					In addition to the debug shell, these kernel boot parameters can be useful for debugging : 
+<pre class="screen"><code class="command">rd.debug systemd.log_target=console systemd.jounald.forward_to_console=1 systemd.log_level=debug console=tty0 console=ttyS0,115200n8</code></pre>
+
+				</div></div></div><div class="para">
+				You can access the debug shell by switching to VT2 (ctl-alt-F2). Note that you won't be able to access the debug shell until after the upgrade process has started, so you'll want to wait a minute or two before switching.
+			</div><div class="para">
+				Once you've switched to VT2, you should see the dracut prompt: 
+<pre class="screen"><code class="command">dracut#</code></pre>
+
+			</div><div class="para">
+				In order to get into the actual upgrade debug shell, you may need to exit the currently running shell (another will start up right afterwards) so that you can access all the binaries present in the initramfs. 
+<pre class="screen"><code class="command">exit</code></pre>
+
+			</div><div class="para">
+				To view the upgrade progress, use: 
+<pre class="screen"><code class="command">cat /sysroot/var/log/upgrade.out</code></pre>
+
+			</div><div class="para">
+				If you want to see the system logs, use journalctl 
+<pre class="screen"><code class="command">journalctl -a -o cat</code></pre>
+
+			</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp3101952">2.2.5.7. Third party modules</h5></div></div></div><div class="para">
+				The <code class="filename">initramfs</code> created by FedUP may need to be rebuild in some cases where drivers are provided by a third party repository. If you experience issues with thrid party drivers after the upgrade, boot into a single or multi-user target and issue the following command: 
+<pre class="screen">
+        <code class="command"># dracut /boot/initramfs-$(uname -r).img $(uname -r)</code>
 </pre>
 
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1541703">2.3.4. Secure Containers</h4></div></div></div><a id="id1541710" class="indexterm"></a><a id="id1541718" class="indexterm"></a><a id="id1541726" class="indexterm"></a><a id="id1541734" class="indexterm"></a><div class="para">
-			A new tool, <span class="package">sandbox</span>, has been created to streamline creation of secure <span class="package">libvirt</span> containers. When provided with an executable <span class="package">sandbox</span> determines the mount points and <span class="package">libvirt</span> container information required to run the application in a container. The container is then launched by <span class="package">libvirt</span> with SELinux context that will prevent it interacting with other processes on the system, including other containers, while still being able to share system data.
+			</div></div></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp16217520">2.3. Boot</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp24249152">2.3.1. Offline System Updates </h4></div></div></div><div class="para">
+			<span class="package">PackageKit</span> and <span class="package">systemd</span> join forces to provide a stable offline environment for applying critical system updates. By booting into a special target, these updates can be applied without causing conflicts in a running system.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp24609264">2.3.2. Some <code class="filename">/etc/sysconfig</code> files have been deprecated</h4></div></div></div><div class="para">
+			A number of files in <code class="filename">/etc/sysconfig</code> have been deprecated. These changes should be transparent to most applications.
+		</div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp23666928">2.3.2.1. <code class="filename">/etc/sysconfig/clock</code> replaced by <code class="filename">/etc/localtime</code></h5></div></div></div><div class="para">
+				The time zone is now configured by creating an appropriate <code class="filename">/etc/localtime</code> symlink to the relevant timezone.
+			</div><div class="para">
+				To list available timezone run the following command: 
+<pre class="screen"><code class="command">timedatectl list-timezone</code></pre>
+
+			</div><div class="para">
+				To set timezone run the following command: 
+<pre class="screen"><code class="command">timedatectl set-timezone <em class="replaceable"><code>Atlantic/Reykjavik</code></em></code></pre>
+
+			</div><div class="para">
+				Systemd uses UTC for the hardware clock by default, but some systems are configured for local time. Users can verify that setting in their <span class="application"><strong>BIOS</strong></span>. To set the system clock directly run this command, using the current time and date: 
+<pre class="screen"><code class="command">set-time <em class="replaceable"><code>"2012-10-27 01:02:03"</code></em></code></pre>
+				 To set the clock to use local time instead of UTC, use the command 
+<pre class="screen"><code class="command">timedatectl set-local-rtc 1</code></pre>
+
+			</div><div class="para">
+				For more information on how <span class="application"><strong>systemd</strong></span> deals with time, see <code class="command">man timedatectl</code> and <code class="command">man localtime</code>.
+			</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp17820976">2.3.2.2. <code class="filename">/etc/sysconfig/i18n</code> has been replaced by <code class="filename">/etc/locale.conf</code></h5></div></div></div><div class="para">
+				Environment variables and configuration directives now belong in <code class="filename">/etc/locale.conf</code>. The locale settings configured here are system wide and inherited by every service or user, unless overridden or unset by individual programs or users. For more information, see <code class="command">man locale.conf</code>
+			</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp15222976">2.3.2.3. <code class="filename">/etc/sysconfig/keyboard</code> has been change to <code class="filename">/etc/vconsole.conf</code></h5></div></div></div><div class="para">
+				The virtual console configuration is now in <code class="filename">/etc/vconsole.conf</code>
+			</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp30641216">2.3.2.4. Hostname configuration moved from <code class="filename">/etc/sysconfig/network</code> to <code class="filename">/etc/hostname</code></h5></div></div></div><div class="para">
+				There are now three separate classes of hostnames in use on a given system. The <span class="emphasis"><em>pretty</em></span> hostname is the high level hostname often presented to users by their desktop environment or shell. The <span class="emphasis"><em>static</em></span> hostname is used by the kernel at boot, and is usually the system's <code class="literal">fully qualified domain name</code>. A system may also have a <span class="emphasis"><em>transient</em></span> hostname assigned by a dhcp server. <span class="application"><strong>hostnamectl</strong></span> is provided for administering these hostnames:
+			</div><div class="segmentedlist"><table border="0"><thead><tr class="segtitle"><th>Command</th><th>Function</th></tr></thead><tbody><tr class="seglistitem"><td class="seg"><code class="command">hostnamectl set-hostname <em class="replaceable"><code>fedorasystem</code></em> --pretty</code></td><td class="seg">Set <span class="emphasis"><em>pretty</em></span> hostname.</td></tr><tr class="seglistitem"><td class="seg"><code class="command">hostnamectl set-hostname <em class="replaceable"><code>fedorasystem.example.org</code></em> --static</code></td><td class="seg">Set <span class="emphasis"><em>static</em></span> hostname.</td></tr><tr class="seglistitem"><td class="seg"><code class="command">hostnamectl set-hostname <em class="replaceable"><code>fedora-dhcp-client.example.org</code></em> --transient</code></td><td class="seg"> Set <span class="emphasis"><em>transient</em></span> hostname.</td></tr><tr class="seglistitem"><td class="seg"><code class="command">hostnamectl set-hostname <em class="replaceable"><code>fedorasystem.example.org</code></em></code></td><td class="seg">Without arguments, <span class="application"><strong>hostnamectl</strong></span> will apply to all hostname types.</td></tr><tr class="seglistitem"><td class="seg"><code class="command">hostnamectl status</code></td><td class="seg">Show current hostname settings</td></tr></tbody></table></div><div class="para">
+				For more information on hostnames, see <code class="command">man hostname</code> and <code class="command">man hostnamectl</code>
+			</div></div></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp17743744">2.4. Security</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp18962416">2.4.1. <span class="productname">Active Directory</span>
+		 made easy</h4></div></div></div><div class="para">
+			Fedora can be used on an <span class="productname">Active Directory</span> domain (or other Kerberos realms, such as IPA) out of the box. It should be easy to configure domain logins on a Fedora machine, and then it should be intuitive and uneventful to login with those credentials.
 		</div><div class="para">
-			This allows an administrator to run multiple instances of a service simultaneously, while preventing them from breaking the host machine or other processes on the system, even when run as root. To use <span class="package">sandbox</span>, install the <span class="package">libvirt-sandbox</span> package.
-		</div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="id1513856">2.3.4.1. krb5-workstation</h5></div></div></div><a id="id1513863" class="indexterm"></a><div class="para">
-				Fedora 17 upgrades the Kerberos authentication system to version 1.10. This adds support for changing passwords over a NAT and support for localization. The <code class="command">kswitch</code> command is added to switch between credential caches. Additional cache support has been added to other commands. Credential choice can be controlled with the file <code class="filename">$HOME/.k5identity</code>.
-			</div></div></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1639616">2.4. File Systems</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1565614">2.4.1. Large filesystems</h4></div></div></div><a id="id2334648" class="indexterm"></a><a id="id1539940" class="indexterm"></a><a id="id1639489" class="indexterm"></a><div class="para">
-			Fedora 17 will support file systems larger than 16 terabytes on the default file system (ext4). With the latest version of <span class="package">e2fsprogs</span>, ext4 file systems can now be up to 100 TB.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1546668">2.4.2. Encrypted filesystems</h4></div></div></div><a id="id1649275" class="indexterm"></a><a id="id1528611" class="indexterm"></a><a id="id1579180" class="indexterm"></a><a id="id2314424" class="indexterm"></a><div class="para">
-			Fedora 17 uses version 1.4.1 of the <span class="package">cryptsetup</span> package, which removes deprecated API calls. In addition, it supports placing LUKS headers on separate devices and the creation of shared, non-overlapping encrypted segments on a single device.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1598566">2.4.3. btrfs</h4></div></div></div><a id="id1552347" class="indexterm"></a><a id="id1598467" class="indexterm"></a><div class="para">
-			<span class="package">btrfs</span> is not available as a target file system during installation. This is a temporary situation and will be resolved in Fedora 18. <span class="package">btrfs</span> is still available after installation.
-		</div></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1773112">2.5. Virtualization</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1571172">2.5.1. QEMU</h4></div></div></div><a id="id2311485" class="indexterm"></a><a id="id1644168" class="indexterm"></a><a id="id1558310" class="indexterm"></a><a id="id2342833" class="indexterm"></a><div class="para">
-			The QEMU open source machine emulator has been updated to version 1.0. Notable features include:
+			These improvements will also increase reliability and ease usage for any Kerberos realm, not just Active Directory. Improvement has been made in much of the login and authentication stack, which now includes <span class="package">realmd</span> and <span class="package">adcli</span>.
+		</div><div class="para">
+			The GNOME <span class="guilabel"><strong>User Accounts</strong></span> Settings GUI features support for enterprise logins.
+		</div><div class="para">
+			With Fedora 18 it is possible to create a trust relationship between an IPA and an <span class="productname">Active Directory</span> domain which would allow users from one domain to access resources of the other domain. The <span class="orgname">FreeIPA</span>
+			 project has documented the feature at <a href="http://freeipa.org/page/IPAv3_testing_AD_trust">http://freeipa.org/page/IPAv3_testing_AD_trust.</a>
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp23079360">2.4.2. Secure Boot</h4></div></div></div><div class="para">
+			UEFI Secure Boot will be supported in Fedora 18. This will allow Fedora to boot on systems that have Secure Boot enabled. Tools are available for administrators to create custom certificates to sign local changes to <span class="application"><strong>GRUB</strong></span> or the kernel.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp17395664">2.4.3. rngd</h4></div></div></div><div class="para">
+			Random number generation is improved by enabling <span class="package">rngd</span> by default.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp15580192">2.4.4. Secure Containers</h4></div></div></div><div class="para">
+			Using SELinux and <span class="package">virt-sandbox</span>, services can be run in secure sandboxes, even as root. The <span class="package">virt-sandbox-service</span> package will create mount points and a libvirt container.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp17383472">2.4.5. SELinux boolean renaming</h4></div></div></div><div class="para">
+			In order to clarify the purpose of SELinux booleans, all settings that begin with <code class="literal">allow</code> will be renamed to reflect their domain. Existing policy booleans will continue to be supported.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp25499728">2.4.6. SELinux Systemd Access Control</h4></div></div></div><div class="para">
+			Support has been added to <span class="package">systemd</span> to check unit files against SELinux settings before allowing a process to start or stop the service.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp16645920">2.4.7. System calls restricted</h4></div></div></div><div class="para">
+			The <span class="package">libseccomp</span> library is now available, which provides applications with an easy way to reduce the potential damage of exploits by using kernel syscall filters. Virtual machines benefit from this as <span class="application"><strong>QEMU/KVM</strong></span> now uses <span class="package">libseccomp</span>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp17640416">2.4.8. usermode</h4></div></div></div><div class="para">
+			<span class="package">usermode</span>, a wrapper to provide superuser privileges to unprivileged users, is being phased out in favor of <span class="package">polkit</span>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp17751696">2.4.9. <span class="productname">Kerberos</span>
+		 credentials moved and improved </h4></div></div></div><div class="para">
+			Fedora 18 changes the standard location of <span class="productname">Kerberos</span> credential caches to <code class="filename">/run/user/$UID</code> in order to increase security and simplify locating the caches for NFSv4. Fedora's <span class="productname">Kerberos</span> support will now allow users to maintain credentials for multiple identities and for the <code class="function">GSSAPI</code> client code to automatically select credentials based on the target service and hostname.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp17755216">2.4.10. <code class="command">halt</code>, <code class="command">poweroff</code>, and <code class="command">reboot</code> Configuration Moved</h4></div></div></div><div class="para">
+			The ability to use <code class="filename">halt(8)</code>, <code class="filename">poweroff(8)</code> and <code class="filename">reboot(8)</code> commands by unprivileged users is now controlled using <span class="package">polkit</span>. See the actions in <code class="filename">/usr/share/polkit-1/actions/org.freedesktop.login1.policy</code>. The PAM configuration files in <code class="filename">/etc/pam.d/{halt,poweroff,reboot}</code> are no longer used and their content, if any, is ignored.
+		</div></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp25487232">2.5. File Systems</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp17923920">2.5.1. <span class="productname">FedFS</span>
+		 </h4></div></div></div><div class="para">
+			Fedora 18 adds <span class="productname">FedFS</span>, a mechanism to provide a coherent namespace across multiple file servers.
+		</div><div class="para">
+			The code provided in this package is a technology preview. The intent is to provide a full and supported Linux <span class="productname">FedFS</span> client and server implementation based on this code. Programming and user interfaces may change significantly for the next few releases.
+		</div><div class="para">
+			The components in this package are used for managing file system referrals in order to create a global network file system namespace. Installable components include:
 		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
-					QEMU now supports live migration of running guests.
+					An automounter program map to manage the <span class="productname">FedFS</span> domain namespace on <span class="productname">FedFS</span> enabled clients.
 				</div></li><li class="listitem"><div class="para">
-					KVM users are now able to run standard performance profiling tools within KVM guests.
+					A mount command to mount parts of a <span class="productname">FedFS</span> domain namespace.
 				</div></li><li class="listitem"><div class="para">
-					QEMU and <span class="package">libvirt</span> now support image streaming. Image streaming lets an administrator start new virtual machines quickly based on existing images; virtual machines are then provisioned completely in the background as they run.
+					A plug-in library that allows programs outside of <span class="productname">FedFS</span> to resolve junctions on local file systems.
 				</div></li><li class="listitem"><div class="para">
-					QEMU and KVM support a new advanced SCSI-based storage stack, <span class="package">virtio-scsi</span>. Support for this new storage stack will be added to <span class="emphasis"><em>libvirt</em></span> in a later release.
+					An <code class="literal">ONC RPC</code> service daemon that runs on file servers enabling the management by remote <span class="productname">FedFS</span> ADMIN clients of <span class="productname">FedFS</span> junctions.
+				</div></li><li class="listitem"><div class="para">
+					A tool called <code class="command">nfsref</code> to manage local junctions without requiring <span class="application"><strong>fedfsd</strong></span>.
+				</div></li><li class="listitem"><div class="para">
+					A set of command-line clients that can access <span class="application"><strong>fedfsd</strong></span> instances on remote file servers.
+				</div></li><li class="listitem"><div class="para">
+					A set of command-line clients that can manage <span class="productname">FedFS</span> entries on an <code class="function">LDAP</code> server acting as a <span class="productname">FedFS</span> <code class="function">NSDB</code>.
+				</div></li><li class="listitem"><div class="para">
+					A tool to manage <code class="function">NSDB</code> connection parameters on the local host.
+				</div></li><li class="listitem"><div class="para">
+					An <code class="literal">LDIF</code> format schema to enable an <code class="function">LDAP</code> server to support <span class="productname">FedFS</span> objects.
 				</div></li></ul></div><div class="para">
-			The full list of changes included in this release is available upstream at <a href="http://wiki.qemu.org/ChangeLog/1.0">http://wiki.qemu.org/ChangeLog/1.0</a>.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1642363">2.5.2. libvirt</h4></div></div></div><a id="id1579551" class="indexterm"></a><div class="para">
-			The <span class="package">libvirt</span> toolkit for interacting with the virtualization capabilities of various hosts has been updated to version 0.9.10. The full list of changes included in this release is available upstream at <a href="http://libvirt.org/news.html">http://libvirt.org/news.html</a>.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2303679">2.5.3. Virtual Machine Manager (virt-manager)</h4></div></div></div><a id="id1547836" class="indexterm"></a><div class="para">
-			Virtual Machine Manager has been updated to version 0.9.1. As well as numerous bug fixes this release adds:
+			For more information refer to the <a href="http://wiki.linux-nfs.org/wiki/index.php/FedFsUtilsProject">FedFS project page</a> and the <a href="http://wiki.linux-nfs.org/wiki/index.php/FedFsUtilsDocs">FedFS Documentation page</a>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp586816">2.5.2. /tmp on tmpfs </h4></div></div></div><div class="para">
+			By default, <code class="filename">/tmp</code> on Fedora 18 will be on a tmpfs. Storage of large temporary files should be done in <code class="filename">/var/tmp</code>. This will reduce the I/O generated on disks, increase SSD lifetime, save power, and improve performance of the <code class="filename">/tmp</code> filesystem.
+		</div></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp16169472">2.6. Virtualization</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp25431248">2.6.1. Live Snapshotting of Virtual Machines</h4></div></div></div><div class="para">
+			The virtualization stack in Fedora has provided the ability to take "snapshots" of a virtual machine for many releases. These functions have however always required that the virtual machine be paused or stopped while the storage snapshot was created. Recent updates included in Fedora 17 allowed for <span class="package">qemu</span> and <span class="package">libvirt</span> to create snapshots of a virtual machine without requiring any downtime.
+		</div><div class="para">
+			Live snapshot creation now works even for virtual machines using disk images stored in <code class="function">RAW</code> format. In these cases <span class="package">libvirt</span> creates snapshots using external <code class="function">QCOW2</code> files - transparently switching the virtual machine to run on the new external image(s) once created.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp25907360">2.6.2. KVM supports hibernating and suspending guests </h4></div></div></div><div class="para">
+			Suspend and hibernate now works from within <span class="application"><strong>KVM</strong></span> virtual machines. These can also be invoked on virtual machines from the host using <code class="command">virsh</code>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp15997936">2.6.3. Manage Virtualized Environments with <span class="productname">oVirt 3.1</span>
+		 </h4></div></div></div><div class="para">
+			The <span class="productname">oVirt</span> virtualization management platform has been significantly expanded in Fedora 18 with the upgrade to version 3.1 For more information, consult the oVirt 3.1 Release Notes at <a href="http://www.ovirt.org/OVirt_3.1_release_notes">http://www.ovirt.org/OVirt_3.1_release_notes</a> and the <span class="productname">oVirt</span> Quick Start Guide at <a href="http://wiki.ovirt.org/wiki/Quick_Start_Guide">http://wiki.ovirt.org/wiki/Quick_Start_Guide</a>.
+		</div></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp22901808">2.7. Web Servers</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp24669728">2.7.1. httpd</h4></div></div></div><div class="para">
+			The Apache <span class="package">httpd</span> package has been upgraded to version 2.4.3-1, which contains numerous security and performance fixes.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp17112480">2.7.2. lighttpd</h4></div></div></div><div class="para">
+			The <span class="package">lighttpd</span> package has been upgraded to version 1.4.32-2.
+		</div></div></div><div xml:lang="en-US" class="section" id="sect_Cloud" lang="en-US"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="sect_Cloud">2.8. Cloud</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp22363632">2.8.1. Eucalpytus </h4></div></div></div><div class="para">
+			<span class="package">eucalyptus</span> allows the creation of private <code class="literal">Infrastructure-as-a-Service (IaaS)</code> clouds that are compatible with <span class="productname">Amazon Web Services</span>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp16383664">2.8.2. <span class="productname">OpenShift Origin</span>
+		 </h4></div></div></div><div class="para">
+			<span class="productname">OpenShift Origin</span> brings <code class="literal">Platform-as-a-Service (PaaS)</code> support to Fedora 18.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp30645488">2.8.3. <span class="productname">OpenStack</span>
+		 </h4></div></div></div><div class="para">
+			Fedora 18 includes the latest version of the <span class="productname">OpenStack</span> IaaS cloud service, codenamed <span class="productname">Folsom</span>.
+		</div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp17952624">2.8.3.1. <span class="productname">Heat</span>
+			 </h5></div></div></div><div class="para">
+				<span class="productname">Heat</span> was added to provide an <span class="productname">AWS CloudFormation</span> API for <span class="productname">OpenStack</span>. <span class="productname">Heat</span> provides a standardized method for <span class="productname">OpenStack</span> users to launch multiple applications in an <span class="productname">OpenStack</span> cloud from a template file describing the cloud application. Administrators are encouraged to read the project's <a href="https://github.com/heat-api/heat/blob/master/docs/GettingStarted.rst#readme"> getting started guide</a> or the browse their <a href="https://github.com/heat-api/heat/wiki"> Wiki</a>.
+			</div></div></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp25749424">2.9. Database Servers</h3></div></div></div><div class="para">
+		<span class="application"><strong>Riak</strong></span>, a scalable and reliable <code class="literal">noSQL</code> data store written in <code class="literal">Erlang</code>, is available in Fedora 18.
+	</div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp17581680">2.10. File Servers</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp17169168">2.10.1. <span class="application"><strong>vsftpd</strong></span></h4></div></div></div><div class="para">
+			Fedora 18 includes the newest <span class="package">vsftpd</span> release, version 3.0, which includes the following changes:
 		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
-					Support for adding USB redirection devices.
+					A new highly restrictive seccomp filter sandbox.
 				</div></li><li class="listitem"><div class="para">
-					An option to change the USB controller to support USB 2.0.
+					A fix for passive mode connections under high loads.
 				</div></li><li class="listitem"><div class="para">
-					An option to specify the machine type for non-x86 guests.
-				</div></li></ul></div><div class="para">
-			The full list of changes included in this release is available upstream at <a href="http://virt-manager.org/download.html">http://virt-manager.org/download.html</a>.
-		</div></div></div><div xml:lang="en-US" class="section" id="sect_Cloud" lang="en-US"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="sect_Cloud">2.6. Cloud</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1548393">2.6.1. CloudStack</h4></div></div></div><a id="id2342686" class="indexterm"></a><a id="id1643891" class="indexterm"></a><div class="para">
-			Fedora 17 will include the <span class="package">CloudStack</span> package, which provides a mature Infrastructure as a Service (IaaS) platform.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2335682">2.6.2. OpenNebula</h4></div></div></div><a id="id1552288" class="indexterm"></a><a id="id1772531" class="indexterm"></a><a id="id1617640" class="indexterm"></a><a id="id1552609" class="indexterm"></a><div class="para">
-			Also new to Fedora 17 is <span class="package">OpenNebula</span>. OpenNebula provides an IaaS platform geared toward data center virtualization. Management of the environment can be done through command line or graphical interfaces. Compatibility with Amazon EC2 the Open Cloud Computing Interface (OCCI) is included.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2312526">2.6.3. OpenStack</h4></div></div></div><a id="id2341996" class="indexterm"></a><a id="id1641335" class="indexterm"></a><a id="id1523471" class="indexterm"></a><a id="id1523374" class="indexterm"></a><a id="id1637328" class="indexterm"></a><a id="id1551124" class="indexterm"></a><a id="id1541400" class="indexterm"></a><a id="id1648694" class="indexterm"></a><div class="para">
-			Fedora 17 includes the latest version of the <span class="package">OpenStack</span> suite, code named "Essex". Included in this new release are the latest versions of the web management interface ("Horizon") and virtual networking ("Quantum"). The use of Qpid as an alternative to RabbitMQ for the AQMP backend is new in Fedora 17. In addition, the availability of libguestfs to support multiple virtual disk formats will make Fedora's OpenStack offering more flexible.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2342524">2.6.4. Open vSwitch</h4></div></div></div><a id="id2342531" class="indexterm"></a><div class="para">
-			Fedora 17 includes Open vSwitch, a software-based network switch used to provide networking services to virtual machines. Open vSwitch supports OpenFlow for ease-of-management.
-		</div></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1639936">2.7. Database Servers</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1571568">2.7.1. mysql</h4></div></div></div><a id="id1548132" class="indexterm"></a><div class="para">
-			Fedora 17 includes <span class="package">mysql</span> 5.5.20, updated from 5.5.14 in Fedora 16.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2314026">2.7.2. postgresql</h4></div></div></div><a id="id2312334" class="indexterm"></a><div class="para">
-			<span class="package">postgresql</span> has been upgraded to 9.1.2
-		</div><div class="warning"><div class="admonition_header"><h2>Potentially Incompatible Change</h2></div><div class="admonition"><div class="para">
-				If you rely on the <em class="parameter"><code>information_schema.referential_constraints</code></em> view, or if you have columns of type <em class="parameter"><code>citext</code></em>, you may need to take special action. Refer to <a href="http://www.postgresql.org/docs/9.1/static/release-9-1-2.html">http://www.postgresql.org/docs/9.1/static/release-9-1-2.html</a>.
-			</div></div></div><div class="para">
-			This is primarily a bugfix release.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2313525">2.7.3. sqlite</h4></div></div></div><a id="id1647872" class="indexterm"></a><div class="para">
-			<span class="package">sqlite</span> has been upgraded to 3.7.9
-		</div><div class="warning"><div class="admonition_header"><h2>Potentially Incompatible Change</h2></div><div class="admonition"><div class="para">
-				If a search token (on the right-hand side of the <code class="command">MATCH</code> operator) in FTS4 begins with "^" then that token must be the first in its field of the document.
-			</div></div></div><div class="para">
-			There are many changes and improvements: 
-			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-						Orders of magnitude performance improvement for <code class="command">CREATE INDEX</code> on very large tables.
-					</div></li><li class="listitem"><div class="para">
-						Improved the windows VFS to better defend against interference from anti-virus software.
-					</div></li><li class="listitem"><div class="para">
-						Improved query plan optimization when the <code class="command">DISTINCT</code> keyword is present.
-					</div></li><li class="listitem"><div class="para">
-						Allow more system calls to be overridden in the unix VFS - to provide better support for chromium sandboxes.
-					</div></li><li class="listitem"><div class="para">
-						Increase the default size of a lookahead cache line from 100 to 128 bytes.
-					</div></li><li class="listitem"><div class="para">
-						Enhancements to the <code class="filename">test_quota.c</code> module so that it can track preexisting files.
-					</div></li><li class="listitem"><div class="para">
-						Added options <code class="command">SQLITE_DBSTATUS_CACHE_HIT</code> and <code class="command">SQLITE_DBSTATUS_CACHE_MISS</code> to the <code class="function">sqlite3_db_status()</code> interface.
-					</div></li><li class="listitem"><div class="para">
-						Removed support for <code class="command">SQLITE_ENABLE_STAT2</code>, replacing it with the much more capable <code class="command">SQLITE_ENABLE_STAT3</code> option.
-					</div></li><li class="listitem"><div class="para">
-						Enhancements to the <span class="application"><strong>sqlite3_analyzer</strong></span> utility program, including the <code class="command">--pageinfo</code> and <code class="command">--stats</code> options and support for multiplexed databases.
-					</div></li><li class="listitem"><div class="para">
-						Enhance the <code class="function">sqlite3_data_count()</code> interface so that it can be used to determine if <code class="command">SQLITE_DONE</code> has been seen on the prepared statement.
-					</div></li><li class="listitem"><div class="para">
-						Added the <code class="command">SQLITE_FCNTL_OVERWRITE</code> file-control by which the SQLite core indicates to the VFS that the current transaction will overwrite the entire database file.
-					</div></li><li class="listitem"><div class="para">
-						Increase the default lookaside memory allocator allocation size from 100 to 128 bytes.
-					</div></li><li class="listitem"><div class="para">
-						Enhanced the query planner so that it can factor terms in and out of <code class="command">OR</code> expressions in the <code class="command">WHERE</code> clause in an effort to find better indices.
-					</div></li><li class="listitem"><div class="para">
-						Added the <code class="command">SQLITE_DIRECT_OVERFLOW_READ</code> compile-time option, causing overflow pages to be read directly from the database file, bypassing the page cache.
-					</div></li><li class="listitem"><div class="para">
-						Remove limits on the magnitude of precision and width value in the format specifiers of the <code class="function">sqlite3_mprintf()</code> family of string rendering routines.
-					</div></li></ul></div>
-
-		</div></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1600153">2.8. System Daemons</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1551565">2.8.1. pciutils</h4></div></div></div><a id="id1540150" class="indexterm"></a><a id="id2341525" class="indexterm"></a><div class="para">
-			The <span class="package">pciutils</span> package, which provides tools for inspecting and configuring PCI devices, has been upgraded to version 3.1.9 in Fedora 17. This adds support for reading speed and link status fields for PCI Express Generation 3 hardware.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1539564">2.8.2. brltty</h4></div></div></div><a id="id1641042" class="indexterm"></a><a id="id1598024" class="indexterm"></a><div class="para">
-			Fedora 17 includes version 4.3 of <span class="package">brltty</span>, the Braille display daemon. Version 4.3 includes new logging and configuration options as well as support for additional devices.
-		</div></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1578920">2.9. Xorg</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1617722">2.9.1. Software Rendering for GNOME Shell</h4></div></div></div><a id="id2313951" class="indexterm"></a><a id="id2316410" class="indexterm"></a><div class="para">
-			The GNOME Shell experience is now available on all hardware, including devices that use software rendering. Users still wishing to use GNOME's fallback mode can enable it manually by accessing the <span class="package">System Info</span> control panel applet, selecting <span class="emphasis"><em>Graphics</em></span>, and setting the <span class="emphasis"><em>Forced Fallback Mode</em></span> option to <span class="emphasis"><em>ON</em></span>.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1520111">2.9.2. Multi-touch Support</h4></div></div></div><a id="id1648302" class="indexterm"></a><a id="id1598231" class="indexterm"></a><div class="para">
-			The X server and libraries in Fedora 17 support version 2.2 of the <span class="package">XInput</span> extension, this includes multi-touch support. Applications that choose to will now be able to take advantage of multi-touch support on Fedora.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1540573">2.9.3. Smooth Scrolling Support</h4></div></div></div><a id="id2309622" class="indexterm"></a><div class="para">
-			The updated X server also provides smooth scrolling for drivers, and devices, that support it. Scroll data is now exported as axis values in addition to the legacy button press events. This allows applications to take velocity into account and provide a smoother scrolling experience. Like multi-touch, to take advantage of smooth scrolling support for it must also be actively written into client applications themselves.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1548033">2.9.4. DRI2 Drivers</h4></div></div></div><a id="id1525821" class="indexterm"></a><a id="id1570452" class="indexterm"></a><a id="id1565099" class="indexterm"></a><a id="id1644060" class="indexterm"></a><a id="id1600149" class="indexterm"></a><a id="id2316151" class="indexterm"></a><a id="id2316159" class="indexterm"></a><a id="id2316167" class="indexterm"></a><a id="id2316175" class="indexterm"></a><div class="para">
-			The <span class="package">i810</span>, <span class="package">mga</span>, <span class="package">r128</span>, <span class="package">savage</span>, <span class="package">sis</span>, <span class="package">tdfx</span>, and <span class="package">unichrome</span> DRI drivers are no longer supplied, as they are no longer included by Mesa. Impacted hardware includes variants of the following devices:
-		</div><a id="id1600474" class="indexterm"></a><a id="id1600486" class="indexterm"></a><a id="id1619240" class="indexterm"></a><a id="id1619252" class="indexterm"></a><a id="id1619264" class="indexterm"></a><a id="id1619276" class="indexterm"></a><a id="id1619288" class="indexterm"></a><a id="id1619300" class="indexterm"></a><a id="id2310243" class="indexterm"></a><a id="id2310255" class="indexterm"></a><a id="id2310267" class="indexterm"></a><a id="id2310279" class="indexterm"></a><a id="id2310291" class="indexterm"></a><a id="id2310303" class="indexterm"></a><a id="id1519345" class="indexterm"></a><a id="id1519357" class="indexterm"></a><a id="id1519369" class="indexterm"></a><a id="id1519381" class="indexterm"></a><a id="id1519393" class="indexterm"></a><a id="id1519401" class="indexterm"></a><div class="itemizedlist"><ul><li class="listitem"><div class="para">
-					Intel i810 and i815 motherboard chipsets
+					A few timeout fixes, particularly with SSL.
 				</div></li><li class="listitem"><div class="para">
-					Matrox MGA G200, G400, G450 and G550 cards
-				</div></li><li class="listitem"><div class="para">
-					ATI Rage 128 cards
-				</div></li><li class="listitem"><div class="para">
-					S3 Savage 3D and Savage 4 cards
-				</div></li><li class="listitem"><div class="para">
-					SiS 300, 540, 630, and 730 chipsets
-				</div></li><li class="listitem"><div class="para">
-					3dfx Voodoo 3, Voodoo 4, and Voodoo 5 cards
-				</div></li><li class="listitem"><div class="para">
-					VIA Unichrome and Unichrome Pro chipsets
-				</div></li></ul></div><div class="para">
-			This hardware is now supported by the <span class="package">llvmpipe</span> software 3D driver which, unlike the older DRI drivers, exposes OpenGL 2.x functionality.
-		</div></div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Welcome_to_Fedora_17.html"><strong>Prev</strong>1. Welcome to Fedora 17</a></li><li class="up"><a accesskey="u" href="#"><strong>Up</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Home</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Desktop.html"><strong>Next</strong>3. Changes in Fedora for Desktop Users</a></li></ul></body></html>
+					Make listen mode the default.
+				</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp18841232">2.10.2. <span class="application"><strong>NFSometer</strong></span></h4></div></div></div><div class="para">
+			<span class="application"><strong>NFSometer</strong></span> is a performance measurement framework for running workloads and reporting results across NFS protocol versions, NFS options and Linux NFS client implementations. More detailed information can be found at <a href="http://wiki.linux-nfs.org/wiki/index.php/NFSometer">http://wiki.linux-nfs.org/wiki/index.php/NFSometer</a>
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp22028192">2.10.3. StorageManagement </h4></div></div></div><div class="para">
+			Fedora 18 provides a number of libraries enabling users to programmatically manage their storage, namely <span class="package">libstoragemgmt</span> and <span class="package">targetd</span>. Documentation is included in the packaged manpages and READMEs.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp17681200">2.10.4. <span class="package">ssm</span>: System Storage Manager </h4></div></div></div><div class="para">
+			Fedora 18 includes <span class="package">ssm</span>, a tool to ease common storage management tasks by providing a unified command line experience. <code class="command">man ssm</code> describes the new functionality provided by the utility.
+		</div></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp15560368">2.11. Samba</h3></div></div></div><div class="para">
+		Fedora 18 includes <span class="productname">Samba4</span>, which provides improved cross-platform file server support. The release supports the new <code class="systemitem">SMB2.2</code> and <code class="systemitem">SMB3</code> protocols and includes an LSA Service Daemon for <span class="productname">FreeIPA</span> trust relationship support. Administrators leaning on <span class="application"><strong>python</strong></span> will be pleased with the new <span class="productname">Samba4</span> scripting interface, which allows <span class="application"><strong>Python</strong></span> programs access to <span class="productname">Samba</span> internals.
+	</div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp25551328">2.12. System Daemons</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp16384864">2.12.1. <span class="application"><strong>SysVinit</strong></span> to <span class="application"><strong>systemd</strong></span></h4></div></div></div><div class="para">
+			Additional <span class="application"><strong>SystemV</strong></span> init scripts are migrated to <span class="application"><strong>systemd</strong></span> <code class="function">unit</code> files to improve readability and boot times.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp22686784">2.12.2. Expanding the admin toolkit with <span class="package">procps-ng</span></h4></div></div></div><div class="para">
+			Fedora 18 brings the migration of legacy <span class="package">procps</span> tools to <span class="package">procps-ng</span>. This provides better maintainability, expanded functionality, and better compatibility with scripts run on other distributions. Users should consult the documentation in <code class="filename">/usr/share/doc/procps-*</code> for more information.
+		</div></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp25087632">2.13. Server Configuration Tools</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp25325840">2.13.1. <span class="package">dnf</span> greets Fedora</h4></div></div></div><div class="para">
+			<span class="package">dnf</span> is a fork of the venerable <span class="application"><strong>yum</strong></span> package manager. It is build on <span class="package">hawkey</span>, a library allowing clients to query and resolve dependencies of RPM packages based on the current state of <code class="function">RPMDB</code> and <span class="application"><strong>yum</strong></span> repositories.
+		</div><div class="para">
+			<span class="package">dnf</span> in Fedora 18 is a technical preview, and is installed alongside <span class="application"><strong>yum</strong></span>. It should not yet be used on critical production machines, but early adopters are promised a more efficient, faster package management utility.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp25412016">2.13.2. <span class="application"><strong>systemctl</strong></span> assumes it works with services</h4></div></div></div><div class="para">
+			<span class="application"><strong>systemctl</strong></span>, the utility used to administer services and other <span class="application"><strong>systemd</strong></span> targets, will now assume that it is working with a service. Administrators will no longer have to append <code class="varname">.service</code> to the name of the daemon they are administering. For example, <code class="command">systemctl restart dhcpd</code> will now just work, but previous releases required <code class="command">systemctl restart dhcpd.service</code>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp17001488">2.13.3. Terminals get more colorful</h4></div></div></div><div class="para">
+			Fedora now features supporting terminal emulators using 256 colors by default. With new environment variables, applications such as <span class="application"><strong>gnome-terminal</strong></span>, <span class="application"><strong>konsole</strong></span>, and screen will automatically be enabled with 256 color support. Other applications can display 256 colors but must be configured. While still disabled by default, users can enable color terminals for connecting remote systems with the environment variable <code class="varname">SEND_256_COLORS_TO_REMOTE</code>. These configurations can be found in <code class="filename">/etc/profile.d/256color.sh</code>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp22588752">2.13.4. Remote management gets better with <span class="productname">Agent-Free Systems Management</span>
+		</h4></div></div></div><div class="para">
+			On systems that contain <code class="function">IPMI</code> compliant <span class="productname">Service Processors</span>, it is now possible to have closer integration of OS and <span class="productname">Service Processor</span> without the need for 3rd party software. This will enable better management of the system remotely.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp18970912">2.13.5. <code class="function">CIM</code> management tools improved</h4></div></div></div><div class="para">
+			Administrators managing large numbers of systems get a running start with Fedora 18's improvements on <code class="function">WEBM</code> and <code class="function">CIM</code> offerings.
+		</div><div class="para">
+			Users can build applications using new and enhanced <code class="function">CPMI</code> providers to monitor and administer network interfaces, storage objects, services, power state, users, and software packages. They can also monitor system load, usage, and more. The toolkit also includes <span class="application"><strong>yawn</strong></span>, a web based browser for navigating and working within the <code class="function">CIM</code> object model.
+		</div><div class="para">
+			These features ease the task of managing large numbers of systems, laying the foundation for robust management infrastructure. Experienced users and system administrators are invited to review the sample python scripts and documentation provided with the <span class="package">sblim-cmpi-*</span> or <span class="package">openlmi-*</span> packages.
+		</div></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp16761040">2.14. Xorg</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp15611824">2.14.1. Server Kernel Mode Setting (KMS) Drivers </h4></div></div></div><div class="para">
+			Many servers ship with only basic GPU hardware. Despite the basic nature of such hardware a fully fledged X.org driver has historically still been required to manage it. Fedora 18 introduces <code class="function">Kernel Mode Setting (KMS)</code> drivers which provide enhanced support for the GPUs commonly found in servers. Users of these GPUs are now able to utilize the additional features provided by KMS drivers, including enhanced graphics in virtual consoles. Chipsets supported by these new KMS drivers include <span class="hardware">AST</span> and <span class="hardware">MGA</span> based <span class="emphasis"><em>ServerEngines</em></span>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp17939040">2.14.2. GPU Hot Plug Support </h4></div></div></div><div class="para">
+			The <span class="productname">X.org</span> server has been rewritten to support 'hot' plugging and unplugging of GPUs. Specifically, this allows Fedora to provide better support for USB connected graphics devices exposed by many modern systems and laptop docking stations. The user is no longer required to restart the X.org server for such devices to be recognised.
+		</div></div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Welcome_to_Fedora_18.html"><strong>Prev</strong>1. Welcome to Fedora 18</a></li><li class="up"><a accesskey="u" href="#"><strong>Up</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Home</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Desktop.html"><strong>Next</strong>3. Changes in Fedora for Desktop Users</a></li></ul></body></html>

@@ -1,431 +1,264 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>3. Fedora の変更点 - デスクトップユーザー向け</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta name="generator" content="publican 2.8" /><meta name="package" content="Fedora-Release_Notes-17-ja-JP-1-0" /><link rel="home" href="index.html" title="リリースノート" /><link rel="up" href="index.html" title="リリースノート" /><link rel="prev" href="sect-Release_Notes-Changes_for_Sysadmin.html" title="2. Fedora の変更点 - システム管理者向け" /><link rel="next" href="sect-Release_Notes-Changes_for_Developers.html" title="4. Fedora の変更点 - 開発者向け" /></head><body><p id="title"><a class="left" href="http://www.fedoraproject.org"><img src="Common_Content/images/image_left.png" alt="Product Site" /></a><a class="right" href="http://docs.fedoraproject.org"><img src="Common_Content/images/image_right.png" alt="Documentation Site" /></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Changes_for_Sysadmin.html"><strong>戻る</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Developers.html"><strong>次へ</strong></a></li></ul><div class="section" id="sect-Release_Notes-Changes_for_Desktop"><div class="titlepage"><div><div keep-together.within-column="always"><h2 class="title" id="sect-Release_Notes-Changes_for_Desktop">3. Fedora の変更点 - デスクトップユーザー向け</h2></div></div></div><div xml:lang="ja-JP" class="section" id="sect-Desktop" lang="ja-JP"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="sect-Desktop">3.1. デスクトップ</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2324296">3.1.1. KDE</h4></div></div></div><a id="id695171" class="indexterm"></a><a id="id2108048" class="indexterm"></a><div class="para">
-			Fedora 17 は KDE 4.8 Software Compilation を特徴としています。KDE は 3 つのコンポーネントを特徴としています。KDE プラットフォームはすべての KDE ベースのアプリケーションの基礎です。KDE Plasma ワークスペースはアプリケーションを使用する方法を管理する方法を提供します。KDE アプリケーションは完全に統合されたエクスペリエンスを提供するためにプラットフォームと Plasma ワークスペースを使用します。
-		</div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="id2203802">3.1.1.1. KDE プラットフォーム</h5></div></div></div><a id="id1624009" class="indexterm"></a><a id="id1785337" class="indexterm"></a><a id="id1621484" class="indexterm"></a><div class="para">
-				KDE PlatformはすべてのKDEベースのアプリケーションとPlasma Workspaceに対するサービスを提供します。　KDE Platform 4.8 はパフォーマンスと安定性を劇的に増加した幾らかの新しい技術を収録しています。
-			</div><div class="para">
-				KDEは今<a href="https://qt.nokia.com/qtquick/">QtQuick</a>を提供します。　QtQuickはKDEライクなQt環境における小さなアプリケーションで構成される簡単な手段です。
-			</div><div class="para">
-				<span class="package">KSecretService</span>　は新しく、セキュアなパスワード−ストレージシステムです。　<span class="package">KWallet</span> はKDEアプリケーションでのパスワードを管理し、<span class="package">KSecretService</span>はKDEアプリケーションで無いものに対してもこれらのパスワードを作ります。
-			</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="id2109660">3.1.1.2. KDE Plasma ワークスペース</h5></div></div></div><a id="id1957083" class="indexterm"></a><div class="para">
-				KDE Plasma ワークスペースは、２つのデスクトップ環境で、あなたがアプリケーションを操作するやり方を管理します。Plasma デスクトップワークスペースは、伝統的な見かけをしており、ネットブック Plasma ワークスペースは、より小さいスクリーンとモバイルデバイスに適した見かけをしています。
-			</div><div class="para">
-				<span class="package">Window Switcher</span> は、６つのレイアウトが可能です。<span class="package">System Settings</span> アプリケーションから、レイアウトを選択できます。
-			</div><div class="para">
-				<span class="package">KWin</span> ウィンドウマネージャーが改善されました。<span class="package">KWin</span> は大幅にパフォーマンスが改善されました。
-			</div><div class="para">
-				<span class="package">System Settings</span> の "Power Management" ペインは、再設計され、簡単になりました。電源管理の設定は複数のディスプレイデバイスがあるコンピューターも扱えるようになりました。現在の "Activity" に従って、電源管理の設定を変更することもできます。
-			</div><div class="para">
-				新しい <span class="emphasis"><em>Icon Tasks</em></span> Plasma ウィジェットを使って、他の著名なオペレーティングシステムと同様に、アプリケーションをタスクバー上のアイコンとして管理することができます。
-			</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="id1774315">3.1.1.3. KDE アプリケーション</h5></div></div></div><a id="id1774321" class="indexterm"></a><a id="id1774329" class="indexterm"></a><a id="id1526859" class="indexterm"></a><a id="id1526867" class="indexterm"></a><a id="id1526875" class="indexterm"></a><a id="id1526883" class="indexterm"></a><a id="id1526891" class="indexterm"></a><div class="para">
-				KDE アプリケーションには、基本的なもの全てと、あなたが必要とする多くの進んだアプリケーションがあります。
-			</div><div class="para">
-				<span class="package">Dolphin</span> は、ファイル管理アプリケーションです。<span class="package">Dolphin</span> は、ファイルをより正確に表示し、異なるコンピュータハードウエアに適応し、また、よりビジュアル的に優れたものとなりました。
-			</div><div class="para">
-				<span class="package">Gwenview</span> は、画像表示アプリケーションです。新しい、透明な位置インジケーターによって、ズームインした画像内でのあなたの位置を知ることができます。細かいビジュアル的、あるいは性能上の改善にも気が付かれるでしょう。
-			</div><div class="para">
-				<span class="package">Okular</span> は、テキスト文書表示アプリケーションです。テキストの選択がより簡単にできるようになりました。いくつかのバグが修正され、複数カラムのテキストが正しく選択できるようになりました。
-			</div><div class="para">
-				<span class="package">Kate</span> テキストエディターは、以下の特徴を持ちます。新しい "Search and Replace" プラグイン、変更行のインジケーター、そして新しい "modelines" エディター、そこではタブとスペースをどう使うかといった文書の変数を簡単に設定できます。Fedora 17 では、<span class="package">Kate</span> のための新しい文書が加わり、それはアプリケーションの "Help" メニューからアクセスできます。
-			</div><div class="para">
-				<span class="package">Cantor</span> は、数学パッケージのためのアプリケーションです。<span class="package">Cantor</span> は、Qalculate と Scilab をサポートします。
-			</div><div class="para">
-				<span class="package">Marble</span> 仮想地球と地図アプリケーションは、<span class="package">KRunner</span> と統合されました。GPS 座標と <span class="package">Marble</span> ブックマークを、 <span class="package">KRunner</span> から検索することができます。道の高度変化の情報を見たり、人工衛星を追跡したり、ベクトル形式の OpenStreetMap ファイルを表示することもできます。
-			</div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1885297">3.1.2. GNOME</h4></div></div></div><a id="id1885304" class="indexterm"></a><a id="id1885312" class="indexterm"></a><a id="id1885320" class="indexterm"></a><a id="id1885328" class="indexterm"></a><div class="para">
-			Fedora 17 は GNOME 3.4 デスクトップ環境を特徴とします。
-		</div><div class="para">
-			GNOME 3.4 のいくつかのハイライトは次のとおりです:
-			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-						いくつかのアプリケーションのメニューは、GNOME シェルに統合されました。新しいメニューは、見た目を整え、アプリケーションの見た目を統一するのに役立ちます。
-					</div></li><li class="listitem"><div class="para">
-						<span class="package">Boxes</span> は、 GNOME 3 アプリケーションになりました。Boxes を使って、他のコンピューターをアクセスしたり、自分あるいは他のコンピューター上の仮想マシンをアクセスすることもできます。
-					</div></li><li class="listitem"><div class="para">
-						今ある、<span class="package">Documents</span> アプリケーションが改善されました。新しい機能は、コレクション、リムーバブルデバイスのサポート、文書の共有、文書の印刷、横書きモード、そして GNOME Shell overview search box との統合です。
-					</div></li><li class="listitem"><div class="para">
-						ハイコントラストと、ハイコントラストの逆像テーマアイコンは、標準のテーマアイコンと比べてより一貫したものとなりました。
-					</div></li><li class="listitem"><div class="para">
-						弱視のユーザーは、GNOME シェルを使ってディスプレイの明るさとコントラストをカスタマイズできます。
-					</div></li><li class="listitem"><div class="para">
-						ネットワークパネルは再設計されました。新しい機能は、インターネットにつながっているか簡単にわかること、ネットワークアクティビティを無効にするための "airplane mode" スイッチ、不要なコネクションを削除するための "forget network" ボタン、そして統合されたパスワードダイアログです。
-					</div></li><li class="listitem"><div class="para">
-						GNOME キーリングダイアログは、GNOME シェルと統合されました。
-					</div></li><li class="listitem"><div class="para">
-						"Wacom" グラフィックスタブレットのユーザーにとって可能となった新機能は：
-						<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-									タブレットを再調整する。
-								</div></li><li class="listitem"><div class="para">
-									ボタンのマッピングを設定する。
-								</div></li><li class="listitem"><div class="para">
-									デバイスにモニターをアサインする。
-								</div></li><li class="listitem"><div class="para">
-									複数のタブレットを設定する。
-								</div></li><li class="listitem"><div class="para">
-									デバイスごとにユニークな設定を保存する。
-								</div></li><li class="listitem"><div class="para">
-									タブレットと機能を識別する。
-								</div></li></ul></div>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>3. Fedora の変更点 - デスクトップユーザー向け</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta name="generator" content="publican 2.8" /><meta name="package" content="Fedora-Release_Notes-18-ja-JP-1-0" /><link rel="home" href="index.html" title="リリースノート" /><link rel="up" href="index.html" title="リリースノート" /><link rel="prev" href="sect-Release_Notes-Changes_for_Sysadmin.html" title="2. Fedora の変更点 - システム管理者向け" /><link rel="next" href="sect-Release_Notes-Changes_for_Developers.html" title="4. Fedora の変更点 - 開発者向け" /></head><body><p id="title"><a class="left" href="http://www.fedoraproject.org"><img src="Common_Content/images/image_left.png" alt="Product Site" /></a><a class="right" href="http://docs.fedoraproject.org"><img src="Common_Content/images/image_right.png" alt="Documentation Site" /></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Changes_for_Sysadmin.html"><strong>戻る</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Developers.html"><strong>次へ</strong></a></li></ul><div class="section" id="sect-Release_Notes-Changes_for_Desktop"><div class="titlepage"><div><div keep-together.within-column="always"><h2 class="title" id="sect-Release_Notes-Changes_for_Desktop">3. Fedora の変更点 - デスクトップユーザー向け</h2></div></div></div><div xml:lang="ja-JP" class="section" id="sect-Desktop" lang="ja-JP"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="sect-Desktop">3.1. デスクトップ</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp13714816">3.1.1. 一般</h4></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp6797152">3.1.1.1. <code class="function">mDNS</code> はデフォルトで有効化</h5></div></div></div><div class="para">
+				「グラフィカルデスクトップ」 ソフトウエアセレクションをインストールするとき、 <code class="function">mDNS</code> クライアントが含まれます。これにより、ローカルネットワークでの、設定なしのデバイスディスカバリーが可能です。プライベート情報は、デフォルトでは、<code class="function">mDNS</code> により公開されることはありません。
+			</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp15732416">3.1.1.2. <span class="application"><strong>systemd</strong></span>はディスプレイマネージャー管理</h5></div></div></div><div class="para">
+				ディスプレイマネージャーを変更するために、<code class="filename">/etc/sysconfig/desktop</code> ファイルを編集するのは、もう行われません。代わりに、<code class="command">systemctl enable --force <em class="replaceable"><code>displaymanager</code></em>.service</code> を使って、お好みのインストール済みのディスプレイマネージャーを有効にして下さい。
+			</div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp11003344">3.1.2. Cinnamon</h4></div></div></div><div class="para">
+			Fedora users now have the option of using <span class="application"><strong>Cinnamon</strong></span>, an advanced desktop environment based on <span class="application"><strong>GNOME3</strong></span>. <span class="application"><strong>Cinnamon</strong></span> takes advantage of advanced features provided by the <span class="application"><strong>GNOME</strong></span> backend while providing users with a more traditional, accessible desktop experience. Install Cinnamon with the command: 
+<pre class="screen">
+	    <code class="command">yum groupinstall "Cinnamon Desktop"</code>
+</pre>
 
-					</div></li><li class="listitem"><div class="para">
-						ビルトインされた GNOME シェルの拡大鏡の機能がより設定可能となりました。
-					</div></li></ul></div>
-
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1920076">3.1.3. Sugar</h4></div></div></div><a id="id1920083" class="indexterm"></a><a id="id1920091" class="indexterm"></a><a id="id1920099" class="indexterm"></a><div class="para">
-			Fedora 17 は Sugar 0.96 デスクトップ環境を特徴とします。いくつかの特徴は次のとおりです:
-			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-						GTK+ 3 に移行するために HippoCanvas の削除
-					</div></li><li class="listitem"><div class="para">
-						NetworkManager 0.9 のサポート
-					</div></li><li class="listitem"><div class="para">
-						GTK+ 3 に基づいた sugar-toolkit
-					</div></li><li class="listitem"><div class="para">
-						PyPi の初期サポート
-					</div></li><li class="listitem"><div class="para">
-						GTK+ 3, webkitgtk, そして gobject-introspection を使った、新しいブラウズアクディビティ。
-					</div></li><li class="listitem"><div class="para">
-						GTK+ 3 と gobject-introspection を使った、新しいリードアクティビティ。
-					</div></li><li class="listitem"><div class="para">
-						さまざまなバグが修正され、いくつかのアクティビティが改善されました
-					</div></li></ul></div>
-
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1584374">3.1.4. リムーバブルメディアのマウントポイントが変わりました</h4></div></div></div><div class="para">
-			ホットプラグ可能な USB デバイスのように、ユーザーのセッションの間にマウントされたリムーバブルメディアは、ユーザーごとのディレクトリにマウントされるようになりました。マウントポイントは、 <code class="filename">/run/media/$USER/</code> に見ることができ、 <em class="parameter"><code>$USER</code></em> だけに排他的なアクセス権が与えられます。
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1584396">3.1.5. Multi-Seat</h4></div></div></div><a id="id1584402" class="indexterm"></a><a id="id1584410" class="indexterm"></a><div class="para">
-			multi-seat Linux 設定を使用するための機能は、いつでも使用できるようになりました。しかし過去には複雑な設定が必ず必要とされました。はじめて Fedora 17 は初めて完全に自動化された multi-seat 設定を提供します。
-		</div><div class="para">
-			この機能を使用するには、モニター、マウスおよびキーボードとともに、<a href="http://www.amazon.com/Plugable-Universal-DisplayLink-1920x1080-High-Speed/dp/B002PONXAI/ref=sr_1_3?ie=UTF8&amp;qid=1335904746&amp;sr=8-3">Plugable Docking Station</a> のように USB ドックを差し込むだけです。そうすると、新しいデスクトップが表示されます。
-		</div><div class="para">
-			この新しい機能のさらなる詳細は以下の記事を参照してください:
-			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-						<a href="http://0pointer.de/blog/projects/multi-seat.html">http://0pointer.de/blog/projects/multi-seat.html</a>
-					</div></li><li class="listitem"><div class="para">
-						<a href="http://www.phoronix.com/scan.php?page=article&amp;item=plugable_multiseat_kick">http://www.phoronix.com/scan.php?page=article&amp;item=plugable_multiseat_kick</a>
-					</div></li></ul></div>
-
-		</div></div></div><div xml:lang="ja-JP" class="section" lang="ja-JP"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id2069866">3.2. 生産性</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1532793">3.2.1. cherrytree</h4></div></div></div><a id="id1655278" class="indexterm"></a><a id="id1852745" class="indexterm"></a><a id="id2332758" class="indexterm"></a><div class="para">
-			<span class="package">cherrytree</span> は Fedora の新しい機能です。階層的なメモ取得アプリケーションです。リッチテキスト、構文ハイライト、単一 XML または SQLite ファイルへのデータ保存の機能があります。
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1638841">3.2.2. evolution</h4></div></div></div><a id="id1585271" class="indexterm"></a><div class="para">
-			<span class="package">evolution</span> は 3.3.5 に更新されました。これはバグ修正のリリースです。
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1794107">3.2.3. libreoffice</h4></div></div></div><a id="id1546482" class="indexterm"></a><div class="para">
-			<span class="package">libreoffice</span> は 3.5.0.3 に更新されました。
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1614494">3.2.4. lemonpos</h4></div></div></div><a id="id1975888" class="indexterm"></a><a id="id1977658" class="indexterm"></a><a id="id1899305" class="indexterm"></a><div class="para">
-			<span class="package">lemonpos</span>, 略称 Lemon は、オープンソースの Point of Sale ソフトウエアで、とても小さい、小さい、あるいは中くらいのビジネス向けに作られています。データ管理とストレージには、MySQL が使われていて、ネットワークのたくさんの POS 端末につながった単一のデータベースとして使うことができます。
-		</div><div class="para">
-			Lemon は、現代的でテーマを決めることができ、使いやすいインタフェース、検索パネル、価格チェッカーツール、お店を管理するための管理者ツール、印刷される報告書、などを提供します。
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1623953">3.2.5. rachota</h4></div></div></div><a id="id1624004" class="indexterm"></a><a id="id695300" class="indexterm"></a><div class="para">
-			<span class="package">rachota</span> も、初めて Fedora で採用されました。これは、異なるプロジェクトのタイムトラッキングをするためのポータブルなアプリケーションです。どこででも動作します。時間データをダイアグラム形式で表示します。カスタマイズ可能な報告書と明細書を作成したり、あるいは測定データの解析ができます。そして、ユーザーの時間の使い方を改善するヒントを提案します。それは、完全にポータブルで、かつ、個人的なタイムトラッカーです。
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id695322">3.2.6. scribus</h4></div></div></div><a id="id1882422" class="indexterm"></a><a id="id1882430" class="indexterm"></a><a id="id1882442" class="indexterm"></a><a id="id1882454" class="indexterm"></a><a id="id1882466" class="indexterm"></a><a id="id1882478" class="indexterm"></a><a id="id1545878" class="indexterm"></a><a id="id1545886" class="indexterm"></a><a id="id1545894" class="indexterm"></a><a id="id1545902" class="indexterm"></a><a id="id1545910" class="indexterm"></a><a id="id1545918" class="indexterm"></a><a id="id1545926" class="indexterm"></a><a id="id1545934" class="indexterm"></a><a id="id1645443" class="indexterm"></a><a id="id1645451" class="indexterm"></a><div class="para">
-			Scribus はメジャーアップグレード 1.4.0 に更新されました:
-			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-						オブジェクトの扱いが機能強化されました。（つまり、進んだ描画プログラムのような変換ツールです）また、Scrapbook と Image Manager のような既存の機能の改善もされました。
-					</div></li><li class="listitem"><div class="para">
-						多くの、テキストとタイポグラフィーに関する進んだオプション。例えば、キャラクタースタイル、オプションのマージン、グリフ拡張など。Undo/Redo が、ついにほとんどすべてのテキスト関係のアクションでサポートされ、新しいスクリプトは、言語の設定に従って、straight quoteの代わりに typographical quotation mark を使うことを可能とします。ユーザビリティーの改善は、カーソルの位置と移動の改善、キャンバスでの高速なレイアウト、そしてリンクされたフレーム間での相互作用などです。
-					</div></li><li class="listitem"><div class="para">
-						ベクトルオブジェクトへの新機能。例えば、ブーリアンパスオペレーション、ラインスタイルエディター上のベクトル効果など。
-					</div></li><li class="listitem"><div class="para">
-						パターンフィルなどの、フィルの扱いが大きく改善されました。多くのグラジエントタイプ外部の色パレット形式 (AI, EPS, GPL, PostScript, SOC) そして、新しい多くの色パレット、その中には、Resene と dtp studio のような商業的ベンダーからのものや、国内外の標準からのものがあります。
-					</div></li><li class="listitem"><div class="para">
-						"Render Frame" という新しいフレームタイプを使うと、Scribus の中からコマンドラインを経由して呼び出すことのできる LaTeX, Lilypond, POV-Ray などの、PostScript, PDF あるいは PNG ファイルを生成するあらゆるプログラムの出力を描画（後に、エクスポートする）ことができます。最初のバージョンは、 Google Summer of Code プロジェクトとして開発されました。後にこのプロジェクトは、外部で生成された文書、科学的出版物と公式などをインポートできるように拡張されました。簡単な設定ファイルで、より多くのレンダラーが追加できます。
-					</div></li><li class="listitem"><div class="para">
-						ベクトルインポートフィルター： Scribus 1.4.0 は、以下のファイル形式に対して新しいインポートフィルターを提供します。Adobe Illustrator (EPS と PDF ベースの両方), Macintosh Picture (PICT), Windows Metafile (WMF), Xfig (FIG), Calamus Vector Graphics (CVG), Kivio Stencils (SML), そして DIA Shapes (SHAPE).
-					</div></li><li class="listitem"><div class="para">
-						ビットマップ画像について：Photoshop ファイルの扱いには、複数のクリッピングパスのサポートや PSD レイヤーのサポートを含め、多くの大きな改善があります。Image Manager は書き直され、新しい非破壊的な画像エフェクトが追加されました。さらに、Scribus 1.4.0 は、画像中の EXIF データをサポートし、Windows と OS/2 ビットマップ (BMP) のインポートは再度、有効になりました。
-					</div></li><li class="listitem"><div class="para">
-						Scribus の、印刷前の機能の主な改善点の中では、Print Preview での印刷マークとインクカバレッジの表示が重要でしょう。さらに、Scribus は、PDF と PostScript のエクスポートの間に、スポットカラーからプロセスカラーへの変換を、１クリックでできるようになりました。
-					</div></li><li class="listitem"><div class="para">
-						PDF エクスポートも、大きな改善がありました。Scribus は、PDF レイヤーを含む PDF 1.5 へのエクスポートが可能です。もうひとつの新機能は、エクスポートされた PDF に、EPS と PDF ファイルをラスター化する代わりに埋め込むオプションです。また、フォントの埋め込みと置換も改善されました。
-					</div></li><li class="listitem"><div class="para">
-						カラー管理のために、Scribus 1.4.0 は littleCMS のバージョン 1 と 2 をサポートしています。メインウィンドウからシングルクリックしてカラー管理を有効化することもできます。
-					</div></li><li class="listitem"><div class="para">
-						さらに、Scribus チームはスクリーンにおいて色覚異常をエミュレーションする機能を追加しました。
-					</div></li><li class="listitem"><div class="para">
-						大小さまざまな数百のユーザビリティの改善を追加しました。
-					</div></li><li class="listitem"><div class="para">
-						含まれているスクリプトが更新されました。テキストフレームにおけるそのままの引用を多くの言語に対して正しい引用符に変換するために、スクリプトメニューにおいて "自動引用" スクリプトの追加されました。
-					</div></li><li class="listitem"><div class="para">
-						Scribus 1.4.0 は以前のバージョンよりも多くのテンプレートが同梱されています。
-					</div></li><li class="listitem"><div class="para">
-						ヘルプシステムの内容が書き換えられて更新されました。
-					</div></li></ul></div>
-
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2081536">3.2.7. timeline</h4></div></div></div><a id="id2081543" class="indexterm"></a><div class="para">
-			時系列にイベントを表示および誘導するためのクロスプラットフォームアプリケーション <span class="package">timeline</span> も Fedora 17 の新しいものです。次のことができます:
-			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-						階層カテゴリにおけるイベントの整理
-					</div></li><li class="listitem"><div class="para">
-						マウスを用いたイベントの移動および大きさ変更
-					</div></li><li class="listitem"><div class="para">
-						イベントの複製
-					</div></li><li class="listitem"><div class="para">
-						イベントの検索
-					</div></li><li class="listitem"><div class="para">
-						特定の日付への移動
-					</div></li><li class="listitem"><div class="para">
-						ズームレベルに応じた異なる表現の表示
-					</div></li><li class="listitem"><div class="para">
-						イメージへのエクスポート
-					</div></li></ul></div>
-
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2081619">3.2.8. vym</h4></div></div></div><a id="id1892941" class="indexterm"></a><div class="para">
-			<span class="package">vym</span> はバージョン 2.0.6 に更新されました。このアップグレードは多くの新しい機能が含まれます:
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp14260464">3.1.3. <span class="application"><strong>GNOME</strong></span></h4></div></div></div><div class="para">
+			Fedora 18 には、最新の <span class="application"><strong>GNOME</strong></span> バージョン 3.6 が含まれます。以下の変更点があります。
 		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
-					一般
+					<span class="emphasis"><em>より進んだユーザー補助</em></span>: 以前の <span class="application"><strong>GNOME3</strong></span> リリースには、スクリーンリーダーや、オンスクリーンキーボードなどのユーザー補助機能がありました。<span class="application"><strong>GNOME 3.6</strong></span> では、これらの機能がデフォルトで有効です。ユーザー補助機能を使うには、 <span class="application"><strong>GNOME Shell</strong></span> から、 <code class="function">「ユニバーサルアクセス」</code> アイコンを選択するだけです。また、<span class="application"><strong>GNOME 3.6</strong></span> では、<span class="application"><strong>ズーム機能</strong></span> に、ブライトネス、コントラスト、そして反転機能がつきました。
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>分散 (「クラウドベースの」) ドキュメントシステムとのより優れた統合</em></span>: ファイル管理のための <span class="application"><strong>GNOME Documents</strong></span> アプリケーションは、既に <span class="productname">Google Docs</span> と統合されています。 <span class="application"><strong>GNOME 3.6</strong></span> ではさらに、 <span class="productname">Windows Live</span> を使うユーザーのために、<span class="productname">Microsoft SkyDrive</span> がサポートされました。
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>Support for ActiveSync Accounts</em></span>: You can use the <span class="application"><strong>GNOME</strong></span> <code class="function">online accounts</code> feature to connect your desktop with your online accounts. GNOME already includes a connector for <span class="trademark">Google</span>™ accounts, and <span class="productname">GNOME 3.6</span> adds a connector for <span class="productname">ActiveSync</span> (or <span class="productname">Microsoft Exchange</span>) accounts.
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>テキストシェーピングの改善</em></span>: <span class="productname">GNOME 3.6</span> では、テキストシェーピングエンジンが改善されました。より高品質のテキストレンダリングと、メモリーの節約に気が付かれるでしょう。新しいテキストレンダリングエンジンは、将来の <span class="application"><strong>GNOME</strong></span> バージョンにわたって、さらなる改善を可能とするでしょう。
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>効率のよい入力ソース選択</em></span>: <span class="productname">GNOME 3.6</span> は、<code class="function">IBus</code> 入力メソッドフレームワークだけを使います。入力デバイス(キーボードのような)とキーレイアウトを選択すれば、すべての <span class="application"><strong>GNOME</strong></span> アプリケーションがその設定を使います。
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em><span class="application"><strong>GNOME</strong></span> を使った初期セットアップ</em></span>: 新しいコンピューターを手に入れたり、新しいオペレーティングシステムをインストールしたときに、<span class="productname">GNOME 3.6</span> を使って、以下の重要なタスクを行うことができます。
 					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-								ファイル処理
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											自動保存
-										</div></li><li class="listitem"><div class="para">
-											自動バックアップ
-										</div></li><li class="listitem"><div class="para">
-											vym はマップがディスクにおいて変更されたかを定期的にチェックします。
-										</div></li><li class="listitem"><div class="para">
-											地図や画像を読み込む際に複数のファイルを選択することができます
-										</div></li><li class="listitem"><div class="para">
-											最終セッションの復元
-										</div></li></ul></div>
-
+								ネットワークに接続する
 							</div></li><li class="listitem"><div class="para">
-								複数のマップセンターを１マップ内に
+								ユーザーアカウントの作成
 							</div></li><li class="listitem"><div class="para">
-								マニュアルページの追加
+								タイムゾーンと地域の設定
 							</div></li><li class="listitem"><div class="para">
-								新しい翻訳
+								オンラインアカウントとの統合
 							</div></li><li class="listitem"><div class="para">
-								コード
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											Qt4 への完全移植
-										</div></li><li class="listitem"><div class="para">
-											XSLTで変換せずに HTML ネイティブコードでのエクスポート
-										</div></li><li class="listitem"><div class="para">
-											DBUS サポート (部分的)
-										</div></li></ul></div>
-
+								<span class="application"><strong>GNOME Shell</strong></span> について、基本的な情報を学ぶ
 							</div></li></ul></div>
 
-				</div></li></ul></div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
-					インポート/エクスポート
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>通知システムの改善</em></span>: <span class="application"><strong>GNOME 3.0</strong></span> ではアプリケーションからユーザーに対して通知を行う新しく方法が加わりました。その仕組みは <code class="function">メッセージトレイ</code> と呼ばれています。 <span class="productname">GNOME 3.6</span> では <code class="function">メッセージトレイ</code> の仕組みが改善され、ユーザーのフォーカスを切り替えることなく、その通知が緊急なものであるかどうかを知ることができます。詳しくは <a href="https://live.gnome.org/GnomeShell/Design/Guidelines/MessageTray">GNOME のドキュメント</a> をご覧ください。
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>プリンター管理の簡略化</em></span>: <span class="productname">GNOME 3.6</span> では、<span class="application"><strong>GNOME Control Center</strong></span> の <code class="function">Printer</code> パネルが改善されました。ローカルやネットワークプリンターを探し、設定したり、ドライバーを選択したり、デフォルトオプションを設定するのがずっと簡単になりました。
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>ロックスクリーンが便利になりました</em></span>: デスクトップを「ロック」したり、「スリープ」状態から復帰したとき、<span class="productname">GNOME 3.6</span> のロックスクリーンはより多くの情報を提供し、新しい操作も可能となりました。
 					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-								最後のエクスポートを繰り返せます
+								日付と時刻を見る
 							</div></li><li class="listitem"><div class="para">
-								CSV スプレッドシートへの簡単なエクスポート
+								音楽とメディアプレイヤーを制御し、ボリュームレベルを調節する
 							</div></li><li class="listitem"><div class="para">
-								最も重要なエクスポートがスクリプト化できます
+								新しいメッセージや通知があるか表示する
 							</div></li><li class="listitem"><div class="para">
-								ASCII エクスポートが URL を表示します
+								基本的なネットワーク接続設定の変更
 							</div></li><li class="listitem"><div class="para">
-								FreeMind マップのインポート
+								デスクトップのアンロック方法の選択
 							</div></li></ul></div>
 
-				</div></li></ul></div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
-					処理方法
-					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-								クイックソートおよび "targets" を使用した移動
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											対象が単一キーにより定義できます
-										</div></li><li class="listitem"><div class="para">
-											"Goto" が対象を選択します
-										</div></li><li class="listitem"><div class="para">
-											"Move to" は移動ビューなしで選択した対象に移動します。クイックソートしているものに対して非常に有用です
-										</div></li></ul></div>
-
-							</div></li><li class="listitem"><div class="para">
-								ブレーンストーミングモード
-							</div></li><li class="listitem"><div class="para">
-								Add/Delete
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											分岐を加えて、子を選ぶ
-										</div></li><li class="listitem"><div class="para">
-											ブランチの子の削除
-										</div></li><li class="listitem"><div class="para">
-											子を保持しているブランチの削除
-										</div></li></ul></div>
-
-							</div></li><li class="listitem"><div class="para">
-								xLinks
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											現在クリックすることにより快適に選択できます
-										</div></li><li class="listitem"><div class="para">
-											ブランチの角をクリックすることにより、非常に簡単に xlink をたどり、それを始めます
-										</div></li><li class="listitem"><div class="para">
-											たどるために "F" キーも使用できます
-										</div></li></ul></div>
-
-							</div></li><li class="listitem"><div class="para">
-								参考資料/URL
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											サブツリーにあるすべての vymLinks を開きます
-										</div></li><li class="listitem"><div class="para">
-											サブツリーにあるすべての URL を開きます
-										</div></li><li class="listitem"><div class="para">
-											Bugzilla の統合
-											<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-														vym が Bugzilla から直接データを取得できます (追加パッケージが必要です、マニュアルを参照してください)
-													</div></li><li class="listitem"><div class="para">
-														バグの状態の簡易チェック: サブツリーにあるすべてのバグは単一のキー入力で更新できます
-													</div></li><li class="listitem"><div class="para">
-														Bugzilla クエリーのサポート
-													</div></li></ul></div>
-
-										</div></li></ul></div>
-
-							</div></li><li class="listitem"><div class="para">
-								履歴の過去のステップから現在のものにコピーします
-							</div></li><li class="listitem"><div class="para">
-								ブランチへのタイムスタンプの追加
-							</div></li><li class="listitem"><div class="para">
-								辞書順の並び替え (昇順/降順)
-							</div></li><li class="listitem"><div class="para">
-								マップセンターとして現在のセクションを持つ新しいマップを作成します
-							</div></li><li class="listitem"><div class="para">
-								ブランチを新しいマップセンターにすることを解除します
-							</div></li><li class="listitem"><div class="para">
-								選択履歴における前後の移動
-							</div></li></ul></div>
-
-				</div></li></ul></div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
-					ウィジェット
-					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-								エディター
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											ツリーエディターが追加されました
-										</div></li><li class="listitem"><div class="para">
-											ヘッダーエディターが追加されました
-										</div></li></ul></div>
-
-							</div></li><li class="listitem"><div class="para">
-								新しい検索ウィンドウ
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											ブランチおよびノートのどちらも、明確にヒットしたすべてを表示します。
-										</div></li><li class="listitem"><div class="para">
-											エディターにおいてヒットしたものを選択することが簡単になりました
-										</div></li></ul></div>
-
-							</div></li><li class="listitem"><div class="para">
-								より多くのファイルダイアログが、スイッチがオフにする警告を表示できます。
-							</div></li><li class="listitem"><div class="para">
-								進行バーが現在読み込み中のマップのファイル名を表示します
-							</div></li><li class="listitem"><div class="para">
-								ドックウィジェット
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											自由に配置できます
-											<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-														メインウィンドウの隣への回りこみ
-													</div></li><li class="listitem"><div class="para">
-														メインウィンドウの中に統合されました (上/下/右/左)
-													</div></li></ul></div>
-
-										</div></li><li class="listitem"><div class="para">
-											メモエディター
-										</div></li><li class="listitem"><div class="para">
-											検索ウィンドウ
-										</div></li></ul></div>
-
-							</div></li></ul></div>
-
-				</div></li></ul></div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
-					グラフィックス
-					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-								アニメーション
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											パン
-										</div></li><li class="listitem"><div class="para">
-											急速に元の状態に返します
-										</div></li></ul></div>
-
-							</div></li><li class="listitem"><div class="para">
-								イメージ
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											基本的な SVG サポート
-										</div></li><li class="listitem"><div class="para">
-											画像の大きさを変更できます
-										</div></li><li class="listitem"><div class="para">
-											新しい標準フラグ
-										</div></li></ul></div>
-
-							</div></li><li class="listitem"><div class="para">
-								フレーム
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											フレーム内にサブツリーを含みます
-										</div></li><li class="listitem"><div class="para">
-											新しいフレーム形式: cloud
-										</div></li></ul></div>
-
-							</div></li><li class="listitem"><div class="para">
-								ズーム
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											スクロールホイールを用いたズーム (CTRL 押下)
-										</div></li><li class="listitem"><div class="para">
-											ズーム要素が保存され、起動時に復元されます
-										</div></li><li class="listitem"><div class="para">
-											"." を用いて中心の選択、または "," を用いてズームの解除
-										</div></li></ul></div>
-
-							</div></li><li class="listitem"><div class="para">
-								自動配置 (衝突検知)
-							</div></li><li class="listitem"><div class="para">
-								フォント
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											初期フォントの設定
-										</div></li><li class="listitem"><div class="para">
-											ブランチの見出しを現在リッチテキストにできます
-										</div></li></ul></div>
-
-							</div></li></ul></div>
-
-				</div></li></ul></div></div></div><div xml:lang="ja-JP" class="section" lang="ja-JP"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1988322">3.3. 国際化</h3></div></div></div><div class="para">
-	</div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1639919">3.3.1. IBus</h4></div></div></div><a id="id1553865" class="indexterm"></a><a id="id1625964" class="indexterm"></a><a id="id1882348" class="indexterm"></a><a id="id1618558" class="indexterm"></a><a id="id2069525" class="indexterm"></a><a id="id2346495" class="indexterm"></a><a id="id2109671" class="indexterm"></a><a id="id2309840" class="indexterm"></a><a id="id1938516" class="indexterm"></a><a id="id1544976" class="indexterm"></a><a id="id1815100" class="indexterm"></a><a id="id1600109" class="indexterm"></a><a id="id1620172" class="indexterm"></a><a id="id1621535" class="indexterm"></a><div class="itemizedlist"><ul><li class="listitem"><div class="para">
-					IBus には、使用可能な入力メソッドエンジンを表示するポップアップを使った、新しい入力メソッドスイッチャーができました。マネージャーの Alt-Tab に似たものです。IBus の、X キーボードレイアウトの扱いもより良く、クリーンになりました。
 				</div></li><li class="listitem"><div class="para">
-					IBus は、入力メソッドエンジンとその状態をアプリケーションとの間で共用するようにふるまいを変えました。
+					<span class="emphasis"><em>エンタープライズログイン情報の統合</em></span>: 大きな(「エンタープライズ」)ネットワークに接続しているユーザーは、<span class="application"><strong>GNOME 3.6 Control Center</strong></span> を使ってユーザーアカウントの設定を見たり、原理的には変更したりできます。この機能は、Fedora 18 <span class="application"><strong>realmd</strong></span> 機能と統合されていますから、 <span class="productname">Active Directory</span> 設定を見たり、管理したりできます。
+				</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp11495168">3.1.4. <span class="productname">KDE</span>
+		 ソフトウエアコンパイレーション</h4></div></div></div><div class="para">
+			Fedora 18 は <span class="productname">KDE 4.9</span> を含みます。多くの新機能と、安定性と性能の改善があります。<span class="orgname">KDE プロジェクト</span>
+			品質検査チームは、このリリースが最高のものであるよう、努力しました。<span class="productname">KDE</span> リリースノートには、いくつかの変更点が示されています。
+		</div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp19098048">3.1.4.1. プラットフォーム</h5></div></div></div><div class="para">
+				<span class="productname">KDE Platform</span> リリースには、バグ修正、その他の品質向上、ネットワーク、また、 <span class="productname">Frameworks 5</span> のための準備があります。
+			</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp19100352">3.1.4.2. <span class="productname">Plasma Workspace</span>
+			</h5></div></div></div><div class="para">
+				<span class="productname">Plasma Workspaces</span> からのハイライトは、<span class="application"><strong>Dolphin</strong></span> ファイルマネージャー、<span class="application"><strong>Konsole</strong></span> X 端末エミュレーター、<code class="function">アクティビティ</code>、そして <span class="application"><strong>KWin</strong></span> ウインドウマネージャーでの大きな改善です。
+			</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						<span class="emphasis"><em><span class="application"><strong>Dolphin</strong></span> ファイルマネージャー</em></span>: パワフルなファイルマネージャーである <span class="application"><strong>Dolphin</strong></span> は、進むと戻るボタンを備えるようになりました。また、インラインのファイル名変更も復帰しました。<span class="application"><strong>Dolphin</strong></span> はレーティング、タグ、イメージとファイルサイズ、著者、日付、などのメタデータを表示できます。さらに、メタデータの属性によるグループ分けとソートもできます。新しい <span class="application"><strong>Mercurial</strong></span> プラグインは、このバージョン管理システムを、<span class="application"><strong>git</strong></span>, <span class="application"><strong>SVN</strong></span> そして <span class="application"><strong>CVS</strong></span> がサポートされているのと同じ、簡単な方法で扱うことができます。このため、ユーザーは、プル、プッシュ、そしてコミットを、ファイルマネージャーから直ちに行うことができます。<span class="application"><strong>Dolphin</strong></span> のユーザーインターフェースはいくつかの小さな改善がありました。例えば、 <code class="function">Places</code> パネルの改善、検索サポートの改善、そして端末位置との同期です。
+					</div></li><li class="listitem"><div class="para">
+						<span class="emphasis"><em><span class="application"><strong>Konsole</strong></span> X 端末エミュレーター</em></span>:働き者の <span class="application"><strong>Konsole</strong></span> は、<span class="productname">KDE</span> <code class="function">Web Shortcuts</code> を使った選択テキストの検索ができるようになりました。フォルダーが <span class="application"><strong>Konsole</strong></span> ウインドウにドロップされた時に、<code class="function">Change Directory To</code> コンテキストオプションが表示されます。ユーザーは、タブをデタッチして、ドラッグすることにより、そのタブだけのウインドウを新しく作ることによって、端末ウインドウの配置をよりいっそう制御可能になりました。既存のタブを同じプロファイルの新しいタブに複製することもできます。メニューとタブバーが見えるかどうかは、 <span class="application"><strong>Konsole</strong></span> を開始する時に制御できます。スクリプトがお好きな方は、タブのタイトルをエスケープシーケンスを使って変更できます。
+					</div></li><li class="listitem"><div class="para">
+						<span class="emphasis"><em><span class="application"><strong>KWin</strong></span> ウインドウマネージャー</em></span>: <span class="productname">KDE</span> ウインドウマネージャーである <span class="application"><strong>KWin</strong></span> は、多くの作業を経ました。改善の中には、ウインドウをスイッチするときにレーズするとか、 <code class="function">Window Specific Settings</code> のヘルプなど小さな変更点から、ボックススイッチをするときの <code class="function">KCM</code> の改善や、 <code class="function">Wobbly Windows</code> の性能改善など、目につきやすいものもあります。 <span class="application"><strong>KWin</strong></span> が、 <code class="function">アクティビティ</code> をより良く扱うための変更点もあります。例えば、 <code class="function">アクティビティ</code> に関するウインドウの規則の追加などです。<span class="application"><strong>KWin</strong></span> の品質と性能を向上させるために注意が払われました。
+					</div></li><li class="listitem"><div class="para">
+						<span class="emphasis"><em><code class="function">アクティビティ</code></em></span>: <code class="function">アクティビティ</code> は、<code class="function">ワークスペース</code>のいたるところでより完全に統合されました。ファイルは、<span class="application"><strong>Dolphin</strong></span>, <span class="application"><strong>Konqueror</strong></span> そして <code class="function">Folder View</code> において、<code class="function">アクティビティ</code>にリンクすることができます。<code class="function">Folder View</code> は、デスクトップあるいはパネルにおいて、ある<code class="function">アクティビティ</code>に関連するファイルだけを表示できます。<code class="function">アクティビティ</code><code class="function">KIO</code> は新しくなり、プライベートアクティビティのための暗号化が可能となりました。
+					</div></li><li class="listitem"><div class="para">
+						<code class="function">ワークスペース</code> に、 <code class="function">MPRIS2</code> サポートが加わりました。<span class="application"><strong>KMix</strong></span> が複数ストリームを処理し、<code class="function">Plasma</code> データエンジンがこの音楽演奏制御プロトコルを処理します。これらの変更は、<code class="function">MPRIS2</code> が、<span class="productname">KDE</span> の音楽とビデオプレーヤーである <span class="application"><strong>Juk</strong></span> と <span class="application"><strong>Dragon</strong></span> をサポートしたことに関係します。 <code class="function">ワークスペース</code> には、多くの小さな変更があり、それには、いくつかの <code class="function">QML</code> の移植も含まれます。改善された <code class="function">Plasma</code> ミニプレイヤーは、トラック属性ダイアログが含まれ、フィルタリングの改善もされました。キックオフメニューは、キーボードだけで使えるようになりました。<code class="function">Network Management</code> plasmoid はレイアウトと使いやすさの改善がありました。<code class="function">Public Transport</code> ウイジェットも、大きな変更がありました。
+					</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp5990736">3.1.4.3. アプリケーション</h5></div></div></div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						<span class="emphasis"><em><span class="application"><strong>Kontact</strong></span> Suite</em></span>: 世界でもっとも完成度の高い PIM スイート <span class="application"><strong>Kontact</strong></span> は多くのバグ修正とパフォーマンスの改善が行われています。
+					</div></li><li class="listitem"><div class="para">
+						<span class="emphasis"><em>KDE 教育</em></span>: <span class="productname">KDE-Edu</span> は、 <span class="application"><strong>Pairs</strong></span>、新しい記憶ゲーム、を導入します。<span class="application"><strong>Rocs</strong></span>、生徒と先生のためのグラフ理論アプリケーション、は、多くの改善がありました。アルゴリズムは、ステップごとに実行できるようになり、アンドゥと cancel-construction システムの改善があり、オーバーレイグラフもサポートされました。<span class="application"><strong>Kstars</strong></span> は、meridian transit time / observation time によるソートが改善されました。<span class="orgname">Digital Sky Survey</span>
+						<span class="application"><strong>Marble</strong></span> では、速度の最適化とスレッドサポートがあり、ユーザーインターフェースも強化されました。<span class="application"><strong>Marble</strong></span> 経路制御エクステンションは、<span class="application"><strong>OSRM (Open Source Routing Machine)</strong></span> を含むようになりました。自転車と歩行者の経路制御、さらに、オフラインでの経路制御と検索を管理するためのオフラインデータモデルも含まれます。<span class="application"><strong>Marble</strong></span> は、 <span class="application"><strong>FlightGear</strong></span> シミュレーターの中に、航空機の位置を表示できるようになりました。
+					</div></li><li class="listitem"><div class="para">
+						<span class="emphasis"><em>KDE ゲーム</em></span>: <span class="productname">KDE ゲーム</span> は、更新されました。<span class="productname">KDE</span> の麻雀ゲームである <span class="application"><strong>Kajongg</strong></span> にはたくさんの改善がありました。ゲームのヒントを示すツールチップ、ロボット AI の改善、そして、プレイヤーが同じサーバーにいるときに可能なチャットなどです。<span class="orgname">kajongg.org</span>
+						はサーバーを持っています！) <span class="application"><strong>KGoldrunner</strong></span> は Gabriel Miltschitzky 氏の貢献により新しいレベルが追加されました。また、 <span class="application"><strong>KPatience</strong></span> は保存時にゲームのヒストリーも保存できるようになりました。<span class="application"><strong>KSudoku</strong></span> は良いヒントを提供する小さな改善と、そのほか、7つの新しい2次元のパズル形式、3つの新しい3次元のパズル形式が加わりました。
+					</div></li></ul></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp6006272">3.1.5. <span class="productname">MATE</span>
+		</h4></div></div></div><div class="para">
+			This is the initial release of <span class="productname">MATE Desktop</span> for Fedora 18. It brings back a classic, intuitive, and easy to use desktop that users have been long requesting. Install MATE by issuing the command: 
+<pre class="screen">
+	  <code class="command">yum groupinstall "MATE Desktop"</code>
+</pre>
+			 Support for <span class="application"><strong>MATE</strong></span> in Fedora is provided in <code class="varname">#fedora-mate</code> or <code class="varname">#mate</code> on <span class="orgname">irc.freenode.net</span>
+			または Fedora bugzilla 経由で。
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp6011408">3.1.6. <span class="productname">Xfce</span>
+		</h4></div></div></div><div class="para">
+			Fedora 18 では <span class="productname">Xfce 4.10</span> が導入されました。この新しいリリースは、高速で軽量かつ、ユーザーフレンドリーなデスクトップ環境を提供するというゴールに沿ったものです。主に、デスクトップに磨きをかけ、いろいろな点でユーザー経験を改善することにフォーカスされました。このリリースのハイライトは：
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					<span class="emphasis"><em>新しいアプリケーションファインダー</em></span>: 新しく、完全に書きなおされたアプリケーションファインダーは、かつての <span class="application"><strong>xfce4-appfinder</strong></span> と <span class="application"><strong>xfrun4</strong></span> の機能を統合しました。
 				</div></li><li class="listitem"><div class="para">
-					ibus-m17n は、zh-pinyin, ko-han2, そしてほとんどの kbd エンジンを含む、いくつかの m17n エンジンをデフォルトで排除します。それらは、ibus-pinyin と ibus-hangul などの他の特定の IME とオーバラップするためです。
+					<span class="emphasis"><em>パネルの改善</em></span>:パネルは、<span class="emphasis"><em>垂直ディスプレイモード</em></span> (deskbar) も可能となりました。さらに、パネルプラグインは複数の行に整列することができ、deskbar モードでは特に便利です。
 				</div></li><li class="listitem"><div class="para">
-					ibus-fep はコンソールおよびターミナルにおいて使用できる新しい IBus フロントエンドクライアントです。
+					<span class="emphasis"><em>機能の改善</em></span>: 新しい<span class="emphasis"><em>MIME タイプエディター</em></span> は、いろいろなファイルタイプを開くのに使うアプリケーションを簡単に変えることができます。設定エディターの機能は拡張され、マウスとタッチパッドの設定ダイアログは、<span class="emphasis"><em>タブレットをより良くサポートします</em></span>。
 				</div></li><li class="listitem"><div class="para">
-					Indic Typing Booster は、 Bengali をサポートします。さらに、Marathi, Hindi, Gujarati そして Tamil 言語のためのベータ版もできました。
-				</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1852738">3.3.2. アジア言語フォント</h4></div></div></div><a id="id1907189" class="indexterm"></a><a id="id1907196" class="indexterm"></a><a id="id1907204" class="indexterm"></a><a id="id1907212" class="indexterm"></a><a id="id1907220" class="indexterm"></a><a id="id1907228" class="indexterm"></a><a id="id1907236" class="indexterm"></a><a id="id1907244" class="indexterm"></a><a id="id1927122" class="indexterm"></a><a id="id1927130" class="indexterm"></a><a id="id1927138" class="indexterm"></a><a id="id1927146" class="indexterm"></a><a id="id1927154" class="indexterm"></a><div class="itemizedlist"><ul><li class="listitem"><div class="para">
-					デフォルトの Korean フォントは、"Un" から "Nanum" に代わりました。 "Nanum" のグリフは、 "Un" よりもきれいに見えます。また、 "Nanum" には、モノスペースの変種もあります。
+					<span class="emphasis"><em>デスクトップ処理の改善</em></span>: いまや、マウスの<span class="emphasis"><em>１クリック</em></span>でアプリケーションをローンチして、デスクトップのファイルを開くことができます。さらに、<span class="productnumber">4.10</span>
+					 デスクトップは、サムネールを表示でき、壁紙リストの中を自動的に進むことができます。
 				</div></li><li class="listitem"><div class="para">
-					デフォルトの簡字体中国語のフォントは、"WenQuanYi Zen Hei" から "WenQuanYi Zen Hei Sharp" に代わりました。後者は、埋め込まれたビットマップフォントを使うため、小さいサイズのときに、簡字体中国語をよりきれいに表示することができます。デフォルトの簡字体中国語のフォントを以前のデフォルトに戻すには、zenheiset ツールを使って下さい。
+					<span class="emphasis"><em>タイル状ウィンドウ</em></span>: ウィンドウマネージャーは、ウィンドウがスクリーンの端にドラッグされた時に、それをタイル状に配置する設定が可能となりました。タブウィンドウ (Alt+Tab) は、より柔軟なテーマとカーソルキーナビゲーションをサポートしました。
 				</div></li><li class="listitem"><div class="para">
-					Lohit フォントは、 SIL OFL ライセンスになりました。
-				</div></li><li class="listitem"><div class="para">
-					Kannada 語のための、gubbi-fonts と navilu-fonts という新しいフォントパッケージが加わりました。
-				</div></li><li class="listitem"><div class="para">
-					Culmus フォントはバージョン 0.121 に更新されました。Frank Ruehl ファミリーは完全に作りなおされ、diacritics と kerning をサポートします。
-				</div></li></ul></div></div></div><div xml:lang="ja-JP" class="section" id="sect_Multimedia" lang="ja-JP"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="sect_Multimedia">3.4. マルチメディア</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1814407">3.4.1. blender</h4></div></div></div><a id="id1654512" class="indexterm"></a><a id="id1527090" class="indexterm"></a><a id="id1614019" class="indexterm"></a><a id="id1892891" class="indexterm"></a><a id="id1964858" class="indexterm"></a><div class="para">
-			<span class="package">blender</span> は、2.6.1 に更新されました。このリリースでは、新しく高速なレンダリングエンジン、モーショントラッキング、ダイナミックペンティング、海洋シミュレーションを含む、多くの新機能が加わりました。詳しくは、 <a href="http://www.blender.org/development/release-logs/blender-260/">http://www.blender.org/development/release-logs/blender-260/</a> と <a href="http://www.blender.org/development/release-logs/blender-261/">http://www.blender.org/development/release-logs/blender-261/</a> を参照下さい。
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1585234">3.4.2. calibre</h4></div></div></div><a id="id1529338" class="indexterm"></a><div class="para">
-			<span class="package">calibre</span> は、 0.8.11 から 0.8.39 に更新されました。多くの改善の中では：削除されたブックは単に削除されるのでなくて、ごみ箱に移動されます。複数のファイル名をコマンドラインに渡すことができます。larger/smaller がクリックされたときにどれだけのフォントサイズの変更がされるかを決める preference 設定ができました。フォーマットをコンバートするかどうかを問い合わせるポップアップを無効にすることができます。多くの新しい、改善されたレシピ、などがあります。
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1530404">3.4.3. epris</h4></div></div></div><div class="para">
-			<span class="package">epris</span> は小さな、軽量のミュージックプレイヤーです。<span class="emphasis"><em>epris</em></span> は Fedora 17 の新機能です。 (非常に) 簡単な概要は <a href="http://code.google.com/p/epris/">http://code.google.com/p/epris/</a> を参照してください。
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2228060">3.4.4. epstool</h4></div></div></div><a id="id1620335" class="indexterm"></a><div class="para">
-			<span class="package">epstool</span> は、EPS ファイルからプレビューイメージを作成あるいは抽出するユティリティです。取り囲む枠を変更したり、ビットマップに変換することもできます。Fedora 17 で初めて導入されました。
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1976358">3.4.5. gimp</h4></div></div></div><a id="id1976364" class="indexterm"></a><div class="para">
-			<span class="package">gimp</span> が 2.8.0 に更新されました。多くの変更があり、いくつかはとても重要なものです。ハイライトの一部は：
+					<span class="emphasis"><em>デフォルトアプリケーションのより良い選択</em></span>: <span class="productname">Xfce</span> パッケージグループと、 <span class="productname">Xfce</span> スピンは、<span class="application"><strong>lightdm</strong></span> ディスプレイマネージャーと、 <span class="application"><strong>Yum Extender</strong></span> パッケージマネージャーを採用します。それらは、デスクトップ環境のゴールに適合するものです。
+				</div></li></ul></div><div class="para">
+			<span class="productname">Xfce 4.10</span> の、アップストリームの変更点のオンラインツアーは、<a href="http://xfce.org/about/tour">ここ</a> からご覧になれます。
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp1697040">3.1.7. <span class="productname">Sugar</span>
+		</h4></div></div></div><div class="para">
+			Fedora 18 では <span class="productname">Sugar 教育環境 "Sucrose" バージョン 0.98</span> が提供されており、教育用途のユーザーや開発者がひとつの空間で楽しむことができます。
+		</div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp1699200">3.1.7.1. <span class="productname">Sugar</span>
+			 を体験しよう</h5></div></div></div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						<span class="emphasis"><em>Sugar にタッチ </em></span>: 最新バージョンの <span class="productname">Sugar</span> はタッチスクリーンに完全に対応し、タッチフレンドリーなユーザーインタフェースを提供します。X環境でのタッチサポートの改善点を活用しています。
+					</div></li><li class="listitem"><div class="para">
+						<span class="emphasis"><em>並び替え順の変更</em></span>: ユーザーはホームビューのアイコンがアルファベット順になったことに気がつくでしょう。
+					</div></li><li class="listitem"><div class="para">
+						<span class="emphasis"><em>Sugar で作ろう</em></span>: <span class="productname">Sugar</span> のアクティビティを構築する開発者は、GTK3ベースの、更新されたツールキットに気づかれるでしょう。
+					</div></li></ul></div></div></div></div><div xml:lang="ja-JP" class="section" lang="ja-JP"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp10686192">3.2. 生産性</h3></div></div></div><div class="para">
+		<span class="package">par</span> が新しく Fedora に追加されました。<span class="application"><strong>par</strong></span> は文を再整形するフィルターです。コマンドラインオプションにより、出力形式を詳細に制御できます。
+	</div></div><div xml:lang="ja-JP" class="section" lang="ja-JP"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp15444480">3.3. ネットワーク</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp14414864">3.3.1. 一貫性のあるネットワークデバイス名</h4></div></div></div><div class="para">
+			Fedora 18 では引き続き以前のリリースでも実装されていた <span class="package">biosdevname</span> というネットワークデバイス名の命名規則が適用されます。サーバーのマザーボード上の内蔵 Ethernet は <code class="literal">em<em class="replaceable"><code>port_number</code></em></code>。PCI カード上の Ethernet ポートは <code class="literal">p<em class="replaceable"><code>slot_number</code></em>p<em class="replaceable"><code>port_number</code></em></code> のように筐体のラベルと同じような順序で命名されます。この機能を無効にしたい場合には、カーネルオプションで <code class="literal">biosdevname=0</code> と指定することで無効にできます。その場合、昔から使われている ethX という名前になります。
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp5470672">3.3.2. <span class="application"><strong>firewalld</strong></span> を用いたより強固なネットワークセキュリティ</h4></div></div></div><div class="para">
+			ファイヤーウォールのデーモン <span class="package">firewalld</span> はFedora 18の既定のファイヤーウォールソリューションになり、<span class="package">iptables</span>を置き換えるものになります。<span class="application"><strong>firewalld</strong></span>を使うと、アプリケーションのポリシー変更を再読み込みを必要とせずに適用でき、ルールが変更されても接続状態を保つことができます。
+		</div><div class="para">
+			A <code class="function">D-BUS</code> interface allows approved applications to communicate their status and present complex or temporary needs to the firewall without requiring hand configuration by an administrator. This improves support for dynamic environments such as <span class="application"><strong>libvirtd</strong></span>, which previously had to be restarted when <span class="application"><strong>iptables</strong></span> rules were changed.
+		</div><div class="para">
+			<code class="command">firewall-cmd</code> コマンドを使うことでマニュアルにて管理が行えます。firewalld のドキュメントに使い方の説明があります。次の manpage をご覧ください: <code class="filename">firewall-cmd(1)</code>、 <code class="filename">firewalld(1)</code>、 <code class="filename">firewalld.conf(5)</code>、<code class="filename">firewalld.icmptype(5)</code>、<code class="filename">firewalld.service(5)</code>、<code class="filename">firewalld.zone(5)</code>
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp13703424">3.3.3. <span class="application"><strong>Team Driver</strong></span> による NIC ボンディングの改善</h4></div></div></div><div class="para">
+			Fedora 18 には新たに <code class="function">Team Driver</code> が収録されます。<code class="function">Team Driver</code> を使うことで、複数のネットワークインターフェースのグループ化が容易になり、そのグループは単一のネットワークインタフェースのように振る舞います。これは既存のBondingドライバーが提供する機能にチーミングの概念を拡張しています。詳しい使い方については、次の manpage をご参照ください: <code class="filename">teamd.conf(5)</code>、 <code class="filename">teamd(8)</code> 、 <code class="filename">teamdctl(8)</code>
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp14143696">3.3.4. ホットスポット機能の導入</h4></div></div></div><div class="para">
+			<span class="package">NetworkManager</span> は 機能強化された <span class="trademark">Wi-Fi</span>™ ホットスポットおよびインターネット接続共有モードをサポートします。これにより、よりスムーズな接続共有が可能で、それはハードウェアでより良くサポートされています。既存の設定が変更されないことを確実にするために、このモードは新しい接続に対してのみ自動的に有効化されます。
+		</div></div></div><div xml:lang="ja-JP" class="section" lang="ja-JP"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp6684672">3.4. 国際化</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp12043296">3.4.1. インプットメソッド</h4></div></div></div><div class="para">
+			<code class="filename">$HOME/.xinputrc</code>は <code class="filename">$HOME/.config/imsettings/xinputrc</code>へ移動されました。
+		</div><div class="para">
+			<code class="filename">$HOME/.imsettings.log</code>は<code class="filename">$HOME/.cache/imsettings/log</code>へ移動されました。
+		</div><div class="para">
+			簡字体中国語のデフォルトエンジンは、 <span class="package">ibus-libpinyin</span> になりました。(詳しくは、 <a href="http://fedoraproject.org/w/index.php?title=Features/ibus-libpinyin">Features/ibus-libpinyin</a> を参照下さい。)
+		</div><div class="para">
+			GNOME デスクトップでは、 <span class="package">im-chooser</span> は、フォールバックモードと、ibus でない入力メソッドのときを除いて使われなくなりました。これは、 <span class="productname">GNOME 3.6</span> が ibus を、デフォルトの入力メソッドシステムとしてサポートするためです。ユーザーは、 <span class="application"><strong>gnome-control-center</strong></span> で、自分の入力メソッドを設定します。
+			<div class="orderedlist"><ol class="arabic"><li class="listitem"><div class="para">
+						パネル右上のユーザーメニューをクリックします。
+					</div></li><li class="listitem"><div class="para">
+						メニューから、 <span class="emphasis"><em>システム設定</em></span> を選択してください。
+					</div></li><li class="listitem"><div class="para">
+						<span class="emphasis"><em>地域 &amp; 言語</em></span> アイコンをクリックします。
+					</div></li><li class="listitem"><div class="para">
+						<span class="emphasis"><em>入力ソース</em></span> タブを開きます。
+					</div></li><li class="listitem"><div class="para">
+						入力ソースを追加するには、 <span class="emphasis"><em>+</em></span> アイコンをクリックします。
+					</div></li><li class="listitem"><div class="para">
+						一つ以上追加したい入力ソースを選択してください。
+					</div></li></ol></div>
+
+		</div><div class="para">
+			リスト内にお探しの入力ソースが見つからない場合は、次のコマンドをターミナルで実行し、デスクトップを再起動してください:
+<pre class="screen"><code class="command">gsettings set org.gnome.desktop.input-sources show-all-sources true</code></pre>
+
+		</div><div class="para">
+			デフォルトでは、入力メソッドをターンオン、オフするためのショートカットキーがないことがあります。以下の手順で有効にできます。
+			<div class="orderedlist"><ol class="arabic"><li class="listitem"><div class="para">
+						<span class="guilabel"><strong>System Settings</strong></span> の <span class="guilabel"><strong>Input Sources</strong></span> タブにある、<span class="guilabel"><strong>shortcut settings</strong></span> リンクをクリックします。あるいは、一番上にある <span class="guibutton"><strong>Keyboard</strong></span> アイコンをクリックします。そして、 <span class="guilabel"><strong>Shortcuts</strong></span> タブへ行き、左ペインの <span class="guilabel"><strong>Typing</strong></span> セクションに行きます。
+					</div></li><li class="listitem"><div class="para">
+						<span class="guibutton"><strong>ソースの切り替え</strong></span>をクリックするか、<span class="keycap"><strong>Control</strong></span> + <span class="keycap"><strong>space</strong></span>を押します。
+					</div></li></ol></div>
+
+		</div><div class="para">
+			あなたの母国語に、入力ソースがデフォルトで何も設定されていない場合は、上記の手順を回避策として、それを追加することができます。以下は、入力メソッドエンジンに対応する入力ソースの表です。
+		</div><table border="1" id="idp11777024"><tr>
+				<td>
+					<span class="emphasis"><em>Input source name</em></span>
+				</td>
+				<td>
+					<span class="emphasis"><em>Input method engine</em></span>
+				</td>
+
+			</tr><tr>
+				<td>
+					Chinese (Chewing)
+				</td>
+				 <td>
+					ibus-chewing
+				</td>
+
+			</tr><tr>
+				<td>
+					Chinese (Intelligent Pinyin)
+				</td>
+				 <td>
+					ibus-libpinyin
+				</td>
+
+			</tr><tr>
+				<td>
+					Japanese (Anthy)
+				</td>
+				 <td>
+					ibus-anthy
+				</td>
+
+			</tr><tr>
+				<td>
+					Korean (Korean)
+				</td>
+				 <td>
+					ibus-hangul
+				</td>
+
+			</tr><tr>
+				<td>
+					* (inscript (m17n))
+				</td>
+				 <td>
+					ibus-m17n
+				</td>
+
+			</tr><tr>
+				<td>
+					* (itrans (m17n))
+				</td>
+				 <td>
+					ibus-m17n
+				</td>
+
+			</tr><tr>
+				<td>
+					* (phonetic (m17n))
+				</td>
+				 <td>
+					ibus-m17n
+				</td>
+
+			</tr></table><div class="para">
+			<span class="package">ibus-libpinyin</span> は、簡字体中国語のための新しい入力フロントエンドを提供します。それは、ユーザーが中国語の文字を入力するスピードを上げることができる知的なピンイン入力メソッドです。それは、<span class="package">ibus-pinyin</span> を置換しますが、こちらも、Fedora において、まだ使うことができます。
+		</div><div class="para">
+			<span class="package">ibus-typing-booster</span> は、ibus プラットフォームのための、予測的入力メソッドです。それは、部分的な入力から、完全な語を予測します。ユーザーは単純に、候補のリストから希望する語を選択すれば済みます。これにより、タイプ速度と綴りを改善できます。<span class="package">ibus-typing-booster</span> は、現在、以下のアジアとヨーロッパ言語をサポートしています。
 			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-						<span class="package">gimp</span> 2.8 では、オプションでシングルウィンドウモードが追加されました。デフォルトのマルチウィンドウモードと新しいシングルウィンドウモードは、Windows メニューの、 Single-window mode チェックボックスでトグルできます。
+						Assamese, Bengali, Farsi, Gujarati, Hindi, Kannada, Maithili, Marathi, Nepali, Oriya, Punjabi, Tamil, Telugu, Urdu
 					</div></li><li class="listitem"><div class="para">
-						<span class="package">gimp</span> では、dock ウィンドウの ドック可能ダイアログが、複数カラムが可能となりました。
-					</div></li><li class="listitem"><div class="para">
-						ドッキングバーは削除され、オーバレイされたハイライトに代わりました。ドック可能なドラッグハンドルは削除され、ドック可能メニューボタンがタブの上に移動しました。新しい Automatic タブスタイルが追加され、ドック可能なタブは利用可能なスペースを使うようになります。
-					</div></li><li class="listitem"><div class="para">
-						比較的大きな、概念上の変更があります。イメージのセーブとエクスポートは完全に別のアクティビティとなりました。イメージをセーブする場合、GIMP のネイティブファイル形式である XCF だけが可能です。それにより、継続中の作業に必要なすべての種類の情報を保存することができます。
-					</div></li><li class="listitem"><div class="para">
-						複雑な作品においては、フラットレイヤー構造はとても制限が多いものです。GIMP 2.8 では、レイヤーグループが導入され、利用者は作品をよりよく構成することができます。レイヤーは木構造で構成されます。レイヤーグループは、GIMP プラグイン API を使って、完全にスクリプト制御可能です。
-					</div></li><li class="listitem"><div class="para">
-						Text Tool を使ったテキスト編集は、別のウィンドウでなくて、キャンバス上で行われるようになりました。
-					</div></li><li class="listitem"><div class="para">
-						サイズ入力ウィジェット、それは x, y, 幅と高さのパラメーターのほとんどを入力するのに使われます、にも改善がされました。例えば、スケールダイアログで、 Width フィールドに '50%' と書き、イメージを幅の 50% にスケールすることができます。 '30in + 40px' や '4 * 5.4in' などの表現も可能です。
+						英語、デンマーク語、フランス語
 					</div></li></ul></div>
 
 		</div><div class="para">
-			他の多くの改善点は、 <a href="http://www.gimp.org/release-notes/gimp-2.8.html">http://www.gimp.org/release-notes/gimp-2.8.html</a> を参照下さい。
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2069693">3.4.6. idjc</h4></div></div></div><a id="id2070099" class="indexterm"></a><a id="id2070107" class="indexterm"></a><a id="id2070115" class="indexterm"></a><a id="id2070127" class="indexterm"></a><a id="id2070135" class="indexterm"></a><div class="para">
-			Internet DJ Console は、 Shoutcast あるいは Icecast サーバーを使って、インターネット上でストリーミングラジオショーをやりたい人のために、パワフルでかつ、使いやすいソースクライアントを提供しようとするプロジェクトです。<span class="package">idjc</span> は、 Fedora で初めて導入されました。
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2070154">3.4.7. vpmk</h4></div></div></div><a id="id1815458" class="indexterm"></a><a id="id1815466" class="indexterm"></a><a id="id1815474" class="indexterm"></a><div class="para">
-			Virtual MIDI Piano Keyboard は、 MIDI イベントジェネレーターであり、レシーバーです。自分では音を発することはありませんが、MIDI シンセサイザー（ハードウエアもしくはソフトウエア、内蔵もしくは外付け）をドライブするのに使うことができます。<span class="package">vpmk</span> は、新しく Fedora に導入されました。
-		</div></div></div><div xml:lang="ja-JP" class="section" lang="ja-JP"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1523110">3.5. 印刷</h3></div></div></div><a id="id1937584" class="indexterm"></a><a id="id2004475" class="indexterm"></a><a id="id1774222" class="indexterm"></a><div class="para">
-	</div><div class="para">
-		Fedora 17 は CUPS colordカラープロファイルサービスがサポートされます。これにより、ユーザーは印刷された色の適合度を定義できます。
-	</div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Changes_for_Sysadmin.html"><strong>戻る</strong>2. Fedora の変更点 - システム管理者向け</a></li><li class="up"><a accesskey="u" href="#"><strong>上に戻る</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>ホーム</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Developers.html"><strong>次へ</strong>4. Fedora の変更点 - 開発者向け</a></li></ul></body></html>
+			fcitx や uim のような、 ibus でない入力メソッドを使いたい場合は、システムからまず、 <span class="package">ibus</span> パッケージを削除して、デスクトップを再開始下さい。GNOME でも、 <span class="package">im-chooser</span> が動作するようになります。
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp6978336">3.4.2. フォント</h4></div></div></div><div class="para">
+			<span class="package">fonts-tweak-tool</span> は、言語順をサポートし、どの言語がテキストを表示するのに優先して使われるかを指定できます。また、フォントごとに、ヒンティング設定とサブピクセルのレンダリングを変更することが可能なフォント属性をサポートします。
+		</div><div class="para">
+			Packtypeフォントは適用範囲の強化のためアップデートされました。
+		</div><div class="para">
+			新しいフォント タミル語の<span class="package">lohit-tamil-classical-fonts</span> と グジャラート語の<span class="package">kalapi-fonts</span> が追加されました。
+		</div><div class="para">
+			ネパール語の<span class="package">madan-fonts</span>、カンナダ語の<span class="package">navilu-fonts</span>と<span class="package">gubbi-fonts</span>はそれぞれの言語用のfontconfigファイルによって最低限の文字をサポートするようになりました。
+		</div><div class="para">
+			<code class="filename">$HOME/.fonts.conf</code> は無効です。ユーザーは、それを、<code class="filename">$HOME/.config/fontconfig/fonts.conf</code> に移動下さい。
+		</div><div class="para">
+			<code class="filename">$HOME/.fonts.conf.d</code> は推奨されていません。 ユーザーは <code class="filename">$HOME/.config/fontconfig/conf.d</code>へ移動することを推奨されています。
+		</div><div class="para">
+			<code class="filename">/etc/fonts/conf.avail</code> の、すべての無効となった fontconfig 設定ファイルは、 <code class="filename">/usr/share/fontconfig/conf.avail</code> に移動しました。古い場所へのローカルなシンボリックリンクがあるならば、それらを更新下さい。
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp6634048">3.4.3.  Utilities </h4></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp6634848">3.4.3.1. <code class="command">localectl</code></h5></div></div></div><div class="para">
+				<code class="command">localectl</code> is a new utility used to query and change the system locale and keyboard layout settings. Settings used in text consoles and inherited by deskop enviromnents. <code class="command">localectl</code> also accepts a hostname argument to administer remote systems over ssh.
+			</div></div></div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Changes_for_Sysadmin.html"><strong>戻る</strong>2. Fedora の変更点 - システム管理者向け</a></li><li class="up"><a accesskey="u" href="#"><strong>上に戻る</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>ホーム</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Developers.html"><strong>次へ</strong>4. Fedora の変更点 - 開発者向け</a></li></ul></body></html>

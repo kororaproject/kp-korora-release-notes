@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>3. Ändringar i Fedora för skrivbordsanvändare</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta name="generator" content="publican 2.8" /><meta name="package" content="Fedora-Release_Notes-18-sv-SE-1-0" /><link rel="home" href="index.html" title="Utgåvenoteringar" /><link rel="up" href="index.html" title="Utgåvenoteringar" /><link rel="prev" href="sect-Release_Notes-Changes_for_Sysadmin.html" title="2. Ändringar i Fedora för systemadministratörer" /><link rel="next" href="sect-Release_Notes-Changes_for_Developers.html" title="4. Ändringar i Fedora för utvecklare" /></head><body><p id="title"><a class="left" href="http://www.fedoraproject.org"><img src="Common_Content/images/image_left.png" alt="Product Site" /></a><a class="right" href="http://docs.fedoraproject.org"><img src="Common_Content/images/image_right.png" alt="Documentation Site" /></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Changes_for_Sysadmin.html"><strong>Föregående</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Developers.html"><strong>Nästa</strong></a></li></ul><div class="section" id="sect-Release_Notes-Changes_for_Desktop"><div class="titlepage"><div><div keep-together.within-column="always"><h2 class="title" id="sect-Release_Notes-Changes_for_Desktop">3. Ändringar i Fedora för skrivbordsanvändare</h2></div></div></div><div xml:lang="sv-SE" class="section" id="sect-Desktop" lang="sv-SE"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="sect-Desktop">3.1. Skrivbord</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp40927088">3.1.1. Allmänt</h4></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp40992144">3.1.1.1. <code class="function">mdns</code> är tillgängligt som standard</h5></div></div></div><div class="para">
+				När valet ”Grafiskt skrivbord” installeras ingår en klient för <code class="function">MDNS</code>. Detta gör att man redan från början kan upptäcka enheter på det lokala nätverket. Ingen personlig information publiceras via <code class="function">MDNS</code> som standard.
+			</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp33926896">3.1.1.2. <span class="application"><strong>systemd</strong></span> hanterar displayhanterare.</h5></div></div></div><div class="para">
+				Att byta displayhanterare görs inte längre genom att redigera <code class="filename">/etc/sysconfig/desktop</code>. Använd istället <code class="command">systemctl enable --force <em class="replaceable"><code>displaymanager</code></em>.service</code> för att aktivera den displayhanterare du valt.
+			</div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp26780464">3.1.2. Cinnamon</h4></div></div></div><div class="para">
+			Fedora users now have the option of using <span class="application"><strong>Cinnamon</strong></span>, an advanced desktop environment based on <span class="application"><strong>GNOME3</strong></span>. <span class="application"><strong>Cinnamon</strong></span> takes advantage of advanced features provided by the <span class="application"><strong>GNOME</strong></span> backend while providing users with a more traditional, accessible desktop experience. Install Cinnamon with the command: 
+<pre class="screen">
+	    <code class="command">yum groupinstall "Cinnamon Desktop"</code>
+</pre>
+
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp35688208">3.1.3. <span class="application"><strong>GNOME</strong></span></h4></div></div></div><div class="para">
+			Fedora 18 inkluderar den senaste utgåvan av <span class="application"><strong>GNOME</strong></span>, version 3.6. du kommer lägga märke till dessa ändringar:
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					<span class="emphasis"><em>Mer tillgängligt användargränssnitt</em></span>: Tidigare utgåvor av <span class="application"><strong>GNOME3</strong></span> lade till tillgänglighetsfunktioner, såsom skärmläsaren och tangentbord på skärmen. <span class="application"><strong>GNOME 3.6</strong></span> aktiverar dessa funktioner som standard. För att använda tillgänglighetsfunktioner, välj helt enkelt ikonen <code class="function">”Universell tillgänglighet”</code> från <span class="application"><strong>GNOME Shell</strong></span>. <span class="application"><strong>GNOME 3.6</strong></span> tillför också möjligheter till ljusstyrka, kontrast och invertering till <span class="application"><strong>Magnifier</strong></span>
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>Bättre integration med distribuerade (”molnbaserade”) dokumentsystem</em></span>: Programmet <span class="application"><strong>GNOME-dokument</strong></span> för filhantering integrerar redan med <span class="productname">Google Docs</span>. <span class="application"><strong>GNOME 3.6</strong></span> lägger till stöd för <span class="productname">Microsoft SkyDrive</span>, för användare med ett konto på <span class="productname">Windows Live</span>.
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>Support for ActiveSync Accounts</em></span>: You can use the <span class="application"><strong>GNOME</strong></span> <code class="function">online accounts</code> feature to connect your desktop with your online accounts. GNOME already includes a connector for <span class="trademark">Google</span>™ accounts, and <span class="productname">GNOME 3.6</span> adds a connector for <span class="productname">ActiveSync</span> (or <span class="productname">Microsoft Exchange</span>) accounts.
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>Förbättrad formgivning av text</em></span>: <span class="productname">GNOME 3.6</span> använder en förbättrad motor för formgivning av text. Du kommer notera högre kvalitet på renderingen av text och besparingar av minne. Den nya motorn för formgivning av text möjliggör vidare förbättringar i framtida versioner av <span class="application"><strong>GNOME</strong></span>.
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>Effektivare val av källa för inmatning</em></span>: <span class="productname">GNOME 3.6</span> använder bar inmatningsramverket <code class="function">IBus</code>. Du kan välja en inmatningsenhet (exempelvis ett tangentbord) och tangentlayouten, och alla <span class="application"><strong>GNOME</strong></span>-program kommer använda dessa inställningar.
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>Initial inställning från <span class="application"><strong>GNOME</strong></span></em></span>: När du skaffar en ny dator eller installerar ett nytt operativsystem, kommer <span class="productname">GNOME 3.6</span> hjälpa dig med följande viktiga uppgifter:
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								Anslut till ett nätverk
+							</div></li><li class="listitem"><div class="para">
+								Skapa ett användarkonto
+							</div></li><li class="listitem"><div class="para">
+								Ange din tidszon och plats
+							</div></li><li class="listitem"><div class="para">
+								Integrera med online-konton
+							</div></li><li class="listitem"><div class="para">
+								Ta reda på grundläggande information om <span class="application"><strong>GNOME Shell</strong></span>
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>Förbättrat notifieringssystem</em></span>: <span class="application"><strong>GNOME 3.0</strong></span> innehöll ett nytt sätt för program att skicka notifieringar till användare som kallas <code class="function">meddelandebricka</code>. <span class="productname">GNOME 3.6</span> förbättrar <code class="function">meddelandebrickan</code> för att hjälpa användare att behålla fokus och veta huruvida notifieringar är brådskande. F-r mer information, se <a href="https://live.gnome.org/GnomeShell/Design/Guidelines/MessageTray">GNOME:s dokumentation</a>.
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>Enklare skrivarhantering</em></span>: <span class="productname">GNOME 3.6</span> inkluderar förbättringar av <code class="function">Skrivar</code>panelen i <span class="application"><strong>GNOME:s kontrollpanel</strong></span>. Du kan lättare hitta och konfigurera lokala och nätverksanslutna skrivare, välja drivrutiner, och ställa in standardalternativ.
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>Mer användbar låsskärm</em></span>: När du ”låser” ditt skrivbord eller kommer tillbaka från sovläget finns mer information och nya möjligheter på låsskärmen i <span class="productname">GNOME 3.6</span>:
+					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+								Se datum och tid
+							</div></li><li class="listitem"><div class="para">
+								Styr musik- och mediaspelare, och justera volymen
+							</div></li><li class="listitem"><div class="para">
+								Se huruvida du har nya meddelanden och notifieringar
+							</div></li><li class="listitem"><div class="para">
+								Ändra grundläggande inställningar av nätverksanslutningar
+							</div></li><li class="listitem"><div class="para">
+								Välj hur du vill låsa upp ditt skrivbord
+							</div></li></ul></div>
+
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>Integrerad information för företagsinloggning</em></span>: Användare som är anslutna till stora (”företags-”)nätverk kan se och potentiellt ändra inställningar av användarkontot i <span class="application"><strong>GNOME 3.6 kontrollpanel</strong></span>. Denna funktion integrerar funktionen <span class="application"><strong>realmd</strong></span> i Fedora 18 så att du kan se och potentiellt hantera <span class="productname">Active Directory</span>-installationer.
+				</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp36365360">3.1.4. <span class="productname">KDE</span>
+		 programsamling</h4></div></div></div><div class="para">
+			Fedora 18 kommer med <span class="productname">KDE 4.9</span>, med många nya funktioner och förbättrad stabilitet och prestanda.<span class="orgname">KDE-projektets</span>
+			Kvalitetsgrupp har tagit initiativet till att säkerställa att denna utgåva är den bästa hittills. Utgåvenoteringarna för <span class="productname">KDE</span> berättar om ett antal spännande ändringar:
+		</div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp36368416">3.1.4.1. Plattform</h5></div></div></div><div class="para">
+				Utgåvan av <span class="productname">KDE plattform</span> inkluderar felrättningar, andra kvalitetsförbättringar, nätverksstöd, och förberedelser för <span class="productname">Frameworks 5</span>.
+			</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp26209136">3.1.4.2. <span class="productname">Arbetsytan Plasma</span>
+			</h5></div></div></div><div class="para">
+				Höjdpunkter för <span class="productname">Plasmaarbetsytor</span> inkluderar väsentliga förbättringar av filhanteraren <span class="application"><strong>Dolphin</strong></span>, X-terminalemulatorn <span class="application"><strong>Konsole</strong></span>, <code class="function">Activities</code>, och fönsterhanteraren <span class="application"><strong>KWin</strong></span>.
+			</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						<span class="emphasis"><em>Filhanteraren <span class="application"><strong>Dolphin</strong></span></em></span>: Dem kraftfulla filhanteraren <span class="application"><strong>Dolphin</strong></span> inkluderar nu fram- och tillbakaknappar och ändring av filnamn in-line är tillbaka. <span class="application"><strong>Dolphin</strong></span> kan visa metadata såsom graderingar, taggar, bild- och filstorlekar, skapare, datum och även annat som gruppering och sortering efter metadataegenskaper. Den nya insticksmodulen <span class="application"><strong>Mercurial</strong></span> hanterar detta versionshanteringssystem på samma bekväma sätt som <span class="application"><strong>git</strong></span>, <span class="application"><strong>SVN</strong></span> och <span class="application"><strong>CVS</strong></span> stödjs, så användare kan dra, trycka och akrivera direkt från filhanteraren. Användargränssnittet i <span class="application"><strong>Dolphin</strong></span> har sett ett flertal mindre förbättringar, inklusive en bättre panel för <code class="function">Platser</code>, förbättrat stöd för att söka och synkronisering med terminalplatsen.
+					</div></li><li class="listitem"><div class="para">
+						<span class="emphasis"><em>X-terminalemulatorn <span class="application"><strong>Konsole</strong></span></em></span>: Arbetshästen <span class="application"><strong>Konsole</strong></span> har nu möjligheten att söka efter en textmarkering med <span class="productname">KDE</span> <code class="function">Webbgenvägar</code>. Den erbjuder kontextalternativet <code class="function">Byt katalog till</code> när en mapp släpps på <span class="application"><strong>Konsole</strong></span>-fönstret. Användare har mer kontroll i att organisera terminalfönster genom att koppla loss flikar och dra tem för att skapa ett nytt fönster med bara den fliken. Befintliga flikar kan klonas till nya med samma profil. Menyns synlighet och flikraden kan styras när man startar <span class="application"><strong>Konsole</strong></span>. För de som är händiga med att skriva skript kan fliktitlar ändras med en escape-sekvens.
+					</div></li><li class="listitem"><div class="para">
+						<span class="emphasis"><em>Fönsterhanteraren <span class="application"><strong>KWin</strong></span></em></span>: <span class="productname">KDE</span>:s fönsteranterare, <span class="application"><strong>KWin</strong></span> har varit föremål för en hel del arbete. Förbättringarna inkluderar subtila ändringar som att höja fönster vid byte av fönster och hjälp med <code class="function">fönsterspecifika inställningar</code>, liksom mer synliga ändringar såsom en förbättrad <code class="function">KCM</code> för lådbyte och bättre prestanda med <code class="function">mjuka fönster</code>. Det finns ändringar för att få <span class="application"><strong>KWin</strong></span> att bättre ta hand om <code class="function">aktiviteter</code>, inklusive tillägget av fönsterregler relaterade till <code class="function">aktiviteter</code>. Det har varit ett allmänt fokus på att förbättra kvaliteten och prestandan hos <span class="application"><strong>KWin</strong></span>.
+					</div></li><li class="listitem"><div class="para">
+						<span class="emphasis"><em><code class="function">Aktiviteter</code></em></span>: <code class="function">Aktiviteter</code> är nu mer ordentligt integrerade i hela <code class="function">arbetsytorna</code>. Filer kan länkas till <code class="function">aktiviteter</code> i <span class="application"><strong>Dolphin</strong></span>, <span class="application"><strong>Konqueror</strong></span> och <code class="function">mappvyn</code>. <code class="function">Mappvyn</code> kan också visa bara de filer som är relaterade till en <code class="function">aktivitet</code> på skrivbordet eller i en panel. En <code class="function">aktivitet</code> <code class="function">KIO</code> är ny, och kryptering är ny möjligt för privata aktiviteter.
+					</div></li><li class="listitem"><div class="para">
+						<code class="function">Arbetsytor</code> introducerar stöd för <code class="function">MPRIS2</code>, <span class="application"><strong>KMix</strong></span> har förmågan att hantera strömmar och en <code class="function">Plasma</code>datamotor för att antera detta protokoll för att styra musikspelare. Dessa ändringar knyter an till stödet för <code class="function">MPRIS2</code> i <span class="application"><strong>Juk</strong></span> och <span class="application"><strong>Dragon</strong></span>, musik- och videospelarna i <span class="productname">KDE</span>. Det finns många mindre ändringar i <code class="function">arbetsytor</code>, inklusive flera <code class="function">QML</code> portar. Den förbättrade <code class="function">Plasma</code> minispelaren inkluderar en dialog för spåregenskaper och bättre filtrering. Kickoff-menyn kan nu användas med bara ett tangentbord. Plasmoiden <code class="function">nätverkshantering</code> har sett arbete med layout och användbarhet. Widgeten <code class="function">kollektivtrafik</code> har också set väsentliga ändringar.
+					</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp36143040">3.1.4.3. Program</h5></div></div></div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						<span class="emphasis"><em>Sviten <span class="application"><strong>Kontact</strong></span></em></span>: Världens mest kompletta PIM-svit <span class="application"><strong>Kontact</strong></span> har fått många felrättningar och prestandaförbättringar.
+					</div></li><li class="listitem"><div class="para">
+						<span class="emphasis"><em>KDE utbildning</em></span>: <span class="productname">KDE-Edu</span> introducerar <span class="application"><strong>Pairs</strong></span>, ett nytt minnesspel. <span class="application"><strong>Rocs</strong></span>, programmet för grafteori för studenter och lärare, har fått ett antal förbättringar. Algoritmer kan nu köras steg för steg, systemen för att ångra och annulera-konstruktion fungerar bättre, och överläggsgrafer stödjs nu. <span class="application"><strong>Kstars</strong></span> har förbättrad sortering efter meridianpassagetid/observationstid och bättre hämtning av bilder från<span class="orgname">Digital kartläggning av himmelen.</span>
+						<span class="application"><strong>Marble</strong></span> fick hastighetsoptimeringar och stöd för trådning, och dess användargränssnitt har förbättrats. Utvidgningarna för att skapa rutter i <span class="application"><strong>Marble</strong></span> innefattar nu <span class="application"><strong>OSRM (Open Source Routing Machine, maskin för att skapa rutter med öppen källkod)</strong></span>, stöd för att skapa rutter för cykel och gående, och en nedkopplad datamodell för att skapa rutter och söka nedkopplat. <span class="application"><strong>Marble</strong></span> kan nu visa flygplans positioner i simulatorn <span class="application"><strong>FlightGear</strong></span>.
+					</div></li><li class="listitem"><div class="para">
+						<span class="emphasis"><em>KDE-spel</em></span>: <span class="productname">KDE Games</span> har uppgraderats. Mycket uppsnyggning ar skett av <span class="application"><strong>Kajongg</strong></span>, Mahjongspelet i <span class="productname">KDE</span>, inklusive speltips som verktygstips, förbättrad robot-AI och chatt om spelarna är på samma server (<span class="orgname">kajongg.org</span>
+						har nu en!). <span class="application"><strong>KGoldrunner</strong></span> har ett antal nya nivåer (ett bidrag av Gabriel Miltschitzky) och <span class="application"><strong>KPatience</strong></span> behåller spelhistoriken när man sparar. <span class="application"><strong>KSudoku</strong></span> har sett små förbättringar såsom bättre tips, liksom sju nya tvådimensionella pusselformer och tree nya 3-D-former.
+					</div></li></ul></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp36158512">3.1.5. <span class="productname">MATE</span>
+		</h4></div></div></div><div class="para">
+			This is the initial release of <span class="productname">MATE Desktop</span> for Fedora 18. It brings back a classic, intuitive, and easy to use desktop that users have been long requesting. Install MATE by issuing the command: 
+<pre class="screen">
+	  <code class="command">yum groupinstall "MATE Desktop"</code>
+</pre>
+			 Support for <span class="application"><strong>MATE</strong></span> in Fedora is provided in <code class="varname">#fedora-mate</code> or <code class="varname">#mate</code> on <span class="orgname">irc.freenode.net</span>
+			eller genom Fedoras bugzilla.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp36163648">3.1.6. <span class="productname">Xfce</span>
+		</h4></div></div></div><div class="para">
+			Fedora 18 introducerar <span class="productname">Xfce 4.10</span>. Denna nya utgåva fortsätter att vara trogen målet att vara en snabb, lättviktig och ändå användarvänlig skrivbordsmiljö och fokuserade huvudsakligen på att snygga upp skrivbordet och förbättra användarens upplevelse på olika sätt. Höjdpunkterna i denna utgåva är:
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					<span class="emphasis"><em>Ny programfinnare</em></span>: ett nytt program för att leta efter program har skrivits om helt och hållet och kombinerar funktionaliteten i de gamla <span class="application"><strong>xfce4-appfinder</strong></span> och <span class="application"><strong>xfrun4</strong></span>
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>Förbättrad panel</em></span>: panelen har nu ett alternativt <span class="emphasis"><em>vertikalt visningsläge</em></span> (en ”deskbar”). Dessutom kan panelinsticksmoduler arrangeras i flera rader vilket är särskilt användbart i vertikalt läge;
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>Förbättrad funktionalitet</em></span>: en <span class="emphasis"><em>ny redigerare av MIME-typer</em></span> som gör att man lätt kan ändra program som används för att öppna olika filtyper. Utökad funktionalitet för inställningsredigeraren och dialogen för inställningar av mus och pekplatta som <span class="emphasis"><em>nu stödjer pekplattor på ett mycket bättre sätt</em></span>;
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>Förbättrad skrivbordshantering</em></span>: det är nu möjligt att starta program och öppna filer på skrivbordet med <span class="emphasis"><em>ett enda klick</em></span> på musen. Dessutom kan skrivbordet <span class="productnumber">4.10</span>
+					 visa miniatyrbilder och automatiskt gå igenom listan över skrivbordsbakgrunder
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>Fönster som plattor (tile)</em></span>: fönsterhanteraren kan konfigureras att hantera fönstren som ej överlappande plattor när man drar dem till kanterna på skärmen. Fönstertabulatorn (Alt+Tab) stödjer mer flexibla teman och navigeringar med piltangenter;
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>Bättre val av standardprogram</em></span>: paketgruppen <span class="productname">Xfce</span> och spinnet <span class="productname">Xfce</span> har nu dieplayhanteraren <span class="application"><strong>lightdm</strong></span> och pakethanteraren <span class="application"><strong>Yum Extender</strong></span> som följer skrivbordsmiljöns mål.
+				</div></li></ul></div><div class="para">
+			En tur på nätet genom ändringarna uppströms i <span class="productname">Xfce 4.10</span> kan ses <a href="http://xfce.org/about/tour">här</a>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp36182336">3.1.7. <span class="productname">Sugar</span>
+		</h4></div></div></div><div class="para">
+			Utbildningsanvändare och -utvecklare inom området kan båda glädjas åt <span class="productname">Sugar utbildningsmiljö ”Sucrose” version 0.98</span> från Fedora 18.
+		</div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp36184352">3.1.7.1. Upplevelsen av <span class="productname">Sugar</span>
+			</h5></div></div></div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						<span class="emphasis"><em>Pek-Sugar</em></span>: Den nyaste versionen av <span class="productname">Sugar</span> har utmärkt stöd för pekskärmar, och har ett pekvänligt användargränssnitt och drar nytta av förbättrat stöd för pekning i X.
+					</div></li><li class="listitem"><div class="para">
+						<span class="emphasis"><em>Ändring av sortering</em></span>: Användare kommer upptäcka att ikoner i hemmavyn nu kommer i bokstavsordning.
+					</div></li><li class="listitem"><div class="para">
+						<span class="emphasis"><em>Matlagning med Sugar</em></span>: Utvecklare som bygger aktiviteter för <span class="productname">Sugar</span> kommer upptäcka en uppdaterad verktygslåda baserad på GTK3.
+					</div></li></ul></div></div></div></div><div xml:lang="sv-SE" class="section" lang="sv-SE"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp32696608">3.2. Produktivitet</h3></div></div></div><div class="para">
+		Paketet <span class="package">par</span> är nytt i Fedora. <span class="application"><strong>par</strong></span> är ett filter för att formatera om stycken. Kommandoradsflaggor tillåter exakt kontroll över utformatet.
+	</div></div><div xml:lang="sv-SE" class="section" lang="sv-SE"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp46918416">3.3. Nätverk</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp33786192">3.3.1. Konsistent namngivning av nätverksenheter</h4></div></div></div><div class="para">
+			Fedora 18 fortsätter tidigare utgåvors användning av <span class="package">biosdevname</span> för att sätta namn på nätverksenheter på ett förutsägbart sätt. Ethernet-portar inbäddade på servrars moderkort kommer få namn som <code class="literal">em<em class="replaceable"><code>portnummer</code></em></code>, medan portar på PCI-kort kommer få namn som <code class="literal">p<em class="replaceable"><code>platsnummer</code></em>p<em class="replaceable"><code>portnummer</code></em></code>, motsvarande etiketterna på chassit. Denna funktion kan stängas av genom att skicka <code class="literal">biosdevname=0</code> på kärnans kommandorad, i vilket fall beteendet återgår till att använda namn som ethX.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp27153760">3.3.2. Bättre nätverkssäkerhet med <span class="application"><strong>firewalld</strong></span></h4></div></div></div><div class="para">
+			Brandväggsdemonen <span class="package">firewalld</span> kommer vara standardlösning för brandvägg i Fedora 18, och ersätta <span class="package">iptables</span>. Användning av <span class="application"><strong>firewalld</strong></span> gör det möjligt att göra policyändringar utan att ladda om, så att förbindelsetillstånd kan fortsätta oavbrutet när regler ändras.
+		</div><div class="para">
+			A <code class="function">D-BUS</code> interface allows approved applications to communicate their status and present complex or temporary needs to the firewall without requiring hand configuration by an administrator. This improves support for dynamic environments such as <span class="application"><strong>libvirtd</strong></span>, which previously had to be restarted when <span class="application"><strong>iptables</strong></span> rules were changed.
+		</div><div class="para">
+			Manuell administration kan göras med <code class="command">firewall-cmd</code>. Dokumentation om firewalld finns i de inkluderade manualsidorna: <code class="filename">firewall-cmd(1)</code>, <code class="filename">firewalld(1)</code>, <code class="filename">firewalld.conf(5)</code>, <code class="filename">firewalld.icmptype(5)</code>, <code class="filename">firewalld.service(5)</code>, <code class="filename">firewalld.zone(5)</code>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp32851008">3.3.3. <span class="application"><strong>Team Driver</strong></span> förbättrar NIC-bindning</h4></div></div></div><div class="para">
+			Fedora 18 innehåller <code class="function">Team Driver</code> som gör det möjligt att gruppera flera nätverksgränssnitt tillsammans så att de fungerar som ett enda nätverksgränssnitt. Detta utökar samarbetsmöjligheterna som fins i den befintliga bindningsdrivrutinen. Det ger också ett modulärt alternativ drivet från användarrymden till den bevintliga bindningsdrivrutinen. Användningsinformation finns i de inkluderade manualsidorna: <code class="filename">teamd.conf(5)</code>, <code class="filename">teamd(8)</code> och <code class="filename">teamdctl(8)</code>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp34869168">3.3.4. Ta med din egen hotspot</h4></div></div></div><div class="para">
+			<span class="package">NetworkManager</span> stödjer nu ett förbättrat läge för hotspot or delning av internetanslutning för Wi-Fi, vilket möjliggör en mycket smidigare delning av anslutningar och stödjs bättre av hårdvara. Detta läge är automatiskt aktiverat endast för nya anslutningar för att säkerställa att befintliga anslutningar är oförändrade.
+		</div></div></div><div xml:lang="sv-SE" class="section" lang="sv-SE"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp39788848">3.4. Internationalisering</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp32475392">3.4.1. Inmatningsmetoder</h4></div></div></div><div class="para">
+			<code class="filename">$HOME/.xinputrc</code> har flyttats till <code class="filename">$HOME/.config/imsettings/xinputrc</code>.
+		</div><div class="para">
+			<code class="filename">$HOME/.imsettings.log</code> har flyttats till <code class="filename">$HOME/.cache/imsettings/log</code>.
+		</div><div class="para">
+			Standardmotorn för förenklad kinesiska har ändrats till <span class="package">ibus-libpinyin</span> (se <a href="http://fedoraproject.org/w/index.php?title=Features/ibus-libpinyin">Features/ibus-libpinyin</a> för mer detaljer).
+		</div><div class="para">
+			På GNOME-skrivbordet är nu <span class="package">im-chooser</span> föråldrat utom i reservläget och med inmatningsmetoder utan ibus, eftersom <span class="productname">GNOME 3.6</span> stödjer ibus som standardsystemet för inmatning. Användare bör nu använda <span class="application"><strong>gnome-control-center</strong></span> för att ställa in sina inmatningsmetoder.
+			<div class="orderedlist"><ol class="arabic"><li class="listitem"><div class="para">
+						klicka på användarmenyn uppe i högra hörnet av panelen
+					</div></li><li class="listitem"><div class="para">
+						välj <span class="emphasis"><em>Systeminställningar</em></span> från menyn.
+					</div></li><li class="listitem"><div class="para">
+						klicka på ikonen <span class="emphasis"><em>Region &amp; språk</em></span>.
+					</div></li><li class="listitem"><div class="para">
+						öppna fliken <span class="emphasis"><em>Inmatningskällor</em></span>.
+					</div></li><li class="listitem"><div class="para">
+						klicka på ikonen <span class="emphasis"><em>+</em></span> för att lägga till inmatningskällor.
+					</div></li><li class="listitem"><div class="para">
+						välj en eller flera inmatningskälla du vill lägga till.
+					</div></li></ol></div>
+
+		</div><div class="para">
+			Om du inte kan hitta en inmatningskälla du letar efter i listan, försök att köra följande kommando i en terminal och starta om skrivbordet:
+<pre class="screen"><code class="command">gsettings set org.gnome.desktop.input-sources show-all-sources true</code></pre>
+
+		</div><div class="para">
+			Det kan vara så att inga snabbtangenter finns som standard för att slå på och av inmatningsmetoder. Du kan aktivera det med följande steg:
+			<div class="orderedlist"><ol class="arabic"><li class="listitem"><div class="para">
+						klicka på länken <span class="guilabel"><strong>genvägsinställningar</strong></span> i fliken <span class="guilabel"><strong>Inmatningskällor</strong></span> på <span class="guilabel"><strong>Systeminställningar</strong></span> eller klicka på ikonen <span class="guibutton"><strong>Tangentbord</strong></span> längst upp i fliken <span class="guilabel"><strong>Genvägar</strong></span>, avsnittet <span class="guilabel"><strong>Skriva</strong></span> på den vänstra panelen.
+					</div></li><li class="listitem"><div class="para">
+						klicka på <span class="guibutton"><strong>Byt till nästa källa</strong></span>, tryck <span class="keycap"><strong>Control</strong></span> + <span class="keycap"><strong>mellanslag</strong></span>.
+					</div></li></ol></div>
+
+		</div><div class="para">
+			Om ingen inmatningskälla är konfigurerad som standard för ditt modersmål kan du lägga till det med ovanstående steg som ett sätt att gå runt hindret. Här är en tabell över inmatningskällor motsvarande inmatningsmetodsmotorerna:
+		</div><table border="1" id="idp39989520"><tr>
+				<td>
+					<span class="emphasis"><em>Input source name</em></span>
+				</td>
+				<td>
+					<span class="emphasis"><em>Input method engine</em></span>
+				</td>
+
+			</tr><tr>
+				<td>
+					Chinese (Chewing)
+				</td>
+				 <td>
+					ibus-chewing
+				</td>
+
+			</tr><tr>
+				<td>
+					Chinese (Intelligent Pinyin)
+				</td>
+				 <td>
+					ibus-libpinyin
+				</td>
+
+			</tr><tr>
+				<td>
+					Japanese (Anthy)
+				</td>
+				 <td>
+					ibus-anthy
+				</td>
+
+			</tr><tr>
+				<td>
+					Korean (Korean)
+				</td>
+				 <td>
+					ibus-hangul
+				</td>
+
+			</tr><tr>
+				<td>
+					* (inscript (m17n))
+				</td>
+				 <td>
+					ibus-m17n
+				</td>
+
+			</tr><tr>
+				<td>
+					* (itrans (m17n))
+				</td>
+				 <td>
+					ibus-m17n
+				</td>
+
+			</tr><tr>
+				<td>
+					* (phonetic (m17n))
+				</td>
+				 <td>
+					ibus-m17n
+				</td>
+
+			</tr></table><div class="para">
+			<span class="package">ibus-libpinyin</span> tillhandahåller en ny inmatningsframände för förenklad kinesiska och ger en intelligen inmatningsmetod för pinyin som snabbar upp användarens inmatning av kinesiska tecken. Den kan ersätta <span class="package">ibus-pinyin</span> som också fortfarande finns tillgänglig i Fedora.
+		</div><div class="para">
+			<span class="package">ibus-typing-booster</span> är en förutsägande inmatningsmetod för plattformen ibus. Den förutsäger hela ord baserat på partiell inmatning. Man kan sedan enkelt välja det önskade ordet från en lista av förslag och förbättra sin skrivhastighet och stavning. <span class="package">ibus-typing-booster</span> stödjer för närvarande följande asiatiska och europeiska språk:
+			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						Assamesiska, bengaliska, farsi, gujaratiska, hindi, kannada, maithili, marathi, nepali, oriya, punjabi, tamilska, telugu, urdu
+					</div></li><li class="listitem"><div class="para">
+						Engelska, danska, franska
+					</div></li></ul></div>
+
+		</div><div class="para">
+			Om du vill använda inmatningsmetoder utan ibus såsom fcitx och uim etc., ta bort paketet <span class="package">ibus</span> från systemet först och starta om skrivbordet. <span class="package">im-chooser</span> kommer komma tillbaka och fungera i nästa jämna GNOME.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp35600080">3.4.2. Typsnitt</h4></div></div></div><div class="para">
+			<span class="package">fonts-tweak-tool</span> stödjer nu ordnandet av språk för att avgöra vilket språk som kommer först för att visa texten, och typsnittsegenskaperna för att ändra sub-pixelrendering och konfiguration av hinting per typsnitt.
+		</div><div class="para">
+			Typsnitten Paktype har uppdaterats med förbättringar för bättre täckning.
+		</div><div class="para">
+			Nya typsnitt <span class="package">lohit-tamil-classical-fonts</span> för tamil och <span class="package">kalapi-fonts</span> föror gujarati har lagts till.
+		</div><div class="para">
+			<span class="package">madan-fonts</span> för nepali, <span class="package">navilu-fonts</span> och <span class="package">gubbi-fonts</span> för kannada stödjer nu de minsta nödvändiga tecknen enligt fontconfig-filer för sina respektive språk.
+		</div><div class="para">
+			<code class="filename">$HOME/.fonts.conf</code> är föråldrat. Användare uppmuntras att flytta den till <code class="filename">$HOME/.config/fontconfig/fonts.conf</code>.
+		</div><div class="para">
+			<code class="filename">$HOME/.fonts.conf.d</code> är föråldrat. Användare uppmuntras att flytta den till <code class="filename">$HOME/.config/fontconfig/conf.d</code>
+		</div><div class="para">
+			Alla de inaktiverade konfigurationsfilerna för fontconfig i <code class="filename">/etc/fonts/conf.avail</code> har flyttats till <code class="filename">/usr/share/fontconfig/conf.avail</code>. Om du har några lokala symboliska länkar från den gamla platsen, var god och uppdatera dem.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp35610128">3.4.3.  Utilities </h4></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp40759248">3.4.3.1. <code class="command">localectl</code></h5></div></div></div><div class="para">
+				<code class="command">localectl</code> is a new utility used to query and change the system locale and keyboard layout settings. Settings used in text consoles and inherited by deskop enviromnents. <code class="command">localectl</code> also accepts a hostname argument to administer remote systems over ssh.
+			</div></div></div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Changes_for_Sysadmin.html"><strong>Föregående</strong>2. Ändringar i Fedora för systemadministratörer</a></li><li class="up"><a accesskey="u" href="#"><strong>Upp</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Hem</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Developers.html"><strong>Nästa</strong>4. Ändringar i Fedora för utvecklare</a></li></ul></body></html>

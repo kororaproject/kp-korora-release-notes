@@ -1,196 +1,116 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>4. Зміни у Fedora для розробників</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta name="generator" content="publican 2.8" /><meta name="package" content="Fedora-Release_Notes-17-uk-UA-1-0" /><link rel="home" href="index.html" title="Нотатки щодо випуску" /><link rel="up" href="index.html" title="Нотатки щодо випуску" /><link rel="prev" href="sect-Release_Notes-Changes_for_Desktop.html" title="3. Зміни у Fedora для звичайних користувачів" /><link rel="next" href="sect-Release_Notes-Changes_for_Specific_Audiences.html" title="5. Зміни у Fedora для специфічних груп користувачів" /></head><body><p id="title"><a class="left" href="http://www.fedoraproject.org"><img src="Common_Content/images/image_left.png" alt="Product Site" /></a><a class="right" href="http://docs.fedoraproject.org"><img src="Common_Content/images/image_right.png" alt="Documentation Site" /></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Changes_for_Desktop.html"><strong>назад</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Specific_Audiences.html"><strong>далі</strong></a></li></ul><div class="section" id="sect-Release_Notes-Changes_for_Developers"><div class="titlepage"><div><div keep-together.within-column="always"><h2 class="title" id="sect-Release_Notes-Changes_for_Developers">4. Зміни у Fedora для розробників</h2></div></div></div><div xml:lang="uk-UA" class="section" lang="uk-UA"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1670632">4.1. Засоби розробки</h3></div></div></div><div class="para">
-		Традиційно до складу Fedora включено багатий набір інструментів для розробки. Нижче наведено основні з багатьох покращень у наборі інструментів цього випуску Fedora.
-	</div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1842050">4.1.1. gcc</h4></div></div></div><a id="id1636139" class="indexterm"></a><a id="id2325371" class="indexterm"></a><a id="id2238383" class="indexterm"></a><a id="id1784995" class="indexterm"></a><a id="id1959296" class="indexterm"></a><a id="id1549629" class="indexterm"></a><a id="id1550489" class="indexterm"></a><a id="id1965549" class="indexterm"></a><a id="id1791355" class="indexterm"></a><a id="id2165343" class="indexterm"></a><a id="id2349558" class="indexterm"></a><div class="para">
-			До складу Fedora 17 включено версію 4.7.0 <span class="package">gcc</span>, <span class="emphasis"><em>gcc-c++</em></span>, <span class="emphasis"><em>gcc-gfortran</em></span>, <span class="emphasis"><em>gcc-objc</em></span> та <span class="emphasis"><em>gcc-gnat</em></span>. У оновленні ви зможете скористатися численними змінами у наборі компіляторів, не лише C і C++, але і Ada та Fortran. Щоб дізнатися про всі подробиці, зверніться до сторінки даних щодо випуску GCC 4.7: <a href="http://gcc.gnu.org/gcc-4.7/changes.html">http://gcc.gnu.org/gcc-4.7/changes.html</a>.
-		</div><div class="para">
-			Основні характеристики:
-		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
-					Декілька архітектур тепер вважаються застарілими, зокрема IRIX 6.5, MIPS OpenBSD, Solaris, Tru64 UNIX 5.1 та декілька застарілих платформ ARM.
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>4. Зміни у Fedora для розробників</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta name="generator" content="publican 2.8" /><meta name="package" content="Fedora-Release_Notes-18-uk-UA-1-0" /><link rel="home" href="index.html" title="Нотатки щодо випуску" /><link rel="up" href="index.html" title="Нотатки щодо випуску" /><link rel="prev" href="sect-Release_Notes-Changes_for_Desktop.html" title="3. Зміни у Fedora для звичайних користувачів" /><link rel="next" href="sect-Release_Notes-Changes_for_Specific_Audiences.html" title="5. Зміни у Fedora для специфічних груп користувачів" /></head><body><p id="title"><a class="left" href="http://www.fedoraproject.org"><img src="Common_Content/images/image_left.png" alt="Product Site" /></a><a class="right" href="http://docs.fedoraproject.org"><img src="Common_Content/images/image_right.png" alt="Documentation Site" /></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Changes_for_Desktop.html"><strong>назад</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Specific_Audiences.html"><strong>далі</strong></a></li></ul><div class="section" id="sect-Release_Notes-Changes_for_Developers"><div class="titlepage"><div><div keep-together.within-column="always"><h2 class="title" id="sect-Release_Notes-Changes_for_Developers">4. Зміни у Fedora для розробників</h2></div></div></div><div xml:lang="uk-UA" class="section" lang="uk-UA"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp7605232">4.1. Програмування</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp21012496">4.1.1. <span class="package">Perl</span></h4></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp6525360">4.1.1.1. <span class="package">Perl</span> оновлено до версії <span class="productnumber">5.16</span>
+			</h5></div></div></div><div class="para">
+				У <span class="package">Perl</span> <span class="productnumber">5.16</span>
+				 є декілька суттєвих відмінностей від попередніх версій:
+			</div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h6 class="title" id="idp5343456">4.1.1.1.1. Нові можливості</h6></div></div></div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+							<code class="function">Unicode 6.1</code>
+						</div></li><li class="listitem"><div class="para">
+							Краща узгодженість <code class="literal">eval</code> у разі використання можливостей <code class="literal">unicode_eval</code> та <code class="literal">evalbytes</code>
+						</div></li><li class="listitem"><div class="para">
+							<code class="literal">substr</code> з 2 і 3 аргументами, викликана у контексті лівого значення, обробляється навіть після зміни початкового рядка
+						</div></li><li class="listitem"><div class="para">
+							У новій карті типів XS <code class="literal">T_*REF_REFCOUNT_FIXED</code> XS виправлено зменшення лічильника посилань
+						</div></li><li class="listitem"><div class="para">
+							Помилкову функцію <code class="literal">is_utf8_char</code> замінено на придатну до XS-викликів функцію <code class="literal">is_utf8_char_buf</code>
+						</div></li><li class="listitem"><div class="para">
+							Уможливлено запис до змінної <code class="literal">$$</code>
+						</div></li><li class="listitem"><div class="para">
+							Покращено інструмент діагностики: режим трасування може бути обмежено до певного рівня, точки зупину може бути тимчасово вимкнено, точки зупину може бути встановлено за назвою файла
+						</div></li><li class="listitem"><div class="para">
+							підпрограми <code class="literal">sort</code> можна завантажувати автоматично
+						</div></li><li class="listitem"><div class="para">
+							змінна <code class="literal">$[</code> надається у користування модулем <code class="literal">arybase</code>
+						</div></li><li class="listitem"><div class="para">
+							Шар введення-виведення з mmap Perl є тепер окремим модулем <code class="literal">PerlIO::mmap</code>
+						</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h6 class="title" id="idp5665136">4.1.1.1.2. Застарілі можливості</h6></div></div></div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+							Доступ до файлів бази даних у кодуванні Unicode безпосередньо вважається тепер застарілим: слід використовувати <code class="literal">Unicode::UCD</code>
+						</div></li><li class="listitem"><div class="para">
+							<code class="literal">Version::Requirements</code> тепер вважається застарілим на користь <code class="literal">CPAN::Meta::Requirements</code>
+						</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h6 class="title" id="idp5670032">4.1.1.1.3. Несумісні можливості</h6></div></div></div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+							Спеціальні блоки (наприклад <code class="literal">BEGIN</code>) викликаються у порожньому (void) контексті
+						</div></li><li class="listitem"><div class="para">
+							Перевантажене перетворення на рядки формального виразу не повертає літерал виразу
+						</div></li><li class="listitem"><div class="para">
+							Карти типів XS <code class="literal">T_DATAUNIT</code> і <code class="literal">T_CALLBACK</code> вилучено
+						</div></li><li class="listitem"><div class="para">
+							Визначену користувачем зміну регістру символів було вилучено на користь <code class="literal">Unicode::Casing</code>
+						</div></li><li class="listitem"><div class="para">
+							Функції C <code class="literal">XSUB</code> тепер є статичним і не експортуються з відповідних об’єктних файлів
+						</div></li><li class="listitem"><div class="para">
+							Придатні лише для читання посилання не можна послаблювати
+						</div></li><li class="listitem"><div class="para">
+							<code class="literal">$$</code>, <code class="literal">$&lt;</code>, <code class="literal">$&gt;</code>, <code class="literal">$(</code> та <code class="literal">$)</code> не кешують власного значення
+						</div></li><li class="listitem"><div class="para">
+							<code class="literal">Devel::DProf</code>, <code class="literal">Shell</code> було вилучено з ядра <span class="package">Perl</span>
+						</div></li><li class="listitem"><div class="para">
+							Вилучені бібліотеки perl4: <code class="filename">abbrev.pl</code>, <code class="filename">assert.pl</code>, <code class="filename">bigfloat.pl</code>, <code class="filename">bigint.pl</code>, <code class="filename">bigrat.pl</code>, <code class="filename">cacheout.pl</code>, <code class="filename">complete.pl</code>, <code class="filename">ctime.pl</code>, <code class="filename">dotsh.pl</code>, <code class="filename">exceptions.pl</code>, <code class="filename">fastcwd.pl</code>, <code class="filename">flush.pl</code>, <code class="filename">getcwd.pl</code>, <code class="filename">getopt.pl</code>, <code class="filename">getopts.pl</code>, <code class="filename">hostname.pl</code>, <code class="filename">importenv.pl</code>, <code class="filename">lib/find{,depth}.pl</code>, <code class="filename">look.pl</code>, <code class="filename">newgetopt.pl</code>, <code class="filename">open2.pl</code>, <code class="filename">open3.pl</code>, <code class="filename">pwd.pl</code>, <code class="filename">hellwords.pl</code>, <code class="filename">stat.pl</code>, <code class="filename">tainted.pl</code>, <code class="filename">termcap.pl</code>, <code class="filename">timelocal.pl</code>
+						</div></li></ul></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp5777632">4.1.1.2. Бібліотеки <span class="productname">PCRE</span>
+			 оновлено до версії <span class="productnumber">8.30</span>
+			</h5></div></div></div><div class="para">
+				До складу Fedora 18 включено бібліотеки <span class="productname">PCRE ( Perl-Compatible Regular Expression )</span> версії <span class="productnumber">8.30 або новішої</span>
+				. У цих бібліотеках передбачено підтримку <code class="literal">UTF-16</code> та внесено зміни до програмного інтерфейсу, що задокументовано у файлах <code class="filename">changelog</code> та <code class="filename">NEWS</code>, встановлених до <code class="filename">/usr/share/doc/pcre*</code>
+			</div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp6222416">4.1.2. <span class="productname">Python</span>
+		 оновлено до версії <span class="productnumber">3.3</span>
+		</h4></div></div></div><div class="para">
+			Комплект <span class="productname">Python 3</span> оновлено до версії <span class="productnumber">3.3</span>
+			 (версією системного комплекту <span class="productname">Python 2</span> залишається <span class="productnumber">2.7</span>
+			), у якій виправлено сотні вад та впроваджено багато покращень. З повним списком можна ознайомитися <a href="http://docs.python.org/dev/whatsnew/3.3.html">тут</a>
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp6227264">4.1.3. Оновлено комплекс <span class="productname">Ruby on Rails</span>
+		 оновлено</h4></div></div></div><div class="para">
+			До складу Fedora 18 включено <span class="productname">Ruby on Rails</span> 3.2, найновішу версію комплексу <span class="productname">Ruby on Rails</span>. Розробники зможуть скористатися найновішими можливостями <span class="productname">Ruby on Rails</span>, документацію з яких можна знайти у нотатках щодо випусків: <a href="http://guides.rubyonrails.org/3_2_release_notes.html">http://guides.rubyonrails.org/3_2_release_notes.html</a> and <a href="http://guides.rubyonrails.org/3_1_release_notes.html">http://guides.rubyonrails.org/3_1_release_notes.html</a>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp6231936">4.1.4. До <span class="productname">Clojure</span>
+		 включено <span class="application"><strong>Leiningen</strong></span> та супутні інструменти</h4></div></div></div><div class="para">
+			До складу Fedora 18 включено повніший комплект <span class="productname">Clojure</span>, зокрема до нього включено інструмент збирання <span class="application"><strong>Leiningen</strong></span>. Це спростить пакування інших бібліотек <span class="productname">Clojure</span> у майбутніх версіях.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp6235616">4.1.5. Git prompt change</h4></div></div></div><div class="para">
+			An update to <span class="package">git</span> in Fedora 18 has moved the file used by bash to include git branch information in the prompt. Users that take advantage of the git prompt in their bash configuration should add <code class="command">source /usr/share/doc/git-1.7.12/contrib/completion/git-prompt.sh</code> to their <code class="filename">~/.bashrc</code> in addition to <code class="command">PS1='[\u@\h`__git_ps1` \W]\$ '</code>
+		</div></div></div><div xml:lang="uk-UA" class="section" lang="uk-UA"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp6880688">4.2. Засоби розробки</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp4520080">4.2.1. Підвищена швидкість роботи <span class="package">boost</span></h4></div></div></div><div class="para">
+			До складу Fedora 18 включено версію <span class="productnumber">1.50</span>
+			 <span class="productname">Boost</span>. Популярна збірка бібліотек мовою C оновлюється до найсвіжішої версії у кожному з випусків Fedora.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp14848640">4.2.2. <span class="productname">Systemtap 2.0</span>
+		</h4></div></div></div><div class="para">
+			До складу <span class="productname">Systemtap 2.0</span> включено новий модуль прототипування, у якому використано <span class="application"><strong>DynInst</strong></span> для складання власних виконуваних файлів користувача під час роботи програми. У цьому додатковому альтернативному модулі не використовуються модулі ядра, для роботи з ним не потрібно набувати прав доступу адміністратора, але його можливості обмежено у сенсі типів інструментів зондування та інших побудов, які може використовувати скрипт.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp4581088">4.2.3. Трасування за допомогою <span class="application"><strong>LTTng</strong></span></h4></div></div></div><div class="para">
+			Розробники, зацікавлені у покращенні створених ними програм, знайдуть у Fedora 18 швидкі і ефективні інструменти трасування <span class="package">lttng-tools</span> та <span class="package">ltt-ust</span>. Засіб трасування без проблем встановлює взаємозв’язки між даними трасування простору користувача та даними ядра, якщо такі доступні. Оскільки використовуються позначки часу з точністю до наносекунд, <span class="application"><strong>LTTng</strong></span> буде особливо корисним для пошуку найменших затримок. Почніть з ознайомлення з документацією за адресою <a href="http://lttng.org/quickstart">http://lttng.org/quickstart</a>
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp4080160">4.2.4. Покращення у звітах щодо аварійних завершень</h4></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp9572720">4.2.4.1. Типово, до складу системи включено <code class="literal">Debuginfo</code></h5></div></div></div><div class="para">
+				До типового комплекту Fedora 18 включено вузький набір даних для діагностики і зневаджування. Доступ до повних діагностичних даних можна отримати за допомогою пакунків <code class="literal">debuginfo</code>.
+			</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp13189280">4.2.4.2. <code class="literal">Debuginfo</code> стиснено за допомогою <span class="productname">DWARF</span>
+			</h5></div></div></div><div class="para">
+				Остаточна обробка даних <code class="literal">debuginfo</code> виконується за допомогою засобу стискання <span class="productname">DWARF</span> <span class="application"><strong>dwz</strong></span> з метою зменшення розмірів файлів <code class="filename">*.debug</code>. Розробники можуть скористатися цією ж програмою для стискання створених ними виконуваних файлів.
+			</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp9476240">4.2.4.3. Спрощення звітування щодо аварійних завершень за допомогою <span class="productname">сервера ABRT</span>
+			</h5></div></div></div><div class="para">
+				У засобі звітування про вади Fedora, <span class="application"><strong>ABRT</strong></span> нової версії використовується спрощений підхід до звітування щодо проблем користувача. Звіти тепер можна обробляти за допомогою <span class="productname">сервера ABRT</span>, на якому передбачено інструменти аналізу статистичних даних та розподілу проблем, що надає у розпорядження супровідників точніші дані щодо проблеми.
+			</div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp5310144">4.2.5. Оновлено <span class="productname">IPython</span>
+		</h4></div></div></div><div class="para">
+			<span class="productname">IPython</span> оновлено до версії <span class="productnumber">0.13</span>
+			, серед помітних особливостей якої такі: <code class="function">Notebook</code> нової версії має новий інтерфейс користувача, реалізовано багато нових можливостей, зокрема автоматичне згортання дуже довгих рядків, вивантаження нових записників на панель, керування запущеними кластерами та покращення у системі підказок. Формат нотатника змінено. Якщо вам потрібно надати ваш нотатник користувачам старішої версії, скористайтеся скриптом перетворення. Передбачено нові засоби обробки комірок, зокрема <code class="literal">%%bash</code>, <code class="literal">%%ruby</code>, <code class="literal">%%timeit</code> тощо. У консолі Qt покращено меню, нова версія консолі може безпосередньо показувати зображення jpeg.
+		</div></div></div><div xml:lang="uk-UA" class="section" lang="uk-UA"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp6435456">4.3. Інструменти GCC</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp4114496">4.3.1. <span class="productname">DragonEgg</span>
+		 оптимізує роботу <span class="package">GCC</span></h4></div></div></div><div class="para">
+			<span class="productname">DragonEgg</span> — додаток до компіляторів <span class="package">GCC</span>, який надає змогу використовувати оптимізацію і комплекс створення коду <span class="productname">LLVM</span>. <span class="productname">DragonEgg</span> надає розробникам програмного забезпечення додаткові можливості з оптимізації коду, яким можна скористатися у компіляторах <span class="package">GCC</span>. Крім того, <span class="productname">DragonEgg</span> надає змогу використовувати <span class="package">GCC</span> для крос-компіляції для архітектур, підтримуваних <span class="productname">LLVM</span> без будь-яких особливих пакунків для крос-компіляції.
+		</div></div></div><div xml:lang="uk-UA" class="section" lang="uk-UA"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp4998912">4.4. <span class="productname">D</span>
+	</h3></div></div></div><div class="para">
+		У Fedora 16 ви зможете скористатися пакунками мови програмування <span class="productname">D</span>. <span class="productname">D</span> — сучасна мова програмування з високою швидкодією зібраних програм (близькою до швидкодії програм C/C++) та простим синтаксисом. Розробникам мовами C/C++ і Java буде просто перейти на <span class="productname">D</span>. До складу Fedora 18 включено додаткові оновлення набору інструментів <span class="productname">D</span>:
+		<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					компілятор ldc оновлено до найсвіжішої версії
 				</div></li><li class="listitem"><div class="para">
-					Підтримка OpenMP 3.1 у C, C++ і Fortran
+					можливість збирання за допомогою <span class="package">llvm</span> 3.1
 				</div></li><li class="listitem"><div class="para">
-					Ширша підтримка оновлень стандартів C11 і C++11
+					оновлено стандартну бібліотеку до комплексу dmd 2.060
 				</div></li><li class="listitem"><div class="para">
-					Нові гнучкі можливості зі зневаджування коду мовою Ada
+					пакунок <span class="package">gtkd</span> нової версії підтримує роботу з <span class="productname">gtk3</span>
 				</div></li><li class="listitem"><div class="para">
-					Декілька покращень у швидкодії коду, написаного мовою Fortran
+					пакунок <span class="package">derelict</span> оновлено до версії 3
 				</div></li><li class="listitem"><div class="para">
-					Багато оптимізацій
+					додано пакунок <span class="package">DSQLITE</span>, за допомогою якого ви можете користуватися <span class="productname">sqlite</span> у <span class="productname">D</span>
 				</div></li><li class="listitem"><div class="para">
-					Нові апаратні платформи: 
-					<a id="id1772191" class="indexterm"></a>
-					 <a id="id1772203" class="indexterm"></a>
-					 <a id="id1772215" class="indexterm"></a>
-					 <a id="id1772227" class="indexterm"></a>
-					 <a id="id1822786" class="indexterm"></a>
-					 <a id="id1822798" class="indexterm"></a>
-					 <a id="id1822810" class="indexterm"></a>
-					 <a id="id1822818" class="indexterm"></a>
-					 <a id="id1822830" class="indexterm"></a>
-					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-								ARM Cortex A7
-							</div></li><li class="listitem"><div class="para">
-								AVR XMEGA
-							</div></li><li class="listitem"><div class="para">
-								Texas Instruments C6X
-							</div></li><li class="listitem"><div class="para">
-								National Semiconductor CR16
-							</div></li><li class="listitem"><div class="para">
-								сімейства Tilera TILE-Gx і TILEPro
-							</div></li></ul></div>
+					додано пакунок <span class="package">gl3n</span> для використання <span class="productname">OpenGL Maths</span> у <span class="productname">D</span>
+				</div></li><li class="listitem"><div class="para">
+					додано пакунок <span class="package">glamour</span>, оболонку до <span class="productname">OpenGL</span> для використання у мові програмування <span class="productname">D</span>.
+				</div></li></ul></div>
 
-				</div></li><li class="listitem"><div class="para">
-					Крім того, покращення підтримки окремих платформ, зокрема ARM, AVR, IA-32/x86-64, MIPS, PowerPC/PowerPC64, SH та SPARC.
-				</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2149968">4.1.2. gdb</h4></div></div></div><a id="id2149975" class="indexterm"></a><div class="para">
-			До складу Fedora 17 включено <span class="package">gdb</span> 7.4.50.20120120. Ознайомитися з багатьма новими можливостями цього випуску можна на <a href="http://www.gnu.org/software/gdb/download/ANNOUNCEMENT">цій сторінці</a>.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2149998">4.1.3. Haskell</h4></div></div></div><a id="id2150005" class="indexterm"></a><div class="para">
-			Пакунки платформи Haskell оновлено до найсвіжішого випуску 2011.4.0.0.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2150019">4.1.4. JBoss AS 7</h4></div></div></div><a id="id2150026" class="indexterm"></a><a id="id2150034" class="indexterm"></a><div class="para">
-			До нової версії Fedora включено спрощену версію JBoss AS 7 (пакунок <span class="emphasis"><em>jboss-as</em></span>). JBoss AS 7 є швидким, модульним, невибагливим до ресурсів, сумісним сервером програм Java EE. У поточній версії передбачено підтримку лише <span class="emphasis"><em>Веб-профілю</em></span> JBoss AS 7. Підтримку <span class="emphasis"><em>Повного профілю</em></span> буде додано у наступному випуску.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1528913">4.1.5. OpenJDK</h4></div></div></div><a id="id1528919" class="indexterm"></a><div class="para">
-			OpenJDK7 тепер є типовим набором інструментів для розробки мовою Java у Fedora, замінивши собою OpenJDK6. З повним списком можливостей, доданих у OpenJDK7 можна ознайомитися на сторінці <a href="http://openjdk.java.net/projects/jdk7/features/">http://openjdk.java.net/projects/jdk7/features/</a>.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1528940">4.1.6. doxygen</h4></div></div></div><a id="id1528947" class="indexterm"></a><div class="para">
-			Окрім безлічі виправлень вад, у <span class="package">doxygen</span> 1.7.6.1 ви зможете скористатися такими можливостями:
-			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-						Позначений номер тепер одразу підсвічується у виведених даних HTML (якщо увімкнено GENERATE_TREEVIEW).
-					</div></li><li class="listitem"><div class="para">
-						У дереві навігації (GENERATE_TREEVIEW) тепер показуються ті самі дані, що і у покажчику.
-					</div></li><li class="listitem"><div class="para">
-						За допомогою розділу navindex тепер можна керувати тим, що буде показано у ієрархії навігації.
-					</div></li><li class="listitem"><div class="para">
-						Якщо у класі або структурі багато елементів (&gt;15) одного типу, у діаграмі UML буде показано лише перші 10 елементів.
-					</div></li><li class="listitem"><div class="para">
-						Дані, виведені рушієм пошуку, заснованим на JavaScript, тепер є компактнішими.
-					</div></li><li class="listitem"><div class="para">
-						Оновлено переклад французькою.
-					</div></li><li class="listitem"><div class="para">
-						Додано підтримку побудов для heredoc та nowdoc PHP.
-					</div></li><li class="listitem"><div class="para">
-						Додано підтримку перехресних посилань для випадків перевантаження оператор-&gt;, зокрема підтримується std::auto_ptr, std::smart_ptr, std::unique_ptr та std::weak_ptr, якщо увімкнено BUILTIN_STL_SUPPORT.
-					</div></li></ul></div>
-
-		</div><div class="para">
-			Сайт проекту: <a href="http://www.stack.nl/~dimitri/doxygen/index.html">http://www.stack.nl/~dimitri/doxygen/index.html</a>
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2228350">4.1.7. emacs</h4></div></div></div><a id="id2228357" class="indexterm"></a><div class="para">
-			GNU Emacs оновлено до найсвіжішого тестового випуску, 24.0.93
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2228371">4.1.8. git</h4></div></div></div><a id="id2228378" class="indexterm"></a><div class="para">
-			Пакунки <span class="package">git</span> оновлено до версії 1.7.9. До складу Fedora 16 було включено версію 1.7.7.
-		</div><div class="para">
-			Додано багато незначних можливостей. Зацікавлені читачі можуть ознайомитися зі <a href="https://raw.github.com/gitster/git/master/Documentation/RelNotes/1.7.9.txt">змінами з часу 1.7.8</a> та <a href="https://raw.github.com/gitster/git/master/Documentation/RelNotes/1.7.8.txt">змінами з часу 1.7.7</a> у основних нотатках щодо випуску.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2228411">4.1.9. rcs</h4></div></div></div><a id="id2228417" class="indexterm"></a><div class="para">
-			Поважну систему керування версіями (<span class="package">rcs</span>) оновлено до версії 5.8.
-		</div><div class="para">
-			Серед оновлень слід відзначити такі:
-		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
-					Зміна умов ліцензування на GPLv3+
-				</div></li><li class="listitem"><div class="para">
-					Зміна у термінології: замість «path» використано «file name» (або «file-name»)
-				</div></li><li class="listitem"><div class="para">
-					Зміни у пакунку RCS
-					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-								Нова документація щодо формату Info
-							</div></li><li class="listitem"><div class="para">
-								Вилучено параметр налаштування збирання --with-diffutils
-							</div></li><li class="listitem"><div class="para">
-								Налаштування збирання стало строгішим за одними параметрами і вільнішим за іншими.
-							</div></li><li class="listitem"><div class="para">
-								Новий параметр налаштування збирання --enable-suid[=setreuid]
-							</div></li><li class="listitem"><div class="para">
-								Новий параметр налаштування збирання --disable-mmap
-							</div></li><li class="listitem"><div class="para">
-								Новий параметр налаштування збирання --enable-mailer=ПРОГРАМА
-							</div></li><li class="listitem"><div class="para">
-								Новий параметр налаштування збирання --enable-compat2
-							</div></li><li class="listitem"><div class="para">
-								Можна скористатися «make check» перед «make install».
-							</div></li></ul></div>
-
-				</div></li><li class="listitem"><div class="para">
-					Виправлення вад
-					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-								Вилучення всіх даних щодо редагування під час вилучення всіх версій.
-							</div></li><li class="listitem"><div class="para">
-								У коді більше не використовується mktemp.
-							</div></li><li class="listitem"><div class="para">
-								Різноманітні виправлення та покращення у сторінці довідника (man).
-							</div></li></ul></div>
-
-				</div></li><li class="listitem"><div class="para">
-					Інші зміни
-					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-								Всі команди, окрім «--help» та «--version».
-							</div></li><li class="listitem"><div class="para">
-								Рядок з цифр тепер є коректним визначенням автора або стану.
-							</div></li><li class="listitem"><div class="para">
-								Змінна середовища RCS_MEM_LIMIT керує пороговим значенням об’єму пам’яті для stdio.
-							</div></li><li class="listitem"><div class="para">
-								Нова версія RCS здатна працювати з файлами, більшими за 2 ГБ.
-							</div></li><li class="listitem"><div class="para">
-								Передавання файла RCS «commitid СИМВОЛ» тепер є вбудованим.
-							</div></li><li class="listitem"><div class="para">
-								Граматику файла верхнього рівня RCS заморожено.
-							</div></li><li class="listitem"><div class="para">
-								Перевірка синтаксичних конструкцій у файлі RCS відбувається раніше і повніше.
-							</div></li><li class="listitem"><div class="para">
-								Можна вказувати порожні повідомлення журналу за допомогою команд ci -m, rcs -m.
-							</div></li><li class="listitem"><div class="para">
-								У параметрі дати можна використовувати ширший набір форматів дат.
-							</div></li></ul></div>
-
-				</div></li><li class="listitem"><div class="para">
-					Зміни у rcsdiff
-					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-								Новий механізм обробки параметра -U N
-							</div></li><li class="listitem"><div class="para">
-								Покращено оптимізацію «та сама версія, не будемо викликати diff».
-							</div></li></ul></div>
-
-				</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1628790">4.1.10. subversion</h4></div></div></div><a id="id1628796" class="indexterm"></a><div class="para">
-			Пакунок системи керування версіями <span class="package">subversion</span> оновлено з версії 1.6.17 до версії 1.7.3. Серед численних змін, краще використання HTTP, новий інструмент створення віддаленого файла дампу та покращення у даних, що виводяться до консолі. Також внесено багато незначних змін. Щоб дізнатися більше про ці зміни, ознайомтеся зі сторінкою <a href="http://subversion.apache.org/docs/release-notes/1.7.html">http://subversion.apache.org/docs/release-notes/1.7.html</a>.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1628823">4.1.11. bugzilla</h4></div></div></div><a id="id1628830" class="indexterm"></a><div class="para">
-			У <span class="package">bugzilla</span> 4.0.4 виправлено декілька вад безпеки попередніх версій. Крім того, у новому випуску системні адміністратори можуть вимикати автодоповнення, виправлено декілька незначних вад. Повний список змін можна знайти на сайті <a href="http://www.bugzilla.org/">http://www.bugzilla.org/</a>.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1628855">4.1.12. bzr</h4></div></div></div><a id="id1628862" class="indexterm"></a><div class="para">
-			Хоча випуск 2.5 <span class="package">bzr</span> було в основному присвячено виправленню вад, цей випуск є новою стабільною версією. Цю версію буде використано як основу для виправлення наступних вад.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1628881">4.1.13. highlight</h4></div></div></div><a id="id1628888" class="indexterm"></a><a id="id1628896" class="indexterm"></a><a id="id1628904" class="indexterm"></a><a id="id1628912" class="indexterm"></a><a id="id1628920" class="indexterm"></a><div class="para">
-			До складу Fedora 17 включено <span class="package">highlight</span> 3.7. Ось покращення у цьому випуску, порівняно з версією 3.6:
-			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-						підтримка Biferno
-					</div></li><li class="listitem"><div class="para">
-						підтримка RPL
-					</div></li><li class="listitem"><div class="para">
-						підтримка Ceylon
-					</div></li><li class="listitem"><div class="para">
-						виправлено визначення Ruby
-					</div></li><li class="listitem"><div class="para">
-						рядок визначення шрифту HTML може містити список шрифтів без лапок
-					</div></li><li class="listitem"><div class="para">
-						додано параметр командного рядка --portable, призначений для збереження файлів налаштувань у поточному робочому каталозі, а не у каталозі користувача
-					</div></li></ul></div>
-
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1927992">4.1.14. mercurial</h4></div></div></div><a id="id1927998" class="indexterm"></a><a id="id1928006" class="indexterm"></a><div class="para">
-			Пакунок <span class="package">mercurial</span> оновлено до версії 2.1. Докладніші дані щодо нових можливостей та виправлень вад можна знайти на сторінці <a href="http://mercurial.selenic.com/wiki/WhatsNew">http://mercurial.selenic.com/wiki/WhatsNew</a>.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1928030">4.1.15. monodevelop</h4></div></div></div><a id="id1928037" class="indexterm"></a><a id="id1928045" class="indexterm"></a><div class="para">
-			До складу Fedora 17 включено <span class="package">monodevelop</span> 2.8.5. Серед численних нових можливостей слід відзначити такі:
-		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
-					Керування проектами
-					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-								Нове діалогове вікно редагування посилань
-							</div></li><li class="listitem"><div class="para">
-								Покращення панелі структури класів та документів
-							</div></li></ul></div>
-
-				</div></li><li class="listitem"><div class="para">
-					Редагування коду
-					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-								Новий редактор для схем кольорів синтаксичних конструкцій
-							</div></li><li class="listitem"><div class="para">
-								Нова типова схема кольорів синтаксичних конструкцій
-							</div></li></ul></div>
-
-				</div></li><li class="listitem"><div class="para">
-					Декілька виправлень та покращень у підтримці систем керування версіями (Version Control та SVN), зокрема додавання проекту, що містить файли, прив’язані до системи керування версіями, у новій версії обробляється належним чином
-				</div></li></ul></div><div class="para">
-			Щоб дізнатися більше, відвідайте <a href="http://monodevelop.com/">сторінку проекту</a>.
-		</div></div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Changes_for_Desktop.html"><strong>назад</strong>3. Зміни у Fedora для звичайних користувачів</a></li><li class="up"><a accesskey="u" href="#"><strong>Догори</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Початок</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Specific_Audiences.html"><strong>далі</strong>5. Зміни у Fedora для специфічних груп користувач...</a></li></ul></body></html>
+	</div></div><div xml:lang="uk-UA" class="section" lang="uk-UA"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp7519568">4.5. Haskell</h3></div></div></div><div class="para">
+		<span class="package">GHC</span> було оновлено до версії 7.4.1, <span class="package">haskell-platform</span> — до 2012.2.0.0, було оновлено також багато з решти 200 пакунків.
+	</div><div class="para">
+		Серед нових доданих пакунків <span class="package">Agda</span>, <span class="package">cabal-rpm</span> і <span class="package"> snap-server</span>.
+	</div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Changes_for_Desktop.html"><strong>назад</strong>3. Зміни у Fedora для звичайних користувачів</a></li><li class="up"><a accesskey="u" href="#"><strong>Догори</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Початок</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Specific_Audiences.html"><strong>далі</strong>5. Зміни у Fedora для специфічних груп користувач...</a></li></ul></body></html>

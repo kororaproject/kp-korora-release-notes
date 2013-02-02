@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>4. Ändringar i Fedora för utvecklare</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta name="generator" content="publican 2.8" /><meta name="package" content="Fedora-Release_Notes-18-sv-SE-1-0" /><link rel="home" href="index.html" title="Utgåvenoteringar" /><link rel="up" href="index.html" title="Utgåvenoteringar" /><link rel="prev" href="sect-Release_Notes-Changes_for_Desktop.html" title="3. Ändringar i Fedora för skrivbordsanvändare" /><link rel="next" href="sect-Release_Notes-Changes_for_Specific_Audiences.html" title="5. Ändringar i Fedora för specifika grupper" /></head><body><p id="title"><a class="left" href="http://www.fedoraproject.org"><img src="Common_Content/images/image_left.png" alt="Product Site" /></a><a class="right" href="http://docs.fedoraproject.org"><img src="Common_Content/images/image_right.png" alt="Documentation Site" /></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Changes_for_Desktop.html"><strong>Föregående</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Specific_Audiences.html"><strong>Nästa</strong></a></li></ul><div class="section" id="sect-Release_Notes-Changes_for_Developers"><div class="titlepage"><div><div keep-together.within-column="always"><h2 class="title" id="sect-Release_Notes-Changes_for_Developers">4. Ändringar i Fedora för utvecklare</h2></div></div></div><div xml:lang="sv-SE" class="section" lang="sv-SE"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp32541920">4.1. Utveckling</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp36532688">4.1.1. <span class="package">Perl</span></h4></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp32873312">4.1.1.1. <span class="package">Perl</span> är uppdaterat till <span class="productnumber">5.16</span>
+			</h5></div></div></div><div class="para">
+				<span class="package">Perl</span> <span class="productnumber">5.16</span>
+				 introducerar ett antal signifikanta ändringar:
+			</div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h6 class="title" id="idp33297312">4.1.1.1.1. Nya funktioner</h6></div></div></div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+							<code class="function">Unicode 6.1</code>
+						</div></li><li class="listitem"><div class="para">
+							Mer konsistent <code class="literal">eval</code> styrd med funktionerna <code class="literal">unicode_eval</code> och <code class="literal">evalbytes</code>
+						</div></li><li class="listitem"><div class="para">
+							2- och 3-arguments <code class="literal">substr</code> anropat i vänstervärdeskontext evalueras även efter att orginalsträngen ändrats.
+						</div></li><li class="listitem"><div class="para">
+							Ny <code class="literal">T_*REF_REFCOUNT_FIXED</code> XS typemap som fixar nedräkning av referensräknare
+						</div></li><li class="listitem"><div class="para">
+							Ny <code class="literal">is_utf8_char_buf</code> XS-anropbar funktion ersätter den trasiga funktionen<code class="literal">is_utf8_char</code>
+						</div></li><li class="listitem"><div class="para">
+							Variabeln <code class="literal">$$</code> är skrivbar
+						</div></li><li class="listitem"><div class="para">
+							Förbättrad felsökning: spårningsläge kan begränsas till en viss nivå, brytpunkter kan avaktivieras tillfälligt, brytpunkter kan anges med filnamn
+						</div></li><li class="listitem"><div class="para">
+							<code class="literal">sort</code>-subrutinerna kan automatladdas
+						</div></li><li class="listitem"><div class="para">
+							Variabeln <code class="literal">$[</code> tillhandahålls av modulen <code class="literal">arybase</code>
+						</div></li><li class="listitem"><div class="para">
+							mmap:at PerlIO-lager är nu en separat modul <code class="literal">PerlIO::mmap</code>
+						</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h6 class="title" id="idp34872992">4.1.1.1.2. Utgående funktioner</h6></div></div></div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+							Att accessa Unicode-databasfiler direkt undanbedes nu; använd <code class="literal">Unicode::UCD</code> istället
+						</div></li><li class="listitem"><div class="para">
+							<code class="literal">Version::Requirements</code> undanbedes till förmån för <code class="literal">CPAN::Meta::Requirements</code>
+						</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h6 class="title" id="idp41148496">4.1.1.1.3. Inkompatibla ändringar</h6></div></div></div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+							Specialblock (t.ex. <code class="literal">BEGIN</code>) anropas nu i void-kontext
+						</div></li><li class="listitem"><div class="para">
+							Ej överlagrad strängformning av reguljära uttryck returnerar inte uttrycket ordagrant
+						</div></li><li class="listitem"><div class="para">
+							Xs-typemap <code class="literal">T_DATAUNIT</code>och <code class="literal">T_CALLBACK</code> är borttagna
+						</div></li><li class="listitem"><div class="para">
+							Användardefinierad ändring av skiftläge har tagits bort till förmån för <code class="literal">Unicode::Casing</code>
+						</div></li><li class="listitem"><div class="para">
+							<code class="literal">XSUB</code>-C-funktioner är statiska nu och exporteras inte från sina objektfiler
+						</div></li><li class="listitem"><div class="para">
+							Endast läsbara referenser kan inte vara svaga
+						</div></li><li class="listitem"><div class="para">
+							<code class="literal">$$</code>, <code class="literal">$&lt;</code>, <code class="literal">$&gt;</code>, <code class="literal">$(</code> och <code class="literal">$)</code> cachar inte sina värden
+						</div></li><li class="listitem"><div class="para">
+							<code class="literal">Devel::DProf</code>, <code class="literal">Shell</code> har tagits bort från <span class="package">Perl</span>-kärnan
+						</div></li><li class="listitem"><div class="para">
+							Borttagna perl4-bibliotek: <code class="filename">abbrev.pl</code>, <code class="filename">assert.pl</code>, <code class="filename">bigfloat.pl</code>, <code class="filename">bigint.pl</code>, <code class="filename">bigrat.pl</code>, <code class="filename">cacheout.pl</code>, <code class="filename">complete.pl</code>, <code class="filename">ctime.pl</code>, <code class="filename">dotsh.pl</code>, <code class="filename">exceptions.pl</code>, <code class="filename">fastcwd.pl</code>, <code class="filename">flush.pl</code>, <code class="filename">getcwd.pl</code>, <code class="filename">getopt.pl</code>, <code class="filename">getopts.pl</code>, <code class="filename">hostname.pl</code>, <code class="filename">importenv.pl</code>, <code class="filename">lib/find{,depth}.pl</code>, <code class="filename">look.pl</code>, <code class="filename">newgetopt.pl</code>, <code class="filename">open2.pl</code>, <code class="filename">open3.pl</code>, <code class="filename">pwd.pl</code>, <code class="filename">hellwords.pl</code>, <code class="filename">stat.pl</code>, <code class="filename">tainted.pl</code>, <code class="filename">termcap.pl</code>, <code class="filename">timelocal.pl</code>
+						</div></li></ul></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp34823584">4.1.1.2. Biblioteken <span class="productname">PCRE</span>
+			 uppdaterade till <span class="productnumber">8.30</span>
+			</h5></div></div></div><div class="para">
+				Fedora 18 tillhandahåller biblioteken <span class="productname">PCRE ( Perl-Compatible Regular Expression, Perlkompatibla reguljära uttryck)</span> i version <span class="productnumber">8.30 eller senare</span>
+				. Detta medför stöd för <code class="literal">UTF-16</code> och API-ändringar, vilka är dokumenterade i filerna <code class="filename">changelog</code> och <code class="filename">NEWS</code> som finns i <code class="filename">/usr/share/doc/pcre*</code>
+			</div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp34828896">4.1.2. <span class="productname">Python</span>
+		 uppdaterat till <span class="productnumber">3.3</span>
+		</h4></div></div></div><div class="para">
+			Systemets <span class="productname">Python 3</span>-stack har uppgraderats till <span class="productnumber">3.3</span>
+			 (systemets <span class="productname">Python 2</span>-stack ligger kvar på <span class="productnumber">2.7</span>
+			), vilket för med sig hundratals rättningar och justeringar; för en lista över ändringar se <a href="http://docs.python.org/dev/whatsnew/3.3.html">http://docs.python.org/dev/whatsnew/3.3.html</a>
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp35531712">4.1.3. <span class="productname">Ruby on Rails</span>
+		-ramverket uppdaterat</h4></div></div></div><div class="para">
+			Fedora 18 tillhandahåller <span class="productname">Ruby on Rails</span> 3.2, den senaste versionen av ramverket <span class="productname">Ruby on Rails</span>. Utvecklare kan använda de senaste funktionerna i <span class="productname">Ruby on Rails</span>, som finns dokumenterade i projektets utgåvenoteringar på <a href="http://guides.rubyonrails.org/3_2_release_notes.html">http://guides.rubyonrails.org/3_2_release_notes.html</a> och <a href="http://guides.rubyonrails.org/3_1_release_notes.html">http://guides.rubyonrails.org/3_1_release_notes.html</a>
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp35535968">4.1.4. <span class="productname">Clojure</span>
+		 har fått sällskap av <span class="application"><strong>Leiningen</strong></span> med verktyg</h4></div></div></div><div class="para">
+			Fedora 18 kommer nu med en mer komplett <span class="productname">Clojure</span>-programmeringsstack, inklusive byggverktyget <span class="application"><strong>Leiningen</strong></span>. Detta kommer göra det enklare att paketera andra <span class="productname">Clojure</span>-bibliotek i framtiden.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp35539488">4.1.5. Git prompt change</h4></div></div></div><div class="para">
+			An update to <span class="package">git</span> in Fedora 18 has moved the file used by bash to include git branch information in the prompt. Users that take advantage of the git prompt in their bash configuration should add <code class="command">source /usr/share/doc/git-1.7.12/contrib/completion/git-prompt.sh</code> to their <code class="filename">~/.bashrc</code> in addition to <code class="command">PS1='[\u@\h`__git_ps1` \W]\$ '</code>
+		</div></div></div><div xml:lang="sv-SE" class="section" lang="sv-SE"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp32555104">4.2. Utvecklingsverktyg</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp34915136">4.2.1. <span class="package">boost</span> kommer upp i fart</h4></div></div></div><div class="para">
+			Fedora 18 innehåller <span class="productname">Boost</span> version <span class="productnumber">1.50</span>
+			. Den populära samlingen med C-bibliotek är uppdaterad till den senaste tillgängliga versionen i varje Fedorautgåva.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp33394384">4.2.2. <span class="productname">Systemtap 2.0</span>
+		</h4></div></div></div><div class="para">
+			<span class="productname">Systemtap 2.0</span> innehåller en ny prototypbakände, som använder <span class="application"><strong>DynInst</strong></span> för att instrumentera en användares egna binärer vid körtillfället. Denna valbara alternativa bakände använder inte kärnmoduler, och behöver inte root-privilegier, men är begränsad med avseende på vilka sorters prober och andra konstruktioner som ett skript kan använda.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp33557184">4.2.3. Spårning med <span class="application"><strong>LTTng</strong></span></h4></div></div></div><div class="para">
+			Utvecklare som försöker förbättra sina program kommer upptäcka att Fedora 18:s paket <span class="package">lttng-tools</span> och <span class="package">ltt-ust</span> möjliggör snabb och effektiv spårning. Spåraren gör det lätt att korrelera användarrymden och kärnspårningar, om de senare finns tillgängliga. Då den kan skryta med nanosekundsprecision i sina tidsstämplar är <span class="application"><strong>LTTng</strong></span> särskilt användbar när man söker efter undflyende fördröjningar. Kom igång med projektets dokumentation på <a href="http://lttng.org/quickstart">http://lttng.org/quickstart</a>
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp33500464">4.2.4. Förbättrade kraschrapporter</h4></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp39941296">4.2.4.1. <code class="literal">Debuginfo</code> inkluderas som standard</h5></div></div></div><div class="para">
+				Fedora 18 kommer med en liden delmängd av felsökningsinformationen som standard. fullständig felsökningsinformation finns fortfarande tillgänglig i <code class="literal">debuginfo</code>-paketen.
+			</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp34954832">4.2.4.2. <code class="literal">Debuginfo</code> komprimerat av <span class="productname">DWARF</span>
+			</h5></div></div></div><div class="para">
+				<code class="literal">Debuginfo</code> kommer att efterbehandlas av <span class="productname">DWARF</span>-komprimeringsverktyget <span class="application"><strong>dwz</strong></span> för att reducera storleken på <code class="filename">*.debug</code>-filerna. Utvecklare kan köra detta program på sina binärer.
+			</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp33204304">4.2.4.3. Förenklad kraschrapportering via <span class="productname">ABRT-servern</span>
+			</h5></div></div></div><div class="para">
+				Fedoras felrapporteringsverktyg, <span class="application"><strong>ABRT</strong></span>, använder nu ett nytt, förenklat sätt att rapportera användarnas problem. Dessa rapporter hanteras nu av <span class="productname">ABRT-servern</span>, som också ger statstik och grupperar ihop rapporterna, vilket ger utvecklarna mer exakt information om problemen.
+			</div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp40054176">4.2.5. <span class="productname">IPython</span>
+		 updaterat</h4></div></div></div><div class="para">
+			<span class="productname">IPython</span> har uppdaterats till version <span class="productnumber">0.13</span>
+			 och viktiga funktioner och saker värda att notera är: <code class="function">Notebook</code> har ett nytt användargränssnitt och har många nya funktioner såsom automatisk brytning av väldigt långa rader, uppladdning av nya anteckningsböcker till översikten, hantering av startade kluster och förbättrade verktygstips. Formatet på anteckningsboken har ändrats och när du vill dela din anteckningsbok med användare av äldre versioner finns det ett konverteringsskript tillgängligt. Nya magiska celler som <code class="literal">%%bash</code>, <code class="literal">%%ruby</code>, <code class="literal">%%timeit</code> och många andra. Qt-konsolen har förbättrade menyer och kan visa jpeg-bilder direkt.
+		</div></div></div><div xml:lang="sv-SE" class="section" lang="sv-SE"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp36554896">4.3. GCC-verktyg</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp33481184">4.3.1. <span class="productname">DragonEgg</span>
+		 optimerar <span class="package">GCC</span></h4></div></div></div><div class="para">
+			<span class="productname">DragonEgg</span> är en insticksmodule till <span class="package">GCC</span>-kompilatorerna för att låta dem använda optimerings- och kodgenereringsramverket <span class="productname">LLVM</span>. <span class="productname">DragonEgg</span> ger programutvecklare fler optimerings- och kodgenereringsalternativ att använda med <span class="package">GCC</span>-kompilatorerna. <span class="productname">DragonEgg</span> gör också att <span class="package">GCC</span> kan användas för korskompilering till målarkitekturer som <span class="productname">LLVM</span> stödjer utan att behöva några särksilda kompilatorpaket för korskompilering.
+		</div></div></div><div xml:lang="sv-SE" class="section" lang="sv-SE"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp42254640">4.4. <span class="productname">D</span>
+	</h3></div></div></div><div class="para">
+		Programmeringsspråket <span class="productname">D</span> är tillgängligt i Fedora 18. <span class="productname">D</span> är ett modernt språk med hög prestanda i närheten av C/C++ och med en enkel syntax. Utvecklare i C/C++ och Java kan lätt migrera till <span class="productname">D</span>. Fedora 18 tillhandahåller flera uppdateringar till verktygslådan <span class="productname">D</span>:
+		<div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					kompilatorn ldc till senaste stabila kompilator
+				</div></li><li class="listitem"><div class="para">
+					byggd mot <span class="package">llvm</span> 3.1
+				</div></li><li class="listitem"><div class="para">
+					uppdaterat standardbibliotek till dmd-framände 2.060
+				</div></li><li class="listitem"><div class="para">
+					paketet <span class="package">gtkd</span> uppdaterat för att stödja <span class="productname">gtk3</span>
+				</div></li><li class="listitem"><div class="para">
+					paketet <span class="package">derelict</span> uppdaterat till version 3
+				</div></li><li class="listitem"><div class="para">
+					paketet <span class="package">DSQLITE</span> tillagt för att använda <span class="productname">sqlite</span> i <span class="productname">D</span>
+				</div></li><li class="listitem"><div class="para">
+					paketet <span class="package">gl3n</span> tillagt för <span class="productname">OpenGL Maths</span> för <span class="productname">D</span>
+				</div></li><li class="listitem"><div class="para">
+					paketet <span class="package">glamour</span> tillagt: en inkapsling av <span class="productname">OpenGL</span> för programmeringsspråket <span class="productname">D</span>.
+				</div></li></ul></div>
+
+	</div></div><div xml:lang="sv-SE" class="section" lang="sv-SE"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp47708864">4.5. Haskell</h3></div></div></div><div class="para">
+		<span class="package">GHC</span> har uppdaterats till version 7.4.1, <span class="package">haskell-platform</span> till 2012.2.0.0, och många av de övriga 200 paketen har uppdaterats.
+	</div><div class="para">
+		Nytillagda paket inkluderar <span class="package">Agda</span>, <span class="package">cabal-rpm</span> och <span class="package">snap-server</span>.
+	</div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Changes_for_Desktop.html"><strong>Föregående</strong>3. Ändringar i Fedora för skrivbordsanvändare</a></li><li class="up"><a accesskey="u" href="#"><strong>Upp</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Hem</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Specific_Audiences.html"><strong>Nästa</strong>5. Ändringar i Fedora för specifika grupper</a></li></ul></body></html>

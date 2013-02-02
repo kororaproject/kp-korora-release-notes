@@ -1,22 +1,23 @@
 # Documentation Specfile
 
 Name:      korora-release-notes
-Version:   18.0
-Release:   1%{?dist}
+Version:   18.0.0
+Release:   3%{?dist}
 Summary:   Release Notes
-URL:       http://kororaproject.org
+URL:       http://fedoraproject.org
 Group:     System Environment/Base
 License:   CC-BY-SA
-Source0:   %{name}-%{version}.tar.gz
+Source0:   fedora-release-notes-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch: noarch
 Requires:	coreutils
 Requires(post):	/bin/touch
+
 Obsoletes:	fedora-release-notes
 Provides:	fedora-release-notes
 
 %description
-These are the official Release Notes for Fedora 17,
+These are the official Release Notes for Fedora 18,
 written and edited by the Fedora community. For more
 information on the Release Notes process or how you can
 contribute, refer to the Release Notes HOWTO located at
@@ -32,6 +33,7 @@ rm -rf $RPM_BUILD_ROOT
 mkdir -p $RPM_BUILD_ROOT%{_defaultdocdir}/HTML
 mkdir -p $RPM_BUILD_ROOT%{_defaultdocdir}/HTML/%{name}
 ln -sf %{_defaultdocdir}/HTML/%{name} $RPM_BUILD_ROOT%{_defaultdocdir}/HTML/fedora-release-notes
+
 #
 # Loop through the languages
 #
@@ -49,15 +51,15 @@ for LANGDIR in document/* ; do
   SRCBASE=${LANGDIR}
   mkdir -p ${NOTETARG}
   mkdir -p ${NOTETARG}/Common_Content
+  mkdir -p ${NOTETARG}/Common_Content/css
+  install -m 644 ${SRCBASE}/Common_Content/css/*.css \
+    ${NOTETARG}/Common_Content/css/
+  echo  "${NOTETARG}/" >> html.lang
   mkdir -p ${NOTETARG}/Common_Content/images
   install -m 644 ${SRCBASE}/Common_Content/images/*.png \
     ${NOTETARG}/Common_Content/images/
   install -m 644 ${SRCBASE}/Common_Content/images/*.svg \
     ${NOTETARG}/Common_Content/images/
-  echo  "${NOTETARG}/" >> html.lang
-  mkdir -p ${NOTETARG}/Common_Content/css
-  install -m 644 ${SRCBASE}/Common_Content/css/*.css \
-    ${NOTETARG}/Common_Content/css/
   echo  "${NOTETARG}/" >> html.lang
   echo  "${NOTETARG}/" >> html.lang
   install -m 644 ${SRCBASE}/*.html ${NOTETARG}/
@@ -145,15 +147,75 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
 # be overwritten.  Make permanent changes to the docs/tools.git repo
 
 %changelog
-* Sun May 20 2012 Chris Smart <chris@kororaa.org> - 17.0.0-1
- - Updated for Kororaa 17 release.
+* Tue Jan 8 2013 Nick Bebout <nb@fedoraproject.org> - 18.0.0-3
+- Pull in latest changes from master
 
-* Thu Nov 10 2011 Chris Smart <chris@kororaa.org> - 16.1.0-1
- - Updated for Kororaa 16 release.
+* Tue Jan 8 2013 Nick Bebout <nb@fedoraproject.org> - 18.0.0-2
+- Update Revision History
 
-* Sun Sep 04 2011 Chris Smart <chris@kororaa.org> - 15.1.0-2
- - Create link to fedora-release-notes, so we don't have to change .desktop file.
- - Add provides fedora-release-notes.
+* Tue Jan 8 2013 Nick Bebout <nb@fedoraproject.org> - 18.0.0-1
+- Update for Fedora 18 final
+
+* Tue Dec   4 2012 John J. McDonough <jjmcd@fedoraproject.org> - 17.95.0
+- Fedora 18 Beta release notes
+
+* Thu Jul 19 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 17.1.0-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_18_Mass_Rebuild
+
+* Tue May 29 2012  John J. McDonough <jjmcd@fedoraproject.org> - 17.1.0
+- Bugs 821168,821412,821413,824529
+- 705245, 751516 NOT corrected (yet)
+- Remove Cloudstack reference
+- Add languages fr-FR,it-IT (17.0 only)
+
+* Mon May 14 2012  John J. McDonough <jjmcd@fedoraproject.org> - 17.0.1
+- Add languages ja-JP,nl-NL,zh-CN,zh-TW
+
+* Tue May 8 2012  John J. McDonough <jjmcd@fedoraproject.org> - 17.0.0
+- Remove draft status
+- Bulgarian and Ukranian translations
+
+* Mon May 7 2012 John J. McDonough <jjmcd@fedoraproject.org> - 16.97.0
+- BZ#817295 - various typos and broken links
+- BZ#817553 - Typos in Amateur Radio and Scientific and Technical sections
+- gimp has been updated to 2.8.0
+- Section on multi-seat
+- Changes to direct kernel boot
+- BZ#819160 - Typo in Circuit Design
+- BZ#819161 - Correct URL in Circuit Design
+- BZ#819164 - typo in Embedded Development section
+
+* Wed Mar 28 2012 John J. McDonough <jjmcd@fedoraproject.org> - 16.96.0
+- Additional updates for Fedora 17 beta 
+
+* Wed Mar 21 2012 John J. McDonough <jjmcd@fedoraproject.org> - 16.95.0
+- Updated for Fedora 17 beta 
+
+* Fri Jan 13 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 16.1.0-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_17_Mass_Rebuild
+
+* Tue Nov  1 2011 John J. McDonough <jjmcd@fedoraproject.org> - 16.1.0-1
+ - BZ#741975 - Various typos
+ - BZ#743614 - Better prose on systemd database handling
+ - BZ#743618 - Improved prose in setting up multiple PostgreSQL servers
+ - BZ#737187 - Warning about GRUB user
+ - BZ#743960 - Include mention of D2
+ - BZ#739661 - Warning about UID/GID change
+ - BZ#745235 - rc.local no longer packaged
+ - BZ#746015 - Virtualization security
+ - BZ#747940 - GTK capitalization
+ - BZ#746672 (against VG) QEMU - capitalization
+ - Clean up links
+ - Dedication to Dennis Ritchie
+ - Additional translations
+
+* Mon Oct 10 2011 John J. McDonough <jjmcd@fedoraproject.org> - 16.0.0-1
+ - Build for F16 GA
+ - Stale F15 content (BZ#741830)
+ - Typos in boot (BZ#743981)
+
+* Fri Sep 16 2011 John J. McDonough <jjmcd@fedoraproject.org> - 15.98.0-1
+ - Release for F16 beta
 
 * Fri Jun  3 2011 John J. McDonough <jjmcd@fedoraproject.org> - 15.1.0-1
  - Typo in Virtualization (BZ#705928)
@@ -161,7 +223,7 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
  - device naming (BZ#707730)
  - Correct version number of boost (BZ#707786)
  - Remove reference to disappeared GS-Theme-Selector (BZ#708085)
-
+ 
 * Tue May 10 2011 John J. McDonough <jjmcd@fedoraproject.org> - 15.0.0-1
 - Updated doc-publican-rpm (icons named to match package)
 - BZ#680165, BZ#699770, BZ#701638, BZ#701780, BZ#702669

@@ -1,19 +1,15 @@
 [Desktop Entry]
 Name=Release Notes
-Name[nl_NL]=Vrijgave informatie
-Name[ja_JP]=リリースノート
-Name[zh_TW]=發&#x200B;行&#x200B;備&#x200B;註&#x200B;
-Name[zh_CN]=发&#x200B;行&#x200B;注&#x200B;记&#x200B;
-Name[bg_BG]=Бележки към Изданието
 Name[uk_UA]=Нотатки щодо випуску
+Name[nl_NL]=Vrijgave-informatie
+Name[sv_SE]=Utgåvenoteringar
+Name[ja_JP]=リリースノート
 GenericName=Release Notes
-Comment=Release Notes for Fedora 17
-Comment[nl_NL]=Vrijgave informatie voor Fedora 17
-Comment[ja_JP]=Fedora 17 のリリースノート
-Comment[zh_TW]=Fedora 17 發&#x200B;行&#x200B;備&#x200B;註&#x200B;
-Comment[zh_CN]=Fedora 17 发&#x200B;行&#x200B;注&#x200B;记&#x200B;
-Comment[bg_BG]=Бележки към Изданието Fedora 17
-Comment[uk_UA]=Нотатки щодо випуску Fedora 17
+Comment=Release Notes for Fedora 18
+Comment[uk_UA]=Нотатки щодо випуску Fedora 18
+Comment[nl_NL]=Vrijgave-informatie voor Fedora 18
+Comment[sv_SE]=Utgåvenoteringar för Fedora 18
+Comment[ja_JP]=Fedora 18 のリリースノート
 Exec=xdg-open file:///usr/share/doc/HTML/fedora-release-notes/index.html
 Icon=fedora-release-notes
 Terminal=false

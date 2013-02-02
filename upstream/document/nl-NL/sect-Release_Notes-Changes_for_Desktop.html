@@ -1,431 +1,264 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>3. Veranderingen in Fedora voor bureaubladgebruikers</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta name="generator" content="publican 2.8" /><meta name="package" content="Fedora-Release_Notes-17-nl-NL-1-0" /><link rel="home" href="index.html" title="Vrijgave informatie" /><link rel="up" href="index.html" title="Vrijgave informatie" /><link rel="prev" href="sect-Release_Notes-Changes_for_Sysadmin.html" title="2. Veranderingen in Fedora voor systeembeheerders" /><link rel="next" href="sect-Release_Notes-Changes_for_Developers.html" title="4. Veranderingen in Fedora voor ontwikkelaars" /></head><body><p id="title"><a class="left" href="http://www.fedoraproject.org"><img src="Common_Content/images/image_left.png" alt="Product Site" /></a><a class="right" href="http://docs.fedoraproject.org"><img src="Common_Content/images/image_right.png" alt="Documentation Site" /></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Changes_for_Sysadmin.html"><strong>Terug</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Developers.html"><strong>Volgende</strong></a></li></ul><div class="section" id="sect-Release_Notes-Changes_for_Desktop"><div class="titlepage"><div><div keep-together.within-column="always"><h2 class="title" id="sect-Release_Notes-Changes_for_Desktop">3. Veranderingen in Fedora voor bureaubladgebruikers</h2></div></div></div><div xml:lang="nl-NL" class="section" id="sect-Desktop" lang="nl-NL"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="sect-Desktop">3.1. Desktop</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2026161">3.1.1. KDE</h4></div></div></div><a id="id2331353" class="indexterm"></a><a id="id1626096" class="indexterm"></a><div class="para">
-			Fedora 17 brengt de KDE 4.8 Software Compilation met zich mee. KDE biedt drie componenten. KDE Platform is de fundering voor alle KDE-gebaseerde applicaties. KDE Plasma Workspace levert middelen om de manier te beheren waarop je je applicaties wilt gebruiken. KDE Applications gebruikt het Platform en Plasma Workspace om je te laten ervaren wat volledige integratie is.
-		</div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="id1928313">3.1.1.1. KDE Platform</h5></div></div></div><a id="id2332039" class="indexterm"></a><a id="id2176039" class="indexterm"></a><a id="id1960693" class="indexterm"></a><div class="para">
-				Het KDE-platform verzorgt services voor alle op KDE gebaseerde applicaties en voor de Plasma Workspace. KDE Platform 4.8 biedt nieuwe technologieën naast spectaculaire groei in prestaties en stabiliteit.
-			</div><div class="para">
-				KDE biedt nu <a href="https://qt.nokia.com/qtquick/"> QtQuick</a>. QtQuick is een makkelijke manier om kleine applicaties (applets) voor Qt omgevingen zoals KDE te maken. KDE heeft <span class="package">Plasma QtQuick Components</span> die je helpen KDE Plasma Workspace applicaties snel te schrijven.
-			</div><div class="para">
-				<span class="package">KSecretService</span> is een nieuw, secure password-storage systeem. <span class="package">KWallet</span> beheert wachtwoorden voor KDE applicaties, en <span class="package">KSecretService</span> stelt deze wachtwoorden beschikbaar aan niet-KDE applicaties.
-			</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="id1609356">3.1.1.2. KDE Plasma Workspaces</h5></div></div></div><a id="id2023007" class="indexterm"></a><div class="para">
-				De KDE Plasma Workspaces zijn twee desktopomgevingen die beheren hoe je met applicaties omgaat. De Plasma Desktop Workspace heeft een meer traditioneel uiterlijk, en de Netbook Plasma Workspace hheeft een aangepast uiterlijk ten behoeve van kleinere schermen en mobile apparaten.
-			</div><div class="para">
-				De <span class="package">Window Switcher</span> heeft nu 6 mogelijke layouts. U kunt tussen layouts kiezen in de <span class="package">System Settings</span> applicatie.
-			</div><div class="para">
-				De <span class="package">KWin</span> windowmanager is verbeterd. <span class="package">KWin</span> levert nu sterk verbeterde prestaties.
-			</div><div class="para">
-				Het "Power Management" venster van <span class="package">System Settings</span> is herontworpen en versimpeld. Instellingen van Power Management werken nu op computers met meerdere beeldschermen. Je kan nu ook instellingen hiervan aanpassen terwijl je bezig bent met een bepaalde "Activity."
-			</div><div class="para">
-				Je kan de nieuwe <span class="emphasis"><em>Icon Tasks</em></span> Plasma widget gebruiken om applicaties te beheren op een taakbalk als een icoon, net als op andere populaire besturingssystemen.
-			</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="id2349598">3.1.1.3. KDE Applicaties</h5></div></div></div><a id="id2349604" class="indexterm"></a><a id="id2349612" class="indexterm"></a><a id="id2164959" class="indexterm"></a><a id="id2164967" class="indexterm"></a><a id="id2164975" class="indexterm"></a><a id="id2164983" class="indexterm"></a><a id="id2164991" class="indexterm"></a><div class="para">
-				De KDE Applicaties bestaan uit alle basisapplicaties, en vele avanceerde applicaties, die je maar nodig hebt.
-			</div><div class="para">
-				<span class="package">Dolphin</span> is de applicatie voor bestandsmanagement. <span class="package">Dolphin</span> toont vanaf nu de bestanden accurater, kan zich aanpassen bij andere computer-hardware, en ziet er veel beter uit..
-			</div><div class="para">
-				<span class="package">Gwenview</span> is de applicatie voor het bekijken van afbeeldingen. Je kan je positie in een ingezoomde afbeelding aflezen in een nieuwe, doorzichtige positie-indicator. Bovendien zal je merken dat er visuele en prestatieverbeteringen zijn aangebracht.
-			</div><div class="para">
-				<span class="package">Okular</span> is de applicatie om tekstdocumenten te bekijken. Tekst selecteren is makkelijker gemaakt. Verscheidenen bugs zijn opgelost, en tekst in meerdere kolommen wordt nu goed geselecteerd.
-			</div><div class="para">
-				De <span class="package">Kate</span> teksteditor biedt een nieuwe "Zoek en Vervang" plugin, indicatoren voor veranderde regels, en een nieuwe "modelines" editor, die mogelijk maakt dat je documentvariabelen -als wel of niet gebruiken van tabs of spaties- makkelijker kan instellen. Fedora 17 heeft nieuwe documentatie voor <span class="package">Kate</span>, toegankelijke via het "Hulp"-menu van de applicatie.
-			</div><div class="para">
-				<span class="package">Cantor</span> is een applicatie ten behoeve van mathematische pakketten. <span class="package">Cantor</span> ondersteunt nu Qalculate en Scilab.
-			</div><div class="para">
-				De applicatie <span class="package">Marble</span> 'virtuele wereldbol en atlas' is nu geïntegreerd met <span class="package">KRunner</span>. GPS coördinaten en <span class="package">Marble</span>-bladwijzers kunnen nu worden gezocht via <span class="package">KRunner</span>. Je kunt nu informatie over route-elevatie bekijken, aardsatellieten volgen, en OpenStreetMap-bestanden in vectorformaat opvragen.
-			</div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1964069">3.1.2. GNOME</h4></div></div></div><a id="id1964076" class="indexterm"></a><a id="id1964084" class="indexterm"></a><a id="id1964092" class="indexterm"></a><a id="id1964100" class="indexterm"></a><div class="para">
-			Fedora 17 levert de GNOME 3.4 desktopomgeving.
-		</div><div class="para">
-			Sommige kenmerken van GNOME 3.4 omvatten:
-			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-						Sommige applicatiemenu's zijn nu geïntegreerd in de GNOME Shell. De nieuwe menu's zien er opgeruimder uit en zorgen ervoor dat applicaties uiterlijk op elkaar zijn afgestemd.
-					</div></li><li class="listitem"><div class="para">
-						<span class="package">Boxes</span> is een nieuwe GNOME 3 app. Je kan Boxes gebruiken om toegang te krijgen op andere computers en op virtuele machines die op dezelfde of een andere computer staan.
-					</div></li><li class="listitem"><div class="para">
-						De bestaande <span class="package">Documents</span> app is verbeterd. Nieuwe features omvatten collecties, ondersteuning voor koppelbare apparaten, ondersteuning voor delen van documenten, ondersteuning voor printen van documenten, portretmodus, en integratie met GNOME Shell overview zoekbox.
-					</div></li><li class="listitem"><div class="para">
-						De hoge-contrast en hoge-contrast-gespiegeld thema-iconen zijn consistenter met het standaard thema.
-					</div></li><li class="listitem"><div class="para">
-						Gebruikers met beperkte zichtvermogens kunnen helderheid en contrast van hun beeldscherm aanpassen via GNOME Shell.
-					</div></li><li class="listitem"><div class="para">
-						Het netwerkpaneel is herontworpen. Nieuwe features omvatten het makkelijker kunnen zien of je met het internet bent verbonden, een "airplane mode" schakelaar om netwerkactiviteiten te onderbreken, een "forget network" knop om ongewenste connecties te verwijderen, en een geïntegreerd wachtwoorddialoog.
-					</div></li><li class="listitem"><div class="para">
-						GNOME Sleutelringdialogen zijn nu geïntegreerd in GNOME Shell.
-					</div></li><li class="listitem"><div class="para">
-						Nieuwe features voor gebruikers van "Wacom" grafische tabletten omvatten de mogelijkheid om:
-						<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-									kalibreer de tabletten
-								</div></li><li class="listitem"><div class="para">
-									configureer knoppenmappings
-								</div></li><li class="listitem"><div class="para">
-									monitoren aan het apparaat toe te wijzen
-								</div></li><li class="listitem"><div class="para">
-									meerdere tabletten te configureren
-								</div></li><li class="listitem"><div class="para">
-									unieke configuraties per apparaat op te slaan
-								</div></li><li class="listitem"><div class="para">
-									tabletten en hun mogelijkheden te identificeren
-								</div></li></ul></div>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>3. Veranderingen in Fedora voor bureaubladgebruikers</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta name="generator" content="publican 2.8" /><meta name="package" content="Fedora-Release_Notes-18-nl-NL-1-0" /><link rel="home" href="index.html" title="Vrijgave-informatie" /><link rel="up" href="index.html" title="Vrijgave-informatie" /><link rel="prev" href="sect-Release_Notes-Changes_for_Sysadmin.html" title="2. Veranderingen in Fedora voor systeembeheerders" /><link rel="next" href="sect-Release_Notes-Changes_for_Developers.html" title="4. Veranderingen in Fedora voor ontwikkelaars" /></head><body><p id="title"><a class="left" href="http://www.fedoraproject.org"><img src="Common_Content/images/image_left.png" alt="Product Site" /></a><a class="right" href="http://docs.fedoraproject.org"><img src="Common_Content/images/image_right.png" alt="Documentation Site" /></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Changes_for_Sysadmin.html"><strong>Terug</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Developers.html"><strong>Volgende</strong></a></li></ul><div class="section" id="sect-Release_Notes-Changes_for_Desktop"><div class="titlepage"><div><div keep-together.within-column="always"><h2 class="title" id="sect-Release_Notes-Changes_for_Desktop">3. Veranderingen in Fedora voor bureaubladgebruikers</h2></div></div></div><div xml:lang="nl-NL" class="section" id="sect-Desktop" lang="nl-NL"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="sect-Desktop">3.1. Bureaublad</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp10710784">3.1.1. Algemeen</h4></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp6418848">3.1.1.1. <code class="function">mdns</code> standaard beschikbaar</h5></div></div></div><div class="para">
+				Bij het installeren van de "Graphical Desktop" software selectie wordt een <code class="function">MDNS</code> cliënt toegevoegd. Hierdoor worden apparaten op het lokale netwerk standaard ontdekt. Standaard wordt er geen privé informatie gepubliceerd via <code class="function">MDNS</code>.
+			</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp8123200">3.1.1.2. <span class="application"><strong>systemd</strong></span> handelt displaybeheerders af</h5></div></div></div><div class="para">
+				Het omschakelen van displaybeheerders gebeurt niet meer door het bewerken van <code class="filename">/etc/sysconfig/desktop</code>. In plaats daarvan wordt <code class="command">systemctl enable --force <em class="replaceable"><code>displaybeheerder</code></em>.service</code> gebruikt om de geïnstalleerde displaybeheerder van jouw keuze aan te zetten.
+			</div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp5923232">3.1.2. Cinnamon</h4></div></div></div><div class="para">
+			Fedora users now have the option of using <span class="application"><strong>Cinnamon</strong></span>, an advanced desktop environment based on <span class="application"><strong>GNOME3</strong></span>. <span class="application"><strong>Cinnamon</strong></span> takes advantage of advanced features provided by the <span class="application"><strong>GNOME</strong></span> backend while providing users with a more traditional, accessible desktop experience. Install Cinnamon with the command: 
+<pre class="screen">
+	    <code class="command">yum groupinstall "Cinnamon Desktop"</code>
+</pre>
 
-					</div></li><li class="listitem"><div class="para">
-						Meer configurabele instellingen voor de ingebouwde GNOME-Shell 'magnification-feature'.
-					</div></li></ul></div>
-
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1790253">3.1.3. Sugar</h4></div></div></div><a id="id2246490" class="indexterm"></a><a id="id2246498" class="indexterm"></a><a id="id2246506" class="indexterm"></a><div class="para">
-			Fedora 17 biedt de Sugar 0.96 desktopomgeving. Enkele features zijn:
-			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-						Verwijdering van HippoCanvas vanwege verhuizing naar GTK+ 3
-					</div></li><li class="listitem"><div class="para">
-						Support voor NetworkManager 0.9
-					</div></li><li class="listitem"><div class="para">
-						sugar-toolkit gebaseerd op GTK+ 3
-					</div></li><li class="listitem"><div class="para">
-						Beginnende ondersteuning voor PyPi
-					</div></li><li class="listitem"><div class="para">
-						Nieuwe Browse Activiteiten gebruikmakend van GTK+ 3, webkitgtk, en gobject-introspection
-					</div></li><li class="listitem"><div class="para">
-						Nieuwe Lees Activiteiten gebruikmakend van GTK+ 3 en gobject-introspection
-					</div></li><li class="listitem"><div class="para">
-						Reparaties van verscheidene bugs en verbetering van verscheidene Activiteiten
-					</div></li></ul></div>
-
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2246577">3.1.4. Verwijderbare media veranderen aankoppelpunten</h4></div></div></div><div class="para">
-			Verwijderbare media die in de sessie van gebruiker zijn aangekoppeld, zoals hot-plugged USB-schijven, zullen in een gebruiker-specifieke map worden aangekoppeld. Aankoppelpunten worden voorzien in <code class="filename">/run/media/$USER/</code> van permissies die <em class="parameter"><code>$USER</code></em> exclusieve toegang verschaffen.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2246598">3.1.5. Multi-Seat</h4></div></div></div><a id="id2246605" class="indexterm"></a><a id="id2246613" class="indexterm"></a><div class="para">
-			De mogelijkheid tot gebruik van multi-seat Linuxconfiguraties is al een tijdje aanwezig, maar was vroeger lastig te configureren. Fedora 17 biedt voor het eerst volledige geautomatiseerde multi-seat configuratie.
-		</div><div class="para">
-			Om deze feature te gebruiken plugt u simpelweg een USB-dock in, zoals de <a href="http://www.amazon.com/Plugable-Universal-DisplayLink-1920x1080-High-Speed/dp/B002PONXAI/ref=sr_1_3?ie=UTF8&amp;qid=1335904746&amp;sr=8-3">Plugable Docking Station</a>, met een monitor, muis en keyboard, en een nieuwe desktop verschijnt.
-		</div><div class="para">
-			Voor meer details over deze nieuwe feature leze men de volgende artikelen:
-			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-						<a href="http://0pointer.de/blog/projects/multi-seat.html">http://0pointer.de/blog/projects/multi-seat.html</a>
-					</div></li><li class="listitem"><div class="para">
-						<a href="http://www.phoronix.com/scan.php?page=article&amp;item=plugable_multiseat_kick">http://www.phoronix.com/scan.php?page=article&amp;item=plugable_multiseat_kick</a>
-					</div></li></ul></div>
-
-		</div></div></div><div xml:lang="nl-NL" class="section" lang="nl-NL"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1785147">3.2. Productiviteit</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2138294">3.2.1. cherrytree</h4></div></div></div><a id="id2265669" class="indexterm"></a><a id="id1937696" class="indexterm"></a><a id="id2343364" class="indexterm"></a><div class="para">
-			<span class="package">cherrytree</span> is nieuw in Fedora. Het is een hiërarchische toepassing voor het maken van notities en het heeft uitgebreide tekst en syntax markering met dataopslag in een enkel XML of SQLite bestand.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2126731">3.2.2. evolution</h4></div></div></div><a id="id2186471" class="indexterm"></a><div class="para">
-			<span class="package">evolution</span> is vernieuwd naar 3.3.5. Dit is een foutreparatie vrijgave.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2165972">3.2.3. libreoffice</h4></div></div></div><a id="id2356126" class="indexterm"></a><div class="para">
-			<span class="package">libreoffice</span> is vernieuwd naar 3.5.0.3.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1618174">3.2.4. lemonpos</h4></div></div></div><a id="id1982246" class="indexterm"></a><a id="id1868028" class="indexterm"></a><a id="id2325385" class="indexterm"></a><div class="para">
-			<span class="package">lemonpos</span>, verkort als Lemon, is een open bron Point-of-sale software bedoeld voor micro, kleine en middelgrote bedrijven. MySQL wordt ingezet voor databeheer en opslag, en het kan gebruikt worden als een enkele database met vele POS terminals in een netwerk.
-		</div><div class="para">
-			Lemon biedt een moderne, goed te gebruiken interface met thema's, een zoekpaneel, een prijscontroletool, administratiegereedschap voor het beheren van een winkel, rapporten op papier, en nog veel meer...
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1634749">3.2.5. rachota</h4></div></div></div><a id="id2158798" class="indexterm"></a><a id="id1681034" class="indexterm"></a><div class="para">
-			<span class="package">rachota</span> is ook nieuw in Fedora. Het is een portable toepassing voor tijdsbeheersing van verschillende projecten. Het draait overal. Het toont tijddata in diagramvorm, maakt aangepaste rapporten aan en factureert of analyseert gemeten data en geeft hints voor het verbeteren van het tijdgebruik van de gebruiker. Het is een geheel portable doch persoonlijke timetracker.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2230223">3.2.6. scribus</h4></div></div></div><a id="id2230230" class="indexterm"></a><a id="id2230238" class="indexterm"></a><a id="id2230250" class="indexterm"></a><a id="id1891395" class="indexterm"></a><a id="id1891407" class="indexterm"></a><a id="id1891419" class="indexterm"></a><a id="id1891431" class="indexterm"></a><a id="id1891439" class="indexterm"></a><a id="id1891447" class="indexterm"></a><a id="id2031101" class="indexterm"></a><a id="id2031109" class="indexterm"></a><a id="id2031117" class="indexterm"></a><a id="id2031125" class="indexterm"></a><a id="id2031133" class="indexterm"></a><a id="id2031141" class="indexterm"></a><a id="id2031149" class="indexterm"></a><div class="para">
-			Scribus is vernieuwd naar 1.4.0, een belangrijke upgrade:
-			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-						Functie-uitbreidingen voor het afhandelen van objecten (b.v. transformatiegereedschappen zoals in geavanceerde tekenprogramma's), met verbeteringen in bestaande functies zoals Scrapbook en Image Manager.
-					</div></li><li class="listitem"><div class="para">
-						Vele geavanceerde opties voor tekst en typografie, zoals karakterstijlen, optische kantlijnen of glyph-extensie. Undo/Redo is eindelijk beschikbaar voor bijna alle tekst gerelateerde acties, en een nieuw script staat het vervangen van rechte aanhalingstekens toe met typografische aanhalingstekens gebaseerd op taalinstellingen. Gebruiksverbeteringen zoals betere plaatsing van de cursor en cursor beweging, snellere indeling op canvas en interactie tussen gelinkte frames.
-					</div></li><li class="listitem"><div class="para">
-						Nieuwe functies voor vector-objecten, zoals Booleaanse padbewerkingen, vectoreffecten of een bewerker voor lijnstijlen.
-					</div></li><li class="listitem"><div class="para">
-						Belangrijke verbeteringen voor het afhandelen van vullen, zoals patroon vullen, meer gradiënt types, ondersteuning voor externe kleur paletten formaten (AI, EPS, GPL, PostScript, SOC), en vele nieuwe kleur paletten, inclusief die van commerciële leveranciers zoals Resene en dtp studio, naast nationale/regering standaarden.
-					</div></li><li class="listitem"><div class="para">
-						Een nieuw frametype met de naam "Render Frame" staat het renderen toe (met daarna het exporteren) van output van elk programma dat PostScript, PDF of PNG bestanden via de commandoregel kan aanmaken (b.v. LaTeX, Lilypond, POV-Ray) binnen Scribus. De initiële versie werd ontwikkeld als een project voor Google Summer of Code, en dit project heeft zich ontwikkeld tot het toestaan van importeren van extern geproduceerde documenten, wetenschappelijke publicaties en formules. Meer render engines kunnen toegevoegd worden door middel van een eenvoudig configuratiebestand.
-					</div></li><li class="listitem"><div class="para">
-						Vector-importfilters: Scribus 1.4.0 biedt nieuwe importfilters voor de volgende bestandsformaten: Adobe Illustrator (zowel EPS als PDF-gebaseerd), Macintosh Picture (PICT), Windows Metafile (WMF), Xfig (FIG), Calamus Vector Graphics (CVG), Kivio Stencils (SML) en DIA Shapes (SHAPE).
-					</div></li><li class="listitem"><div class="para">
-						Wat betreft bitmapafbeeldingen: het afhandelen van Photoshop-bestanden heeft vele belangrijke verbeteringen ondergaan, zoals ondersteuning van meerdere clippingpaden of PSD-lagen. Image Manager is opnieuw geschreven, en nieuwe niet-destructieve image-effecten zijn toegevoegd.* Daarnaast ondersteunt Scribus 1.4.0 nu EXIF-data in afbeeldingen, en import van Windows en OS/2-bitmaps (BMP) is opnieuw aangezet.
-					</div></li><li class="listitem"><div class="para">
-						Naast belangrijke uitbreidingen van de pre-press functies van Scribus, zijn het printen van merktekens en het tonen van inkt bedekking in de Print Preview de belangrijkste. Daarnaast maakt Scribus nu met een enkele klik conversie mogelijk van spot kleuren naar proces kleuren tijdens PDF en PostScript export.
-					</div></li><li class="listitem"><div class="para">
-						PDF-export heeft ook belangrijke verbeteringen ondergaan. Scribus kan nu exporteren naar PDF 1.5, inclusief PDF-lagen. Een andere nieuwe functie is de optie voor embedded EPS en PDF-bestanden in geëxporteerde PDFs als alternatief voor rasteren. Ook zijn zowel lettertype-embedding als substitutie verbeterd.
-					</div></li><li class="listitem"><div class="para">
-						Voor kleurbeheer ondersteunt Scribus 1.4.0 nu zowel littleCMS versie 1 als 2. Het is mogelijk om kleurbeheer aan te zetten met een enkele klik in het hoofdvenster.
-					</div></li><li class="listitem"><div class="para">
-						Daarnaast heeft het Scribusteam een functie toegevoegd voor het emuleren van kleurenblindheid op het scherm.
-					</div></li><li class="listitem"><div class="para">
-						Honderden kleine en belangrijke gebruiksverbeteringen zijn toegevoegd.
-					</div></li><li class="listitem"><div class="para">
-						De meegeleverde scripts zijn vernieuwd, inclusief het toevoegen van het "Autoquote"-script in het Scriptmenu waarmee rechte aanhalingstekens in een tekstframe worden geconverteerd naar voor veel talen correcte aanhalingstekens.
-					</div></li><li class="listitem"><div class="para">
-						Scribus 1.4.0 wordt geleverd met veel meer templates dan in vorige versies.
-					</div></li><li class="listitem"><div class="para">
-						De inhoud van het Hulpsysteem is opnieuw geschreven en vernieuwd.
-					</div></li></ul></div>
-
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1654245">3.2.7. timeline</h4></div></div></div><a id="id1654252" class="indexterm"></a><div class="para">
-			Ook nieuw in Fedora 17 is <span class="package">timeline</span>, een cross-platformtoepassing voor het tonen en navigeren van gebeurtenissen op een tijdslijn. Het kan:
-			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-						Gebeurtenissen organiseren in hiërarchische categorieën
-					</div></li><li class="listitem"><div class="para">
-						Gebeurtenissen verplaatsen en in grootte veranderen met de muis
-					</div></li><li class="listitem"><div class="para">
-						Gebeurtenissen dupliceren
-					</div></li><li class="listitem"><div class="para">
-						Gebeurtenissen zoeken
-					</div></li><li class="listitem"><div class="para">
-						Naar een specifieke datum gaan
-					</div></li><li class="listitem"><div class="para">
-						Een andere representatie tonen, afhankelijk van het zoom niveau
-					</div></li><li class="listitem"><div class="para">
-						Exporteren naar een afbeelding
-					</div></li></ul></div>
-
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2166057">3.2.8. vym</h4></div></div></div><a id="id2166064" class="indexterm"></a><div class="para">
-			<span class="package">vym</span> is vernieuwd naar versie 2.0.6. Deze vernieuwing bevat vele nieuwe functies:
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp17590496">3.1.3. <span class="application"><strong>GNOME</strong></span></h4></div></div></div><div class="para">
+			Fedora 18 bevat de nieuwste <span class="application"><strong>GNOME</strong></span> vrijgave, versie 3.6. Je zult deze veranderingen opmerken:
 		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
-					Algemeen
+					<span class="emphasis"><em>Meer toegankelijke gebruikersinterface</em></span>: Vorige <span class="application"><strong>GNOME3</strong></span> vrijgaven voegden toegankelijkheidsfuncties toe, zoals de schermlezer en schermtoetsenbord. <span class="application"><strong>GNOME 3.6</strong></span> schakelt deze functies standaard in. Voor het gebruik van toegankelijkheidsfuncties, kies je de <code class="function">"Universal Access"</code> icoon vanuit de <span class="application"><strong>GNOME Shell</strong></span>. <span class="application"><strong>GNOME 3.6</strong></span> voegt ook helderheid, contrast en inversie mogelijkheden toe aan <span class="application"><strong>Magnifier</strong></span>.
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>Betere integratie met Distributes ("Cloud-Based") document systemen</em></span>: De <span class="application"><strong>GNOME Documenten</strong></span> toepassing voor bestandsbeheer integreert <span class="productname">Google Docs</span> al. <span class="application"><strong>GNOME 3.6</strong></span> voegt ondersteuning toe voor <span class="productname">Microsoft SkyDrive</span>, voor gebruikers met een <span class="productname">Windows Live</span> account.
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>Support for ActiveSync Accounts</em></span>: You can use the <span class="application"><strong>GNOME</strong></span> <code class="function">online accounts</code> feature to connect your desktop with your online accounts. GNOME already includes a connector for <span class="trademark">Google</span>™ accounts, and <span class="productname">GNOME 3.6</span> adds a connector for <span class="productname">ActiveSync</span> (or <span class="productname">Microsoft Exchange</span>) accounts.
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>Verbeterde tekstvormgeving</em></span>: <span class="productname">GNOME 3.6</span> gebruikt een verbeterde tekst vorm engine. Je zult een hogere kwaliteit tekst renderen en geheugen besparing opmerken. De nieuwe tekst vorm engine geeft verdere verbeteringen in toekomstige versies van <span class="application"><strong>GNOME</strong></span>.
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>Meer efficiënte inputbron selectie</em></span>: <span class="productname">GNOME 3.6</span> gebruikt alleen de <code class="function">IBus</code> invoermethode framework. Je kunt een invoerapparaat (zoals een toetsenbord) en de belangrijkste indeling kiezen en alle <span class="application"><strong>GNOME</strong></span> toepassingen zullen deze instellingen gebruiken.
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>Initiële instelling van <span class="application"><strong>GNOME</strong></span></em></span>: Als je een nieuwe computer aanschaft of van een nieuw besturingssysteem installeert zal <span class="productname">GNOME 3.6</span> le helpen met de volgende belangrijke taken:
 					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-								Bestand afhandelen
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											Autosave
-										</div></li><li class="listitem"><div class="para">
-											Automatische back-ups
-										</div></li><li class="listitem"><div class="para">
-											vym controleert nu regelmatig of kaarten veranderd zijn op schijf en
-										</div></li><li class="listitem"><div class="para">
-											Meerdere bestanden kunnen geselecteerd worden tijdens het laden van kaarten en afbeeldingen
-										</div></li><li class="listitem"><div class="para">
-											Laatste sessie herstellen
-										</div></li></ul></div>
-
+								Verbinden met een netwerk
 							</div></li><li class="listitem"><div class="para">
-								Meerdere kaartcentra op een kaart
+								Een gebruikersaccount aanmaken
 							</div></li><li class="listitem"><div class="para">
-								Man-pagina toegevoegd
+								Je tijdzone en locatie instellen
 							</div></li><li class="listitem"><div class="para">
-								Nieuwe vertalingen
+								Integreren met online accounts
 							</div></li><li class="listitem"><div class="para">
-								Code
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											Nu helemaal omgezet naar Qt4
-										</div></li><li class="listitem"><div class="para">
-											HTML-export is nu native-code zonder XSLT-transformatie
-										</div></li><li class="listitem"><div class="para">
-											DBUS-ondersteuning (gedeeltelijk)
-										</div></li></ul></div>
-
+								Basis informatie over <span class="application"><strong>GNOME Shell</strong></span> aanbieden
 							</div></li></ul></div>
 
-				</div></li></ul></div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
-					Import/Export
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>Verbeterd notificatie systeem</em></span>: <span class="application"><strong>GNOME 3.0</strong></span> bevat een nieuwe manier voor toepassingen om meldingen naar gebruikers te verzenden met de naam <code class="function">Message Tray</code>. <span class="productname">GNOME 3.6</span> verbetert de <code class="function">Meesage tray</code> wat helpt voor gebruikers om gefocust te blijven en te weten of de kennisgevingen dringend zijn. Voor meer informatie refereer je naar de <a href="https://live.gnome.org/GnomeShell/Design/Guidelines/MessageTray">GNOME documentatie</a>.
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>Eenvoudiger printerbeheer</em></span>: <span class="productname">GNOME 3.6</span> bevat verbeteringen aan het <code class="function">Printer</code> paneel in <span class="application"><strong>GNOME Control Center</strong></span>. Je kunt lokale en netwerk printer gemakkelijker vinden en configureren, drivers kiezen en standaardopties instellen.
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>Meer nuttige scherm vergrendeling</em></span>: Als je jouw bureaublad "vergrendelt" of terugkeert uit de "slaapstand", biedt het vergrendel scherm in <span class="productname">GNOME 3.6</span> informatie en nieuwe mogelijkheden:
 					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-								Laatste export kan worden herhaald
+								Tonen van datum en tijd
 							</div></li><li class="listitem"><div class="para">
-								Eenvoudige export naar CSV-spreadsheet
+								Controle van muziek en mediaspelers en het volume aanpassen
 							</div></li><li class="listitem"><div class="para">
-								Belangrijkste exports kunnen nu met scrips uitgevoerd worden
+								Kijken of je nieuwe berichten of meldingen hebt
 							</div></li><li class="listitem"><div class="para">
-								ASCII exports tonen URL's
+								Basis netwerkverbindingsinstellingen veranderen
 							</div></li><li class="listitem"><div class="para">
-								Import van FreeMind-kaarten
+								Keuze maken voor het ontgrendelen van je bureaublad
 							</div></li></ul></div>
 
-				</div></li></ul></div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
-					Afhandelen
-					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-								Snel sorteren en verplaatsen met "targets"
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											Targets kunnen gedefinieerd worden met enkele toetsaanslag
-										</div></li><li class="listitem"><div class="para">
-											"Goto" selecteert target
-										</div></li><li class="listitem"><div class="para">
-											"Move to" verplaatst selectie naar target zonder de view te verplaatsen. Er nuttig om snel iets te sorteren
-										</div></li></ul></div>
-
-							</div></li><li class="listitem"><div class="para">
-								Brainstormmodus
-							</div></li><li class="listitem"><div class="para">
-								Toevoegen/Verwijderen
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											Voeg een tak in en selecteer de kinderen hiervan
-										</div></li><li class="listitem"><div class="para">
-											De kinderen van een tak verwijderen
-										</div></li><li class="listitem"><div class="para">
-											Verwijderen van een taak met behoud van de kinderen hiervan
-										</div></li></ul></div>
-
-							</div></li><li class="listitem"><div class="para">
-								xLinks
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											Kan nu gemakkelijk geselecteerd worden met klikken
-										</div></li><li class="listitem"><div class="para">
-											Erg gemakkelijk om een xlink te volgen door te klikken in de hoek van een tak, daar waar het begint
-										</div></li><li class="listitem"><div class="para">
-											Bovendien kan de "F" toets worden gebruikt voor volgen
-										</div></li></ul></div>
-
-							</div></li><li class="listitem"><div class="para">
-								Referenties/URL's
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											Openen van alle vymLinks in een subboom
-										</div></li><li class="listitem"><div class="para">
-											Openen alle URL's in een subboom
-										</div></li><li class="listitem"><div class="para">
-											Bugzilla integratie
-											<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-														vym kan data direct van Bugzilla halen (extra pakket vereist, zie handleiding)
-													</div></li><li class="listitem"><div class="para">
-														Snelle controle van de status van bugs: Alle bugs in een subboom kunnen worden vernieuwd met een enkele toetsaanslag
-													</div></li><li class="listitem"><div class="para">
-														Ondersteuning voor Bugzilla queries
-													</div></li></ul></div>
-
-										</div></li></ul></div>
-
-							</div></li><li class="listitem"><div class="para">
-								Kopiëren van vorige stappen in de geschiedenis naar de huidige
-							</div></li><li class="listitem"><div class="para">
-								Voeg tijdstempel toe aan tak
-							</div></li><li class="listitem"><div class="para">
-								Sorteer lexicaal (voorwaarts/achterwaarts)
-							</div></li><li class="listitem"><div class="para">
-								Maak een nieuwe kaart aan met huidige selectie als KaartCentrum
-							</div></li><li class="listitem"><div class="para">
-								Scheid een taak om een nieuw KaartCentrum aan te maken
-							</div></li><li class="listitem"><div class="para">
-								Ga voorwaarts/achterwaarts in selectiegeschiedenis
-							</div></li></ul></div>
-
-				</div></li></ul></div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
-					Widgets
-					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-								Editors
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											Boom editor toegevoegd
-										</div></li><li class="listitem"><div class="para">
-											Koptekst editor toegevoegd
-										</div></li></ul></div>
-
-							</div></li><li class="listitem"><div class="para">
-								Vind nieuw venster
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											Toon alle hits duidelijk, zowel takken als opmerkingen
-										</div></li><li class="listitem"><div class="para">
-											Maak het gemakkelijker om de hits in de editor te selecteren
-										</div></li></ul></div>
-
-							</div></li><li class="listitem"><div class="para">
-								Meer bestandsdialogen kunnen nu onthouden waarschuwingen uit te zetten
-							</div></li><li class="listitem"><div class="para">
-								Progressiebalk toont bestandsnaam van de kaart die nu geladen wordt
-							</div></li><li class="listitem"><div class="para">
-								Dock Widgets
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											Kunnen zonder beperking worden geplaatst
-											<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-														Drijven naast het hoofdvenster
-													</div></li><li class="listitem"><div class="para">
-														Geïntegreerd (boven/links/rechts/onder) in hoofdvenster
-													</div></li></ul></div>
-
-										</div></li><li class="listitem"><div class="para">
-											Opmerking editor
-										</div></li><li class="listitem"><div class="para">
-											Vind venster
-										</div></li></ul></div>
-
-							</div></li></ul></div>
-
-				</div></li></ul></div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
-					Grafisch
-					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-								Animatie
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											Panning
-										</div></li><li class="listitem"><div class="para">
-											Snap back
-										</div></li></ul></div>
-
-							</div></li><li class="listitem"><div class="para">
-								Afbeeldingen
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											Basis SVG-ondersteuning
-										</div></li><li class="listitem"><div class="para">
-											Afbeeldingen kunnen in grootte worden veranderd
-										</div></li><li class="listitem"><div class="para">
-											Nieuwe standaardvlaggen
-										</div></li></ul></div>
-
-							</div></li><li class="listitem"><div class="para">
-								Frames
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											Voeg subboom toe in frame
-										</div></li><li class="listitem"><div class="para">
-											Nieuw frametype: cloud
-										</div></li></ul></div>
-
-							</div></li><li class="listitem"><div class="para">
-								Zoom
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											Zoom met scrollwiel (duw op CTRL)
-										</div></li><li class="listitem"><div class="para">
-											Zoom factor wordt opgeslagen en hersteld bij laden
-										</div></li><li class="listitem"><div class="para">
-											Centreer op selectie met "." of reset zoom met ","
-										</div></li></ul></div>
-
-							</div></li><li class="listitem"><div class="para">
-								Automatische indeling (botsing detectie)
-							</div></li><li class="listitem"><div class="para">
-								Lettertypen
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											Stel standaardlettertype in
-										</div></li><li class="listitem"><div class="para">
-											Tak kopteksten kunnen nu RichText zijn
-										</div></li></ul></div>
-
-							</div></li></ul></div>
-
-				</div></li></ul></div></div></div><div xml:lang="nl-NL" class="section" lang="nl-NL"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1530977">3.3. Internationalisatie</h3></div></div></div><div class="para">
-	</div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1597216">3.3.1. IBus</h4></div></div></div><a id="id2186468" class="indexterm"></a><a id="id1974381" class="indexterm"></a><a id="id1528901" class="indexterm"></a><a id="id1929847" class="indexterm"></a><a id="id2026101" class="indexterm"></a><a id="id1721745" class="indexterm"></a><a id="id1738513" class="indexterm"></a><a id="id2230324" class="indexterm"></a><a id="id1882603" class="indexterm"></a><a id="id2033712" class="indexterm"></a><a id="id2343403" class="indexterm"></a><a id="id2164130" class="indexterm"></a><a id="id1530160" class="indexterm"></a><a id="id1978816" class="indexterm"></a><div class="itemizedlist"><ul><li class="listitem"><div class="para">
-					IBus heeft een nieuwe invoermethode switch met een pop-up die aangeeft welke invoermethode engines beschikbaar zijn, lijkend op Alt-Tab in beheerders. IBus heeft nu ook een betere en nettere afhandeling van X toetsenbord indelingen.
 				</div></li><li class="listitem"><div class="para">
-					IBus heeft het gedrag veranderd voor het delen tussen toepassingen van invoermethode engines en de toestand.
+					<span class="emphasis"><em>Geïntegreerde Enterprise inlog informatie</em></span>: Gebruikers die verbonden zijn met grote ("ondernemings") netwerken kunnen gebruikersaccount instellingen bekijken en potentieel wijzigen in het <span class="application"><strong>GNOME 3.6 Control Center</strong></span>. Deze functie integreert de Fedora 18 <span class="application"><strong>realmd</strong></span> functie, zodat je implementaties van <span class="productname">Active Directory</span> kunt bekijken en potentieel beheren.
+				</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp3917648">3.1.4. <span class="productname">KDE</span>
+		 Softwarecompilatie</h4></div></div></div><div class="para">
+			Fedora 18 beschikt over <span class="productname">KDE 4.9</span>, met vele nieuwe functies en verbeterde stabiliteit en prestaties. Het<span class="orgname">KDE project</span>
+			Kwaliteit team heeft het initiatief genomen om ervoor te zorgen dat deze vrijgave de allerbest wordt. De <span class="productname">KDE</span> release notes onthullen een aantal opwindende wijzigingen:
+		</div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp3920848">3.1.4.1. Platform</h5></div></div></div><div class="para">
+				De <span class="productname">KDE Platform</span> vrijgave bevat foutreparaties, andere kwaliteitsverbeteringen, netwerken en voorbereiding voor <span class="productname">Frameworks 5</span>.
+			</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp15847600">3.1.4.2. <span class="productname">Plasma werkruimte</span>
+			</h5></div></div></div><div class="para">
+				Hoogtepunten voor <span class="productname">Plasma werkruimtes</span> omvatten aanzienlijke verbeteringen in de <span class="application"><strong>Dolphin</strong></span> bestandsbeheerder, <span class="application"><strong>Konsole</strong></span> X Terminal emulator, <code class="function">Activiteiten</code> en de <span class="application"><strong>KWin</strong></span> Window Manager.
+			</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						<span class="emphasis"><em><span class="application"><strong>Dolphin</strong></span> bestandsbeheerder</em></span>: De krachtige bestandsbeheerder <span class="application"><strong>Dolphin</strong></span> bevat nu terug en vooruit knoppen en in-line bestand hernoemen is weer terug. <span class="application"><strong>Dolphin</strong></span> kan metadata weergeven zoals waarderingen, tags, beeld en bestandsgrootten, auteur, datum en meer veel meer, evenals het groeperen en sorteren van metadata eigenschappen. De nieuwe <span class="application"><strong>Mercurial</strong></span> plug-in behandelt dit versiebeheersysteem op dezelfde gemakkelijke manier als <span class="application"><strong>git</strong></span>, <span class="application"><strong>SVN</strong></span> en <span class="application"><strong>CVS</strong></span> worden ondersteund, zodat gebruikers direct vanuit het bestandsbeheer pull, push en commit kunnen uitvoeren. De gebruikersinterface van de <span class="application"><strong>Dolphin</strong></span> heeft verschillende kleinere verbeteringen gekregen, waaronder een beter <code class="function">Locaties</code> paneel, verbeterde zoekfunctie ondersteuning en synchronisatie met de terminal locatie.
+					</div></li><li class="listitem"><div class="para">
+						<span class="emphasis"><em><span class="application"><strong>Konsole</strong></span> X Terminal emulator</em></span>: Het werkpaard <span class="application"><strong>Konsole</strong></span> heeft nu de mogelijkheid om naar een tekstselectie te zoeken met <span class="productname">KDE</span> <code class="function">Web Shortcuts</code>. Het biedt de <code class="function">Change Directory to</code> context optie als een map naar het <span class="application"><strong>Konsole</strong></span> venster gesleept wordt. Gebruikers hebben meer controle over het organiseren van terminalvensters tabs los te koppelen en ze naar een nieuw venster te slepen met alleen die tab. Bestaande tabbladen kunnen naar een nieuwe gekloond worden met hetzelfde profiel. Zichtbaarheid van de menu en tabblad balken kan gecontroleerd worden als <span class="application"><strong>Konsole</strong></span> opgestart wordt. Voor wie handig is met het schrijven van scripts kan tabblad titels wijzigen door middel van een escape-karakterreeks.
+					</div></li><li class="listitem"><div class="para">
+						<span class="emphasis"><em><span class="application"><strong>KWin</strong></span> Vensterbeheerder</em></span>: De <span class="productname">KDE</span> vensterbeheerder, <span class="application"><strong>KWin</strong></span> heeft veel aandacht gekregen. Verbeteringen omvatten subtiele veranderingen zoals het omhoog brengen van vensters tijdens venster omschakelen en hulp voor <code class="function">Window Specific Setting</code>, evenals meer zichtbare veranderingen zoals een verbeterde <code class="function">KCM</code> voor het vak omschakelen en betere performance met <code class="function">Wobbly Windows</code>. Er zijn veranderingen zodat <span class="application"><strong>KWin</strong></span> beter werkt met <code class="function">Activiteiten</code>, inclusief de toevoeging van <code class="function">Activiteit</code> gerelateerde venster regels. Er was een algemene focus op het verbeteren van de <span class="application"><strong>KWin</strong></span> kwaliteit en performance.
+					</div></li><li class="listitem"><div class="para">
+						<span class="emphasis"><em><code class="function">Activiteiten</code></em></span>: <code class="function">Activiteiten</code> is nu grondig geïntegreerd in de <code class="function">Workspaces</code>. Bestanden kunnen aan <code class="function">Activiteiten</code> gekoppeld worden in <span class="application"><strong>Dolphin</strong></span>, <span class="application"><strong>Konqueror</strong></span> en <code class="function">Folder View</code>. <code class="function">Folder View</code> kan ook alleen de bestanden tonen die gerelateerd zijn aan een <code class="function">Activiteit</code> op het bureaublad of in een paneel. Een <code class="function">Activiteit</code> <code class="function">KIO</code> is nieuw en versleuteling privé activiteiten is nu mogelijk.
+					</div></li><li class="listitem"><div class="para">
+						<code class="function">Workspaces</code> introduceert <code class="function">MPRIS2</code> ondersteuning en heeft met <span class="application"><strong>KMix</strong></span> de mogelijkheid om streams af te handelen en een <code class="function">Plasma</code> data engine voor het afhandelen van dit muziekspeler controle protocol. Deze veranderingen sluiten aan bij <code class="function">MPRIS2</code> ondersteuning in <span class="application"><strong>Juk</strong></span> en <span class="application"><strong>Dragon</strong></span>, de <span class="productname">KDE</span> muziek en video spelers. Er zijn veel kleinere veranderingen in <code class="function">Workspaces</code>, zoals verschillende <code class="function">QML</code> poorten. De verbeterde <code class="function">Plasma</code> mini-player omvat een track eigenschappen dialoog en verbeterd filteren. Het Kickoff menu kan nu met alleen een toetsenbord gebruikt worden. De <code class="function">Netwerkbeheer</code> plasmoid heeft een verbeterde indeling en bruikbaarheid. De <code class="function">Public Transport</code> widget heeft ook aanzienlijke veranderingen ondergaan.
+					</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp9243728">3.1.4.3. Toepassingen</h5></div></div></div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						<span class="emphasis"><em><span class="application"><strong>Kontact</strong></span> Suite</em></span>: De meest complete PIM suite ter wereld, <span class="application"><strong>Kontact</strong></span>, kreeg vele foutreparaties en performanceverbeteringen.
+					</div></li><li class="listitem"><div class="para">
+						<span class="emphasis"><em>KDE Educatie</em></span>: <span class="productname">KDE-Edu</span> introduceert <span class="application"><strong>Pairs</strong></span>, een nieuw memory spel. <span class="application"><strong>Rocs</strong></span>, de grafische theorie toepassing voor studenten en leraren, kreeg een aantal verbeteringen. Algoritmes kunnen nu stap voor stap uitgevoerd worden, het undo en cancel -constructie systeem werkt beter en overlay grafieken worden nu ondersteund. <span class="application"><strong>Kstars</strong></span> heeft sorteren verbeterd door meridiaanovergangstijd / observatietijd en betere<span class="orgname">Digital Sky Survey</span>
+						afbeelding ophalen. <span class="application"><strong>Marble</strong></span> kreeg snelheidsoptimalisaties en ondersteuning van threads, en de gebruikersinterface is verbeterd. <span class="application"><strong>Marble</strong></span> routering extensies omvatten nu <span class="application"><strong>OSRM (Open Source Routing Machine)</strong></span>, ondersteuning voor fiets en voetgangers routes maken en een offline data model voor het beheren van offline routes maken en offline zoekdata. <span class="application"><strong>Marble</strong></span> kan nu posities van vliegtuigen tonen in de <span class="application"><strong>FlightGear</strong></span> simulator.
+					</div></li><li class="listitem"><div class="para">
+						<span class="emphasis"><em>KDE Games</em></span>: <span class="productname">KDE Games</span> is vernieuwd. <span class="application"><strong>Kajongg</strong></span>, het <span class="productname">KDE</span> Mahjongg spel, is flink opgepoetst waaronder tooltip spelhints, verbeterde robot AI en chat als spelers zich op dezelfde server bevinden (<span class="orgname">kajongg.org</span>
+						nu heeft een!). <span class="application"><strong>KGoldrunner</strong></span> heeft een aantal nieuwe niveaus (een bijdrage door Gabriel Miltschitzky) en <span class="application"><strong>KPatience</strong></span> behoudt game geschiedenis bij het opslaan. <span class="application"><strong>KSudoku</strong></span> heeft kleine verbeteringen gekregen, zoals betere hints, evenals zeven nieuwe tweedimensionale puzzelvormen en drie nieuwe 3-D vormen.
+					</div></li></ul></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp9258944">3.1.5. <span class="productname">MATE</span>
+		</h4></div></div></div><div class="para">
+			This is the initial release of <span class="productname">MATE Desktop</span> for Fedora 18. It brings back a classic, intuitive, and easy to use desktop that users have been long requesting. Install MATE by issuing the command: 
+<pre class="screen">
+	  <code class="command">yum groupinstall "MATE Desktop"</code>
+</pre>
+			 Support for <span class="application"><strong>MATE</strong></span> in Fedora is provided in <code class="varname">#fedora-mate</code> or <code class="varname">#mate</code> on <span class="orgname">irc.freenode.net</span>
+			of via de Fedora bugzilla.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp9264080">3.1.6. <span class="productname">Xfce</span>
+		</h4></div></div></div><div class="para">
+			Fedora 18 bevat de invoering van <span class="productname">Xfce 4.10</span>. Deze nieuwe vrijgave blijft trouw aan het doel van het aanbieden van een snelle, lichtgewicht en toch gebruiksvriendelijke bureaublad omgeving en heeft voornamelijk als doel om op verschillende manieren het bureaublad te polijsten en de gebruikerservaring te verbeteren. Hoogtepunten van deze versie zijn:
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					<span class="emphasis"><em>Nieuwe toepassing zoeker</em></span>: een nieuwe toepassing zoeker is helemaal herschreven en combineert de functionaliteit van de oude <span class="application"><strong>xfce4-appfinder</strong></span> met <span class="application"><strong>xfrun4</strong></span>
 				</div></li><li class="listitem"><div class="para">
-					ibus-m17n bevat standaard niet meer enkele m17n engines, zoals\nzh-pinyin, ko-han2 en de meeste kbd engines, omdat zij overlap vertonen met andere specifieke IME's zoals ibus-pinyin en ibus-hangul.
+					<span class="emphasis"><em>Verbeterd paneel</em></span>: het paneel heeft nu een alternatieve <span class="emphasis"><em>verticale display modus</em></span> (a deskbalk). Daarnaast kunnen paneel plug-ins in meerdere rijen gerangschikt worden, wat erg nuttig is voor deskbalk modus;
 				</div></li><li class="listitem"><div class="para">
-					ibus-fep is een nieuwe IBus front-end cliënt die gebruikt kan worden in consoles en terminals.
+					<span class="emphasis"><em>Verbeterde functionaliteit</em></span>: een <span class="emphasis"><em>nieuwe MIME type editor</em></span> waarmee je gemakkelijk toepassingen kunt veranderen die gebruikt worden voor het openen van verschillende bestandstypen. Uitgebreide functionaliteit voor de instellingen editor en de muis en touchpad instellingen dialoog welke <span class="emphasis"><em>nu ondersteunt tablets op een veel betere manier ondersteunen</em></span>;
 				</div></li><li class="listitem"><div class="para">
-					Indic Typing Booster ondersteunt nu Bengali, en er zijn beta versies voor Marathi, Hindi, Gujarati en Tamil talen beschikbaar.
-				</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2027664">3.3.2. Aziatische lettertypes</h4></div></div></div><a id="id2027671" class="indexterm"></a><a id="id2027679" class="indexterm"></a><a id="id2266318" class="indexterm"></a><a id="id2266326" class="indexterm"></a><a id="id2266334" class="indexterm"></a><a id="id2266342" class="indexterm"></a><a id="id2266350" class="indexterm"></a><a id="id2266358" class="indexterm"></a><a id="id2266366" class="indexterm"></a><a id="id2266374" class="indexterm"></a><a id="id1982254" class="indexterm"></a><a id="id1982262" class="indexterm"></a><a id="id1982270" class="indexterm"></a><div class="itemizedlist"><ul><li class="listitem"><div class="para">
-					Het standaard Koreaanse lettertype is van "Un" veranderd in "Nanum". Dit omdat de glyphes er in "Nanum" beter uitzien dan in "Un" en omdat "Nanum" een monospace variant heeft.
+					<span class="emphasis"><em>Verbeterde bureaublad afhandeling</em></span>: het is nu mogelijk toepassingen op te starten en bestanden op het bureaublad te openen met een <span class="emphasis"><em>enkele klik</em></span> van de muis. Bovendien kan het <span class="productnumber">4.10</span>
+					 bureaublad miniaturen weergeven en automatisch een lijst met achtergronden doorlopen.
 				</div></li><li class="listitem"><div class="para">
-					De standaard Vereenvoudigd Chinese lettertype is van "WenQuanYi Zen Hei" veranderd naar "WenQuanYi Zen Hei Sharp", welke het embedded bitmap lettertype gebruikt om Vereenvoudigd Chinees voor kleinere groottes duidelijker te renderen. Men kan het zenheiset gereedschap gebruiken om het standaard Vereenvoudigd Chinese lettertype terug te veranderen van de vorige standaard.
+					<span class="emphasis"><em>Vensters rangschikken</em></span>: de vensterbeheerder kan geconfigureerd worden om vensters naast elkaar schikken als ze naar de randen van het scherm gesleept worden. Het tab venster (Alt + Tab) ondersteunt meer flexibele thema's en cursortoets navigatie;
 				</div></li><li class="listitem"><div class="para">
-					Lohit lettertypes hebben nu de SIL OFL licentie.
-				</div></li><li class="listitem"><div class="para">
-					De nieuwe lettertype pakketten gubbi-fonts en navilu-fonts zijn toegevoegd voor de Kannada taal.
-				</div></li><li class="listitem"><div class="para">
-					De Culmus lettertypes zijn vernieuwd naar versie 0.121 met een volledig bewerkte Frank Ruehl familie, welke nu diakritisch en overhang ondersteunt.
-				</div></li></ul></div></div></div><div xml:lang="nl-NL" class="section" id="sect_Multimedia" lang="nl-NL"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="sect_Multimedia">3.4. Multimedia</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1724674">3.4.1. blender</h4></div></div></div><a id="id2349494" class="indexterm"></a><a id="id1885620" class="indexterm"></a><a id="id2252584" class="indexterm"></a><a id="id2110145" class="indexterm"></a><a id="id2120233" class="indexterm"></a><div class="para">
-			<span class="package">blender</span> is vernieuwd naar 2.6.1. Deze vrijgave bevat veel nieuwe eigenschappen inclusief een nieuwe, snellere rendering engine, bewegingstracking, dynamisch schilderen, een oceaan simulatie, en nog veel meer. Refereer naar <a href="http://www.blender.org/development/release-logs/blender-260/">http://www.blender.org/development/release-logs/blender-260/</a> en <a href="http://www.blender.org/development/release-logs/blender-261/">http://www.blender.org/development/release-logs/blender-261/</a> voor extra details.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1681147">3.4.2. calibre</h4></div></div></div><a id="id1785010" class="indexterm"></a><div class="para">
-			<span class="package">calibre</span> is vernieuw van 0.8.11 naar 0.8.39. Naast vele verbeteringen; verwijderde boeken gaan naar het recycle vat in plaats van gewoon verwijderd te worden, op de commandoregel kunnen meerdere bestandsnamen opgegeven worden, er is nu een voorkeursinstelling voor de grootte verandering als op groter/kleiner geklikt wordt, de pop-up die vraagt naar conversie formaten kan uitgezet worden, vele nieuwe en verbeterde recepten, en nog veel meer.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1974111">3.4.3. epris</h4></div></div></div><div class="para">
-			<span class="package">epris</span> is een kleine, lichtgewicht muziekspeler. <span class="emphasis"><em>epris</em></span> is nieuw in Fedora 17. Voor een (zeer) kort overzicht ga je naar <a href="http://code.google.com/p/epris/">http://code.google.com/p/epris/</a>
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2070502">3.4.4. epstool</h4></div></div></div><a id="id1885604" class="indexterm"></a><div class="para">
-			<span class="package">epstool</span> iis een hulpprogramma voor het aanmaken of extraheren van preview images in EPS bestanden, repareren van bounding boxes en converteren naar bitmaps. Het is ook nieuw in Fedora 17.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1790016">3.4.5. gimp</h4></div></div></div><a id="id1618141" class="indexterm"></a><div class="para">
-			<span class="package">gimp</span> is vernieuwd naar 2.8.0. Er zijn vele veranderingen, waarvan sommige heel belangrijk. Onder de hoogtepunten bevinden zich:
+					<span class="emphasis"><em>Betere keus van standaard toepassingen</em></span>: de <span class="productname">Xfce</span> pakketgroep en de <span class="productname">Xfce</span> spin bevatten nu de <span class="application"><strong>lightdm</strong></span> displaybeheerder en <span class="application"><strong>Yum Extender</strong></span> pakketbeheerder om te voldoen aan de doelstellingen van de bureaublad omgeving.
+				</div></li></ul></div><div class="para">
+			Een online rondleiding van de upstream wijzigingen in <span class="productname">Xfce 4.10</span> kan <a href="http://xfce.org/about/tour">hier</a> bekeken worden.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp15035952">3.1.7. <span class="productname">Sugar</span>
+		</h4></div></div></div><div class="para">
+			Educatieve gebruikers en ontwikkelaars kunnen in Fedora 18 genieten van de <span class="productname">Sugar leeromgeving "Sucrose" versie 0.98</span>.
+		</div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp15037968">3.1.7.1. De <span class="productname">Sugar</span>
+			 ervaring</h5></div></div></div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						<span class="emphasis"><em>Touching Sugar</em></span>: De nieuwste versie van <span class="productname">Sugar</span> heeft uitstekende ondersteuning voor aanraakschermen, wat aanraakvriendelijke gebruikersinterfaces levert en voordeel ondervindt van de verbeterde aanraak ondersteuning in X.
+					</div></li><li class="listitem"><div class="para">
+						<span class="emphasis"><em>Sorteren veranderd</em></span>: Gebruikers zullen merken dat de iconen in de home-view nu een alfabetische volgorde hebben.
+					</div></li><li class="listitem"><div class="para">
+						<span class="emphasis"><em>Cooking with Sugar</em></span>:Ontwikkelaars die activiteiten bouwen voor <span class="productname">Sugar</span> zullen een vernieuwde gereedschapskist gebaseerd op GTK3 ontdekken.
+					</div></li></ul></div></div></div></div><div xml:lang="nl-NL" class="section" lang="nl-NL"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp15874832">3.2. Productiviteit</h3></div></div></div><div class="para">
+		Het <span class="package">par</span> pakket is nieuw in Fedora. <span class="application"><strong>par</strong></span> is een filter voor het opnieuw formatteren van paragrafen. Commandoregel opties laten je het outputformaat nauwkeurig bepalen.
+	</div></div><div xml:lang="nl-NL" class="section" lang="nl-NL"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp5459632">3.3. Netwerken</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp4974016">3.3.1. Consistente netwerkapparaat naamgeving</h4></div></div></div><div class="para">
+			Fedora 18 blijft, net als in vorige vrijgaven, <span class="package">biosdevname</span> gebruiken om netwerkapparaat namen op een deterministische manier in te stellen. Ethernet poorten embedded op server moederborden krijgen de naam <code class="literal">em<em class="replaceable"><code>poort_nummer</code></em></code>, terwijl poorten op PCI kaarten de naam <code class="literal">p<em class="replaceable"><code>slot_nummer</code></em>p<em class="replaceable"><code>poort_nummer</code></em></code> krijgen, overeenkomstig met de chassis-labels. Deze eigenschap kan uitgezet worden door <code class="literal">biosdevname=0</code> door te geven op de kernel commandoregel, waarna de naamgeving ethX weer gebruikt zal worden.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp9097680">3.3.2. Betere netwerkbeveiliging met <span class="application"><strong>firewalld</strong></span></h4></div></div></div><div class="para">
+			De firewall daemon <span class="package">firewalld</span> zal de standaard firewall oplossing voor Fedora 18 zijn, ter vervanging van <span class="package">iptables</span>. Met het gebruik van <span class="application"><strong>firewalld</strong></span> zal het toepassen van veranderingen het beleid mogelijk worden zonder herladen, waardoor verbindingstoestanden niet onderbroken worden als de regels veranderd worden.
+		</div><div class="para">
+			A <code class="function">D-BUS</code> interface allows approved applications to communicate their status and present complex or temporary needs to the firewall without requiring hand configuration by an administrator. This improves support for dynamic environments such as <span class="application"><strong>libvirtd</strong></span>, which previously had to be restarted when <span class="application"><strong>iptables</strong></span> rules were changed.
+		</div><div class="para">
+			Handmatig beheer kan uitgevoerd worden met <code class="command">firewall-cmd</code>. Documentatie over firewalld kan gevonden worden in de meegeleverde man pagina's: <code class="filename">firewall-cmd(1)</code>, <code class="filename">firewalld(1)</code>, <code class="filename">firewalld.conf(5)</code>, <code class="filename">firewalld.icmptype(5)</code>, <code class="filename">firewalld.service(5)</code>, <code class="filename">firewalld.zone(5)</code>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp8484256">3.3.3. <span class="application"><strong>Team Driver</strong></span> verbetert NIC hechting</h4></div></div></div><div class="para">
+			Fedora 18 bevat <code class="function">Team Driver</code> die samenbundeling van meerdere netwerkinterfaces mogelijk maakt zodat ze als een enkel netwerkinterface optreden. Dit breidt samenwerkingsmogelijkheden uit wat aangeboden wordt door de bestaande binding-driver. Het biedt ook een in de gebruikersruimte bepaald, modulair alternatief voor de bestaande binding-driver. Informatie over het gebruik kan in de meegeleverde man pagina's gevonden worden: <code class="filename">teamd.conf(5)</code>, <code class="filename">teamd(8)</code>en <code class="filename">teamdctl(8)</code>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp6013712">3.3.4. Richt je eigen hotspot in</h4></div></div></div><div class="para">
+			<span class="package">NetworkManager</span> ondersteunt nu een verbeterde Hotspot of Internetverbindingsdeling modus voor <span class="trademark">WiFi</span>™, wat een veel soepelere verbindingsdeling geeft en beter ondersteund wordt door de hardware. Deze modus wordt alleen automatisch ingeschakeld voor nieuwe verbindingen om ervoor te zorgen dat bestaande configuraties ongewijzigd blijven.
+		</div></div></div><div xml:lang="nl-NL" class="section" lang="nl-NL"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp7072288">3.4. Internationalisatie</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp8688944">3.4.1. Invoermethoden</h4></div></div></div><div class="para">
+			<code class="filename">$HOME/.xinputrc</code> is verplaatst naar <code class="filename">$HOME/.config/imsettings/xinputrc</code>.
+		</div><div class="para">
+			<code class="filename">$HOME/.imsettings.log</code> is verplaatst naar <code class="filename">$HOME/.cache/imsettings/log</code>.
+		</div><div class="para">
+			De standaard engine voor Vereenvoudigd Chinees is veranderd naar <span class="package">ibus-libpinyin</span> (zie <a href="http://fedoraproject.org/w/index.php?title=Features/ibus-libpinyin">Features/ibus-libpinyin</a> voor meer details).
+		</div><div class="para">
+			Op de GNOME Desktop is <span class="package">im-chooser</span> nu verouderd, behalve in fall-back modus en met niet-ibus invoermethoden, omdat <span class="productname">GNOME 3.6</span> ibus als het standaard invoermethode systeem ondersteunt. Gebruikers moeten nu <span class="application"><strong>gnome-control-center</strong></span> gebruiken om hun invoermethoden in te stellen:
+			<div class="orderedlist"><ol class="arabic"><li class="listitem"><div class="para">
+						klik op het gebruikersmenu in de rechterbovenhoek van het paneel.
+					</div></li><li class="listitem"><div class="para">
+						selecteer <span class="emphasis"><em>Systeeminstellingen</em></span> in het menu.
+					</div></li><li class="listitem"><div class="para">
+						klik op de <span class="emphasis"><em>Regio en Taal</em></span> icoon.
+					</div></li><li class="listitem"><div class="para">
+						open de <span class="emphasis"><em>Invoermethoden</em></span> tab.
+					</div></li><li class="listitem"><div class="para">
+						klik op de <span class="emphasis"><em>+</em></span> icoon om invoerbronnen toe te voegen.
+					</div></li><li class="listitem"><div class="para">
+						kies een of meer invoerbronnen die je wilt toevoegen.
+					</div></li></ol></div>
+
+		</div><div class="para">
+			Als je een invoerbron die je in de lijst zoekt niet kunt vinden, probeer dan het volgende commando in een terminal en start het bureaublad opnieuw op:
+<pre class="screen"><code class="command">gsettings set org.gnome.desktop.input-sources show-all-sources true</code></pre>
+
+		</div><div class="para">
+			Er kan standaard geen sneltoets zijn voor het aan of uitzetten van de invoermethode. Je kunt dit mogelijk maken met de volgende stappen:
+			<div class="orderedlist"><ol class="arabic"><li class="listitem"><div class="para">
+						klik op de <span class="guilabel"><strong>sneltoetsinstellingen</strong></span> link in de <span class="guilabel"><strong>Invoerbronnen</strong></span> tab op <span class="guilabel"><strong>Systeeminstellingen</strong></span> of klik op de <span class="guibutton"><strong>Toetsenbord</strong></span> icoon bovenin en de <span class="guilabel"><strong>Sneltoets</strong></span> tab, de <span class="guilabel"><strong>Typen</strong></span> sectie op het linker paneel.
+					</div></li><li class="listitem"><div class="para">
+						klik op de <span class="guibutton"><strong>Schakel naar volgende bron</strong></span>, duw op <span class="keycap"><strong>Control</strong></span> + <span class="keycap"><strong>space</strong></span>.
+					</div></li></ol></div>
+
+		</div><div class="para">
+			Als er voor jouw taal standaard geen invoerbron geconfigureerd is, kun je deze toevoegen met de stappen hierboven als tijdelijke oplossing. Hier volgt een tabel van invoerbronnen corresponderend met de invoermethode engines:
+		</div><table border="1" id="idp3032720"><tr>
+				<td>
+					<span class="emphasis"><em>Input source name</em></span>
+				</td>
+				<td>
+					<span class="emphasis"><em>Input method engine</em></span>
+				</td>
+
+			</tr><tr>
+				<td>
+					Chinese (Chewing)
+				</td>
+				 <td>
+					ibus-chewing
+				</td>
+
+			</tr><tr>
+				<td>
+					Chinese (Intelligent Pinyin)
+				</td>
+				 <td>
+					ibus-libpinyin
+				</td>
+
+			</tr><tr>
+				<td>
+					Japanese (Anthy)
+				</td>
+				 <td>
+					ibus-anthy
+				</td>
+
+			</tr><tr>
+				<td>
+					Korean (Korean)
+				</td>
+				 <td>
+					ibus-hangul
+				</td>
+
+			</tr><tr>
+				<td>
+					* (inscript (m17n))
+				</td>
+				 <td>
+					ibus-m17n
+				</td>
+
+			</tr><tr>
+				<td>
+					* (itrans (m17n))
+				</td>
+				 <td>
+					ibus-m17n
+				</td>
+
+			</tr><tr>
+				<td>
+					* (phonetic (m17n))
+				</td>
+				 <td>
+					ibus-m17n
+				</td>
+
+			</tr></table><div class="para">
+			<span class="package">ibus-libpinyin</span> biedt een nieuwe invoer front-end voor Vereenvoudigd Chinees met een intelligente pinyin invoermethode die de gebruikersinput van Chinese karakters versnelt. Het kan <span class="package">ibus-pinyin</span> vervangen die ook nog steeds in Fedora beschikbaar is.
+		</div><div class="para">
+			<span class="package">ibus-typing-booster</span> is een voorspellende invoermethode voor het ibus platform. Het voorspelt volledige woorden gebaseerd op gedeeltelijke input. Je kunt dan eenvoudig het gewenste woord kiezen in een lijst met suggesties en je typesnelheid en spelling verbeteren. <span class="package">ibus-typing-booster</span> ondersteunt op dit moment de volgende Aziatische en Europese talen:
 			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-						<span class="package">gimp</span> 2.8 introduceert een optionele enkel-venster mode. Je kunt omschakelen tussen de standaard meerdere-vensters mode en de nieuwe enkel-venster mode met de Single-window mode selectievakje in het Vensters menu.
+						Assamese, Bengali, Farsi, Gujarati, Hindi, Kannada, Maithili, Marathi, Nepali, Oriya, Punjabi, Tamil, Telugu, Urdu
 					</div></li><li class="listitem"><div class="para">
-						<span class="package">gimp</span> staat nu dialogen toe die in een dock venster in meerdere kolommen geplaatst kunnen worden.
-					</div></li><li class="listitem"><div class="para">
-						De dock balken zijn verwijderd en vervangen door overlaid highlights. De dockable drag handel is verwijderd en de dock menu knop is naar de tabs verplaatst. Een nieuwe Automatische tab stijl is toegevoegd die dockable tabs de beschikbare ruimte laat gebruiken.
-					</div></li><li class="listitem"><div class="para">
-						Een tamelijk grote conceptuele verandering is dat het opslaan en exporteren van afbeeldingen nu duidelijk verschillende activiteiten zijn. Het opslaan van een afbeelding kan alleen in het XCF formaat wat het native bestandsformaat van GIMP is, die in staat is om allerlei soorten informatie op te slaan nodig voor werk in voortgang.
-					</div></li><li class="listitem"><div class="para">
-						Voor complexe composities is een platte laag structuur erg beperkend. GIMP 2.8 laat gebruikers hun composities beter organiseren met de introductie van laag groepen waarmee lagen om boomstructuren georganiseerd kunnen worden. Laag groepen zijn volledig scriptbaar met de GIMP plug-in API.
-					</div></li><li class="listitem"><div class="para">
-						Tekst bewerken met het Tekst gereedschap wordt nu op-canvas uitgevoerd in plaats van in een apart venster.
-					</div></li><li class="listitem"><div class="para">
-						Verbeteringen zijn ook aangebracht in de grootte ingang widget, die gebruikt wordt voor de invoer van de meeste x, y, breedte en hoogte parameters. In de schaal dialoog, bijvoorbeeld, is het ni mogelijk om '50%' te schrijven in het Breedte veld om de afbeelding naar 50% van de breedte te schalen. Expressies zoals '30in + 40px' en '4 * 5.4in' werken ook.
+						Engels, Deens, Frans
 					</div></li></ul></div>
 
 		</div><div class="para">
-			Er zijn vele ander verbeteringen die bekeken kunnen worden op <a href="http://www.gimp.org/release-notes/gimp-2.8.html">http://www.gimp.org/release-notes/gimp-2.8.html</a>
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2039397">3.4.6. idjc</h4></div></div></div><a id="id2039404" class="indexterm"></a><a id="id2039412" class="indexterm"></a><a id="id2039420" class="indexterm"></a><a id="id2039432" class="indexterm"></a><a id="id2039440" class="indexterm"></a><div class="para">
-			Internet DJ Console is een project om een krachtige doch gemakkelijk te gebruiken bron cliënt te bieden voor iemand die geïnteresseerd is in streaming live radio shows via het Internet met Shoutcast of Icecast servers. <span class="package">idjc</span> verschijnt nu voor het eerst in Fedora.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2344765">3.4.7. vpmk</h4></div></div></div><a id="id2344772" class="indexterm"></a><a id="id2344780" class="indexterm"></a><a id="id2344788" class="indexterm"></a><div class="para">
-			Virtual MIDI Piano Keyboard is een MIDI gebeurtenis generator en ontvanger. Het produceert zelf geen geluid, maar kan gebruikt worden voor het aansturen van een MIDI synthesizer (hardware of software, intern of extern). <span class="package">vpmk</span> is nieuw in Fedora.
-		</div></div></div><div xml:lang="nl-NL" class="section" lang="nl-NL"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1618242">3.5. Afdrukken</h3></div></div></div><a id="id1887554" class="indexterm"></a><a id="id2346509" class="indexterm"></a><a id="id2026136" class="indexterm"></a><div class="para">
-	</div><div class="para">
-		Fedora 17 bevat ondersteuning voor de CUPS colord-kleurprofiel service. Hiermee kan de gebruiker kleurprofielen definiëren die de natuurgetrouwheid van afgedrukte kleuren verbetert.
-	</div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Changes_for_Sysadmin.html"><strong>Terug</strong>2. Veranderingen in Fedora voor systeembeheerders</a></li><li class="up"><a accesskey="u" href="#"><strong>Omhoog</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Begin</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Developers.html"><strong>Volgende</strong>4. Veranderingen in Fedora voor ontwikkelaars</a></li></ul></body></html>
+			Als je niet-ibus invoermethoden wilt gebruiken zoals fcitx en uim enz., verwijder je eerst het <span class="package">ibus</span> pakket van het systeem en start je de desktop opnieuw op. <span class="package">im-chooser</span> zal zelfs in GNOME weer aan het werk gaan.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp8822672">3.4.2. Lettertypen</h4></div></div></div><div class="para">
+			<span class="package">fonts-tweak-tool</span> ondersteunt nu de taalvolgorde om te bepalen welke taal voorrang heeft bij het tonen van tekst en de lettertype eigenschappen voor het veranderen van de sub-pixel rendering en hinting configuratie per lettertype.
+		</div><div class="para">
+			De Paktype lettertypes zijn vernieuwd met uitbreidingen voor betere dekking.
+		</div><div class="para">
+			Nieuwe lettertypes <span class="package">lohit-tamil-classical-fonts</span> voor Tamil en <span class="package">kalapi-fonts</span> voor Gujarati zijn toegevoegd.
+		</div><div class="para">
+			<span class="package">madan-fonts</span> voor Nepali, <span class="package">navilu-fonts</span> en <span class="package">gubbi-fonts</span> voor Kannada ondersteunen nu de minimaal vereiste karakters volgens het fontconfig bestand voor hun respectivelijke talen.
+		</div><div class="para">
+			<code class="filename">$HOME/.fonts.conf</code> is verouderd. Gebruikers worden aangemoedigd om het te verplaatsen naar <code class="filename">$HOME/.config/fontconfig/fonts.conf</code>.
+		</div><div class="para">
+			<code class="filename">$HOME/.fonts.conf.d</code> is verouderd. Gebruikers worden aangemoedigd om het te verplaatsen naar <code class="filename">$HOME/.config/fontconfig/conf.d</code>
+		</div><div class="para">
+			Alle niet ingeschakelde fontconfig configuratiebestanden in <code class="filename">/etc/fonts/conf.avail</code> zijn verplaatst naar <code class="filename">/usr/share/fontconfig/conf.avail</code>. Als je een lokale symbolische links hebt van de oude locatie moet je deze vernieuwen.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp8832752">3.4.3.  Utilities </h4></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp8833552">3.4.3.1. <code class="command">localectl</code></h5></div></div></div><div class="para">
+				<code class="command">localectl</code> is a new utility used to query and change the system locale and keyboard layout settings. Settings used in text consoles and inherited by deskop enviromnents. <code class="command">localectl</code> also accepts a hostname argument to administer remote systems over ssh.
+			</div></div></div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Changes_for_Sysadmin.html"><strong>Terug</strong>2. Veranderingen in Fedora voor systeembeheerders</a></li><li class="up"><a accesskey="u" href="#"><strong>Omhoog</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Begin</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Developers.html"><strong>Volgende</strong>4. Veranderingen in Fedora voor ontwikkelaars</a></li></ul></body></html>

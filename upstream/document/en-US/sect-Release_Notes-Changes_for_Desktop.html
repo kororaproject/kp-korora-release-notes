@@ -1,431 +1,264 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>3. Changes in Fedora for Desktop Users</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta name="generator" content="publican 2.8" /><meta name="package" content="Fedora-Release_Notes-17-en-US-1-0" /><link rel="home" href="index.html" title="Release Notes" /><link rel="up" href="index.html" title="Release Notes" /><link rel="prev" href="sect-Release_Notes-Changes_for_Sysadmin.html" title="2. Changes in Fedora for System Administrators" /><link rel="next" href="sect-Release_Notes-Changes_for_Developers.html" title="4. Changes in Fedora for Developers" /></head><body><p id="title"><a class="left" href="http://www.fedoraproject.org"><img src="Common_Content/images/image_left.png" alt="Product Site" /></a><a class="right" href="http://docs.fedoraproject.org"><img src="Common_Content/images/image_right.png" alt="Documentation Site" /></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Changes_for_Sysadmin.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Developers.html"><strong>Next</strong></a></li></ul><div class="section" id="sect-Release_Notes-Changes_for_Desktop"><div class="titlepage"><div><div keep-together.within-column="always"><h2 class="title" id="sect-Release_Notes-Changes_for_Desktop">3. Changes in Fedora for Desktop Users</h2></div></div></div><div xml:lang="en-US" class="section" id="sect-Desktop" lang="en-US"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="sect-Desktop">3.1. Desktop</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1640009">3.1.1. KDE</h4></div></div></div><a id="id1579489" class="indexterm"></a><a id="id2335715" class="indexterm"></a><div class="para">
-			Fedora 17 features the KDE 4.8 Software Compilation. KDE features three components. KDE Platform is the foundation for all KDE-based applications. KDE Plasma Workspace provides you with ways to manage how you use applications. KDE Applications use the Platform and Plasma Workspace to give you a fully-integrated experience.
-		</div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="id1527401">3.1.1.1. KDE Platform</h5></div></div></div><a id="id1579734" class="indexterm"></a><a id="id2341959" class="indexterm"></a><a id="id1772304" class="indexterm"></a><div class="para">
-				The KDE Platform provides services for all KDE-based applications and the Plasma Workspace. KDE Platform 4.8 features some new technology along with dramatic increases in performance and stability.
-			</div><div class="para">
-				KDE now offers <a href="https://qt.nokia.com/qtquick/"> QtQuick</a>. QtQuick is an easy way to make small applications (applets) for Qt environments like KDE. KDE has <span class="package">Plasma QtQuick Components</span> that help you write KDE Plasma Workspace applications quickly.
-			</div><div class="para">
-				<span class="package">KSecretService</span> is a new, secure password-storage system. <span class="package">KWallet</span> manages passwords for KDE applications, and <span class="package">KSecretService</span> makes those passwords available to non-KDE applications.
-			</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="id2334660">3.1.1.2. KDE Plasma Workspaces</h5></div></div></div><a id="id1528763" class="indexterm"></a><div class="para">
-				The KDE Plasma Workspaces are two desktop environments that manage how you work with applications. The Plasma Desktop Workspace has a more traditional appearance, and the Netbook Plasma Workspace has a modified appearance for smaller screens and mobile devices.
-			</div><div class="para">
-				The <span class="package">Window Switcher</span> now has six possible layouts. You can choose between layouts in the <span class="package">System Settings</span> application.
-			</div><div class="para">
-				The <span class="package">KWin</span> window manager is improved. <span class="package">KWin</span> offers significantly improved performance.
-			</div><div class="para">
-				The "Power Management" pane of <span class="package">System Settings</span> is redesigned and simplified. Power management settings now work on computers with multiple display devices. You can also now modify power management settings to change when you are in a certain "Activity."
-			</div><div class="para">
-				You can use the new <span class="emphasis"><em>Icon Tasks</em></span> Plasma widget to manage your applications on a taskbar as an icon, like in other popular operating systems.
-			</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="id1579788">3.1.1.3. KDE Applications</h5></div></div></div><a id="id1579794" class="indexterm"></a><a id="id1579802" class="indexterm"></a><a id="id1548137" class="indexterm"></a><a id="id1548145" class="indexterm"></a><a id="id1548153" class="indexterm"></a><a id="id1548161" class="indexterm"></a><a id="id1548169" class="indexterm"></a><div class="para">
-				The KDE Applications are all of the basic applications, and many advanced applications, that you need.
-			</div><div class="para">
-				<span class="package">Dolphin</span> is the file management application. <span class="package">Dolphin</span> now displays files more accurately, adapts to different computer hardware, and is more visually appealing.
-			</div><div class="para">
-				<span class="package">Gwenview</span> is the image viewing application. You can see your position in a zoomed-in image with the new, translucent position indicator. You will also notice minor visual and performance improvements.
-			</div><div class="para">
-				<span class="package">Okular</span> is the text document viewing application. You can now select text more easily. Several bugs are fixed, and multi-column text is selected properly.
-			</div><div class="para">
-				The <span class="package">Kate</span> text editor features a new "Search and Replace" plugin, indicators of changed lines, and a new "modelines" editor that allows you to set document variables like whether to use tabs or spaces more easily. Fedora 17 has new documentation for <span class="package">Kate</span>, accessible through the application's "Help" menu.
-			</div><div class="para">
-				<span class="package">Cantor</span> is an application for mathematics packages. <span class="package">Cantor</span> now supports Qalculate and Scilab.
-			</div><div class="para">
-				The <span class="package">Marble</span> virtual globe and atlas application is now integrated with <span class="package">KRunner</span>. You can search GPS coordinates and <span class="package">Marble</span> bookmarks through <span class="package">KRunner</span>. You can also view route elevation information, track earth satellites, and display OpenStreetMap files in vector format.
-			</div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1599920">3.1.2. GNOME</h4></div></div></div><a id="id2309498" class="indexterm"></a><a id="id2309506" class="indexterm"></a><a id="id2309514" class="indexterm"></a><a id="id2309522" class="indexterm"></a><div class="para">
-			Fedora 17 features the GNOME 3.4 desktop environment.
-		</div><div class="para">
-			Some highlights of GNOME 3.4 include: 
-			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-						Some applications' menus are now integrated with the GNOME Shell. The new menus reduce visual clutter and help unite applications' appearance.
-					</div></li><li class="listitem"><div class="para">
-						<span class="package">Boxes</span> is a new GNOME 3 app. You can use Boxes to access other computers and virtual machines on the same or another computer.
-					</div></li><li class="listitem"><div class="para">
-						The existing <span class="package">Documents</span> app is improved. New features include collections, support for removable devices, support for sharing documents, support for printing documents, portrait mode, and integration with the GNOME Shell overview search box.
-					</div></li><li class="listitem"><div class="para">
-						The high contrast and high contrast inverse theme icons are more consistent with standard theme icons.
-					</div></li><li class="listitem"><div class="para">
-						Users with low vision can customize the brightness and contrast of their display through GNOME Shell.
-					</div></li><li class="listitem"><div class="para">
-						The network panel is redesigned. New features include easily knowing whether you are connected to the Internet, an "airplane mode" switch to disable network activity, a "forget network" button to remove unwanted connections, and an integrated password dialog.
-					</div></li><li class="listitem"><div class="para">
-						GNOME Keyring dialogs are now integrated with GNOME Shell.
-					</div></li><li class="listitem"><div class="para">
-						New features for users with "Wacom" graphics tablets include the ability to: 
-						<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-									calibrate the tablets
-								</div></li><li class="listitem"><div class="para">
-									configure button mappings
-								</div></li><li class="listitem"><div class="para">
-									assign monitors to the device
-								</div></li><li class="listitem"><div class="para">
-									configure multiple tablets
-								</div></li><li class="listitem"><div class="para">
-									store unique configurations per device
-								</div></li><li class="listitem"><div class="para">
-									identify tablets and their capabilities
-								</div></li></ul></div>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>3. Changes in Fedora for Desktop Users</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta name="generator" content="publican 2.8" /><meta name="package" content="Fedora-Release_Notes-18-en-US-1-0" /><link rel="home" href="index.html" title="Release Notes" /><link rel="up" href="index.html" title="Release Notes" /><link rel="prev" href="sect-Release_Notes-Changes_for_Sysadmin.html" title="2. Changes in Fedora for System Administrators" /><link rel="next" href="sect-Release_Notes-Changes_for_Developers.html" title="4. Changes in Fedora for Developers" /></head><body><p id="title"><a class="left" href="http://www.fedoraproject.org"><img src="Common_Content/images/image_left.png" alt="Product Site" /></a><a class="right" href="http://docs.fedoraproject.org"><img src="Common_Content/images/image_right.png" alt="Documentation Site" /></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Changes_for_Sysadmin.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Developers.html"><strong>Next</strong></a></li></ul><div class="section" id="sect-Release_Notes-Changes_for_Desktop"><div class="titlepage"><div><div keep-together.within-column="always"><h2 class="title" id="sect-Release_Notes-Changes_for_Desktop">3. Changes in Fedora for Desktop Users</h2></div></div></div><div xml:lang="en-US" class="section" id="sect-Desktop" lang="en-US"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="sect-Desktop">3.1. Desktop</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp26326240">3.1.1. General</h4></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp25834624">3.1.1.1. <code class="function">mdns</code> available by default</h5></div></div></div><div class="para">
+				When installing the "Graphical Desktop" software selection, an <code class="function">MDNS</code> client is included. This allows out of the box discovery of devices on the local network. No private information is published via <code class="function">MDNS</code> by default.
+			</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp25893264">3.1.1.2. <span class="application"><strong>systemd</strong></span> handles display managers</h5></div></div></div><div class="para">
+				Switching display managers is no longer done by editing <code class="filename">/etc/sysconfig/desktop</code>. Instead use <code class="command">systemctl enable --force <em class="replaceable"><code>displaymanager</code></em>.service</code> to enable the installed display manager of your choice.
+			</div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp22074992">3.1.2. Cinnamon</h4></div></div></div><div class="para">
+			Fedora users now have the option of using <span class="application"><strong>Cinnamon</strong></span>, an advanced desktop environment based on <span class="application"><strong>GNOME3</strong></span>. <span class="application"><strong>Cinnamon</strong></span> takes advantage of advanced features provided by the <span class="application"><strong>GNOME</strong></span> backend while providing users with a more traditional, accessible desktop experience. Install Cinnamon with the command: 
+<pre class="screen">
+	    <code class="command">yum groupinstall "Cinnamon Desktop"</code>
+</pre>
 
-					</div></li><li class="listitem"><div class="para">
-						More configurable settings for the built-in GNOME Shell magnification feature.
-					</div></li></ul></div>
-
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1647797">3.1.3. Sugar</h4></div></div></div><a id="id1647803" class="indexterm"></a><a id="id1541057" class="indexterm"></a><a id="id1541065" class="indexterm"></a><div class="para">
-			Fedora 17 features the Sugar 0.96 desktop environment. Some features include: 
-			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-						Removal of HippoCanvas for move to GTK+ 3
-					</div></li><li class="listitem"><div class="para">
-						Support for NetworkManager 0.9
-					</div></li><li class="listitem"><div class="para">
-						sugar-toolkit based on GTK+ 3
-					</div></li><li class="listitem"><div class="para">
-						Initial support for PyPi
-					</div></li><li class="listitem"><div class="para">
-						New Browse Activity using GTK+ 3, webkitgtk, and gobject-introspection
-					</div></li><li class="listitem"><div class="para">
-						New Read Activity using GTK+ 3 and gobject-introspection
-					</div></li><li class="listitem"><div class="para">
-						Fixes for various bugs and improvements to several Activities
-					</div></li></ul></div>
-
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1541137">3.1.4. Removable media changes mount points</h4></div></div></div><div class="para">
-			Removable media mounted in the user's session, such as hot-plugged USB drives, will be mounted in a user-specific directory. Mount points are provisioned in <code class="filename">/run/media/$USER/</code> with permissions allowing <em class="parameter"><code>$USER</code></em> exclusive access.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1541157">3.1.5. Multi-Seat</h4></div></div></div><a id="id1541164" class="indexterm"></a><a id="id1541172" class="indexterm"></a><div class="para">
-			The ability to use multi-seat Linux configurations has been available for some time, but in the past has always required complex configuration. For the first time Fedora 17 provides completely automatic multi-seat configuration.
-		</div><div class="para">
-			To use this feature, simply plug in a USB dock such as the <a href="http://www.amazon.com/Plugable-Universal-DisplayLink-1920x1080-High-Speed/dp/B002PONXAI/ref=sr_1_3?ie=UTF8&amp;qid=1335904746&amp;sr=8-3">Plugable Docking Station</a>, with a monitor, mouse and keyboard, and a new desktop appears.
-		</div><div class="para">
-			For additional details on this new feature refer to the following articles: 
-			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-						<a href="http://0pointer.de/blog/projects/multi-seat.html">http://0pointer.de/blog/projects/multi-seat.html</a>
-					</div></li><li class="listitem"><div class="para">
-						<a href="http://www.phoronix.com/scan.php?page=article&amp;item=plugable_multiseat_kick">http://www.phoronix.com/scan.php?page=article&amp;item=plugable_multiseat_kick</a>
-					</div></li></ul></div>
-
-		</div></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id2312333">3.2. Productivity</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1649760">3.2.1. cherrytree</h4></div></div></div><a id="id1526225" class="indexterm"></a><a id="id1639671" class="indexterm"></a><a id="id1614390" class="indexterm"></a><div class="para">
-			<span class="package">cherrytree</span> is new to Fedora. It is a hierarchical note taking application, featuring rich text and syntax highlighting, storing data in a single XML or SQLite file.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1540410">3.2.2. evolution</h4></div></div></div><a id="id1565433" class="indexterm"></a><div class="para">
-			<span class="package">evolution</span> has been updated to 3.3.5. This is a bugfix release.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2311685">3.2.3. libreoffice</h4></div></div></div><a id="id1600136" class="indexterm"></a><div class="para">
-			<span class="package">libreoffice</span> has been updated to 3.5.0.3.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2343444">3.2.4. lemonpos</h4></div></div></div><a id="id1523906" class="indexterm"></a><a id="id1540544" class="indexterm"></a><a id="id2313591" class="indexterm"></a><div class="para">
-			<span class="package">lemonpos</span>, Lemon in short, is an open source Point of Sale software targeted for micro, small and medium businesses. MySQL is employed for data management and storage, and can be used a single database with many POS terminals on a network.
-		</div><div class="para">
-			Lemon provides a modern themeable and easy to use interface, a search panel, a price-checker tool, an administration tool for managing your store, printed reports, and more...
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2343599">3.2.5. rachota</h4></div></div></div><a id="id1527496" class="indexterm"></a><a id="id1528731" class="indexterm"></a><div class="para">
-			<span class="package">rachota</span> is also new to Fedora. It is a portable application for timetracking different projects. It runs everywhere. It displays time data in diagram form, creates customized reports and invoices or analyses measured data and suggests hints to improve user's time usage. It is a totally portable yet personal timetracker.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1528751">3.2.6. scribus</h4></div></div></div><a id="id1528758" class="indexterm"></a><a id="id1644177" class="indexterm"></a><a id="id1644189" class="indexterm"></a><a id="id1644201" class="indexterm"></a><a id="id1644213" class="indexterm"></a><a id="id1644225" class="indexterm"></a><a id="id2312376" class="indexterm"></a><a id="id2312384" class="indexterm"></a><a id="id2312392" class="indexterm"></a><a id="id2312400" class="indexterm"></a><a id="id2312408" class="indexterm"></a><a id="id2312416" class="indexterm"></a><a id="id2312424" class="indexterm"></a><a id="id2312432" class="indexterm"></a><a id="id1622703" class="indexterm"></a><a id="id1622711" class="indexterm"></a><div class="para">
-			Scribus has been updated to 1.4.0, a major upgrade: 
-			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-						Feature enhancements to object handling (e.g. transform tools like in advanced drawing programs), with improvements to existing features like the Scrapbook and the Image Manager.
-					</div></li><li class="listitem"><div class="para">
-						Many advanced options for text and typography, like character styles, optical margins, or glyph extension. Undo/Redo is finally available for almost all text-related actions, and a new script enables replacing straight quotes with typographical quotation marks based on language settings. Usability improvements include better cursor placement and movement, faster layout on canvas and interaction between linked frames.
-					</div></li><li class="listitem"><div class="para">
-						New features for vector objects, like Boolean path operations, vector effects or a line style editor.
-					</div></li><li class="listitem"><div class="para">
-						Major improvements to the handling of fills, like pattern fill, more gradient types, support for external color palette formats (AI, EPS, GPL, PostScript, SOC), and many new color palettes, including those from commercial vendors like Resene and dtp studio, as well as national/government standards.
-					</div></li><li class="listitem"><div class="para">
-						A new frame type called "Render Frame" allows for rendering (and subsequently exporting) the output of every program that can create PostScript, PDF or PNG files via the command line (e.g. LaTeX, Lilypond, POV-Ray) inside Scribus. The initial version was developed as a project for Google Summer of Code, and this project has developed to allow import of externally produced documents, scientific publications and formulas. More renderers can be added with a simple configuration file.
-					</div></li><li class="listitem"><div class="para">
-						Vector import filters: Scribus 1.4.0 provides new import filters for the following file formats: Adobe Illustrator (both EPS and PDF-based), Macintosh Picture (PICT), Windows Metafile (WMF), Xfig (FIG), Calamus Vector Graphics (CVG), Kivio Stencils (SML), and DIA Shapes (SHAPE).
-					</div></li><li class="listitem"><div class="para">
-						Regarding bitmap images: the handling of Photoshop files has seen many major improvements, like support of multiple clipping paths or PSD layers. The Image Manager has been rewritten, and new non-destructive image effects have been added.* Moreover, Scribus 1.4.0 now supports EXIF data in images, and import of Windows and OS/2 bitmaps (BMP) has been re-enabled.
-					</div></li><li class="listitem"><div class="para">
-						Among the major enhancements to Scribus's pre-press features, printing marks and the display of ink coverage in the Print Preview are the most important. In addition, Scribus now enables conversion of spot colors to process colors during PDF and PostScript export with a single click.
-					</div></li><li class="listitem"><div class="para">
-						PDF export has seen major improvements as well. Scribus can now export to PDF 1.5, including PDF layers. Another new feature is the option to embed EPS and PDF files in exported PDFs as an alternative to rasterizing them. Also, both font embedding and substitution have been improved.
-					</div></li><li class="listitem"><div class="para">
-						For color management, Scribus 1.4.0 now supports both littleCMS version 1 and 2. It's also possible to enable color management with a single click from the main window.
-					</div></li><li class="listitem"><div class="para">
-						Additionally, the Scribus Team has added a feature to emulate color blindness on screen.
-					</div></li><li class="listitem"><div class="para">
-						Hundreds of minor and major usability improvements have been added.
-					</div></li><li class="listitem"><div class="para">
-						The included scripts have been updated, including the addition of the "Autoquote" script in the Script menu to convert straight quotes in a text frame to correct quotation marks for many languages.
-					</div></li><li class="listitem"><div class="para">
-						Scribus 1.4.0 is being shipped with many more templates than previous versions.
-					</div></li><li class="listitem"><div class="para">
-						The content of the Help System has been rewritten and updated.
-					</div></li></ul></div>
-
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1523300">3.2.7. timeline</h4></div></div></div><a id="id1523306" class="indexterm"></a><div class="para">
-			Also new to Fedora 17 is <span class="package">timeline</span>, a cross-platform application for displaying and navigating events on a timeline. It can: 
-			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-						Organize events in hierarchical categories
-					</div></li><li class="listitem"><div class="para">
-						Move and resize events with the mouse
-					</div></li><li class="listitem"><div class="para">
-						Duplicate events
-					</div></li><li class="listitem"><div class="para">
-						Search events
-					</div></li><li class="listitem"><div class="para">
-						Go to a specific date
-					</div></li><li class="listitem"><div class="para">
-						Display a different representation depending on zoom level
-					</div></li><li class="listitem"><div class="para">
-						Export to an image
-					</div></li></ul></div>
-
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2325543">3.2.8. vym</h4></div></div></div><a id="id2325550" class="indexterm"></a><div class="para">
-			<span class="package">vym</span> has been updated to version 2.0.6. This upgrade include many new features:
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp21982352">3.1.3. <span class="application"><strong>GNOME</strong></span> </h4></div></div></div><div class="para">
+			Fedora 18 includes the newest <span class="application"><strong>GNOME</strong></span> release, version 3.6. You will notice these changes:
 		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
-					General 
+					<span class="emphasis"><em>More Accessible User Interface</em></span>: Previous <span class="application"><strong>GNOME3</strong></span> releases add accessibility features, such as the screen reader and on-screen keyboard. <span class="application"><strong>GNOME 3.6</strong></span> enables these features by default. To use accessibility features, simply choose the <code class="function">"Universal Access"</code> icon from the <span class="application"><strong>GNOME Shell</strong></span>. <span class="application"><strong>GNOME 3.6</strong></span> also adds brightness, contrast, and inversion capabilities to <span class="application"><strong>Magnifier</strong></span>
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>Better Integration with Distributed ("Cloud-Based") Document Systems</em></span>: The <span class="application"><strong>GNOME Documents</strong></span> application for file management already integrates with <span class="productname">Google Docs</span>. <span class="application"><strong>GNOME 3.6</strong></span> adds support for <span class="productname">Microsoft SkyDrive</span>, for users with a <span class="productname">Windows Live</span> account.
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>Support for ActiveSync Accounts</em></span>: You can use the <span class="application"><strong>GNOME</strong></span> <code class="function">online accounts</code> feature to connect your desktop with your online accounts. GNOME already includes a connector for <span class="trademark">Google</span>™ accounts, and <span class="productname">GNOME 3.6</span> adds a connector for <span class="productname">ActiveSync</span> (or <span class="productname">Microsoft Exchange</span>) accounts.
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>Improved Text Shaping</em></span>: <span class="productname">GNOME 3.6</span> uses an improved text shaping engine. You will notice higher-quality text rendering and memory savings. The new text shaping engine allows further improvements in future <span class="application"><strong>GNOME</strong></span> versions.
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>More Efficient Input Source Selection</em></span>: <span class="productname">GNOME 3.6</span> uses only the <code class="function">IBus</code> input method framework. You can choose an input device (like a keyboard) and the key layout, and all <span class="application"><strong>GNOME</strong></span> applications will use these settings.
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>Initial Setup from <span class="application"><strong>GNOME</strong></span></em></span>: When you acquire a new computer or install a new operating system, <span class="productname">GNOME 3.6</span> will help you with the following important tasks: 
 					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-								File handling 
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											Autosave
-										</div></li><li class="listitem"><div class="para">
-											Automatic backups
-										</div></li><li class="listitem"><div class="para">
-											vym now checks regularily if map has changed on disk and
-										</div></li><li class="listitem"><div class="para">
-											Multiple files can be selected while loading maps and images
-										</div></li><li class="listitem"><div class="para">
-											Restore last session
-										</div></li></ul></div>
-
+								Connect to a network
 							</div></li><li class="listitem"><div class="para">
-								Multiple mapcenters in one map
+								Make a user account
 							</div></li><li class="listitem"><div class="para">
-								Manpage added
+								Set your time zone and location
 							</div></li><li class="listitem"><div class="para">
-								New translations
+								Integrate with online accounts
 							</div></li><li class="listitem"><div class="para">
-								Code 
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											Completely ported to Qt4 now.
-										</div></li><li class="listitem"><div class="para">
-											HTML export now native code without XSLT transformation
-										</div></li><li class="listitem"><div class="para">
-											DBUS support (partly)
-										</div></li></ul></div>
-
+								Learn basic information about <span class="application"><strong>GNOME Shell</strong></span>
 							</div></li></ul></div>
 
-				</div></li></ul></div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
-					Import/Export 
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>Improved Notification System</em></span>: <span class="application"><strong>GNOME 3.0</strong></span> included a new way for applications to send notifications to users, called <code class="function">Message Tray</code>. <span class="productname">GNOME 3.6</span> enhances the <code class="function">Message Tray</code> to help users remain focused and know whether notifications are urgent. For more information, refer to the <a href="https://live.gnome.org/GnomeShell/Design/Guidelines/MessageTray">GNOME documentation</a>.
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>Easier Printer Management</em></span>: <span class="productname">GNOME 3.6</span> includes improvements to the <code class="function">Printer</code> panel in <span class="application"><strong>GNOME Control Center</strong></span>. You can more easily find and configure local and network printers, choose drivers, and set default options.
+				</div></li><li class="listitem"><div class="para">
+					<span class="emphasis"><em>More Useful Lock Screen</em></span>: When you "lock" your desktop or return from the "Sleep" state, the lock screen in <span class="productname">GNOME 3.6</span> offers more information and new abilities: 
 					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-								Last export can be repeated
+								See the date and time
 							</div></li><li class="listitem"><div class="para">
-								Simple export to CSV spreadsheet
+								Control music and media players, and adjust the volume level
 							</div></li><li class="listitem"><div class="para">
-								Most important exports can be scripted now
+								View whether you have new message and notifications
 							</div></li><li class="listitem"><div class="para">
-								ASCII exports show URLs
+								Change basic network connection settings
 							</div></li><li class="listitem"><div class="para">
-								Import of FreeMind maps
+								Choose how to unlock your desktop
 							</div></li></ul></div>
 
-				</div></li></ul></div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
-					Handling 
-					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-								Quick sorting and moving using "targets" 
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											Targets can be defined by a single keystroke
-										</div></li><li class="listitem"><div class="para">
-											"Goto" selects target
-										</div></li><li class="listitem"><div class="para">
-											"Move to" moves selection to target without moving view. Very useful for quickly sorting things
-										</div></li></ul></div>
-
-							</div></li><li class="listitem"><div class="para">
-								Brainstorm mode
-							</div></li><li class="listitem"><div class="para">
-								Add/Delete 
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											Insert a branch and select its children
-										</div></li><li class="listitem"><div class="para">
-											Removing children of a branch
-										</div></li><li class="listitem"><div class="para">
-											Removing a branch while keeping its children
-										</div></li></ul></div>
-
-							</div></li><li class="listitem"><div class="para">
-								xLinks 
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											Can now be comfortably selected by clicking
-										</div></li><li class="listitem"><div class="para">
-											Very easy to follow a xlink by clicking into the corner of the branch, where it begins
-										</div></li><li class="listitem"><div class="para">
-											Also, the "F" key can be used to follow
-										</div></li></ul></div>
-
-							</div></li><li class="listitem"><div class="para">
-								References/URLs 
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											Opening of all vymLinks in a subtree
-										</div></li><li class="listitem"><div class="para">
-											Opening of all URLs in a subtree
-										</div></li><li class="listitem"><div class="para">
-											Bugzilla integration 
-											<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-														vym can fetch data directly from Bugzilla (extra package required, see manual)
-													</div></li><li class="listitem"><div class="para">
-														Quick checks of bugs' status: All bugs in a subtree can be updated with a single keystroke
-													</div></li><li class="listitem"><div class="para">
-														Support for Bugzilla queries
-													</div></li></ul></div>
-
-										</div></li></ul></div>
-
-							</div></li><li class="listitem"><div class="para">
-								Copy from past steps in history to current one
-							</div></li><li class="listitem"><div class="para">
-								Adding timestamp to branch
-							</div></li><li class="listitem"><div class="para">
-								Sort lexically (forward/backward)
-							</div></li><li class="listitem"><div class="para">
-								Create new map with current selection as MapCenter
-							</div></li><li class="listitem"><div class="para">
-								Detach a branch to make it a new mapcenter
-							</div></li><li class="listitem"><div class="para">
-								Go forward/backward in selection history
-							</div></li></ul></div>
-
-				</div></li></ul></div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
-					Widgets 
-					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-								Editors 
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											Tree editor added
-										</div></li><li class="listitem"><div class="para">
-											Heading editor added
-										</div></li></ul></div>
-
-							</div></li><li class="listitem"><div class="para">
-								New find window 
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											Shows all hits clearly, both branches and notes
-										</div></li><li class="listitem"><div class="para">
-											Makes it easy to select the hits in editors
-										</div></li></ul></div>
-
-							</div></li><li class="listitem"><div class="para">
-								More file dialogs now can remember to switch off warnings
-							</div></li><li class="listitem"><div class="para">
-								Progress bar shows filename of currently loading map
-							</div></li><li class="listitem"><div class="para">
-								Dock Widgets 
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											Can be positioned freely 
-											<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-														Floating next to main window
-													</div></li><li class="listitem"><div class="para">
-														Integrated (top/left/right/bottom) into main window
-													</div></li></ul></div>
-
-										</div></li><li class="listitem"><div class="para">
-											Note editor
-										</div></li><li class="listitem"><div class="para">
-											Find window
-										</div></li></ul></div>
-
-							</div></li></ul></div>
-
-				</div></li></ul></div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
-					Graphics 
-					<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-								Animation 
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											Panning
-										</div></li><li class="listitem"><div class="para">
-											Snap back
-										</div></li></ul></div>
-
-							</div></li><li class="listitem"><div class="para">
-								Images 
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											Basic SVG support
-										</div></li><li class="listitem"><div class="para">
-											Images can be resized
-										</div></li><li class="listitem"><div class="para">
-											New standard flags
-										</div></li></ul></div>
-
-							</div></li><li class="listitem"><div class="para">
-								Frames 
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											Include subtree in frame
-										</div></li><li class="listitem"><div class="para">
-											New frametype: cloud
-										</div></li></ul></div>
-
-							</div></li><li class="listitem"><div class="para">
-								Zoom 
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											Zoom with scroll wheel (press CTRL)
-										</div></li><li class="listitem"><div class="para">
-											Zoom factor is saved and restored on load
-										</div></li><li class="listitem"><div class="para">
-											Center on selection with "." or reset zoom with ","
-										</div></li></ul></div>
-
-							</div></li><li class="listitem"><div class="para">
-								Autolayout (collision detection)
-							</div></li><li class="listitem"><div class="para">
-								Fonts 
-								<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											Set default font
-										</div></li><li class="listitem"><div class="para">
-											Branch headings may be RichText now
-										</div></li></ul></div>
-
-							</div></li></ul></div>
-
-				</div></li></ul></div></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1619114">3.3. Internationalization</h3></div></div></div><div class="para">
-	</div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1637211">3.3.1. IBus</h4></div></div></div><a id="id1579342" class="indexterm"></a><a id="id1576341" class="indexterm"></a><a id="id1549726" class="indexterm"></a><a id="id1646734" class="indexterm"></a><a id="id1598749" class="indexterm"></a><a id="id2341443" class="indexterm"></a><a id="id1540813" class="indexterm"></a><a id="id1617866" class="indexterm"></a><a id="id1582639" class="indexterm"></a><a id="id2309994" class="indexterm"></a><a id="id1614019" class="indexterm"></a><a id="id2346474" class="indexterm"></a><a id="id1635680" class="indexterm"></a><a id="id2309405" class="indexterm"></a><div class="itemizedlist"><ul><li class="listitem"><div class="para">
-					IBus has a new input method switcher with a popup listing available input methods engines, somewhat like Alt-Tab in managers. IBus also now has better and cleaner handling of X keyboard layouts.
 				</div></li><li class="listitem"><div class="para">
-					IBus has changed the behavior to share the input method engines and the state among applications.
+					<span class="emphasis"><em>Integrated Enterprise Login Information</em></span>: Users connected to large ("enterprise") networks can view and potentially modify user account settings in the <span class="application"><strong>GNOME 3.6 Control Center</strong></span>. This feature integrates the Fedora 18 <span class="application"><strong>realmd</strong></span> feature so you can view and potentially manage <span class="productname">Active Directory</span> deployments.
+				</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp15402240">3.1.4. <span class="productname">KDE</span>
+		 Software Compilation </h4></div></div></div><div class="para">
+			Fedora 18 features <span class="productname">KDE 4.9</span>, with many new features and improved stability and performance. The <span class="orgname">KDE Project</span>
+			 Quality team has taken the initiative to ensure that this release is the best one yet. The <span class="productname">KDE</span> release notes reveal a number of exiting changes:
+		</div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp15405232">3.1.4.1. Platform </h5></div></div></div><div class="para">
+				The <span class="productname">KDE Platform</span> release includes bugfixes, other quality improvements, networking, and preparation for <span class="productname">Frameworks 5</span>.
+			</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idm960672">3.1.4.2. <span class="productname">Plasma Workspace</span>
+			</h5></div></div></div><div class="para">
+				Highlights for <span class="productname">Plasma Workspaces</span> include substantial improvements to the <span class="application"><strong>Dolphin</strong></span> File Manager, <span class="application"><strong>Konsole</strong></span> X Terminal Emulator, <code class="function">Activities</code>, and the <span class="application"><strong>KWin</strong></span> Window Manager.
+			</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						<span class="emphasis"><em><span class="application"><strong>Dolphin</strong></span> File Manager</em></span>: The powerful file manager <span class="application"><strong>Dolphin</strong></span> now includes back and forward buttons and in-line file renaming is back. <span class="application"><strong>Dolphin</strong></span> can show metadata such as ratings, tags, image and file sizes, author, date, and more as well as grouping and sorting by metadata properties. The new <span class="application"><strong>Mercurial</strong></span> plugin handles this versioning system in the same convenient way <span class="application"><strong>git</strong></span>, <span class="application"><strong>SVN</strong></span> and <span class="application"><strong>CVS</strong></span> are supported, so users can do pulls, pushes and commits right from the file manager. The <span class="application"><strong>Dolphin</strong></span> user interface has seen several smaller improvements, including a better <code class="function">Places</code> panel, improved search support and synchronization with the terminal location.
+					</div></li><li class="listitem"><div class="para">
+						<span class="emphasis"><em><span class="application"><strong>Konsole</strong></span> X Terminal Emulator</em></span>: The workhorse <span class="application"><strong>Konsole</strong></span> now has the ability to search for a text selection using <span class="productname">KDE</span> <code class="function">Web Shortcuts</code>. It offers the <code class="function">Change Directory To</code> context option when a folder is dropped on the <span class="application"><strong>Konsole</strong></span> window. Users have more control for organizing terminal windows by detaching tabs and dragging them to create a new window with just that tab. Existing tabs can be cloned into new ones with the same profile. Visibility of the menu and tab bars can be controlled when starting <span class="application"><strong>Konsole</strong></span>. For those handy with scripting, tab titles can be changed through an escape sequence.
+					</div></li><li class="listitem"><div class="para">
+						<span class="emphasis"><em><span class="application"><strong>KWin</strong></span> Window manager</em></span>: The <span class="productname">KDE</span> Window Manager, <span class="application"><strong>KWin</strong></span> has seen a lot of work. Improvements include subtle changes like raising windows during window switching and help for <code class="function">Window Specific Settings</code>, as well as more visible changes such as an improved <code class="function">KCM</code> for box switching and better performance with <code class="function">Wobbly Windows</code>. There are changes to make <span class="application"><strong>KWin</strong></span> deal better with <code class="function">Activities</code>, including the addition of <code class="function">Activity</code> related window rules. There has been a general focus on improving <span class="application"><strong>KWin</strong></span> quality and performance.
+					</div></li><li class="listitem"><div class="para">
+						<span class="emphasis"><em><code class="function">Activities</code></em></span>: <code class="function">Activities</code> are now integrated more thoroughly throughout the <code class="function">Workspaces</code>. Files can be linked to <code class="function">Activities</code> in <span class="application"><strong>Dolphin</strong></span>, <span class="application"><strong>Konqueror</strong></span> and <code class="function">Folder View</code>. <code class="function">Folder View</code> can also show only those files related to an <code class="function">Activity</code> on the desktop or in a panel. An <code class="function">Activity</code> <code class="function">KIO</code> is new, and encryption for private activities is now possible.
+					</div></li><li class="listitem"><div class="para">
+						<code class="function">Workspaces</code> introduce <code class="function">MPRIS2</code> support, with <span class="application"><strong>KMix</strong></span> having the ability to handle streams and a <code class="function">Plasma</code> data engine for handling this music player control protocol. These changes tie in with <code class="function">MPRIS2</code> support in <span class="application"><strong>Juk</strong></span> and <span class="application"><strong>Dragon</strong></span>, the <span class="productname">KDE</span> music and video players. There are many smaller changes in <code class="function">Workspaces</code>, including several <code class="function">QML</code> ports. The improved <code class="function">Plasma</code> miniplayer includes a track properties dialog and better filtering. The Kickoff menu can now be used with only a keyboard. The <code class="function">Network Management</code> plasmoid has seen layout and usability work. The <code class="function">Public Transport</code> widget has also seen considerable changes.
+					</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp23350416">3.1.4.3. Applications</h5></div></div></div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						<span class="emphasis"><em><span class="application"><strong>Kontact</strong></span> Suite</em></span>: The world’s most complete PIM suite <span class="application"><strong>Kontact</strong></span> received many bugfixes and performance improvements.
+					</div></li><li class="listitem"><div class="para">
+						<span class="emphasis"><em>KDE Education</em></span>: <span class="productname">KDE-Edu</span> introduces <span class="application"><strong>Pairs</strong></span>, a new memory game. <span class="application"><strong>Rocs</strong></span>, the graph theory application for students and teachers, gained a number of improvements. Algorithms can now be executed step-wise, the undo and cancel-construction system works better, and overlay graphs are now supported. <span class="application"><strong>Kstars</strong></span> has improved sorting by meridian transit time / observation time and better <span class="orgname">Digital Sky Survey</span>
+						 image retrieval. <span class="application"><strong>Marble</strong></span> received speed optimizations and threading support, and its user interface has been enhanced. <span class="application"><strong>Marble</strong></span> routing extensions now include <span class="application"><strong>OSRM (Open Source Routing Machine)</strong></span>, support for bicycle and pedestrian routing, and an offline data model to manage offline routing and offline search data. <span class="application"><strong>Marble</strong></span> can now show positions of aircraft in the <span class="application"><strong>FlightGear</strong></span> simulator.
+					</div></li><li class="listitem"><div class="para">
+						<span class="emphasis"><em>KDE Games</em></span>: <span class="productname">KDE Games</span> have been upgraded. There has been a lot of polish to <span class="application"><strong>Kajongg</strong></span>, the <span class="productname">KDE</span> Mahjongg game, including tooltip playing hints, improved robot AI and chat if players are on the same server (<span class="orgname">kajongg.org</span>
+						 now has one!). <span class="application"><strong>KGoldrunner</strong></span> has a number of new levels (a contribution by Gabriel Miltschitzky) and <span class="application"><strong>KPatience</strong></span> retains game history upon saving. <span class="application"><strong>KSudoku</strong></span> has seen small improvements such as better hints, as well as seven new two-dimensional puzzle shapes and three new 3-D shapes.
+					</div></li></ul></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp23365552">3.1.5. <span class="productname">MATE</span>
+		</h4></div></div></div><div class="para">
+			This is the initial release of <span class="productname">MATE Desktop</span> for Fedora 18. It brings back a classic, intuitive, and easy to use desktop that users have been long requesting. Install MATE by issuing the command: 
+<pre class="screen">
+	  <code class="command">yum groupinstall "MATE Desktop"</code>
+</pre>
+			 Support for <span class="application"><strong>MATE</strong></span> in Fedora is provided in <code class="varname">#fedora-mate</code> or <code class="varname">#mate</code> on <span class="orgname">irc.freenode.net</span>
+			 or through the Fedora bugzilla.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp23370688">3.1.6. <span class="productname">Xfce</span>
+		</h4></div></div></div><div class="para">
+			Fedora 18 sees the introduction of <span class="productname">Xfce 4.10</span>. This new release remains true to the goal of providing a fast, lightweight yet user-friendly desktop environment and was mainly focused on polishing the desktop and improving the user experience in various ways. Highlights of this release are:
+		</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+					<span class="emphasis"><em>New application finder</em></span>: a new application finder that has been completely rewritten and combines the functionality of the old <span class="application"><strong>xfce4-appfinder</strong></span> and <span class="application"><strong>xfrun4</strong></span>
 				</div></li><li class="listitem"><div class="para">
-					ibus-m17n now excludes some m17n engines by default, including zh-pinyin, ko-han2, and most kbd engines, because they overlap with other specific IMEs such as ibus-pinyin and ibus-hangul.
+					<span class="emphasis"><em>Improved panel</em></span>: the panel now has an alternative <span class="emphasis"><em>vertical display mode</em></span> (a deskbar). What's more, panel plugins can be arranged in multiple rows, whicsh is particularly useful in the deskbar mode;
 				</div></li><li class="listitem"><div class="para">
-					ibus-fep is a new IBus frontend client which can be used in consoles and terminals.
+					<span class="emphasis"><em>Improved functionality</em></span>: a <span class="emphasis"><em>new MIME type editor</em></span> that allows you to easily change applications used for opening different file types. Extended functionality for the settings editor and the mouse and touchpad settings dialog which <span class="emphasis"><em>now supports tablets in a much better way</em></span>;
 				</div></li><li class="listitem"><div class="para">
-					Indic Typing Booster now supports Bengali, and there are beta versions for Marathi, Hindi, Gujarati and Tamil languages available.
-				</div></li></ul></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1581630">3.3.2. Asian Fonts</h4></div></div></div><a id="id1581636" class="indexterm"></a><a id="id1581644" class="indexterm"></a><a id="id1581652" class="indexterm"></a><a id="id2343284" class="indexterm"></a><a id="id2343292" class="indexterm"></a><a id="id2343300" class="indexterm"></a><a id="id2343308" class="indexterm"></a><a id="id2343316" class="indexterm"></a><a id="id2343324" class="indexterm"></a><a id="id2343332" class="indexterm"></a><a id="id2343340" class="indexterm"></a><a id="id1639679" class="indexterm"></a><a id="id1639687" class="indexterm"></a><div class="itemizedlist"><ul><li class="listitem"><div class="para">
-					The default Korean Font has changed from "Un" to "Nanum". As the glyphs in "Nanum" look nicer than "Un" and "Nanum" has a monospace variant.
+					<span class="emphasis"><em>Improved desktop handling</em></span>: it is now possible to launch applications and open files on the desktop with a <span class="emphasis"><em>single click</em></span> of the mouse. In addition, the <span class="productnumber">4.10</span>
+					 desktop can display thumbnails and automatically advance through the wallpaper list
 				</div></li><li class="listitem"><div class="para">
-					The default Simplified Chinese Font has changed from "WenQuanYi Zen Hei" to "WenQuanYi Zen Hei Sharp", which uses the embedded bitmap font to make Simplified Chinese render more clearly at small sizes. One can use the zenheiset tool to change the default Simplified Chinese font back to the previous default.
+					<span class="emphasis"><em>Tiling windows</em></span>: the window manager can be configured to tile windows when dragging them to the screen edges. The tab window (Alt+Tab) supports more flexible theming and cursor key navigation;
 				</div></li><li class="listitem"><div class="para">
-					Lohit fonts are now under SIL OFL license.
-				</div></li><li class="listitem"><div class="para">
-					New font packages gubbi-fonts and navilu-fonts have been added for Kannada language.
-				</div></li><li class="listitem"><div class="para">
-					Culmus fonts have been update to version 0.121 with fully reworked Frank Ruehl family, which now supports diacritics and kerning.
-				</div></li></ul></div></div></div><div xml:lang="en-US" class="section" id="sect_Multimedia" lang="en-US"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="sect_Multimedia">3.4. Multimedia</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2310191">3.4.1. blender</h4></div></div></div><a id="id1552434" class="indexterm"></a><a id="id1774561" class="indexterm"></a><a id="id1523034" class="indexterm"></a><a id="id2346932" class="indexterm"></a><a id="id1599720" class="indexterm"></a><div class="para">
-			<span class="package">blender</span> has been updated to 2.6.1. This release includes many new features including a new, faster rendering engine, motion tracking, dynamic painting, an ocean simulation, and much more. Refer to <a href="http://www.blender.org/development/release-logs/blender-260/">http://www.blender.org/development/release-logs/blender-260/</a> and <a href="http://www.blender.org/development/release-logs/blender-261/">http://www.blender.org/development/release-logs/blender-261/</a> for additional details.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1599190">3.4.2. calibre</h4></div></div></div><a id="id2312709" class="indexterm"></a><div class="para">
-			<span class="package">calibre</span> has been upgraded from 0.8.11 to 0.8.39. Among the many improvements; deleted books are moved to the recycle bin instead of just deleting, multiple filenames can be passed on the command line, there is now a preference setting for how much a font size changes when larger/smaller is clicked, the popup asking about converting formats can be disabled, many new and improved recipes, and much more.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1528138">3.4.3. epris</h4></div></div></div><div class="para">
-			<span class="package">epris</span> is a small, lightweight music player. <span class="emphasis"><em>epris</em></span> is new to Fedora 17. For a (very) brief overview, go to <a href="http://code.google.com/p/epris/">http://code.google.com/p/epris/</a>
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2346496">3.4.4. epstool</h4></div></div></div><a id="id1520136" class="indexterm"></a><div class="para">
-			<span class="package">epstool</span> is a utility to create or extract preview images in EPS files, fix bounding boxes and convert to bitmaps. It is also new to Fedora 17.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1773873">3.4.5. gimp</h4></div></div></div><a id="id1773880" class="indexterm"></a><div class="para">
-			<span class="package">gimp</span> has been upgraded to 2.8.0. There are many changes, some very significant. Among the highlights: 
+					<span class="emphasis"><em>Better choice of default applications</em></span>: the <span class="productname">Xfce</span> group of packages and the <span class="productname">Xfce</span> spin now feature the <span class="application"><strong>lightdm</strong></span> display manager and <span class="application"><strong>Yum Extender</strong></span> package manager conforming with the desktop environment's goals.
+				</div></li></ul></div><div class="para">
+			An online tour of the upstream changes in <span class="productname">Xfce 4.10</span> can be viewed <a href="http://xfce.org/about/tour">here</a>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp23389424">3.1.7. <span class="productname">Sugar</span>
+		 </h4></div></div></div><div class="para">
+			Educational users and developers in the space alike can enjoy the <span class="productname">Sugar Learning Environment "Sucrose" version 0.98</span> from Fedora 18.
+		</div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp23391520">3.1.7.1. The <span class="productname">Sugar</span>
+			 Experience </h5></div></div></div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						<span class="emphasis"><em>Touching Sugar</em></span>: The newest version of <span class="productname">Sugar</span> has excellent support for touchscreens, providing touch friendly user interfaces and taking advantage of improved touch support in X.
+					</div></li><li class="listitem"><div class="para">
+						<span class="emphasis"><em>Changing Sort</em></span>: Users will notice that icons in the home view are now in alphabetical order.
+					</div></li><li class="listitem"><div class="para">
+						<span class="emphasis"><em>Cooking with Sugar</em></span>:Developers building activities for <span class="productname">Sugar</span> will discover an updated toolkit based on GTK3.
+					</div></li></ul></div></div></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp24160352">3.2. Productivity</h3></div></div></div><div class="para">
+		The <span class="package">par</span> package is new to Fedora. <span class="application"><strong>par</strong></span> is a filter to reformat paragraphs. Command line options allow precise control of the output format.
+	</div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp17544240">3.3. Networking</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp15420688">3.3.1. Consistent network device naming</h4></div></div></div><div class="para">
+			Fedora 18 continues the previous releases' use of <span class="package">biosdevname</span> to set network device names in a deterministic manner. Ethernet ports embedded on server motherboards will be named <code class="literal">em<em class="replaceable"><code>port_number</code></em></code>, while ports on PCI cards will be named <code class="literal">p<em class="replaceable"><code>slot_number</code></em>p<em class="replaceable"><code>port_number</code></em></code>, corresponding to the chassis labels. This feature may be disabled by passing <code class="literal">biosdevname=0</code> on the kernel command line, in which case, behavior will revert to using ethX names.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp16930672">3.3.2. Better network security with <span class="application"><strong>firewalld</strong></span></h4></div></div></div><div class="para">
+			The firewall daemon <span class="package">firewalld</span> will be the default firewall solution for Fedora 18, replacing <span class="package">iptables</span>. Using <span class="application"><strong>firewalld</strong></span> will allow for application of policy changes without reloading, allowing connection states to stay unbroken when rules are changed.
+		</div><div class="para">
+			A <code class="function">D-BUS</code> interface allows approved applications to communicate their status and present complex or temporary needs to the firewall without requiring hand configuration by an administrator. This improves support for dynamic environments such as <span class="application"><strong>libvirtd</strong></span>, which previously had to be restarted when <span class="application"><strong>iptables</strong></span> rules were changed.
+		</div><div class="para">
+			Manual administration can be done with <code class="command">firewall-cmd</code>. Documentation on firewalld can be found in the included manpages: <code class="filename">firewall-cmd(1)</code>, <code class="filename">firewalld(1)</code>, <code class="filename">firewalld.conf(5)</code>, <code class="filename">firewalld.icmptype(5)</code>, <code class="filename">firewalld.service(5)</code>, <code class="filename">firewalld.zone(5)</code>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp22947232">3.3.3. <span class="application"><strong>Team Driver</strong></span> improves NIC bonding</h4></div></div></div><div class="para">
+			Fedora 18 includes <code class="function">Team Driver</code> which facilitates grouping of multiple network interfaces together so they act like a single network interface. This extends teaming possibilities provided by the existing bonding driver. It also provides a userspace driven, modular alternative to the existing bonding driver. Usage information can be found in the included manpages: <code class="filename">teamd.conf(5)</code>, <code class="filename">teamd(8)</code>, and <code class="filename">teamdctl(8)</code>.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp30655408">3.3.4. Bring your own Hotspot</h4></div></div></div><div class="para">
+			<span class="package">NetworkManager</span> now supports an enhanced Hotspot or Internet Connection Sharing mode for Wi-Fi, which enables a much smoother connection sharing experience and is better supported by hardware. This mode is automatically enabled only for new connections to ensure existing configurations are unchanged.
+		</div></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="idp30790864">3.4. Internationalization</h3></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp17225376">3.4.1. Input Methods </h4></div></div></div><div class="para">
+			<code class="filename">$HOME/.xinputrc</code> has been moved to <code class="filename">$HOME/.config/imsettings/xinputrc</code>.
+		</div><div class="para">
+			<code class="filename">$HOME/.imsettings.log</code> has been moved to <code class="filename">$HOME/.cache/imsettings/log</code>.
+		</div><div class="para">
+			The default engine for Simplified Chinese has been changed to <span class="package">ibus-libpinyin</span> (see <a href="http://fedoraproject.org/w/index.php?title=Features/ibus-libpinyin">Features/ibus-libpinyin</a> for more details).
+		</div><div class="para">
+			On the GNOME Desktop, <span class="package">im-chooser</span> is now deprecated except in fallback mode and with non-ibus input methods, since <span class="productname">GNOME 3.6</span> supports ibus as the default input method system. Users should now use <span class="application"><strong>gnome-control-center</strong></span> to setup their input methods: 
+			<div class="orderedlist"><ol class="arabic"><li class="listitem"><div class="para">
+						click on the user menu at the upper right corner of the panel.
+					</div></li><li class="listitem"><div class="para">
+						select <span class="emphasis"><em>System Settings</em></span> from the menu.
+					</div></li><li class="listitem"><div class="para">
+						click on the <span class="emphasis"><em>Region &amp; Language</em></span> icon.
+					</div></li><li class="listitem"><div class="para">
+						open the <span class="emphasis"><em>Input Sources</em></span> tab.
+					</div></li><li class="listitem"><div class="para">
+						click on <span class="emphasis"><em>+</em></span> icon to add input sources.
+					</div></li><li class="listitem"><div class="para">
+						choose one or more input sources you want to add.
+					</div></li></ol></div>
+
+		</div><div class="para">
+			If you can't find an input source you are looking for in the list, try running the following command in a terminal and restart the desktop: 
+<pre class="screen"><code class="command">gsettings set org.gnome.desktop.input-sources show-all-sources true</code></pre>
+
+		</div><div class="para">
+			There may be no shortcut key to turn the input method on and off by default. you can enable it with the following steps: 
+			<div class="orderedlist"><ol class="arabic"><li class="listitem"><div class="para">
+						click the <span class="guilabel"><strong>shortcut settings</strong></span> link in the <span class="guilabel"><strong>Input Sources</strong></span> tab on <span class="guilabel"><strong>System Settings</strong></span> or click the <span class="guibutton"><strong>Keyboard</strong></span> icon at the top and the <span class="guilabel"><strong>Shortcuts</strong></span> tab, the <span class="guilabel"><strong>Typing</strong></span> section at the left pane.
+					</div></li><li class="listitem"><div class="para">
+						click on the <span class="guibutton"><strong>Switch to next source</strong></span>, press <span class="keycap"><strong>Control</strong></span> + <span class="keycap"><strong>space</strong></span>.
+					</div></li></ol></div>
+
+		</div><div class="para">
+			If no input source is configured by default for your native language, you can add it using the above steps as a workaround. Here is a table of input sources corresponding to the input method engines:
+		</div><table border="1" id="idp22848208"><tr>
+				<td>
+					<span class="emphasis"><em>Input source name</em></span>
+				</td>
+				<td>
+					<span class="emphasis"><em>Input method engine</em></span>
+				</td>
+
+			</tr><tr>
+				<td>
+					Chinese (Chewing)
+				</td>
+				 <td>
+					ibus-chewing
+				</td>
+
+			</tr><tr>
+				<td>
+					Chinese (Intelligent Pinyin)
+				</td>
+				 <td>
+					ibus-libpinyin
+				</td>
+
+			</tr><tr>
+				<td>
+					Japanese (Anthy)
+				</td>
+				 <td>
+					ibus-anthy
+				</td>
+
+			</tr><tr>
+				<td>
+					Korean (Korean)
+				</td>
+				 <td>
+					ibus-hangul
+				</td>
+
+			</tr><tr>
+				<td>
+					* (inscript (m17n))
+				</td>
+				 <td>
+					ibus-m17n
+				</td>
+
+			</tr><tr>
+				<td>
+					* (itrans (m17n))
+				</td>
+				 <td>
+					ibus-m17n
+				</td>
+
+			</tr><tr>
+				<td>
+					* (phonetic (m17n))
+				</td>
+				 <td>
+					ibus-m17n
+				</td>
+
+			</tr></table><div class="para">
+			<span class="package">ibus-libpinyin</span> provides a new input frontend for Simplified Chinese providing an intelligent pinyin input method that speeds up the user input of Chinese characters. It can replace <span class="package">ibus-pinyin</span> which is also still available in Fedora.
+		</div><div class="para">
+			<span class="package">ibus-typing-booster</span> is a predictive input method for the ibus platform. It predicts complete words based on partial input. One can then simply select the desired word from a list of suggestions and improve one's typing speed and spelling. <span class="package">ibus-typing-booster</span> currently supports the following Asian and European languages:
 			<div class="itemizedlist"><ul><li class="listitem"><div class="para">
-						<span class="package">gimp</span> 2.8 introduces an optional single-window mode. You can toggle between the default multi-window mode and the new single-window mode through the Single-window mode checkbox in the Windows menu.
+						Assamese, Bengali, Farsi, Gujarati, Hindi, Kannada, Maithili, Marathi, Nepali, Oriya, Punjabi, Tamil, Telugu, Urdu
 					</div></li><li class="listitem"><div class="para">
-						<span class="package">gimp</span> now allows dockable dialogs in a dock window to be placed in multiple columns.
-					</div></li><li class="listitem"><div class="para">
-						The docking bars have been removed and replaced with overlaid highlights. The dockable drag handle has been removed and the dockable menu button has been moved up to the tabs. A new Automatic tab style has been added which makes dockable tabs use the available space.
-					</div></li><li class="listitem"><div class="para">
-						A rather big conceptual change is that saving and exporting images now are clearly separated activities. Saving an image can only be done in the XCF format which is GIMP's native file format, able to save all kinds of information necessary for works in progress.
-					</div></li><li class="listitem"><div class="para">
-						For complex compositions, a flat layer structure is very limiting. GIMP 2.8 lets users organize their compositions better through the introduction of layer groups which allow layers to be organized in tree-like structures. Layer groups are fully scriptable through the GIMP plug-in API.
-					</div></li><li class="listitem"><div class="para">
-						Text editing with the Text Tool is now performed on-canvas instead of in a separate window.
-					</div></li><li class="listitem"><div class="para">
-						Enhancements have also been made to the size entry widget, which is used for inputting most of the x, y, width, height parameters. For example, in the scale dialog it is now possible to write '50%' in the Width field to scale the image to 50% of the width. Expressions such as '30in + 40px' and '4 * 5.4in' work, too.
+						English, Danish, French
 					</div></li></ul></div>
 
 		</div><div class="para">
-			There are many other improvements which can be researched at <a href="http://www.gimp.org/release-notes/gimp-2.8.html">http://www.gimp.org/release-notes/gimp-2.8.html</a>
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id1558245">3.4.6. idjc</h4></div></div></div><a id="id1558252" class="indexterm"></a><a id="id1558260" class="indexterm"></a><a id="id1558268" class="indexterm"></a><a id="id1558280" class="indexterm"></a><a id="id1558288" class="indexterm"></a><div class="para">
-			Internet DJ Console is a project to provide a powerful yet easy to use source-client for individuals interested in streaming live radio shows over the Internet using Shoutcast or Icecast servers. <span class="package">idjc</span> appears for the first time in Fedora.
-		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="id2311143">3.4.7. vpmk</h4></div></div></div><a id="id2311150" class="indexterm"></a><a id="id2311158" class="indexterm"></a><a id="id2311166" class="indexterm"></a><div class="para">
-			Virtual MIDI Piano Keyboard is a MIDI events generator and receiver. It doesn't produce any sound by itself, but can be used to drive a MIDI synthesizer (either hardware or software, internal or external). <span class="package">vpmk</span> is new to Fedora.
-		</div></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="id1540037">3.5. Printing</h3></div></div></div><a id="id2310217" class="indexterm"></a><a id="id2342966" class="indexterm"></a><a id="id1649827" class="indexterm"></a><div class="para">
-	</div><div class="para">
-		Fedora 17 includes support for the CUPS colord color profile service. This allows the user to define color profiles that improve the fidelity of printed colors.
-	</div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Changes_for_Sysadmin.html"><strong>Prev</strong>2. Changes in Fedora for System Administrators</a></li><li class="up"><a accesskey="u" href="#"><strong>Up</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Home</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Developers.html"><strong>Next</strong>4. Changes in Fedora for Developers</a></li></ul></body></html>
+			If you want to use non-ibus input method such as fcitx and uim etc., remove the <span class="package">ibus</span> package from the system first and restart the desktop. <span class="package">im-chooser</span> will get back to work on even GNOME.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp25213312">3.4.2. Fonts</h4></div></div></div><div class="para">
+			<span class="package">fonts-tweak-tool</span> now supports the language ordering to decide what language has precedence to display the text, and the font properties to change the sub-pixel rendering and hinting configuration per fonts.
+		</div><div class="para">
+			The Paktype fonts have been updated with enhancements for better coverage.
+		</div><div class="para">
+			New fonts <span class="package">lohit-tamil-classical-fonts</span> for Tamil and <span class="package">kalapi-fonts</span> for Gujarati have been added.
+		</div><div class="para">
+			<span class="package">madan-fonts</span> for Nepali, <span class="package">navilu-fonts</span> and <span class="package">gubbi-fonts</span> for Kannada now support the minimum required characters as per fontconfig file for their respective languages.
+		</div><div class="para">
+			<code class="filename">$HOME/.fonts.conf</code> is deprecated. Users are encouraged to move it to <code class="filename">$HOME/.config/fontconfig/fonts.conf</code>.
+		</div><div class="para">
+			<code class="filename">$HOME/.fonts.conf.d</code> is deprecated. Users are encouraged to move it to <code class="filename">$HOME/.config/fontconfig/conf.d</code>
+		</div><div class="para">
+			All the disabled fontconfig config files in <code class="filename">/etc/fonts/conf.avail</code> have been moved to <code class="filename">/usr/share/fontconfig/conf.avail</code>. If you have any local symbolic links from the old location, please update them.
+		</div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h4 class="title" id="idp23170224">3.4.3.  Utilities </h4></div></div></div><div class="section"><div class="titlepage"><div><div keep-together.within-column="always"><h5 class="title" id="idp23171024">3.4.3.1. <code class="command">localectl</code></h5></div></div></div><div class="para">
+				<code class="command">localectl</code> is a new utility used to query and change the system locale and keyboard layout settings. Settings used in text consoles and inherited by deskop enviromnents. <code class="command">localectl</code> also accepts a hostname argument to administer remote systems over ssh.
+			</div></div></div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-Release_Notes-Changes_for_Sysadmin.html"><strong>Prev</strong>2. Changes in Fedora for System Administrators</a></li><li class="up"><a accesskey="u" href="#"><strong>Up</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Home</strong></a></li><li class="next"><a accesskey="n" href="sect-Release_Notes-Changes_for_Developers.html"><strong>Next</strong>4. Changes in Fedora for Developers</a></li></ul></body></html>
