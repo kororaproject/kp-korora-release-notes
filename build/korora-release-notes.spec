@@ -7,7 +7,7 @@ Summary:   Release Notes
 URL:       http://fedoraproject.org
 Group:     System Environment/Base
 License:   CC-BY-SA
-Source0:   fedora-release-notes-%{version}.tar.gz
+Source0:   %{name}-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch: noarch
 Requires:	coreutils
