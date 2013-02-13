@@ -2,7 +2,7 @@
 
 Name:      korora-release-notes
 Version:   18.0.0
-Release:   3%{?dist}
+Release:   3%{?dist}.1
 Summary:   Release Notes
 URL:       http://fedoraproject.org
 Group:     System Environment/Base
@@ -15,6 +15,8 @@ Requires(post):	/bin/touch
 
 Obsoletes:	fedora-release-notes
 Provides:	fedora-release-notes
+Obsoletes:	kororaa-release-notes
+Provides:	kororaa-release-notes
 
 %description
 These are the official Release Notes for Fedora 18,
