@@ -1,8 +1,8 @@
 # Documentation Specfile
 
 Name:      korora-release-notes
-Version:   18.0.0
-Release:   3%{?dist}.1
+Version:   19.0.0
+Release:   1%{?dist}
 Summary:   Release Notes
 URL:       http://fedoraproject.org
 Group:     System Environment/Base
@@ -19,7 +19,7 @@ Obsoletes:	kororaa-release-notes
 Provides:	kororaa-release-notes
 
 %description
-These are the official Release Notes for Fedora 18,
+These are the official Release Notes for Fedora 19,
 written and edited by the Fedora community. For more
 information on the Release Notes process or how you can
 contribute, refer to the Release Notes HOWTO located at
